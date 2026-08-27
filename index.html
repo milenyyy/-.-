@@ -3,30 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dear Noah 💌</title>
+    <title>Dear Noah ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         TELA INICIAL
-    ========================== -->
+    <!-- =================================
+         PARTE 1 — DEAR NOAH
+    ================================== -->
 
     <section class="inicio" id="inicio">
 
+        <div class="brilho brilho-1"></div>
+        <div class="brilho brilho-2"></div>
+        <div class="brilho brilho-3"></div>
+
         <div class="inicio-conteudo">
 
-            <p class="subtitulo">UMA PEQUENA CARTA</p>
+            <p class="subtitulo">
+                UMA PEQUENA CARTA
+            </p>
 
-            <h1>Dear Noah</h1>
+            <h1>
+                Dear Noah
+            </h1>
+
+            <div class="linha"></div>
 
             <p class="frase">
                 Algumas coisas são difíceis de dizer...
+                <br>
                 então talvez seja melhor escrever.
             </p>
 
@@ -36,156 +46,109 @@
 
         </div>
 
+        <div class="indicador">
+            ↓
+        </div>
+
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          CARTA
-    ========================== -->
+    ================================== -->
 
     <section class="carta" id="carta">
 
         <div class="papel">
 
+            <div class="decoracao-canto">
+                ♥
+            </div>
+
             <p class="data">
                 Para Noah,
             </p>
 
-            <h2>Querido Noah,</h2>
-
-            <p>
-                Talvez você não esperasse encontrar uma carta
-                escondida em forma de site.
-            </p>
-
-            <p>
-                Mas algumas mensagens merecem mais do que
-                uma simples mensagem enviada pelo celular.
-            </p>
-
-            <p>
-                Então fiz este pequeno lugar para guardar
-                algumas palavras, lembranças e momentos.
-            </p>
-
-            <button class="botao" onclick="mostrarMensagem()">
-                ✨ Tem mais uma coisa...
-            </button>
-
-            <p id="mensagem" class="mensagem"></p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         GALERIA
-    ========================== -->
-
-    <section class="galeria" id="galeria">
-
-        <p class="subtitulo">ALGUMAS LEMBRANÇAS</p>
-
-        <h2>Pequenos momentos</h2>
-
-        <p class="descricao">
-            Cada imagem pode guardar uma história.
-        </p>
-
-
-        <div class="fotos">
-
-            <!-- FOTO 1 -->
-
-            <div class="foto">
-                <img src="imagens/foto1.jpg" alt="Lembrança 1">
-
-                <div class="legenda">
-                    <h3>Momento #1</h3>
-
-                    <p>
-                        Uma lembrança especial.
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- FOTO 2 -->
-
-            <div class="foto">
-                <img src="imagens/foto2.jpg" alt="Lembrança 2">
-
-                <div class="legenda">
-                    <h3>Momento #2</h3>
-
-                    <p>
-                        Mais uma história para guardar.
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- FOTO 3 -->
-
-            <div class="foto">
-                <img src="imagens/foto3.jpg" alt="Lembrança 3">
-
-                <div class="legenda">
-                    <h3>Momento #3</h3>
-
-                    <p>
-                        Porque algumas coisas merecem ser lembradas.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         SURPRESA
-    ========================== -->
-
-    <section class="surpresa">
-
-        <div class="surpresa-conteudo">
-
-            <p class="subtitulo">UMA ÚLTIMA COISA...</p>
-
             <h2>
-                Você encontrou
-                <br>
-                a parte secreta. 👀
+                Querido Noah,
             </h2>
 
-            <button class="botao" onclick="surpresa()">
-                🎁 Descobrir
-            </button>
+            <!-- TEXTO 4 -->
 
-            <div id="surpresaTexto"></div>
+            <p>
+                Meu bem, não sou boa com palavras como um certo
+                poeta aí, mas cada palavra dessa carta será retirada
+                do meu coração. Irei colocar cada pensamento e
+                sentimento em cada detalhe dessa carta. Espero que goste...
+            </p>
+
+
+            <!--
+                OS PRÓXIMOS TEXTOS DA CARTA
+                SERÃO COLOCADOS AQUI.
+            -->
+
+
+            <p class="assinatura">
+                Com carinho,
+                <br>
+                <span>♡</span>
+            </p>
+
+
+            <button class="botao botao-carta"
+                    onclick="mostrarMensagem()">
+
+                ✨ Tem mais uma coisa...
+
+            </button>
 
         </div>
 
     </section>
 
 
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
+    <!-- =================================
+         VOCÊ É...
+    ================================== -->
 
-    <footer>
+    <section class="elogios" id="elogios">
 
-        <p>
-            Feito especialmente para Noah ♡
-        </p>
+        <div class="elogios-fundo">
 
-    </footer>
+            <div class="estrela estrela-1">✦</div>
+            <div class="estrela estrela-2">✧</div>
+            <div class="estrela estrela-3">✦</div>
+            <div class="estrela estrela-4">✧</div>
+
+        </div>
 
 
-    <!-- JAVASCRIPT -->
+        <div class="elogios-conteudo">
+
+            <p class="pequeno-texto">
+                talvez você não saiba...
+            </p>
+
+            <h2>
+                Você é...
+            </h2>
+
+            <p class="texto-final">
+                muito mais especial do que imagina.
+            </p>
+
+        </div>
+
+
+        <div id="coracoes"></div>
+
+    </section>
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
 
     <script src="script.js"></script>
 

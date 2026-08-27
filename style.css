@@ -1,33 +1,47 @@
-/* =================================
+/* =========================================
    CONFIGURAÇÕES
-================================= */
+========================================= */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     background: #fff4f5;
 
     color: #211719;
 
     overflow-x: hidden;
+
 }
 
 
-/* =================================
-   BOTÃO
-================================= */
+/* =========================================
+   BOTÕES
+========================================= */
 
 .botao {
+
     border: 1px solid #211719;
 
     background: #211719;
@@ -45,23 +59,96 @@ body {
     cursor: pointer;
 
     transition: 0.3s ease;
+
 }
 
+
 .botao:hover {
+
     background: #8f424b;
 
     transform: translateY(-5px);
 
     box-shadow:
-        0 15px 30px rgba(33, 23, 25, 0.25);
+        0 15px 30px
+        rgba(33, 23, 25, 0.25);
+
 }
 
 
-/* =================================
+/* =========================================
+   BOTÕES DE NAVEGAÇÃO
+========================================= */
+
+.navegacao {
+
+    position: absolute;
+
+    z-index: 100;
+
+    bottom: 30px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.35);
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    color: #f2b6bc;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.navegacao:hover {
+
+    transform: translateY(-5px);
+
+    background: #8f424b;
+
+    color: white;
+
+}
+
+
+/* botão da direita */
+
+.navegacao-direita {
+
+    right: 30px;
+
+}
+
+
+/* botão da esquerda */
+
+.navegacao-esquerda {
+
+    left: 30px;
+
+}
+
+
+/* =========================================
    TELA INICIAL
-================================= */
+========================================= */
 
 .inicio {
+
     min-height: 100vh;
 
     display: flex;
@@ -79,6 +166,7 @@ body {
     padding: 40px 25px;
 
     background:
+
         radial-gradient(
             circle at 20% 20%,
             #f3b8be 0%,
@@ -92,21 +180,26 @@ body {
         ),
 
         #fff4f5;
+
 }
 
 
 .inicio-conteudo {
+
     max-width: 750px;
 
     position: relative;
 
     z-index: 2;
 
-    animation: aparecer 1.2s ease;
+    animation:
+        aparecer 1.2s ease;
+
 }
 
 
 .subtitulo {
+
     font-family: Arial, sans-serif;
 
     font-size: 12px;
@@ -116,21 +209,30 @@ body {
     color: #8f424b;
 
     margin-bottom: 22px;
+
 }
 
 
 .inicio h1 {
-    font-size: clamp(65px, 10vw, 110px);
+
+    font-size:
+        clamp(
+            65px,
+            10vw,
+            110px
+        );
 
     font-weight: normal;
 
     color: #211719;
 
     line-height: 1;
+
 }
 
 
 .linha {
+
     width: 70px;
 
     height: 1px;
@@ -138,10 +240,12 @@ body {
     background: #8f424b;
 
     margin: 28px auto;
+
 }
 
 
 .frase {
+
     font-size: 20px;
 
     line-height: 1.8;
@@ -149,53 +253,79 @@ body {
     color: #634e52;
 
     margin-bottom: 35px;
+
 }
 
 
-/* =================================
+/* =========================================
    BRILHOS
-================================= */
+========================================= */
 
 .brilho {
+
     position: absolute;
 
     width: 250px;
+
     height: 250px;
 
     border-radius: 50%;
 
-    background: rgba(217, 107, 117, 0.12);
+    background:
+        rgba(
+            217,
+            107,
+            117,
+            0.12
+        );
 
     filter: blur(10px);
 
-    animation: flutuar 7s ease-in-out infinite;
+    animation:
+        flutuar 7s
+        ease-in-out
+        infinite;
+
 }
+
 
 .brilho-1 {
+
     top: -80px;
+
     left: -60px;
+
 }
 
+
 .brilho-2 {
+
     right: -80px;
+
     top: 25%;
 
     animation-delay: 2s;
+
 }
 
+
 .brilho-3 {
+
     bottom: -100px;
+
     left: 35%;
 
     animation-delay: 4s;
+
 }
 
 
-/* =================================
+/* =========================================
    INDICADOR
-================================= */
+========================================= */
 
 .indicador {
+
     position: absolute;
 
     bottom: 30px;
@@ -206,15 +336,19 @@ body {
 
     font-size: 25px;
 
-    animation: subirDescer 1.5s infinite;
+    animation:
+        subirDescer 1.5s
+        infinite;
+
 }
 
 
-/* =================================
+/* =========================================
    CARTA
-================================= */
+========================================= */
 
 .carta {
+
     min-height: 100vh;
 
     padding: 120px 25px;
@@ -225,12 +359,20 @@ body {
 
     justify-content: center;
 
+    position: relative;
+
     background: #171112;
+
 }
 
 
 .papel {
-    width: min(750px, 100%);
+
+    width:
+        min(
+            750px,
+            100%
+        );
 
     padding: 70px;
 
@@ -239,15 +381,16 @@ body {
     background: #fffafa;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.35);
+        0 25px 70px
+        rgba(0, 0, 0, 0.35);
 
     border-radius: 4px;
 
-    animation: subir 1s ease;
 }
 
 
 .papel::before {
+
     content: "";
 
     position: absolute;
@@ -257,31 +400,38 @@ body {
     border: 1px solid #e5b9be;
 
     pointer-events: none;
+
 }
 
 
 .decoracao-canto {
+
     position: absolute;
 
     top: 32px;
+
     right: 38px;
 
     color: #a94f5a;
 
     font-size: 20px;
+
 }
 
 
 .data {
+
     text-align: right;
 
     color: #987b80;
 
     margin-bottom: 50px;
+
 }
 
 
 .papel h2 {
+
     font-size: 43px;
 
     font-weight: normal;
@@ -289,10 +439,12 @@ body {
     color: #211719;
 
     margin-bottom: 35px;
+
 }
 
 
 .papel p:not(.data):not(.assinatura) {
+
     font-size: 18px;
 
     line-height: 2;
@@ -300,10 +452,12 @@ body {
     color: #503f42;
 
     margin-bottom: 22px;
+
 }
 
 
 .assinatura {
+
     margin-top: 45px;
 
     color: #634e52;
@@ -311,33 +465,39 @@ body {
     line-height: 1.7;
 
     font-style: italic;
+
 }
 
 
 .assinatura span {
+
     color: #a94f5a;
 
     font-size: 25px;
+
 }
 
 
 .botao-carta {
+
     margin-top: 25px;
+
 }
 
 
-/* =================================
-   VOCÊ É...
-================================= */
+/* =========================================
+   SEÇÃO "VOCÊ É..."
+========================================= */
 
 .elogios {
+
     min-height: 100vh;
 
     position: relative;
 
     overflow: hidden;
 
-    display: none;
+    display: flex;
 
     align-items: center;
 
@@ -346,6 +506,7 @@ body {
     text-align: center;
 
     background:
+
         radial-gradient(
             circle at center,
             #3a1d21,
@@ -353,26 +514,30 @@ body {
         );
 
     color: white;
+
 }
 
 
-.elogios.ativo {
-    display: flex;
-}
-
+/* =========================================
+   CONTEÚDO CENTRAL
+========================================= */
 
 .elogios-conteudo {
+
     position: relative;
 
-    z-index: 20;
+    z-index: 30;
 
     padding: 30px;
 
-    animation: aparecerTexto 1.5s ease;
+    animation:
+        aparecerTexto 1.5s ease;
+
 }
 
 
 .pequeno-texto {
+
     font-family: Arial, sans-serif;
 
     letter-spacing: 4px;
@@ -384,22 +549,46 @@ body {
     color: #e9aeb4;
 
     margin-bottom: 25px;
+
 }
 
 
 .elogios h2 {
-    font-size: clamp(65px, 10vw, 110px);
+
+    font-size:
+        clamp(
+            65px,
+            10vw,
+            110px
+        );
 
     font-weight: normal;
 
     color: #f2b6bc;
 
     text-shadow:
-        0 0 20px rgba(242, 182, 188, 0.4);
+
+        0 0 20px
+        rgba(
+            242,
+            182,
+            188,
+            0.4
+        ),
+
+        0 0 60px
+        rgba(
+            242,
+            182,
+            188,
+            0.15
+        );
+
 }
 
 
 .texto-final {
+
     margin-top: 25px;
 
     color: #d8c1c4;
@@ -407,58 +596,86 @@ body {
     font-size: 18px;
 
     font-style: italic;
+
 }
 
 
-/* =================================
+/* =========================================
    ESTRELAS
-================================= */
+========================================= */
 
 .estrela {
+
     position: absolute;
 
     color: #f2b6bc;
 
     opacity: 0.5;
 
-    animation: piscar 2s infinite alternate;
+    animation:
+        piscar 2s
+        infinite
+        alternate;
+
 }
+
 
 .estrela-1 {
+
     top: 15%;
+
     left: 15%;
+
     font-size: 25px;
+
 }
+
 
 .estrela-2 {
+
     top: 30%;
+
     right: 15%;
+
     font-size: 18px;
+
 }
+
 
 .estrela-3 {
+
     bottom: 20%;
+
     left: 25%;
+
     font-size: 20px;
+
 }
+
 
 .estrela-4 {
+
     bottom: 15%;
+
     right: 25%;
+
     font-size: 28px;
+
 }
 
 
-/* =================================
+/* =========================================
    CORAÇÕES
-================================= */
+========================================= */
 
 .coracao {
+
     position: absolute;
 
-    top: -120px;
+    top: -130px;
 
     width: 100px;
+
     height: 90px;
 
     z-index: 10;
@@ -469,44 +686,67 @@ body {
 
     justify-content: center;
 
-    animation: cair linear forwards;
+    pointer-events: none;
+
+    animation:
+        cair
+        linear
+        forwards;
+
 }
 
 
 .coracao::before,
 .coracao::after {
+
     content: "";
 
     position: absolute;
 
     width: 60px;
+
     height: 90px;
 
     background: #f2b6bc;
 
-    border-radius: 60px 60px 0 0;
+    border-radius:
+        60px 60px 0 0;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.2);
+
 }
 
 
 .coracao::before {
+
     left: 50px;
 
-    transform: rotate(-45deg);
+    transform:
+        rotate(-45deg);
 
-    transform-origin: 0 100%;
+    transform-origin:
+        0 100%;
+
 }
 
 
 .coracao::after {
+
     left: 0;
 
-    transform: rotate(45deg);
+    transform:
+        rotate(45deg);
 
-    transform-origin: 100% 100%;
+    transform-origin:
+        100% 100%;
+
 }
 
 
 .coracao span {
+
     position: relative;
 
     z-index: 5;
@@ -521,24 +761,82 @@ body {
 
     font-weight: bold;
 
-    transform: translateY(5px);
+    text-align: center;
+
+    line-height: 1.1;
+
 }
 
 
-/* =================================
+/* =========================================
+   PALAVRAS FORA DOS CORAÇÕES
+========================================= */
+
+.palavra-solta {
+
+    position: absolute;
+
+    z-index: 15;
+
+    color: #f2b6bc;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 10px
+        rgba(
+            242,
+            182,
+            188,
+            0.5
+        );
+
+    animation:
+        aparecerSumir
+        4s
+        ease-in-out
+        forwards;
+
+}
+
+
+.palavra-solta.grande {
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================
    ANIMAÇÕES
-================================= */
+========================================= */
 
 @keyframes aparecer {
 
     from {
+
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(30px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
 }
@@ -547,28 +845,21 @@ body {
 @keyframes aparecerTexto {
 
     from {
+
         opacity: 0;
-        transform: scale(0.75);
+
+        transform:
+            scale(0.75);
+
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
-    }
 
-}
+        transform:
+            scale(1);
 
-
-@keyframes subir {
-
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 
 }
@@ -578,11 +869,17 @@ body {
 
     0%,
     100% {
-        transform: translate(-50%, 0);
+
+        transform:
+            translate(-50%, 0);
+
     }
 
     50% {
-        transform: translate(-50%, 8px);
+
+        transform:
+            translate(-50%, 8px);
+
     }
 
 }
@@ -592,11 +889,17 @@ body {
 
     0%,
     100% {
-        transform: translate(0, 0);
+
+        transform:
+            translate(0, 0);
+
     }
 
     50% {
-        transform: translate(25px, -25px);
+
+        transform:
+            translate(25px, -25px);
+
     }
 
 }
@@ -605,13 +908,21 @@ body {
 @keyframes piscar {
 
     from {
+
         opacity: 0.2;
-        transform: scale(0.8);
+
+        transform:
+            scale(0.8);
+
     }
 
     to {
+
         opacity: 0.8;
-        transform: scale(1.2);
+
+        transform:
+            scale(1.2);
+
     }
 
 }
@@ -620,52 +931,143 @@ body {
 @keyframes cair {
 
     0% {
+
         transform:
             translateY(-150px)
             rotate(0deg);
 
         opacity: 0;
+
     }
 
     10% {
+
         opacity: 1;
+
     }
 
     100% {
+
         transform:
             translateY(115vh)
             rotate(360deg);
 
         opacity: 0;
+
     }
 
 }
 
 
-/* =================================
+@keyframes aparecerSumir {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            translateY(10px);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.05)
+            translateY(-5px);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            translateY(-15px);
+
+    }
+
+}
+
+
+/* =========================================
    CELULAR
-================================= */
+========================================= */
 
 @media (max-width: 750px) {
 
     .papel {
-        padding: 55px 35px;
+
+        padding:
+            55px 35px;
+
     }
+
 
     .papel::before {
+
         inset: 15px;
+
     }
+
 
     .papel h2 {
+
         font-size: 34px;
+
     }
+
 
     .papel p:not(.data):not(.assinatura) {
+
         font-size: 16px;
+
     }
 
+
+    .navegacao {
+
+        width: 43px;
+
+        height: 43px;
+
+        bottom: 20px;
+
+    }
+
+
+    .navegacao-direita {
+
+        right: 20px;
+
+    }
+
+
+    .navegacao-esquerda {
+
+        left: 20px;
+
+    }
+
+
     .elogios h2 {
+
         font-size: 65px;
+
     }
 
 }

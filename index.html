@@ -2,19 +2,26 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Dear Noah ❤️</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- =================================
-         PARTE 1 — DEAR NOAH
-    ================================== -->
+
+    <!-- =========================================
+         PARTE 1
+         TELA INICIAL
+    ========================================== -->
 
     <section class="inicio" id="inicio">
 
@@ -22,29 +29,43 @@
         <div class="brilho brilho-2"></div>
         <div class="brilho brilho-3"></div>
 
+
         <div class="inicio-conteudo">
 
             <p class="subtitulo">
                 UMA PEQUENA CARTA
             </p>
 
+
             <h1>
                 Dear Noah
             </h1>
 
+
             <div class="linha"></div>
 
+
             <p class="frase">
+
                 Algumas coisas são difíceis de dizer...
+
                 <br>
+
                 então talvez seja melhor escrever.
+
             </p>
 
-            <button class="botao" onclick="abrirCarta()">
+
+            <button
+                class="botao"
+                onclick="abrirCarta()">
+
                 💌 Abrir carta
+
             </button>
 
         </div>
+
 
         <div class="indicador">
             ↓
@@ -53,104 +74,202 @@
     </section>
 
 
-    <!-- =================================
-         CARTA
-    ================================== -->
 
-    <section class="carta" id="carta">
+    <!-- =========================================
+         CARTA
+    ========================================== -->
+
+    <section
+        class="carta"
+        id="carta">
+
 
         <div class="papel">
+
 
             <div class="decoracao-canto">
                 ♥
             </div>
 
+
             <p class="data">
                 Para Noah,
             </p>
+
 
             <h2>
                 Querido Noah,
             </h2>
 
+
             <!-- TEXTO 4 -->
 
             <p>
+
                 Meu bem, não sou boa com palavras como um certo
                 poeta aí, mas cada palavra dessa carta será retirada
                 do meu coração. Irei colocar cada pensamento e
                 sentimento em cada detalhe dessa carta. Espero que goste...
+
             </p>
 
 
             <!--
-                OS PRÓXIMOS TEXTOS DA CARTA
+                OS PRÓXIMOS TEXTOS
                 SERÃO COLOCADOS AQUI.
             -->
 
 
             <p class="assinatura">
+
                 Com carinho,
+
                 <br>
+
                 <span>♡</span>
+
             </p>
 
 
-            <button class="botao botao-carta"
-                    onclick="mostrarMensagem()">
+            <!-- BOTÃO PARA PRÓXIMA PARTE -->
+
+            <button
+                class="botao botao-carta"
+                onclick="irParaCoracoes()">
 
                 ✨ Tem mais uma coisa...
 
             </button>
 
+
         </div>
+
+
+        <!-- BOTÃO FLUTUANTE -->
+
+        <button
+            class="navegacao navegacao-direita"
+            onclick="irParaCoracoes()"
+            title="Ir para a próxima parte">
+
+            ↓
+
+        </button>
+
 
     </section>
 
 
-    <!-- =================================
-         VOCÊ É...
-    ================================== -->
 
-    <section class="elogios" id="elogios">
+    <!-- =========================================
+         PARTE DOS CORAÇÕES
+    ========================================== -->
+
+    <section
+        class="elogios"
+        id="elogios">
+
+
+        <!-- FUNDO -->
 
         <div class="elogios-fundo">
 
-            <div class="estrela estrela-1">✦</div>
-            <div class="estrela estrela-2">✧</div>
-            <div class="estrela estrela-3">✦</div>
-            <div class="estrela estrela-4">✧</div>
+            <div class="estrela estrela-1">
+                ✦
+            </div>
+
+            <div class="estrela estrela-2">
+                ✧
+            </div>
+
+            <div class="estrela estrela-3">
+                ✦
+            </div>
+
+            <div class="estrela estrela-4">
+                ✧
+            </div>
 
         </div>
 
+
+
+        <!-- PALAVRAS SOLTAS -->
+
+        <div id="palavrasSoltas"></div>
+
+
+
+        <!-- CORAÇÕES -->
+
+        <div id="coracoes"></div>
+
+
+
+        <!-- TEXTO CENTRAL -->
 
         <div class="elogios-conteudo">
 
+
             <p class="pequeno-texto">
+
                 talvez você não saiba...
+
             </p>
+
 
             <h2>
+
                 Você é...
+
             </h2>
 
+
             <p class="texto-final">
+
                 muito mais especial do que imagina.
+
             </p>
+
 
         </div>
 
 
-        <div id="coracoes"></div>
+
+        <!-- BOTÃO PARA VOLTAR -->
+
+        <button
+            class="navegacao navegacao-esquerda"
+            onclick="voltarCarta()"
+            title="Voltar para a carta">
+
+            ↑
+
+        </button>
+
+
+        <!-- BOTÃO PARA CONTINUAR -->
+
+        <button
+            class="navegacao navegacao-direita"
+            onclick="proximaParte()"
+            title="Próxima parte">
+
+            ↓
+
+        </button>
+
 
     </section>
 
 
-    <!-- =================================
+
+    <!-- =========================================
          JAVASCRIPT
-    ================================== -->
+    ========================================== -->
 
     <script src="script.js"></script>
+
 
 </body>
 

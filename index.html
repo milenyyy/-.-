@@ -2,31 +2,62 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Dear Noah ❤️</title>
+    <title>Dear Noah ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
 
-<!-- =====================================================
+<!-- ==================================================
      PARTE 1 — DEAR NOAH
-===================================================== -->
+================================================== -->
 
 <section class="inicio" id="inicio">
 
-    <div class="brilho brilho-1"></div>
-    <div class="brilho brilho-2"></div>
-    <div class="brilho brilho-3"></div>
+    <div class="grain"></div>
+
+    <div class="inicio-luz luz-1"></div>
+    <div class="inicio-luz luz-2"></div>
+
+    <div class="flores-decoracao">
+
+        <span>✦</span>
+        <span>♡</span>
+        <span>✧</span>
+        <span>·</span>
+        <span>✦</span>
+
+    </div>
+
 
     <div class="inicio-conteudo">
 
-        <p class="subtitulo">
+        <p class="microtexto">
             UMA PEQUENA CARTA
         </p>
 
@@ -34,108 +65,170 @@
             Dear Noah
         </h1>
 
-        <div class="linha"></div>
+        <div class="ornamento">
+
+            <span>—</span>
+
+            <b>♡</b>
+
+            <span>—</span>
+
+        </div>
 
         <p class="frase">
+
             Algumas coisas são difíceis de dizer...
             <br>
-            então talvez seja melhor escrever.
+
+            <em>
+                então talvez seja melhor escrever.
+            </em>
+
         </p>
 
-        <button class="botao" onclick="abrirCarta()">
-            💌 Abrir carta
+
+        <button
+            class="botao-principal"
+            onclick="abrirCarta()"
+        >
+
+            <span>♡</span>
+
+            Abrir carta
+
+            <span>♡</span>
+
         </button>
 
     </div>
 
-    <div class="indicador">
-        ↓
+
+    <div class="scroll-indicator">
+
+        <span>role para descobrir</span>
+
+        <b>↓</b>
+
     </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- ==================================================
      CARTA
-===================================================== -->
+================================================== -->
 
 <section class="carta" id="carta">
 
     <div class="papel">
 
-        <div class="decoracao-canto">
-            ♥
+        <div class="papel-textura"></div>
+
+        <div class="canto canto-1">❦</div>
+        <div class="canto canto-2">❦</div>
+
+
+        <div class="carta-topo">
+
+            <span>para Noah</span>
+
+            <span>♡</span>
+
         </div>
 
-        <p class="data">
-            Para Noah,
+
+        <div class="linha-decorativa"></div>
+
+
+        <p class="saudacao">
+            Meu querido Noah,
         </p>
 
-        <h2>
-            Querido Noah,
-        </h2>
 
-        <p>
+        <p class="texto-carta">
+
             Meu bem, não sou boa com palavras como um certo
             poeta aí, mas cada palavra dessa carta será retirada
             do meu coração. Irei colocar cada pensamento e
             sentimento em cada detalhe dessa carta. Espero que goste...
+
         </p>
 
-        <!--
-        OS PRÓXIMOS TEXTOS DA CARTA
-        VÃO SER ADICIONADOS AQUI.
-        -->
 
-        <p class="assinatura">
-            Com carinho,
-            <br>
-            <span>♡</span>
-        </p>
+        <div class="espaco-futuro">
 
-        <button class="botao botao-carta"
-            onclick="irParaCoracoes()">
+            <!--
+            OS PRÓXIMOS TEXTOS SERÃO
+            ADICIONADOS AQUI.
+            -->
 
-            ✨ Tem mais uma coisa...
+        </div>
+
+
+        <div class="assinatura">
+
+            <span>com carinho,</span>
+
+            <strong>♡</strong>
+
+        </div>
+
+
+        <div class="selo">
+
+            feito especialmente para você
+
+        </div>
+
+
+        <button
+            class="botao-carta"
+            onclick="irParaCoracoes()"
+        >
+
+            Tem mais uma coisa...
+
+            <span>✦</span>
 
         </button>
 
     </div>
 
+
     <button
-        class="navegacao navegacao-direita"
-        onclick="irParaCoracoes()">
-
+        class="seta-navegacao direita"
+        onclick="irParaCoracoes()"
+        aria-label="Próxima parte"
+    >
         ↓
-
     </button>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- ==================================================
      VOCÊ É...
-===================================================== -->
+================================================== -->
 
 <section class="elogios" id="elogios">
 
-    <div class="elogios-fundo">
+    <div class="ceu"></div>
 
-        <div class="estrela estrela-1">
-            ✦
-        </div>
 
-        <div class="estrela estrela-2">
-            ✧
-        </div>
+    <div class="estrelas">
 
-        <div class="estrela estrela-3">
-            ✦
-        </div>
-
-        <div class="estrela estrela-4">
-            ✧
-        </div>
+        <i>✦</i>
+        <i>✧</i>
+        <i>·</i>
+        <i>✦</i>
+        <i>·</i>
+        <i>✧</i>
+        <i>✦</i>
+        <i>·</i>
+        <i>✧</i>
+        <i>✦</i>
 
     </div>
 
@@ -152,97 +245,116 @@
 
     <!-- TEXTO CENTRAL -->
 
-    <div class="elogios-conteudo">
+    <div class="elogios-centro">
 
-        <p class="pequeno-texto">
-            talvez você não saiba...
+        <p>
+            existem coisas que talvez
+            você nunca perceba...
         </p>
+
+
+        <div class="ornamento pequeno">
+
+            <span>—</span>
+            <b>♡</b>
+            <span>—</span>
+
+        </div>
+
 
         <h2>
             Você é...
         </h2>
 
-        <p class="texto-final">
-            muito mais especial do que imagina.
-        </p>
+
+        <div class="subfrase">
+
+            <span>mais especial</span>
+
+            <br>
+
+            do que imagina.
+
+        </div>
 
     </div>
 
 
     <button
-        class="navegacao navegacao-esquerda"
-        onclick="voltarCarta()">
-
+        class="seta-navegacao esquerda"
+        onclick="voltarCarta()"
+    >
         ↑
-
     </button>
 
 
     <button
-        class="navegacao navegacao-direita"
-        onclick="irParaParte2()">
-
+        class="seta-navegacao direita"
+        onclick="irParaParte2()"
+    >
         ↓
-
     </button>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- ==================================================
      TRANSIÇÃO
-===================================================== -->
+================================================== -->
 
-<section class="transicao" id="transicao">
+<section class="transicao">
 
-    <div class="transicao-conteudo">
+    <div class="transicao-linha"></div>
 
-        <p>
-            FIM DO ARQUIVO...
-        </p>
+    <p>
+        algumas histórias não terminam aqui.
+    </p>
 
-        <span>
-            carregando próxima página...
-        </span>
-
-    </div>
+    <span>
+        próxima parte →
+    </span>
 
 </section>
 
 
-<!-- =====================================================
-     PARTE 2 — ARQUIVO NOAH
-===================================================== -->
+
+<!-- ==================================================
+     PARTE 2 — ARQUIVO
+================================================== -->
 
 <section class="arquivo" id="arquivo">
 
+    <div class="arquivo-grain"></div>
+
     <div class="scanlines"></div>
 
-    <div class="ruido"></div>
 
-
-    <div class="arquivo-topo">
+    <header class="arquivo-header">
 
         <span>
-            SYSTEM // ARCHIVE
+            ARCHIVE // 001
         </span>
 
         <span>
-            FILE_001
+            23:17:04
         </span>
 
-    </div>
+    </header>
 
 
-    <div class="arquivo-conteudo">
+    <div class="arquivo-circulo"></div>
 
-        <p class="arquivo-label">
-            [ CONFIDENTIAL FILE ]
+
+    <main class="arquivo-main">
+
+        <p class="arquivo-pequeno">
+            PERSONAL FILE
         </p>
 
 
         <h2>
-            ARQUIVO
+            THE
         </h2>
 
         <h1>
@@ -250,113 +362,165 @@
         </h1>
 
 
-        <div class="linha-glitch"></div>
+        <div class="linha-arquivo"></div>
 
 
-        <div class="status">
+        <div class="arquivo-info">
 
-            <p>
-                SUJEITO:
-                <strong>NOAH</strong>
-            </p>
+            <div>
 
-            <p>
-                STATUS:
-                <strong class="verde">
-                    ONLINE
-                </strong>
-            </p>
+                <span>SUBJECT</span>
 
-            <p>
-                ACCESS:
                 <strong>
-                    RESTRICTED
+                    NOAH
                 </strong>
-            </p>
 
-        </div>
+            </div>
 
 
-        <!-- =================================================
-             FOTO
-        ================================================== -->
+            <div>
 
-        <div class="foto-arquivo">
+                <span>STATUS</span>
 
-            <div class="foto-moldura">
+                <strong class="online">
+                    ● ONLINE
+                </strong>
 
-                <img
-                    src="imagens/noah1.jpg"
-                    alt="Foto do Noah">
+            </div>
 
-                <span class="camera">
-                    CAMERA_01
-                </span>
+
+            <div>
+
+                <span>CLASSIFICATION</span>
+
+                <strong>
+                    PRIVATE
+                </strong>
 
             </div>
 
         </div>
 
 
-        <p class="mensagem-arquivo">
+        <!-- FOTO -->
 
-            Este arquivo contém informações que talvez você
-            ainda não conheça.
+        <div class="foto-polaroid">
+
+            <div class="fita"></div>
+
+
+            <div class="foto-container">
+
+                <img
+                    src="imagens/noah1.jpg"
+                    alt="Foto do Noah"
+                >
+
+
+                <div class="camera-data">
+
+                    <span>
+                        REC
+                    </span>
+
+                    <span>
+                        CAM_01
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="polaroid-legenda">
+
+                <span>
+                    PHOTO_01
+                </span>
+
+                <small>
+                    arquivo pessoal
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <p class="arquivo-descricao">
+
+            Há coisas sobre certas pessoas que não podem
+            ser resumidas em algumas linhas.
 
             <br><br>
 
-            Algumas delas foram escondidas de propósito.
+            Então este arquivo foi criado.
+
+            <br>
+
+            Para guardar algumas delas.
 
         </p>
 
 
         <button
-            class="botao-arquivo"
-            onclick="iniciarInvestigacao()">
+            class="botao-investigacao"
+            onclick="iniciarInvestigacao()"
+        >
 
-            ▶ INICIAR INVESTIGAÇÃO
+            <span>▶</span>
+
+            abrir arquivo
 
         </button>
 
-    </div>
+    </main>
 
 
     <button
-        class="navegacao-arquivo voltar"
-        onclick="voltarParte1()">
-
+        class="seta-arquivo"
+        onclick="voltarParte1()"
+    >
         ↑
-
     </button>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- ==================================================
      INVESTIGAÇÃO
-===================================================== -->
+================================================== -->
 
-<section class="investigacao" id="investigacao">
+<section
+    class="investigacao"
+    id="investigacao"
+>
 
-    <div class="investigacao-container">
+    <div class="investigacao-grid"></div>
 
-        <p class="arquivo-label">
-            INVESTIGATION // 01
+
+    <div class="investigacao-conteudo">
+
+        <p class="codigo">
+            FILE_SYSTEM / NOAH_001
         </p>
 
 
         <h2>
 
-            VOCÊ ENCONTROU
+            Você encontrou
             <br>
-            UM ARQUIVO.
+
+            <span>algumas coisas.</span>
 
         </h2>
 
 
-        <p class="investigacao-texto">
+        <p class="descricao-investigacao">
 
-            Mas esse não parece ser o único.
+            Mas parece que os arquivos estão
+            escondendo alguma coisa.
 
         </p>
 
@@ -366,18 +530,23 @@
 
             <button
                 class="arquivo-card"
-                onclick="abrirArquivo(1)">
+                onclick="abrirArquivo(1)"
+            >
 
-                <span class="icone">
-                    📼
-                </span>
+                <div class="card-numero">
+                    01
+                </div>
+
+                <div class="card-icone">
+                    ◉
+                </div>
 
                 <strong>
                     TAPE_01
                 </strong>
 
                 <small>
-                    UNKNOWN
+                    AUDIO / UNKNOWN
                 </small>
 
             </button>
@@ -385,18 +554,23 @@
 
             <button
                 class="arquivo-card"
-                onclick="abrirArquivo(2)">
+                onclick="abrirArquivo(2)"
+            >
 
-                <span class="icone">
-                    📷
-                </span>
+                <div class="card-numero">
+                    02
+                </div>
+
+                <div class="card-icone">
+                    ▣
+                </div>
 
                 <strong>
                     PHOTO_01
                 </strong>
 
                 <small>
-                    LOCKED
+                    IMAGE / LOCKED
                 </small>
 
             </button>
@@ -404,68 +578,91 @@
 
             <button
                 class="arquivo-card"
-                onclick="abrirArquivo(3)">
+                onclick="abrirArquivo(3)"
+            >
 
-                <span class="icone">
-                    📄
-                </span>
+                <div class="card-numero">
+                    03
+                </div>
+
+                <div class="card-icone">
+                    ▤
+                </div>
 
                 <strong>
                     NOTE_01
                 </strong>
 
                 <small>
-                    UNKNOWN
+                    TEXT / UNKNOWN
                 </small>
 
             </button>
-
 
         </div>
 
 
         <div
             id="resultadoArquivo"
-            class="resultado-arquivo">
+            class="resultado-arquivo"
+        ></div>
 
-        </div>
+
+        <button
+            class="botao-proximo"
+            onclick="irParaSenha()"
+        >
+
+            continuar investigação
+            <span>→</span>
+
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- ==================================================
      SENHA
-===================================================== -->
+================================================== -->
 
 <section class="senha" id="senha">
 
-    <div class="senha-container">
+    <div class="vidro"></div>
+
+
+    <div class="senha-conteudo">
 
         <div class="cadeado">
-            🔒
+
+            ♢
+
         </div>
 
 
-        <p class="arquivo-label">
-            SECURITY SYSTEM
+        <p class="codigo">
+            SECURITY / ENCRYPTED
         </p>
 
 
         <h2>
 
-            ARQUIVO
+            Algumas coisas
             <br>
-            PROTEGIDO
+
+            <em>precisam de uma chave.</em>
 
         </h2>
 
 
-        <p>
+        <p class="senha-descricao">
 
-            Parece que você precisa de uma senha
-            para continuar.
+            O próximo arquivo está protegido.
+            <br>
+
+            Talvez você saiba a resposta.
 
         </p>
 
@@ -475,12 +672,12 @@
             <input
                 type="text"
                 id="senhaInput"
-                placeholder="DIGITE A SENHA"
+                placeholder="digite a senha..."
                 autocomplete="off"
             >
 
             <button onclick="verificarSenha()">
-                ENTER
+                abrir
             </button>
 
         </div>
@@ -488,9 +685,14 @@
 
         <p
             id="mensagemSenha"
-            class="mensagem-senha">
+            class="mensagem-senha"
+        ></p>
 
-        </p>
+
+        <div
+            id="borboletas"
+            class="borboletas"
+        ></div>
 
     </div>
 

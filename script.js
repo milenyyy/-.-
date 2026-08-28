@@ -1,162 +1,109 @@
-/* =====================================================
-   NAVEGAÇÃO
-===================================================== */
+/* ==================================================
+   ABRIR CARTA
+================================================== */
 
-function irPara(id) {
+function abrirCarta() {
 
-    const elemento =
-        document.getElementById(id);
+    const carta =
+        document.getElementById("carta");
 
-    if (!elemento) return;
+    carta.scrollIntoView({
 
-    elemento.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+        behavior: "smooth"
+
     });
 
 }
 
 
-/* =====================================================
-   ABRIR CARTA
-===================================================== */
+/* ==================================================
+   MOSTRAR MENSAGEM
+================================================== */
 
-function abrirCarta() {
+function mostrarMensagem() {
 
-    irPara("carta");
+    const mensagem =
+        document.getElementById("mensagem");
 
-}
+    mensagem.style.display =
+        "block";
 
+    mensagem.classList.add(
+        "aparecer"
+    );
 
-/* =====================================================
-   CORAÇÕES
-===================================================== */
+    mensagem.innerText =
+        "E talvez essa seja a parte mais importante: algumas pessoas tornam os nossos dias mais especiais simplesmente por existirem. ♡";
 
-let coracoesAtivos = false;
+    setTimeout(function () {
 
+        document.getElementById("coracoes")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
-function irParaCoracoes() {
-
-    irPara("elogios");
-
-    iniciarCoracoes();
-
-}
-
-
-function iniciarCoracoes() {
-
-    if (coracoesAtivos) return;
-
-    coracoesAtivos = true;
-
-
-    const palavras = [
-
-        "incrível",
-        "maravilhoso",
-        "especial",
-        "lindo",
-        "único",
-        "admirável",
-        "inesquecível",
-        "talentoso",
-        "brilhante",
-        "gentil",
-        "querido",
-        "extraordinário",
-        "divertido",
-        "inteligente",
-        "autêntico",
-        "fantástico",
-        "importante",
-        "memorável",
-        "criativo",
-        "inspirador",
-        "surpreendente",
-        "encantador"
-
-    ];
-
-
-    const palavrasSoltas = [
-
-        "luz",
-        "alegria",
-        "carinho",
-        "amizade",
-        "sorriso",
-        "sonho",
-        "felicidade",
-        "gentileza",
-        "coragem",
-        "brilho",
-        "bondade",
-        "força",
-        "magia",
-        "risadas",
-        "memórias",
-        "presença",
-        "afeto",
-        "calma",
-        "esperança",
-        "vida"
-
-    ];
-
-
-    /* cria alguns imediatamente */
-
-    for (let i = 0; i < 20; i++) {
-
-        setTimeout(() => {
-
-            criarCoracao(palavras);
-
-        }, i * 180);
-
-    }
-
-
-    /* chuva infinita */
-
-    setInterval(() => {
-
-        criarCoracao(palavras);
-
-    }, 330);
-
-
-    /* estrelas/palavras */
-
-    for (let i = 0; i < 10; i++) {
-
-        setTimeout(() => {
-
-            criarPalavra(palavrasSoltas);
-
-        }, i * 300);
-
-    }
-
-
-    setInterval(() => {
-
-        criarPalavra(palavrasSoltas);
-
-    }, 750);
+    }, 1800);
 
 }
 
 
-/* =====================================================
-   CRIAR CORAÇÃO
-===================================================== */
+/* ==================================================
+   LISTA DE PALAVRAS
+================================================== */
 
-function criarCoracao(palavras) {
+const palavras = [
+
+    "INCRÍVEL",
+
+    "MARAVILHOSO",
+
+    "LINDO",
+
+    "ESPECIAL",
+
+    "ÚNICO",
+
+    "ADMIRÁVEL",
+
+    "GENTIL",
+
+    "FORTE",
+
+    "INTELIGENTE",
+
+    "ENGRAÇADO",
+
+    "IMPORTANTE",
+
+    "AUTÊNTICO",
+
+    "BRILHANTE",
+
+    "EXTRAORDINÁRIO",
+
+    "LEGAL",
+
+    "CARISMÁTICO",
+
+    "MEMORÁVEL",
+
+    "FODA",
+
+    "INSUBSTITUÍVEL"
+
+];
+
+
+/* ==================================================
+   CRIAR CORAÇÕES
+================================================== */
+
+function criarCoracao() {
 
     const container =
-        document.getElementById("coracoes");
+        document.getElementById(
+            "coracoesFundo"
+        );
 
     if (!container) return;
 
@@ -164,16 +111,12 @@ function criarCoracao(palavras) {
     const coracao =
         document.createElement("div");
 
-
-    const texto =
-        document.createElement("span");
-
-
-    coracao.className =
-        "coracao";
+    coracao.classList.add(
+        "coracao"
+    );
 
 
-    texto.innerText =
+    const palavra =
         palavras[
             Math.floor(
                 Math.random() *
@@ -182,54 +125,69 @@ function criarCoracao(palavras) {
         ];
 
 
-    coracao.appendChild(texto);
-
-
-    coracao.style.left =
-        Math.random() * 105 - 3 + "%";
+    coracao.innerHTML =
+        "♥<span>" +
+        palavra +
+        "</span>";
 
 
     const tamanho =
-        .55 + Math.random() * .65;
+        Math.random() * 25 + 25;
 
 
-    coracao.style.transform =
-        `scale(${tamanho})`;
+    const esquerda =
+        Math.random() * 100;
 
 
     const duracao =
-        5 + Math.random() * 7;
+        Math.random() * 8 + 8;
+
+
+    coracao.style.left =
+        esquerda + "%";
+
+
+    coracao.style.fontSize =
+        tamanho + "px";
 
 
     coracao.style.animationDuration =
         duracao + "s";
 
 
-    coracao.style.animationDelay =
-        Math.random() * 1.5 + "s";
+    container.appendChild(
+        coracao
+    );
 
 
-    container.appendChild(coracao);
-
-
-    setTimeout(() => {
+    setTimeout(function () {
 
         coracao.remove();
 
-    }, (duracao + 2) * 1000);
+    }, duracao * 1000);
 
 }
 
 
-/* =====================================================
-   PALAVRAS QUE APARECEM E SOMEM
-===================================================== */
+/* ==================================================
+   CORAÇÕES INFINITOS
+================================================== */
 
-function criarPalavra(palavras) {
+setInterval(
+    criarCoracao,
+    450
+);
+
+
+/* ==================================================
+   PALAVRAS FORA DOS CORAÇÕES
+================================================== */
+
+function criarPalavra() {
 
     const container =
         document.getElementById(
-            "palavrasSoltas"
+            "palavrasFora"
         );
 
     if (!container) return;
@@ -238,9 +196,9 @@ function criarPalavra(palavras) {
     const palavra =
         document.createElement("span");
 
-
-    palavra.className =
-        "palavra-solta";
+    palavra.classList.add(
+        "palavra-flutuante"
+    );
 
 
     palavra.innerText =
@@ -253,299 +211,103 @@ function criarPalavra(palavras) {
 
 
     palavra.style.left =
-        (5 + Math.random() * 88) + "%";
+        Math.random() * 85 + "%";
 
 
     palavra.style.top =
-        (8 + Math.random() * 82) + "%";
+        Math.random() * 85 + "%";
 
 
-    if (Math.random() > .7) {
-
-        palavra.classList.add("grande");
-
-    }
+    palavra.style.animationDelay =
+        Math.random() * 2 + "s";
 
 
-    container.appendChild(palavra);
+    container.appendChild(
+        palavra
+    );
 
 
-    setTimeout(() => {
+    setTimeout(function () {
 
         palavra.remove();
 
-    }, 4500);
+    }, 4000);
 
 }
 
 
-/* =====================================================
-   VOLTAR PARA CARTA
-===================================================== */
-
-function voltarCarta() {
-
-    irPara("carta");
-
-}
+setInterval(
+    criarPalavra,
+    900
+);
 
 
-/* =====================================================
-   PARTE 2
-===================================================== */
+/* ==================================================
+   IR PARA PARTE 2
+================================================== */
 
 function irParaParte2() {
 
-    irPara("arquivo");
-
-}
-
-
-function voltarParte1() {
-
-    irPara("elogios");
-
-}
-
-
-function iniciarInvestigacao() {
-
-    irPara("investigacao");
-
-}
-
-
-/* =====================================================
-   ARQUIVOS
-===================================================== */
-
-function abrirArquivo(numero) {
-
-    const resultado =
+    const parte2 =
         document.getElementById(
-            "resultadoArquivo"
+            "parte2"
         );
 
+    parte2.scrollIntoView({
 
-    if (numero === 1) {
+        behavior: "smooth"
 
-        resultado.innerHTML = `
-
-            <strong>TAPE_01 // AUDIO</strong>
-
-            <br><br>
-
-            Arquivo de áudio encontrado.
-
-            <br>
-
-            Duração: 00:03:17
-
-            <br><br>
-
-            <em>
-            "Algumas pessoas deixam marcas
-            mesmo sem perceber."
-            </em>
-
-        `;
-
-    }
-
-
-    if (numero === 2) {
-
-        resultado.innerHTML = `
-
-            <strong>PHOTO_01 // LOCKED</strong>
-
-            <br><br>
-
-            Esta fotografia está protegida.
-
-            <br>
-
-            Talvez exista uma chave
-            escondida em algum lugar.
-
-        `;
-
-    }
-
-
-    if (numero === 3) {
-
-        resultado.innerHTML = `
-
-            <strong>NOTE_01 // UNKNOWN</strong>
-
-            <br><br>
-
-            "Nem tudo que está escondido
-            quer permanecer escondido."
-
-            <br><br>
-
-            — arquivo sem identificação
-
-        `;
-
-    }
+    });
 
 }
 
 
-/* =====================================================
-   IR PARA SENHA
-===================================================== */
+/* ==================================================
+   PRÓXIMO REGISTRO
+================================================== */
 
-function irParaSenha() {
+function proximoRegistro() {
 
-    irPara("senha");
-
-}
-
-
-/* =====================================================
-   SENHA
-===================================================== */
-
-function verificarSenha() {
-
-    const input =
+    const registro =
         document.getElementById(
-            "senhaInput"
+            "registroExtra"
         );
 
-
-    const mensagem =
-        document.getElementById(
-            "mensagemSenha"
-        );
+    registro.style.display =
+        "block";
 
 
-    const senha =
-        input.value
-            .trim()
-            .toLowerCase();
+    registro.classList.add(
+        "aparecer"
+    );
 
 
-    const senhaCorreta =
-        "borboletas em vidro";
+    registro.scrollIntoView({
 
+        behavior: "smooth",
 
-    if (senha === senhaCorreta) {
+        block: "center"
 
-        mensagem.innerHTML =
-            "✦ ACESSO CONCEDIDO ✦";
-
-
-        mensagem.style.color =
-            "#d99aa3";
-
-
-        criarBorboletas();
-
-
-    } else {
-
-        mensagem.innerHTML =
-            "ACESSO NEGADO — tente novamente.";
-
-
-        mensagem.style.color =
-            "#9b5962";
-
-    }
+    });
 
 }
 
 
-/* =====================================================
-   BORBOLETAS APÓS A SENHA
-===================================================== */
+/* ==================================================
+   VOLTAR PARA CORAÇÕES
+================================================== */
 
-function criarBorboletas() {
+function voltarCoracoes() {
 
-    const container =
+    const coracoes =
         document.getElementById(
-            "borboletas"
+            "coracoes"
         );
 
+    coracoes.scrollIntoView({
 
-    for (let i = 0; i < 12; i++) {
+        behavior: "smooth"
 
-        const borboleta =
-            document.createElement("span");
-
-
-        borboleta.className =
-            "borboleta";
-
-
-        borboleta.innerHTML =
-            "🦋";
-
-
-        borboleta.style.left =
-            Math.random() * 100 + "%";
-
-
-        borboleta.style.top =
-            (50 + Math.random() * 40) + "%";
-
-
-        borboleta.style.animationDelay =
-            Math.random() * 1.5 + "s";
-
-
-        container.appendChild(
-            borboleta
-        );
-
-
-        setTimeout(() => {
-
-            borboleta.remove();
-
-        }, 5500);
-
-    }
+    });
 
 }
-
-
-/* =====================================================
-   ENTER NA SENHA
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-        const input =
-            document.getElementById(
-                "senhaInput"
-            );
-
-
-        if (!input) return;
-
-
-        input.addEventListener(
-            "keydown",
-            (event) => {
-
-                if (
-                    event.key === "Enter"
-                ) {
-
-                    verificarSenha();
-
-                }
-
-            }
-        );
-
-    }
-);

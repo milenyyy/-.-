@@ -47,7 +47,9 @@ function criarCoracao() {
         "coracao-caindo";
 
     coracao.innerHTML =
-        Math.random() > 0.5 ? "♥" : "♡";
+        Math.random() > 0.5
+            ? "♥"
+            : "♡";
 
     coracao.style.setProperty(
         "--posicao",
@@ -103,13 +105,20 @@ const palavras = [
     "IMPORTANTE",
     "EXTRAORDINÁRIO",
     "FASCINANTE",
-    "MEMORÁVEL"
+    "MEMORÁVEL",
+    "AUTÊNTICO",
+    "GENUÍNO",
+    "ADMIRADO",
+    "NOTÁVEL",
+    "INESQUECÍVEL"
 
 ];
 
 
 const palavrasContainer =
-    document.getElementById("palavrasEstrelas");
+    document.getElementById(
+        "palavrasEstrelas"
+    );
 
 
 palavras.forEach((palavra) => {
@@ -148,7 +157,9 @@ palavras.forEach((palavra) => {
         Math.random() * 5 + "s"
     );
 
-    palavrasContainer.appendChild(elemento);
+    palavrasContainer.appendChild(
+        elemento
+    );
 
 });
 
@@ -160,7 +171,9 @@ palavras.forEach((palavra) => {
 function irParaParte2() {
 
     const parte2 =
-        document.getElementById("investigacao");
+        document.getElementById(
+            "investigacao"
+        );
 
     parte2.scrollIntoView({
         behavior: "smooth"
@@ -176,7 +189,9 @@ function irParaParte2() {
 function abrirPista(numero) {
 
     const texto =
-        document.getElementById("textoPista");
+        document.getElementById(
+            "textoPista"
+        );
 
 
     const pistas = {
@@ -201,7 +216,8 @@ function abrirPista(numero) {
         texto.innerText =
             pistas[numero];
 
-        texto.style.opacity = "1";
+        texto.style.opacity =
+            "1";
 
     }, 300);
 
@@ -215,16 +231,25 @@ function abrirPista(numero) {
 function verificarSenha() {
 
     const campo =
-        document.getElementById("senha");
+        document.getElementById(
+            "senha"
+        );
 
     const resultado =
-        document.getElementById("resultadoSenha");
+        document.getElementById(
+            "resultadoSenha"
+        );
 
     const senha =
-        campo.value.trim().toLowerCase();
+        campo.value
+            .trim()
+            .toLowerCase();
 
 
-    if (senha === "borboletas em vidro") {
+    if (
+        senha ===
+        "borboletas em vidro"
+    ) {
 
         resultado.innerText =
             "✓ ACESSO CONCEDIDO";
@@ -234,8 +259,11 @@ function verificarSenha() {
 
 
         document
-            .getElementById("investigacaoFinal")
-            .style.display = "block";
+            .getElementById(
+                "investigacaoFinal"
+            )
+            .style.display =
+            "block";
 
 
     } else {
@@ -257,15 +285,21 @@ function verificarSenha() {
 
 document
     .getElementById("senha")
-    .addEventListener("keydown", function(event) {
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-        if (event.key === "Enter") {
+            if (
+                event.key ===
+                "Enter"
+            ) {
 
-            verificarSenha();
+                verificarSenha();
+
+            }
 
         }
-
-    });
+    );
 
 
 /* =====================================================
@@ -275,7 +309,9 @@ document
 function irParaParte3() {
 
     const universo =
-        document.getElementById("universo");
+        document.getElementById(
+            "universo"
+        );
 
     universo.scrollIntoView({
         behavior: "smooth"
@@ -298,10 +334,10 @@ let audioLigado = false;
 function criarSomUniverso() {
 
     if (audioLigado) {
-        return;
-    }
 
-    audioLigado = true;
+        return;
+
+    }
 
 
     try {
@@ -313,48 +349,75 @@ function criarSomUniverso() {
             )();
 
 
+        if (
+            audioContext.state ===
+            "suspended"
+        ) {
+
+            audioContext.resume();
+
+        }
+
+
         const frequencias = [
+
             110,
+
             164.81,
+
             220
+
         ];
 
 
-        frequencias.forEach((frequencia, index) => {
+        frequencias.forEach(
+            (frequencia, index) => {
 
-            const oscilador =
-                audioContext.createOscillator();
+                const oscilador =
+                    audioContext
+                        .createOscillator();
 
-            const ganho =
-                audioContext.createGain();
-
-
-            oscilador.type = "sine";
-
-            oscilador.frequency.value =
-                frequencia;
+                const ganho =
+                    audioContext
+                        .createGain();
 
 
-            ganho.gain.value =
-                0.018;
+                oscilador.type =
+                    "sine";
+
+                oscilador.frequency.value =
+                    frequencia;
 
 
-            oscilador.connect(ganho);
-
-            ganho.connect(
-                audioContext.destination
-            );
+                ganho.gain.value =
+                    0.012;
 
 
-            oscilador.start();
+                oscilador.connect(
+                    ganho
+                );
+
+                ganho.connect(
+                    audioContext.destination
+                );
 
 
-            osciladores.push({
-                oscilador,
-                ganho
-            });
+                oscilador.start();
 
-        });
+
+                osciladores.push({
+
+                    oscilador,
+
+                    ganho
+
+                });
+
+            }
+        );
+
+
+        audioLigado = true;
 
 
     } catch (erro) {
@@ -378,25 +441,36 @@ function comecarUniverso() {
 
 
     const intro =
-        document.getElementById("universoIntro");
+        document.getElementById(
+            "universoIntro"
+        );
 
     const ceu =
-        document.getElementById("ceu");
+        document.getElementById(
+            "ceu"
+        );
 
 
-    intro.style.opacity = "0";
+    intro.style.opacity =
+        "0";
+
+    intro.style.transform =
+        "scale(1.04)";
 
 
     setTimeout(() => {
 
-        intro.style.display = "none";
+        intro.style.display =
+            "none";
 
-        ceu.style.display = "block";
+        ceu.style.display =
+            "block";
 
 
         setTimeout(() => {
 
-            ceu.style.opacity = "1";
+            ceu.style.opacity =
+                "1";
 
         }, 100);
 
@@ -436,6 +510,8 @@ const palavrasUniverso = {
 
 let estrelasEncontradas = 0;
 
+let constelacaoRevelada = false;
+
 
 function clicarEstrela(numero) {
 
@@ -445,8 +521,16 @@ function clicarEstrela(numero) {
         );
 
 
+    if (!estrela) {
+
+        return;
+
+    }
+
+
     if (
-        estrela.dataset.clicada === "true"
+        estrela.dataset.clicada ===
+        "true"
     ) {
 
         return;
@@ -456,14 +540,6 @@ function clicarEstrela(numero) {
 
     estrela.dataset.clicada =
         "true";
-
-
-    estrela.style.color =
-        "#e5a7b4";
-
-
-    estrela.style.transform =
-        "scale(1.8)";
 
 
     estrelasEncontradas++;
@@ -479,8 +555,8 @@ function clicarEstrela(numero) {
         palavrasUniverso[numero];
 
 
-    palavra.style.opacity = "1";
-
+    palavra.style.opacity =
+        "1";
 
     palavra.style.transform =
         "translate(-50%, -50%) scale(1.1)";
@@ -488,15 +564,22 @@ function clicarEstrela(numero) {
 
     setTimeout(() => {
 
-        palavra.style.opacity = "0";
+        palavra.style.opacity =
+            "0";
 
         palavra.style.transform =
-            "translate(-50%, -50%) scale(0.8)";
+            "translate(-50%, -50%) scale(0.7)";
 
     }, 1600);
 
 
-    if (estrelasEncontradas >= 10) {
+    atualizarContador();
+
+
+    if (
+        estrelasEncontradas >=
+        10
+    ) {
 
         revelarConstelacao();
 
@@ -506,10 +589,87 @@ function clicarEstrela(numero) {
 
 
 /* =====================================================
+   CONTADOR DAS ESTRELAS
+===================================================== */
+
+function atualizarContador() {
+
+    let contador =
+        document.getElementById(
+            "contadorEstrelas"
+        );
+
+
+    if (!contador) {
+
+        contador =
+            document.createElement(
+                "div"
+            );
+
+        contador.id =
+            "contadorEstrelas";
+
+        contador.style.position =
+            "absolute";
+
+        contador.style.top =
+            "30px";
+
+        contador.style.left =
+            "50%";
+
+        contador.style.transform =
+            "translateX(-50%)";
+
+        contador.style.zIndex =
+            "35";
+
+        contador.style.fontFamily =
+            "monospace";
+
+        contador.style.fontSize =
+            "12px";
+
+        contador.style.letterSpacing =
+            "3px";
+
+        contador.style.color =
+            "#a99aa4";
+
+        document
+            .getElementById("ceu")
+            .appendChild(
+                contador
+            );
+
+    }
+
+
+    contador.innerText =
+        "ESTRELAS ENCONTRADAS  " +
+        estrelasEncontradas +
+        " / 10";
+
+}
+
+
+/* =====================================================
    CONSTELAÇÃO
 ===================================================== */
 
 function revelarConstelacao() {
+
+    if (constelacaoRevelada) {
+
+        return;
+
+    }
+
+
+    constelacaoRevelada =
+        true;
+
 
     const constelacao =
         document.getElementById(

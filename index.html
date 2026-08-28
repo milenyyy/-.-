@@ -17,9 +17,9 @@
 <body>
 
 
-<!-- =====================================================
-     PARTE 1 — TELA INICIAL
-===================================================== -->
+<!-- ==================================================
+     PARTE 1 — INÍCIO
+================================================== -->
 
 <section class="inicio" id="inicio">
 
@@ -52,9 +52,9 @@
 
 
 
-<!-- =====================================================
+<!-- ==================================================
      PARTE 1 — CARTA
-===================================================== -->
+================================================== -->
 
 <section class="carta" id="carta">
 
@@ -83,7 +83,7 @@
 
         <p>
             Então fiz este pequeno lugar para guardar
-            algumas palavras, lembranças e momentos.
+            algumas palavras.
         </p>
 
 
@@ -117,16 +117,14 @@
 
 
 
-<!-- =====================================================
+<!-- ==================================================
      PARTE 1 — VOCÊ É...
-===================================================== -->
+================================================== -->
 
 <section
     class="coracoes"
     id="coracoes">
 
-
-    <!-- CORAÇÕES -->
 
     <div
         class="coracoes-fundo"
@@ -134,15 +132,11 @@
     </div>
 
 
-    <!-- PALAVRAS FORA DOS CORAÇÕES -->
-
     <div
         class="palavras-fora"
         id="palavrasFora">
     </div>
 
-
-    <!-- TEXTO CENTRAL -->
 
     <div class="voce-e">
 
@@ -161,8 +155,6 @@
     </div>
 
 
-    <!-- BOTÃO -->
-
     <button
         class="botao botao-proximo"
         onclick="irParaParte2()">
@@ -175,120 +167,14 @@
 
 
 
-<!-- =====================================================
-     GALERIA
-===================================================== -->
-
-<section
-    class="galeria"
-    id="galeria">
-
-
-    <p class="subtitulo">
-        ALGUMAS LEMBRANÇAS
-    </p>
-
-
-    <h2>
-        Pequenos momentos
-    </h2>
-
-
-    <p class="descricao">
-        Cada imagem pode guardar uma história.
-    </p>
-
-
-
-    <div class="fotos">
-
-
-        <!-- FOTO 1 -->
-
-        <div class="foto">
-
-            <img
-                src="imagens/foto1.jpg"
-                alt="Lembrança 1">
-
-            <div class="legenda">
-
-                <h3>
-                    Momento #1
-                </h3>
-
-                <p>
-                    Uma lembrança especial.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FOTO 2 -->
-
-        <div class="foto">
-
-            <img
-                src="imagens/foto2.jpg"
-                alt="Lembrança 2">
-
-            <div class="legenda">
-
-                <h3>
-                    Momento #2
-                </h3>
-
-                <p>
-                    Mais uma história para guardar.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FOTO 3 -->
-
-        <div class="foto">
-
-            <img
-                src="imagens/foto3.jpg"
-                alt="Lembrança 3">
-
-            <div class="legenda">
-
-                <h3>
-                    Momento #3
-                </h3>
-
-                <p>
-                    Porque algumas coisas merecem ser lembradas.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- ==================================================
      PARTE 2 — INVESTIGAÇÃO
-===================================================== -->
+================================================== -->
 
 <section
     class="investigacao"
     id="parte2">
 
-
-    <!-- EFEITO VHS -->
 
     <div class="scanlines"></div>
 
@@ -312,7 +198,9 @@
 
 
 
-    <!-- INTRODUÇÃO -->
+    <!-- ==================================================
+         INTRODUÇÃO
+    ================================================== -->
 
     <div
         class="investigacao-intro"
@@ -330,13 +218,14 @@
 
 
         <p>
-            Você consegue encontrar?
+            Talvez você devesse investigar.
         </p>
 
 
         <button
+            type="button"
             class="botao botao-investigar"
-            onclick="iniciarInvestigacao()">
+            id="botaoInvestigar">
 
             🔎 Começar investigação
 
@@ -346,8 +235,8 @@
 
 
 
-    <!-- =================================================
-         SALA
+    <!-- ==================================================
+         SALA DA INVESTIGAÇÃO
     ================================================== -->
 
     <div
@@ -355,7 +244,7 @@
         id="sala">
 
 
-        <!-- TEXTO DE OBJETIVO -->
+        <!-- OBJETIVO -->
 
         <div class="objetivo">
 
@@ -371,29 +260,25 @@
 
 
 
-        <!-- =================================================
-             OBJETO — VELA
-        ================================================== -->
+        <!-- CADERNO -->
 
         <button
-            class="objeto vela"
-            onclick="clicarVela()"
-            aria-label="Vela">
+            type="button"
+            class="objeto caderno"
+            id="objetoCaderno">
 
-            🕯️
+            📓
 
         </button>
 
 
 
-        <!-- =================================================
-             OBJETO — QUADRO
-        ================================================== -->
+        <!-- QUADRO -->
 
         <button
+            type="button"
             class="objeto quadro"
-            onclick="clicarQuadro()"
-            aria-label="Quadro">
+            id="objetoQuadro">
 
             <span>
                 ?
@@ -403,29 +288,12 @@
 
 
 
-        <!-- =================================================
-             OBJETO — CADERNO
-        ================================================== -->
+        <!-- TV -->
 
         <button
-            class="objeto caderno"
-            onclick="clicarCaderno()"
-            aria-label="Caderno">
-
-            📓
-
-        </button>
-
-
-
-        <!-- =================================================
-             OBJETO — TV
-        ================================================== -->
-
-        <button
+            type="button"
             class="objeto tv"
-            onclick="clicarTv()"
-            aria-label="Televisão">
+            id="objetoTv">
 
             <div class="tv-tela">
 
@@ -439,14 +307,25 @@
 
 
 
-        <!-- =================================================
-             OBJETO — CAIXA
-        ================================================== -->
+        <!-- VELA -->
 
         <button
+            type="button"
+            class="objeto vela"
+            id="objetoVela">
+
+            🕯️
+
+        </button>
+
+
+
+        <!-- CAIXA -->
+
+        <button
+            type="button"
             class="objeto caixa"
-            onclick="abrirCaixa()"
-            aria-label="Caixa">
+            id="objetoCaixa">
 
             🔒
 
@@ -454,14 +333,12 @@
 
 
 
-        <!-- =================================================
-             OBJETO ESCONDIDO
-        ================================================== -->
+        <!-- SEGREDO -->
 
         <button
+            type="button"
             class="objeto segredo"
-            onclick="clicarSegredo()"
-            aria-label="Algo escondido">
+            id="objetoSegredo">
 
             •
 
@@ -469,51 +346,34 @@
 
 
 
-        <!-- =================================================
-             CADERNO DE INVESTIGAÇÃO
+        <!-- ==================================================
+             LISTA DE PISTAS
         ================================================== -->
 
         <div class="caderno-investigacao">
 
             <div class="caderno-titulo">
-
                 🗂 INVESTIGAÇÃO
-
             </div>
-
 
             <div id="pista1">
-
                 □ Caderno
-
             </div>
-
 
             <div id="pista2">
-
                 □ Quadro
-
             </div>
-
 
             <div id="pista3">
-
                 □ Televisão
-
             </div>
-
 
             <div id="pista4">
-
                 □ Algo escondido
-
             </div>
 
-
             <div id="pista5">
-
                 □ Caixa
-
             </div>
 
         </div>
@@ -522,16 +382,16 @@
 
 
 
-    <!-- =================================================
-         PAINEL DE PISTAS
+    <!-- ==================================================
+         PAINEL DE PISTA
     ================================================== -->
 
     <div
         class="painel-pista"
         id="painelPista">
 
-
         <button
+            type="button"
             class="fechar-pista"
             onclick="fecharPista()">
 
@@ -559,16 +419,16 @@
 
 
 
-    <!-- =================================================
-         CAIXA / CÓDIGO
+    <!-- ==================================================
+         PAINEL DA CAIXA
     ================================================== -->
 
     <div
         class="caixa-painel"
         id="caixaPainel">
 
-
         <button
+            type="button"
             class="fechar-pista"
             onclick="fecharCaixa()">
 
@@ -578,7 +438,7 @@
 
 
         <p class="pista-tipo">
-            CAIXA #01
+            CAIXA Nº 01
         </p>
 
 
@@ -588,7 +448,8 @@
 
 
         <p class="texto-caixa">
-            As pistas estão espalhadas pela sala.
+            Talvez as pistas que você encontrou
+            tenham alguma coisa em comum.
         </p>
 
 
@@ -601,6 +462,7 @@
 
 
         <button
+            type="button"
             class="botao"
             onclick="verificarCodigo()">
 
@@ -618,7 +480,7 @@
 
 
 
-    <!-- =================================================
+    <!-- ==================================================
          ARQUIVO DESBLOQUEADO
     ================================================== -->
 
@@ -626,29 +488,29 @@
         class="arquivo-desbloqueado"
         id="arquivoDesbloqueado">
 
-
         <p class="codigo-vermelho">
             [ ARQUIVO DESBLOQUEADO ]
         </p>
 
 
         <h2>
-            Então você realmente chegou até aqui.
+            Você encontrou a primeira resposta.
         </h2>
 
 
         <p>
-            Mas isso era apenas a primeira pista.
+            Mas talvez essa investigação não seja
+            exatamente sobre o que você pensava.
         </p>
 
 
         <p>
-            Algumas coisas são encontradas facilmente.
-            Outras precisam ser procuradas.
+            E isso foi apenas o começo.
         </p>
 
 
         <button
+            type="button"
             class="botao"
             onclick="continuarInvestigacao()">
 
@@ -659,56 +521,36 @@
     </div>
 
 
-
-    <!-- =================================================
-         BOTÃO VOLTAR
-    ================================================== -->
-
-    <button
-        class="botao-voltar"
-        onclick="voltarCoracoes()">
-
-        ↑ voltar
-
-    </button>
-
-
 </section>
 
 
 
-<!-- =====================================================
-     PARTE DE SURPRESA — RESERVADA
-===================================================== -->
+<!-- ==================================================
+     FINAL TEMPORÁRIO
+================================================== -->
 
 <section
-    class="surpresa"
-    id="surpresa">
+    class="final-temporario">
 
-    <div class="surpresa-conteudo">
+    <p class="subtitulo">
+        POR ENQUANTO...
+    </p>
 
-        <p class="subtitulo">
-            AINDA NÃO...
-        </p>
+    <h2>
+        A história ainda não acabou.
+    </h2>
 
-        <h2>
-            Essa parte fica<br>
-            para depois. 👀
-        </h2>
-
-        <p>
-            A história ainda está só começando.
-        </p>
-
-    </div>
+    <p>
+        Existem outras partes esperando para serem descobertas.
+    </p>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ==================================================
      RODAPÉ
-===================================================== -->
+================================================== -->
 
 <footer>
 

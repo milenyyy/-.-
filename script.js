@@ -4,12 +4,11 @@
 
 function abrirCarta() {
 
-    const carta =
-        document.getElementById("carta");
-
-    carta.scrollIntoView({
-        behavior: "smooth"
-    });
+    document
+        .getElementById("carta")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
 
@@ -25,21 +24,16 @@ function mostrarMensagem() {
         document.getElementById("mensagem");
 
 
-    mensagem.style.display =
-        "block";
+    mensagem.style.display = "block";
 
 
-    mensagem.classList.remove(
-        "aparecer"
-    );
+    mensagem.classList.remove("aparecer");
 
 
     void mensagem.offsetWidth;
 
 
-    mensagem.classList.add(
-        "aparecer"
-    );
+    mensagem.classList.add("aparecer");
 
 
     mensagem.innerText =
@@ -54,14 +48,14 @@ function mostrarMensagem() {
                 behavior: "smooth"
             });
 
-    }, 1800);
+    }, 1500);
 
 }
 
 
 
 /* ==================================================
-   PALAVRAS
+   PALAVRAS DOS CORAÇÕES
 ================================================== */
 
 const palavras = [
@@ -92,7 +86,7 @@ const palavras = [
 
 
 /* ==================================================
-   CORAÇÕES
+   CORAÇÃO
 ================================================== */
 
 function criarCoracao() {
@@ -159,11 +153,6 @@ function criarCoracao() {
 }
 
 
-
-/* ==================================================
-   CORAÇÕES INFINITOS
-================================================== */
-
 setInterval(
     criarCoracao,
     450
@@ -172,7 +161,7 @@ setInterval(
 
 
 /* ==================================================
-   PALAVRAS FORA
+   PALAVRAS FORA DOS CORAÇÕES
 ================================================== */
 
 function criarPalavra() {
@@ -244,15 +233,11 @@ setInterval(
 
 function irParaParte2() {
 
-    const parte2 =
-        document.getElementById(
-            "parte2"
-        );
-
-
-    parte2.scrollIntoView({
-        behavior: "smooth"
-    });
+    document
+        .getElementById("parte2")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
 
@@ -276,31 +261,12 @@ function iniciarInvestigacao() {
         );
 
 
-    if (!introducao || !sala) {
-
-        console.error(
-            "Erro: elementos da investigação não foram encontrados."
-        );
-
-        return;
-
-    }
-
-
     introducao.style.display =
         "none";
 
 
     sala.style.display =
         "block";
-
-
-    sala.classList.remove(
-        "aparecer"
-    );
-
-
-    void sala.offsetWidth;
 
 
     sala.classList.add(
@@ -312,7 +278,7 @@ function iniciarInvestigacao() {
 
 
 /* ==================================================
-   PISTAS
+   MOSTRAR PISTA
 ================================================== */
 
 function mostrarPista(
@@ -320,12 +286,6 @@ function mostrarPista(
     titulo,
     texto
 ) {
-
-    const painel =
-        document.getElementById(
-            "painelPista"
-        );
-
 
     document.getElementById(
         "pistaTipo"
@@ -345,7 +305,9 @@ function mostrarPista(
         texto;
 
 
-    painel.style.display =
+    document.getElementById(
+        "painelPista"
+    ).style.display =
         "block";
 
 }
@@ -358,18 +320,16 @@ function mostrarPista(
 
 function clicarCaderno() {
 
-    marcarPista(
-        "pista1"
-    );
+    marcarPista("pista1");
 
 
     mostrarPista(
 
         "PISTA #01",
 
-        "O CADERNO",
+        "UMA ANOTAÇÃO",
 
-        "Entre algumas páginas existe uma anotação estranha: 03 — 17 — 09. Talvez esses números sejam importantes."
+        "Na última página existe uma frase: 'O começo não está no primeiro número. Procure aquilo que se repete.'"
 
     );
 
@@ -383,9 +343,7 @@ function clicarCaderno() {
 
 function clicarQuadro() {
 
-    marcarPista(
-        "pista2"
-    );
+    marcarPista("pista2");
 
 
     mostrarPista(
@@ -394,7 +352,7 @@ function clicarQuadro() {
 
         "ATRÁS DO QUADRO",
 
-        "Você encontrou um pequeno número escrito atrás do quadro: 17."
+        "Há três números escritos: 17, 09 e 03. Ao lado deles existe uma pequena frase: 'Nem tudo deve ser lido na ordem em que aparece.'"
 
     );
 
@@ -414,38 +372,35 @@ function clicarTv() {
     cliquesTv++;
 
 
-    marcarPista(
-        "pista3"
+    if (cliquesTv < 3) {
+
+        mostrarPista(
+
+            "SINAL FRACO",
+
+            "A TELEVISÃO",
+
+            "A tela pisca. Talvez seja necessário insistir."
+
+        );
+
+        return;
+
+    }
+
+
+    marcarPista("pista3");
+
+
+    mostrarPista(
+
+        "PISTA #03",
+
+        "SINAL INTERCEPTADO",
+
+        "Por alguns segundos aparece uma sequência: 03 — 17 — 09. A mensagem desaparece antes que você consiga descobrir o motivo."
+
     );
-
-
-    if (cliquesTv >= 3) {
-
-        mostrarPista(
-
-            "SINAL INTERCEPTADO",
-
-            "VOCÊ VIU ISSO?",
-
-            "A televisão pisca. Por menos de um segundo, aparece uma sequência: 03 — 17 — 09."
-
-        );
-
-    }
-
-    else {
-
-        mostrarPista(
-
-            "PISTA #03",
-
-            "TELEVISÃO",
-
-            "A televisão não tem sinal. Mas você sente que deveria tentar novamente."
-
-        );
-
-    }
 
 }
 
@@ -463,7 +418,7 @@ function clicarVela() {
 
         "A VELA",
 
-        "A chama continua acesa. Não parece haver nenhuma pista aqui... por enquanto."
+        "A chama ilumina alguma coisa por baixo da mesa. Você percebe um pequeno símbolo, mas não consegue alcançá-lo."
 
     );
 
@@ -477,18 +432,16 @@ function clicarVela() {
 
 function clicarSegredo() {
 
-    marcarPista(
-        "pista4"
-    );
+    marcarPista("pista4");
 
 
     mostrarPista(
 
-        "PISTA ESCONDIDA",
+        "PISTA #04",
 
-        "VOCÊ ENCONTROU",
+        "UMA FRASE",
 
-        "Um pequeno símbolo estava escondido no canto da sala. Talvez você esteja começando a enxergar coisas que não deveria."
+        "Você encontrou a última mensagem: 'O passado vem antes do presente, mas o que nasceu primeiro nem sempre deve ser colocado primeiro.'"
 
     );
 
@@ -503,12 +456,21 @@ function clicarSegredo() {
 function marcarPista(id) {
 
     const elemento =
-        document.getElementById(
-            id
-        );
+        document.getElementById(id);
 
 
     if (!elemento) return;
+
+
+    if (
+        elemento.classList.contains(
+            "pista-encontrada"
+        )
+    ) {
+
+        return;
+
+    }
 
 
     elemento.classList.add(
@@ -536,13 +498,9 @@ function marcarPista(id) {
 
 function fecharPista() {
 
-    const painel =
-        document.getElementById(
-            "painelPista"
-        );
-
-
-    painel.style.display =
+    document.getElementById(
+        "painelPista"
+    ).style.display =
         "none";
 
 }
@@ -555,13 +513,9 @@ function fecharPista() {
 
 function abrirCaixa() {
 
-    const painel =
-        document.getElementById(
-            "caixaPainel"
-        );
-
-
-    painel.style.display =
+    document.getElementById(
+        "caixaPainel"
+    ).style.display =
         "block";
 
 
@@ -612,6 +566,15 @@ function verificarCodigo() {
             .replace(/\s/g, "");
 
 
+    /*
+       A sequência correta precisa ser
+       descoberta pelas pistas.
+
+       Código:
+       031709
+    */
+
+
     if (codigo === "031709") {
 
         resultado.innerText =
@@ -622,9 +585,7 @@ function verificarCodigo() {
             "#d67a87";
 
 
-        marcarPista(
-            "pista5"
-        );
+        marcarPista("pista5");
 
 
         setTimeout(function () {
@@ -652,12 +613,13 @@ function verificarCodigo() {
 
         }, 900);
 
+
     }
 
     else {
 
         resultado.innerText =
-            "✕ Código incorreto.";
+            "✕ Código incorreto. As pistas ainda escondem alguma coisa.";
 
 
         resultado.style.color =
@@ -670,42 +632,129 @@ function verificarCodigo() {
 
 
 /* ==================================================
-   CONTINUAR INVESTIGAÇÃO
+   MOSTRAR CARTA DO LÍRIO
 ================================================== */
 
-function continuarInvestigacao() {
+function mostrarCartaLirio() {
 
-    mostrarPista(
+    const carta =
+        document.getElementById(
+            "cartaLirio"
+        );
 
-        "ARQUIVO #002",
 
-        "AINDA NÃO TERMINOU",
+    carta.style.display =
+        "flex";
 
-        "Você encontrou a primeira resposta. Mas existem outras partes deste arquivo que ainda estão bloqueadas."
 
+    carta.classList.add(
+        "aparecer"
     );
+
+
+    carta.scrollIntoView({
+
+        behavior: "smooth"
+
+    });
+
+
+    escreverTextoLirio();
 
 }
 
 
 
 /* ==================================================
-   EVENTOS DOS BOTÕES
+   TEXTO DA CARTA
 ================================================== */
 
-/*
-   Aqui está uma parte importante da correção.
+function escreverTextoLirio() {
 
-   O JavaScript procura cada botão pelo ID
-   e conecta a função correspondente.
-*/
+    const elemento =
+        document.getElementById(
+            "textoLirio"
+        );
+
+
+    if (
+        elemento.dataset.escrito === "true"
+    ) {
+
+        return;
+
+    }
+
+
+    elemento.dataset.escrito =
+        "true";
+
+
+    const texto =
+
+        "Eu poderia dizer que você é a rosa mais linda que já vi, mas, na verdade, você é o lírio mais encantador que já apareceu para mim. A flor mais bela do meu jardim, a flor mais preciosa do meu buquê.\n\n" +
+
+        "Você é a típica flor que não arrancamos, porque gostamos dela. Você é a flor que cuidamos, regamos e deixamos crescer.\n\n" +
+
+        "Você é tão belo quanto um lírio em meio a um buquê cheio de rosas.";
+
+
+    let indice = 0;
+
+
+    function escrever() {
+
+        if (
+            indice >= texto.length
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            texto[indice] === "\n"
+        ) {
+
+            elemento.innerHTML +=
+                "<br><br>";
+
+        }
+
+        else {
+
+            elemento.innerHTML +=
+                texto[indice];
+
+        }
+
+
+        indice++;
+
+
+        setTimeout(
+            escrever,
+            28
+        );
+
+    }
+
+
+    escrever();
+
+}
+
+
+
+/* ==================================================
+   EVENTOS
+================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-
-        /* BOTÃO DA INVESTIGAÇÃO */
 
         const botaoInvestigar =
             document.getElementById(
@@ -723,8 +772,6 @@ document.addEventListener(
         }
 
 
-        /* CADERNO */
-
         const caderno =
             document.getElementById(
                 "objetoCaderno"
@@ -740,8 +787,6 @@ document.addEventListener(
 
         }
 
-
-        /* QUADRO */
 
         const quadro =
             document.getElementById(
@@ -759,8 +804,6 @@ document.addEventListener(
         }
 
 
-        /* TV */
-
         const tv =
             document.getElementById(
                 "objetoTv"
@@ -776,8 +819,6 @@ document.addEventListener(
 
         }
 
-
-        /* VELA */
 
         const vela =
             document.getElementById(
@@ -795,8 +836,6 @@ document.addEventListener(
         }
 
 
-        /* CAIXA */
-
         const caixa =
             document.getElementById(
                 "objetoCaixa"
@@ -813,8 +852,6 @@ document.addEventListener(
         }
 
 
-        /* SEGREDO */
-
         const segredo =
             document.getElementById(
                 "objetoSegredo"
@@ -830,8 +867,6 @@ document.addEventListener(
 
         }
 
-
-        /* ENTER NO CÓDIGO */
 
         const campoCodigo =
             document.getElementById(

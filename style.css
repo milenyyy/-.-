@@ -1,6 +1,6 @@
-/* ==================================================
+/* =====================================================
    CONFIGURAÇÕES
-================================================== */
+===================================================== */
 
 * {
     margin: 0;
@@ -13,105 +13,47 @@ html {
 }
 
 body {
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    background: #080607;
 
-    background: #fff7f8;
-
-    color: #24171b;
+    color: #eee5e8;
 
     overflow-x: hidden;
 }
 
+button,
+input {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   CORES PRINCIPAIS
+===================================================== */
 
 :root {
 
-    --vermelho-claro: #f2c3c9;
+    --preto: #080607;
 
-    --vermelho: #b84c5c;
+    --preto-2: #120b0e;
 
-    --vermelho-escuro: #711f2d;
+    --vermelho: #c87989;
 
-    --rosa: #ff9daa;
+    --vermelho-claro: #e5a7b4;
 
-    --preto: #120e10;
+    --vermelho-palido: #f4d5dc;
 
-    --preto-2: #1d1518;
+    --vinho: #6f2639;
 
-    --cinza: #76666b;
-
-}
-
-
-/* ==================================================
-   BOTÃO
-================================================== */
-
-.botao {
-
-    border: none;
-
-    background: var(--vermelho);
-
-    color: white;
-
-    padding: 15px 30px;
-
-    border-radius: 30px;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-family: Arial, sans-serif;
-
-    box-shadow:
-        0 8px 25px
-        rgba(100, 20, 35, 0.18);
+    --branco: #fff5f7;
 
 }
 
 
-.botao:hover {
-
-    background: var(--vermelho-escuro);
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 15px 35px
-        rgba(100, 20, 35, 0.3);
-
-}
-
-
-/* ==================================================
-   SUBTÍTULO
-================================================== */
-
-.subtitulo {
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 5px;
-
-    color: var(--vermelho-escuro);
-
-    margin-bottom: 20px;
-
-}
-
-
-/* ==================================================
+/* =====================================================
    INÍCIO
-================================================== */
+===================================================== */
 
 .inicio {
 
@@ -127,24 +69,25 @@ body {
 
     padding: 30px;
 
-    position: relative;
-
     background:
 
         radial-gradient(
-            circle at 20% 20%,
-            #efb6bf,
-            transparent 32%
+            circle at 50% 0%,
+            rgba(200, 121, 137, 0.35),
+            transparent 40%
         ),
 
         radial-gradient(
             circle at 80% 80%,
-            #e8a6b1,
-            transparent 32%
+            rgba(111, 38, 57, 0.15),
+            transparent 40%
         ),
 
-        #fff7f8;
+        #080607;
 
+    position: relative;
+
+    overflow: hidden;
 }
 
 
@@ -154,18 +97,14 @@ body {
 
     position: absolute;
 
-    width: 420px;
-
-    height: 420px;
-
-    border:
-        1px solid
-        rgba(113, 31, 45, 0.12);
+    width: 500px;
+    height: 500px;
 
     border-radius: 50%;
 
-    animation:
-        pulsar 5s infinite;
+    border: 1px solid rgba(229, 167, 180, 0.15);
+
+    animation: pulsar 5s infinite;
 
 }
 
@@ -178,9 +117,21 @@ body {
 
     z-index: 2;
 
-    animation:
-        aparecer 1.2s ease;
+    animation: aparecer 1.3s ease forwards;
+}
 
+
+.subtitulo {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: var(--vermelho-claro);
+
+    margin-bottom: 20px;
 }
 
 
@@ -190,10 +141,12 @@ body {
 
     font-weight: normal;
 
-    color: var(--preto);
+    color: var(--branco);
 
     margin-bottom: 25px;
 
+    text-shadow:
+        0 0 25px rgba(229, 167, 180, 0.25);
 }
 
 
@@ -203,16 +156,59 @@ body {
 
     line-height: 1.7;
 
-    color: var(--cinza);
+    color: #cbb9bf;
 
     margin-bottom: 35px;
-
 }
 
 
-/* ==================================================
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.botao {
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #c87989,
+            #8f4257
+        );
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 8px 30px rgba(150, 60, 80, 0.18);
+}
+
+
+.botao:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 40px rgba(200, 121, 137, 0.3);
+
+    filter: brightness(1.1);
+}
+
+
+/* =====================================================
    CARTA
-================================================== */
+===================================================== */
 
 .carta {
 
@@ -226,8 +222,13 @@ body {
 
     align-items: center;
 
-    background: #fffafa;
+    background:
 
+        radial-gradient(
+            circle at center,
+            #1b0e13,
+            #080607 70%
+        );
 }
 
 
@@ -235,20 +236,20 @@ body {
 
     max-width: 750px;
 
-    width: 100%;
+    background: #fdf8f9;
 
-    background: #fffdf8;
+    color: #3f3035;
 
     padding: 70px;
 
     border-radius: 5px;
 
     box-shadow:
-        0 20px 60px
-        rgba(50, 20, 30, 0.13);
+        0 20px 70px rgba(0,0,0,0.5);
 
     position: relative;
 
+    animation: subir 1s ease;
 }
 
 
@@ -259,19 +260,13 @@ body {
     position: absolute;
 
     top: 20px;
-
     left: 20px;
-
     right: 20px;
-
     bottom: 20px;
 
-    border:
-        1px solid
-        #e7cdd2;
+    border: 1px solid #e6cbd2;
 
     pointer-events: none;
-
 }
 
 
@@ -279,10 +274,9 @@ body {
 
     text-align: right;
 
-    color: #98747c;
+    color: #9a6674;
 
     margin-bottom: 50px;
-
 }
 
 
@@ -293,58 +287,38 @@ body {
     font-weight: normal;
 
     margin-bottom: 30px;
-
-    color: var(--preto);
-
 }
 
 
-.papel p:not(.data):not(.mensagem) {
+.papel p:not(.data) {
 
     font-size: 18px;
 
     line-height: 2;
 
     margin-bottom: 20px;
+}
 
-    color: #493b40;
 
+.texto-quatro {
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #ead7dc;
 }
 
 
 .papel .botao {
 
     margin-top: 20px;
-
 }
 
 
-.mensagem {
-
-    display: none;
-
-    margin-top: 30px;
-
-    padding: 25px;
-
-    background: #f6dce1;
-
-    border-left:
-        4px solid
-        var(--vermelho);
-
-    border-radius: 12px;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-}
-
-
-/* ==================================================
+/* =====================================================
    CORAÇÕES
-================================================== */
+===================================================== */
 
 .coracoes {
 
@@ -364,1236 +338,84 @@ body {
 
         radial-gradient(
             circle at center,
-            #4a2029,
-            #171012 70%
+            #2a1018,
+            #090607 75%
         );
-
-    color: white;
-
 }
 
 
-.coracoes-fundo {
+.coracoes-conteudo {
+
+    position: relative;
+
+    z-index: 20;
+
+    text-align: center;
+
+    animation: aparecer 1.5s ease;
+}
+
+
+.coracoes h2 {
+
+    font-size: 75px;
+
+    font-weight: normal;
+
+    color: var(--branco);
+
+    text-shadow:
+        0 0 25px rgba(229,167,180,0.3);
+}
+
+
+.coracoes-intro {
+
+    margin-top: 20px;
+
+    color: #c7b1b8;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   CHUVA INFINITA DE CORAÇÕES
+===================================================== */
+
+.chuva-coracoes {
 
     position: absolute;
 
     inset: 0;
+
+    pointer-events: none;
 
     overflow: hidden;
-
-    z-index: 5;
-
-    pointer-events: none;
-
 }
 
 
-.coracao {
+.coracao-caindo {
 
     position: absolute;
 
-    top: -100px;
+    top: -80px;
 
-    color: #f3aeb9;
+    color: var(--vermelho-claro);
 
-    font-size: 25px;
-
-    animation:
-        cair linear infinite;
-
-    opacity: 0.85;
-
-}
-
-
-.coracao span {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    color: #551d27;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 7px;
-
-    font-weight: bold;
-
-    white-space: nowrap;
-
-}
-
-
-.palavras-fora {
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-}
-
-
-.palavra-flutuante {
-
-    position: absolute;
-
-    z-index: 8;
-
-    color: #f3c5cc;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    animation:
-        estrela 4s ease-in-out infinite;
+    font-size: var(--tamanho);
 
     opacity: 0;
 
-}
-
-
-.voce-e {
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 20;
-
     animation:
-        aparecer 1.5s ease;
+        cair var(--duracao) linear infinite;
 
-}
+    animation-delay: var(--atraso);
 
+    left: var(--posicao);
 
-.mini-texto {
-
-    text-transform: uppercase;
-
-    letter-spacing: 4px;
-
-    font-size: 11px;
-
-    color: #e7a9b2;
-
-    margin-bottom: 20px;
-
-}
-
-
-.voce-e h2 {
-
-    font-size: 90px;
-
-    font-weight: normal;
-
-    color: #fffafa;
-
-}
-
-
-.texto-coracoes {
-
-    margin-top: 20px;
-
-    font-size: 18px;
-
-    color: #d9c1c5;
-
-}
-
-
-.botao-proximo {
-
-    position: absolute;
-
-    bottom: 35px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    z-index: 30;
-
-}
-
-
-.botao-proximo:hover {
-
-    transform:
-        translateX(-50%)
-        translateY(-4px);
-
-}
-
-
-/* ==================================================
-   INVESTIGAÇÃO
-================================================== */
-
-.investigacao {
-
-    min-height: 100vh;
-
-    background: #0c090a;
-
-    color: #eee;
-
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 60px 25px 100px;
-
-}
-
-
-.investigacao::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle,
-            transparent 30%,
-            rgba(0,0,0,0.55)
-        );
-
-    z-index: 20;
-
-}
-
-
-.ruido {
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: 0.07;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-
-    animation:
-        ruido 0.2s infinite;
-
-    z-index: 10;
-
-}
-
-
-.scanlines {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        repeating-linear-gradient(
-            to bottom,
-            transparent 0px,
-            transparent 3px,
-            rgba(255,255,255,0.025) 4px
-        );
-
-    pointer-events: none;
-
-    z-index: 11;
-
-}
-
-
-.investigacao-header {
-
-    max-width: 1100px;
-
-    margin: 0 auto 60px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    border-bottom:
-        1px solid
-        #422229;
-
-    padding-bottom: 15px;
-
-    position: relative;
-
-    z-index: 30;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    color: #9c7379;
-
-}
-
-
-.investigacao-header span {
-
-    color: #bd4f5d;
-
-}
-
-
-/* ==================================================
-   INTRO
-================================================== */
-
-.investigacao-intro {
-
-    min-height: 65vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 30;
-
-}
-
-
-.codigo-vermelho {
-
-    color: #d15c6b;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 25px;
-
-}
-
-
-.investigacao-intro h2 {
-
-    font-size: 65px;
-
-    font-weight: normal;
-
-    color: #f0c5ca;
-
-    line-height: 1.2;
-
-    margin-bottom: 25px;
-
-}
-
-
-.investigacao-intro > p:not(.codigo-vermelho) {
-
-    color: #927b80;
-
-    font-size: 18px;
-
-    margin-bottom: 35px;
-
-}
-
-
-/* ==================================================
-   SALA
-================================================== */
-
-.sala {
-
-    display: none;
-
-    width: min(1100px, 100%);
-
-    height: 650px;
-
-    margin: auto;
-
-    position: relative;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            #21191b 0%,
-            #160f11 65%,
-            #0d090a 65%,
-            #090707 100%
-        );
-
-    border:
-        1px solid
-        #43232a;
-
-    box-shadow:
-        inset 0 0 100px
-        rgba(0,0,0,0.8);
-
-    z-index: 25;
-
-}
-
-
-.sala::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    top: 65%;
-
-    height: 1px;
-
-    background: #4a272d;
-
-}
-
-
-.objetivo {
-
-    position: absolute;
-
-    top: 20px;
-
-    left: 25px;
-
-    font-family: monospace;
-
-    z-index: 50;
-
-}
-
-
-.objetivo span {
-
-    color: #bd4f5d;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-}
-
-
-.objetivo p {
-
-    color: #79666b;
-
-    font-size: 11px;
-
-    margin-top: 5px;
-
-}
-
-
-/* ==================================================
-   OBJETOS
-================================================== */
-
-.objeto {
-
-    border: none;
-
-    background: transparent;
-
-    position: absolute;
-
-    cursor: pointer;
-
-    z-index: 40;
-
-    transition: 0.3s;
-
-}
-
-
-.objeto:hover {
-
-    transform: scale(1.08);
-
-    filter:
-        drop-shadow(
-            0 0 12px
-            rgba(220,100,120,0.5)
-        );
-
-}
-
-
-.caderno {
-
-    left: 20%;
-
-    bottom: 14%;
-
-    font-size: 65px;
-
-}
-
-
-.quadro {
-
-    left: 38%;
-
-    top: 18%;
-
-    width: 160px;
-
-    height: 110px;
-
-    background: #302124;
-
-    border:
-        9px solid
-        #0b0809;
-
-}
-
-
-.quadro span {
-
-    font-size: 45px;
-
-    color: #5f444a;
-
-}
-
-
-.tv {
-
-    right: 17%;
-
-    top: 28%;
-
-    width: 220px;
-
-    height: 150px;
-
-    background: #0a0809;
-
-    border:
-        12px solid
-        #21191b;
-
-}
-
-
-.tv-tela {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #151113;
-
-    color: #6d555a;
-
-    font-family: monospace;
-
-    font-size: 10px;
-
-    animation:
-        tvPiscando 2s infinite;
-
-}
-
-
-.vela {
-
-    left: 12%;
-
-    bottom: 25%;
-
-    font-size: 55px;
-
-}
-
-
-.caixa {
-
-    right: 27%;
-
-    bottom: 13%;
-
-    font-size: 60px;
-
-}
-
-
-.segredo {
-
-    right: 8%;
-
-    bottom: 8%;
-
-    color: #5e3b42;
-
-    font-size: 30px;
-
-    opacity: 0.5;
-
-}
-
-
-.segredo:hover {
-
-    color: #e36b7b;
-
-}
-
-
-/* ==================================================
-   LISTA DE PISTAS
-================================================== */
-
-.caderno-investigacao {
-
-    position: absolute;
-
-    right: 20px;
-
-    top: 20px;
-
-    width: 210px;
-
-    padding: 15px;
-
-    background:
-        rgba(15,10,12,0.92);
-
-    border:
-        1px solid
-        #48252c;
-
-    font-family: monospace;
-
-    font-size: 11px;
-
-    color: #8e777b;
-
-    z-index: 60;
-
-}
-
-
-.caderno-titulo {
-
-    color: #d15c6b;
-
-    border-bottom:
-        1px solid
-        #45242a;
-
-    padding-bottom: 10px;
-
-    margin-bottom: 12px;
-
-}
-
-
-.caderno-investigacao div:not(.caderno-titulo) {
-
-    margin: 9px 0;
-
-}
-
-
-.pista-encontrada {
-
-    color: #e8b1b8 !important;
-
-    text-decoration: line-through;
-
-}
-
-
-/* ==================================================
-   PAINÉIS
-================================================== */
-
-.painel-pista,
-.caixa-painel {
-
-    display: none;
-
-    position: fixed;
-
-    top: 50%;
-
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    width: min(500px, 90%);
-
-    padding: 40px;
-
-    background: #171012;
-
-    border:
-        1px solid
-        #71303b;
-
-    box-shadow:
-        0 30px 100px
-        rgba(0,0,0,0.8);
-
-    z-index: 200;
-
-    text-align: center;
-
-    animation:
-        aparecer 0.4s ease;
-
-}
-
-
-.fechar-pista {
-
-    position: absolute;
-
-    right: 15px;
-
-    top: 10px;
-
-    background: transparent;
-
-    border: none;
-
-    color: #7d5c63;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-}
-
-
-.pista-tipo {
-
-    color: #d15c6b;
-
-    font-family: monospace;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.painel-pista h3,
-.caixa-painel h3 {
-
-    color: #f1c5ca;
-
-    font-size: 30px;
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-
-}
-
-
-.painel-pista > p:not(.pista-tipo) {
-
-    color: #b8a4a8;
-
-    line-height: 1.8;
-
-    font-size: 16px;
-
-}
-
-
-/* ==================================================
-   INPUT
-================================================== */
-
-.texto-caixa {
-
-    color: #927e83;
-
-    font-size: 14px;
-
-    margin-bottom: 25px;
-
-}
-
-
-#codigo {
-
-    display: block;
-
-    width: 180px;
-
-    margin: 0 auto 20px;
-
-    padding: 13px;
-
-    text-align: center;
-
-    background: #0b0809;
-
-    border:
-        1px solid
-        #61303a;
-
-    color: #efc1c7;
-
-    outline: none;
-
-    font-family: monospace;
-
-    letter-spacing: 5px;
-
-}
-
-
-.resultado-codigo {
-
-    margin-top: 20px;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    min-height: 18px;
-
-}
-
-
-/* ==================================================
-   ARQUIVO
-================================================== */
-
-.arquivo-desbloqueado {
-
-    display: none;
-
-    width: min(700px, 100%);
-
-    margin: 80px auto 0;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 50;
-
-}
-
-
-.arquivo-desbloqueado h2 {
-
-    font-size: 45px;
-
-    font-weight: normal;
-
-    color: #efc5ca;
-
-    margin-bottom: 25px;
-
-}
-
-
-.arquivo-desbloqueado > p:not(.codigo-vermelho) {
-
-    color: #a89499;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-
-}
-
-
-/* ==================================================
-   CARTA DO LÍRIO
-================================================== */
-
-.carta-lirio {
-
-    min-height: 100vh;
-
-    padding: 120px 25px;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            #fff4f5,
-            #f2c5cb 70%
-        );
-
-    position: relative;
-
-    overflow: hidden;
-
-}
-
-
-.lirio-container {
-
-    width: min(850px, 100%);
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 5;
-
-}
-
-
-.titulo-lirio {
-
-    margin-bottom: 45px;
-
-}
-
-
-.titulo-lirio h2 {
-
-    font-size: 60px;
-
-    font-weight: normal;
-
-    color: #27191d;
-
-}
-
-
-/* ==================================================
-   MOLDURA DO LÍRIO
-================================================== */
-
-.moldura-lirio {
-
-    width: min(350px, 85vw);
-
-    height: 430px;
-
-    margin: auto;
-
-    padding: 12px;
-
-    background: #fffdf8;
-
-    border:
-        1px solid
-        #c38b94;
-
-    box-shadow:
-        0 25px 60px
-        rgba(70, 30, 40, 0.2);
-
-    position: relative;
-
-    animation:
-        florAparecer 1.5s ease;
-
-}
-
-
-.moldura-lirio img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-}
-
-
-.brilho-lirio {
-
-    position: absolute;
-
-    inset: -20px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.65),
-            transparent 65%
-        );
-
-    z-index: -1;
-
-    animation:
-        brilho 4s infinite;
-
-}
-
-
-/* ==================================================
-   PAPEL DA CARTA
-================================================== */
-
-.papel-lirio {
-
-    max-width: 750px;
-
-    margin: 60px auto 0;
-
-    padding: 60px;
-
-    background: #fffdf8;
-
-    box-shadow:
-        0 20px 50px
-        rgba(80, 40, 50, 0.12);
-
-    border:
-        1px solid
-        #e5c8cd;
-
-    text-align: left;
-
-    position: relative;
-
-}
-
-
-.papel-lirio::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 18px;
-
-    border:
-        1px solid
-        #ead9dc;
-
-    pointer-events: none;
-
-}
-
-
-.assinatura {
-
-    font-size: 20px;
-
-    margin-bottom: 30px;
-
-    color: #6c4b53;
-
-}
-
-
-.texto-lirio {
-
-    font-size: 19px;
-
-    line-height: 2;
-
-    color: #38282d;
-
-    min-height: 250px;
-
-}
-
-
-.assinatura-final {
-
-    text-align: right;
-
-    font-size: 35px;
-
-    color: #a84757;
-
-    margin-top: 30px;
-
-}
-
-
-/* ==================================================
-   CONTINUAÇÃO
-================================================== */
-
-.continua {
-
-    min-height: 500px;
-
-    padding: 100px 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background: #f0c3ca;
-
-}
-
-
-.continua h2 {
-
-    font-size: 55px;
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-
-}
-
-
-.continua p:not(.subtitulo) {
-
-    color: #664c53;
-
-}
-
-
-/* ==================================================
-   FOOTER
-================================================== */
-
-footer {
-
-    padding: 35px;
-
-    text-align: center;
-
-    background: #130f11;
-
-    color: #b88e95;
-
-    font-family: Arial, sans-serif;
-
-}
-
-
-footer small {
-
-    display: block;
-
-    margin-top: 10px;
-
-    color: #6e565b;
-
-}
-
-
-/* ==================================================
-   ANIMAÇÕES
-================================================== */
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-@keyframes florAparecer {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(40px)
-            scale(0.92);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-
-@keyframes brilho {
-
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scale(0.9);
-    }
-
-    50% {
-        opacity: 0.8;
-        transform: scale(1.1);
-    }
-
+    text-shadow:
+        0 0 15px rgba(229,167,180,0.45);
 }
 
 
@@ -1606,56 +428,1053 @@ footer small {
             rotate(0deg);
 
         opacity: 0;
-
     }
 
     10% {
-        opacity: 0.9;
+        opacity: 0.8;
     }
 
     90% {
-        opacity: 0.8;
+        opacity: 0.7;
     }
 
     100% {
 
         transform:
-            translateY(110vh)
+            translateY(120vh)
             rotate(360deg);
 
         opacity: 0;
+    }
+}
 
+
+/* =====================================================
+   PALAVRAS COMO ESTRELAS
+===================================================== */
+
+.palavra-estrela-fundo {
+
+    position: absolute;
+
+    color: #f2cbd3;
+
+    font-family: Arial, sans-serif;
+
+    font-size: var(--tamanho-palavra);
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    animation:
+        piscar var(--tempo) ease-in-out infinite;
+
+    animation-delay: var(--atraso);
+
+    left: var(--x);
+
+    top: var(--y);
+
+    text-shadow:
+        0 0 15px rgba(255,220,228,0.7);
+}
+
+
+@keyframes piscar {
+
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+}
+
+
+/* =====================================================
+   BOTÃO CONTINUAR
+===================================================== */
+
+.continuar {
+
+    position: absolute;
+
+    bottom: 50px;
+
+    z-index: 30;
+}
+
+
+/* =====================================================
+   PARTE 2 — INVESTIGAÇÃO
+===================================================== */
+
+.investigacao {
+
+    min-height: 100vh;
+
+    padding: 100px 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #1b0b10,
+            #050405
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.investigacao::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(255,255,255,0.015) 4px
+        );
+
+    pointer-events: none;
+}
+
+
+.investigacao-conteudo {
+
+    max-width: 850px;
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+
+.codigo-vermelho {
+
+    color: var(--vermelho-claro);
+
+    font-family: monospace;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+
+.investigacao h2 {
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    line-height: 1.3;
+
+    margin-bottom: 25px;
+}
+
+
+.texto-investigacao {
+
+    color: #ad9ba1;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+}
+
+
+.arquivo {
+
+    margin: 40px auto;
+
+    max-width: 600px;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(229,167,180,0.15);
+
+    text-align: left;
+
+    font-family: monospace;
+
+    line-height: 2;
+
+    color: #aa969d;
+}
+
+
+.arquivo span {
+
+    color: var(--vermelho-claro);
+}
+
+
+.pistas {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+
+.pista {
+
+    padding: 14px 20px;
+
+    background: #10090c;
+
+    color: #dcb8c1;
+
+    border: 1px solid #522632;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.pista:hover {
+
+    background: #261118;
+
+    transform: translateY(-3px);
+}
+
+
+.texto-pista {
+
+    min-height: 30px;
+
+    color: #dcaeba;
+
+    font-style: italic;
+
+    margin: 20px auto;
+
+    max-width: 650px;
+
+    line-height: 1.7;
+}
+
+
+.senha-area {
+
+    margin-top: 50px;
+
+    padding: 35px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.senha-area p {
+
+    color: #9f8c93;
+
+    margin-bottom: 20px;
+}
+
+
+.senha-area input {
+
+    width: min(400px, 100%);
+
+    padding: 15px;
+
+    background: #0b0809;
+
+    border: 1px solid #58303b;
+
+    color: white;
+
+    outline: none;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+}
+
+
+.senha-area input:focus {
+
+    border-color: var(--vermelho);
+}
+
+
+#resultadoSenha {
+
+    min-height: 25px;
+
+    margin-top: 15px;
+}
+
+
+.investigacao-final {
+
+    display: none;
+
+    margin-top: 40px;
+
+    animation: aparecer 1s ease;
+}
+
+
+.arquivo-aberto {
+
+    padding: 40px;
+
+    border: 1px solid #7c3d4e;
+
+    background: rgba(124,61,78,0.08);
+
+    margin-bottom: 30px;
+}
+
+
+.arquivo-status {
+
+    color: #e6a6b4;
+
+    font-family: monospace;
+
+    letter-spacing: 3px;
+}
+
+
+.arquivo-aberto h3 {
+
+    font-size: 30px;
+
+    margin: 20px 0;
+}
+
+
+/* =====================================================
+   PARTE 3 — UNIVERSO
+===================================================== */
+
+.universo {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #020308;
+
+    color: white;
+}
+
+
+.estrelas-fundo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            rgba(255,255,255,0.6) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        90px 90px,
+        150px 150px;
+
+    animation: estrelasMover 40s linear infinite;
+
+    opacity: 0.6;
+}
+
+
+@keyframes estrelasMover {
+
+    from {
+        background-position: 0 0, 0 0;
+    }
+
+    to {
+        background-position: 300px 500px, -400px 300px;
+    }
+}
+
+
+.nebulosa {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.18;
+}
+
+
+.nebulosa-1 {
+
+    width: 500px;
+
+    height: 300px;
+
+    background: #91364d;
+
+    top: 20%;
+
+    left: -10%;
+}
+
+
+.nebulosa-2 {
+
+    width: 500px;
+
+    height: 350px;
+
+    background: #432a69;
+
+    right: -10%;
+
+    bottom: 20%;
+}
+
+
+.universo-intro {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    transition: 1.5s;
+}
+
+
+.universo-mini {
+
+    font-family: monospace;
+
+    letter-spacing: 5px;
+
+    color: #c894a2;
+
+    margin-bottom: 30px;
+}
+
+
+.universo-intro h2 {
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    font-weight: normal;
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+}
+
+
+.universo-intro > p:not(.universo-mini) {
+
+    font-size: 20px;
+
+    color: #aaa9b7;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   CÉU
+===================================================== */
+
+.ceu {
+
+    display: none;
+
+    position: absolute;
+
+    inset: 0;
+
+    min-height: 100vh;
+
+    opacity: 0;
+
+    transition: 2s;
+
+    overflow: hidden;
+}
+
+
+.via-lactea {
+
+    position: absolute;
+
+    width: 150%;
+
+    height: 350px;
+
+    left: -25%;
+
+    top: 25%;
+
+    transform: rotate(-18deg);
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,0.2),
+            rgba(160,130,180,0.08) 35%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   TELESCÓPIO
+===================================================== */
+
+.observatorio {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 250px;
+
+    height: 300px;
+
+    opacity: 0.35;
+}
+
+
+.telescopio {
+
+    position: absolute;
+
+    bottom: 100px;
+
+    left: 40px;
+
+    width: 170px;
+
+    height: 60px;
+
+    transform: rotate(-25deg);
+
+}
+
+
+.telescopio-corpo {
+
+    width: 170px;
+
+    height: 50px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            #292831,
+            #0d0d12
+        );
+
+    border: 1px solid #575362;
+}
+
+
+.telescopio-ocular {
+
+    position: absolute;
+
+    right: -25px;
+
+    top: 12px;
+
+    width: 35px;
+
+    height: 35px;
+
+    background: #111117;
+
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+   ESTRELAS CLICÁVEIS
+===================================================== */
+
+.estrela {
+
+    position: absolute;
+
+    font-size: 25px;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 15;
+
+    transition: 0.4s;
+
+    animation: brilhoEstrela 2s infinite alternate;
+
+    text-shadow:
+        0 0 12px white,
+        0 0 30px #dcaeba;
+}
+
+
+.estrela:hover {
+
+    transform: scale(2);
+
+}
+
+
+.estrela-1 { top: 20%; left: 20%; }
+.estrela-2 { top: 32%; left: 35%; }
+.estrela-3 { top: 18%; left: 50%; }
+.estrela-4 { top: 42%; left: 65%; }
+.estrela-5 { top: 25%; left: 80%; }
+.estrela-6 { top: 55%; left: 15%; }
+.estrela-7 { top: 65%; left: 35%; }
+.estrela-8 { top: 58%; left: 55%; }
+.estrela-9 { top: 72%; left: 75%; }
+.estrela-10 { top: 48%; left: 88%; }
+
+
+@keyframes brilhoEstrela {
+
+    from {
+        opacity: 0.45;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   PALAVRA DA ESTRELA
+===================================================== */
+
+.palavra-estrela {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 30;
+
+    font-size: clamp(25px, 5vw, 50px);
+
+    letter-spacing: 5px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #e5a7b4,
+        0 0 40px #e5a7b4;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CONSTELAÇÃO BORBOLETA
+===================================================== */
+
+.constelacao {
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 300px;
+
+    left: 50%;
+
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    transition: 3s;
+
+    z-index: 5;
+}
+
+
+.constelacao.mostrar {
+
+    opacity: 1;
+}
+
+
+.ponto {
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 12px white,
+        0 0 25px #e5a7b4;
+}
+
+
+.p1 { left: 50%; top: 48%; }
+.p2 { left: 38%; top: 35%; }
+.p3 { left: 25%; top: 20%; }
+.p4 { left: 15%; top: 35%; }
+.p5 { left: 30%; top: 55%; }
+.p6 { left: 70%; top: 35%; }
+.p7 { left: 85%; top: 20%; }
+.p8 { left: 95%; top: 35%; }
+.p9 { left: 70%; top: 55%; }
+.p10 { left: 50%; top: 65%; }
+
+
+.linha {
+
+    position: absolute;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.45);
+
+    transform-origin: left center;
+}
+
+
+.l1 {
+    width: 90px;
+    left: 50%;
+    top: 48%;
+    transform: rotate(-145deg);
+}
+
+.l2 {
+    width: 80px;
+    left: 38%;
+    top: 35%;
+    transform: rotate(-140deg);
+}
+
+.l3 {
+    width: 70px;
+    left: 25%;
+    top: 20%;
+    transform: rotate(130deg);
+}
+
+.l4 {
+    width: 70px;
+    left: 15%;
+    top: 35%;
+    transform: rotate(35deg);
+}
+
+.l5 {
+    width: 80px;
+    left: 30%;
+    top: 55%;
+    transform: rotate(-10deg);
+}
+
+.l6 {
+    width: 90px;
+    left: 50%;
+    top: 48%;
+    transform: rotate(-35deg);
+}
+
+.l7 {
+    width: 80px;
+    left: 70%;
+    top: 35%;
+    transform: rotate(-40deg);
+}
+
+.l8 {
+    width: 70px;
+    left: 85%;
+    top: 20%;
+    transform: rotate(50deg);
+}
+
+
+/* =====================================================
+   MENSAGEM DO CÉU
+===================================================== */
+
+.ceu-mensagem {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    z-index: 20;
+
+    color: #aaa8b3;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.ceu-mensagem span {
+
+    font-size: 13px;
+
+    color: #777680;
+}
+
+
+/* =====================================================
+   FINAL UNIVERSO
+===================================================== */
+
+.universo-final {
+
+    display: none;
+
+    min-height: 100vh;
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 50;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(30,20,40,0.75),
+            #020308 75%
+        );
+
+    animation: aparecer 2s ease;
+}
+
+
+.universo-final p {
+
+    color: #aaa6b2;
+
+    font-size: 19px;
+
+    margin-bottom: 25px;
+}
+
+
+.universo-final h3 {
+
+    max-width: 750px;
+
+    font-size: clamp(30px, 5vw, 55px);
+
+    font-weight: normal;
+
+    line-height: 1.4;
+
+    margin-bottom: 45px;
+}
+
+
+/* =====================================================
+   PRÓXIMA PARTE
+===================================================== */
+
+.proxima-parte {
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    background:
+        linear-gradient(
+            #080607,
+            #170b10
+        );
+}
+
+
+.proxima-parte h2 {
+
+    font-size: clamp(35px, 6vw, 60px);
+
+    font-weight: normal;
+
+    margin: 20px 0;
+}
+
+
+.proxima-parte p:last-child {
+
+    color: #a9979d;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #030203;
+
+    color: #a98f98;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   ANIMAÇÕES GERAIS
+===================================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
 
 
-@keyframes estrela {
+@keyframes subir {
 
-    0% {
-
+    from {
         opacity: 0;
-
-        transform:
-            scale(0.7);
-
+        transform: translateY(50px);
     }
 
-    30% {
+    to {
         opacity: 1;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            scale(1.2);
-
+        transform: translateY(0);
     }
 
 }
@@ -1663,192 +1482,73 @@ footer small {
 
 @keyframes pulsar {
 
-    0%,
-    100% {
-
-        transform:
-            scale(0.8);
-
-        opacity: 0.3;
-
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.2;
     }
 
     50% {
-
-        transform:
-            scale(1.1);
-
-        opacity: 0.7;
-
+        transform: scale(1.2);
+        opacity: 0.5;
     }
 
 }
 
 
-@keyframes ruido {
-
-    0% {
-        transform: translate(0,0);
-    }
-
-    25% {
-        transform: translate(2px,-1px);
-    }
-
-    50% {
-        transform: translate(-1px,2px);
-    }
-
-    75% {
-        transform: translate(1px,1px);
-    }
-
-    100% {
-        transform: translate(0,0);
-    }
-
-}
-
-
-@keyframes tvPiscando {
-
-    0%,
-    100% {
-        opacity: 0.7;
-    }
-
-    50% {
-        opacity: 0.35;
-    }
-
-}
-
-
-/* ==================================================
+/* =====================================================
    CELULAR
-================================================== */
+===================================================== */
 
 @media (max-width: 750px) {
 
     .inicio h1 {
-        font-size: 58px;
+        font-size: 60px;
     }
-
 
     .frase {
         font-size: 17px;
     }
 
-
     .papel {
-        padding: 45px 30px;
+        padding: 50px 30px;
     }
-
 
     .papel h2 {
         font-size: 32px;
     }
 
-
-    .papel p:not(.data):not(.mensagem) {
-        font-size: 16px;
+    .coracoes h2 {
+        font-size: 55px;
     }
 
-
-    .voce-e h2 {
-        font-size: 65px;
+    .investigacao h2 {
+        font-size: 35px;
     }
 
-
-    .investigacao {
-        padding: 40px 12px 80px;
+    .arquivo {
+        font-size: 12px;
     }
 
-
-    .investigacao-header {
-        font-size: 9px;
-        letter-spacing: 1px;
+    .constelacao {
+        width: 300px;
+        height: 230px;
     }
 
-
-    .investigacao-intro h2 {
-        font-size: 42px;
+    .observatorio {
+        display: none;
     }
 
-
-    .sala {
-        height: 570px;
+    .estrela {
+        font-size: 20px;
     }
 
-
-    .caderno-investigacao {
-        width: 150px;
-        font-size: 9px;
-        right: 10px;
-        top: 10px;
+    .via-lactea {
+        width: 180%;
+        left: -40%;
     }
 
-
-    .tv {
-        width: 145px;
-        height: 105px;
-        right: 10%;
-    }
-
-
-    .quadro {
-        width: 110px;
-        height: 80px;
-        left: 34%;
-    }
-
-
-    .quadro span {
-        font-size: 30px;
-    }
-
-
-    .vela {
-        left: 10%;
-        font-size: 40px;
-    }
-
-
-    .caderno {
-        font-size: 48px;
-        left: 18%;
-    }
-
-
-    .caixa {
+    .universo-intro h2 {
         font-size: 45px;
-        right: 25%;
-    }
-
-
-    .titulo-lirio h2 {
-        font-size: 42px;
-    }
-
-
-    .moldura-lirio {
-        height: 360px;
-    }
-
-
-    .papel-lirio {
-        padding: 45px 30px;
-    }
-
-
-    .texto-lirio {
-        font-size: 17px;
-        line-height: 1.8;
-    }
-
-
-    .continua h2 {
-        font-size: 38px;
     }
 
 }

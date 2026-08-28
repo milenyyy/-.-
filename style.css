@@ -14,11 +14,8 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-
     background: #080607;
-
     color: #eee5e8;
-
     overflow-x: hidden;
 }
 
@@ -27,102 +24,96 @@ input {
     font-family: Arial, sans-serif;
 }
 
-
-/* =====================================================
-   CORES PRINCIPAIS
-===================================================== */
-
 :root {
-
     --preto: #080607;
-
     --preto-2: #120b0e;
-
     --vermelho: #c87989;
-
     --vermelho-claro: #e5a7b4;
-
     --vermelho-palido: #f4d5dc;
-
     --vinho: #6f2639;
-
     --branco: #fff5f7;
-
 }
 
 
 /* =====================================================
-   INÍCIO
+   BOTÕES
 ===================================================== */
 
-.inicio {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 30px;
+.botao {
+    border: 1px solid rgba(255,255,255,0.16);
 
     background:
+        linear-gradient(
+            135deg,
+            #c87989,
+            #8f4257
+        );
 
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(200, 121, 137, 0.35),
-            transparent 40%
-        ),
+    color: white;
 
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(111, 38, 57, 0.15),
-            transparent 40%
-        ),
+    padding: 15px 30px;
 
-        #080607;
+    border-radius: 40px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+
+    box-shadow:
+        0 10px 35px rgba(150,60,80,0.2);
 
     position: relative;
-
     overflow: hidden;
 }
 
-
-.inicio::before {
-
+.botao::before {
     content: "";
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    top: 0;
+    left: -120%;
 
-    border-radius: 50%;
+    width: 80%;
+    height: 100%;
 
-    border: 1px solid rgba(229, 167, 180, 0.15);
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.3),
+            transparent
+        );
 
-    animation: pulsar 5s infinite;
+    transform: skewX(-20deg);
 
+    transition: 0.7s;
+}
+
+.botao:hover::before {
+    left: 140%;
+}
+
+.botao:hover {
+    transform: translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 15px 45px rgba(200,121,137,0.35);
+
+    filter: brightness(1.1);
 }
 
 
-.inicio-conteudo {
-
-    max-width: 700px;
-
-    position: relative;
-
-    z-index: 2;
-
-    animation: aparecer 1.3s ease forwards;
-}
-
+/* =====================================================
+   TEXTOS GERAIS
+===================================================== */
 
 .subtitulo {
-
     font-family: Arial, sans-serif;
 
     font-size: 12px;
@@ -135,9 +126,73 @@ input {
 }
 
 
-.inicio h1 {
+/* =====================================================
+   PARTE 1 — INÍCIO
+===================================================== */
 
-    font-size: 90px;
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(200,121,137,0.35),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(111,38,57,0.18),
+            transparent 40%
+        ),
+
+        #080607;
+}
+
+.inicio::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(229,167,180,0.15);
+
+    animation:
+        pulsar 5s infinite;
+}
+
+.inicio-conteudo {
+    max-width: 700px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        aparecer 1.3s ease forwards;
+}
+
+.inicio h1 {
+    font-size: clamp(60px, 10vw, 90px);
 
     font-weight: normal;
 
@@ -146,12 +201,10 @@ input {
     margin-bottom: 25px;
 
     text-shadow:
-        0 0 25px rgba(229, 167, 180, 0.25);
+        0 0 25px rgba(229,167,180,0.25);
 }
 
-
 .frase {
-
     font-size: 20px;
 
     line-height: 1.7;
@@ -163,55 +216,10 @@ input {
 
 
 /* =====================================================
-   BOTÕES
-===================================================== */
-
-.botao {
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #c87989,
-            #8f4257
-        );
-
-    color: white;
-
-    padding: 15px 28px;
-
-    border-radius: 30px;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition: 0.4s;
-
-    box-shadow:
-        0 8px 30px rgba(150, 60, 80, 0.18);
-}
-
-
-.botao:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 12px 40px rgba(200, 121, 137, 0.3);
-
-    filter: brightness(1.1);
-}
-
-
-/* =====================================================
    CARTA
 ===================================================== */
 
 .carta {
-
     min-height: 100vh;
 
     padding: 100px 30px;
@@ -223,7 +231,6 @@ input {
     align-items: center;
 
     background:
-
         radial-gradient(
             circle at center,
             #1b0e13,
@@ -231,10 +238,8 @@ input {
         );
 }
 
-
 .papel {
-
-    max-width: 750px;
+    width: min(750px, 100%);
 
     background: #fdf8f9;
 
@@ -249,12 +254,11 @@ input {
 
     position: relative;
 
-    animation: subir 1s ease;
+    animation:
+        subir 1s ease;
 }
 
-
 .papel::before {
-
     content: "";
 
     position: absolute;
@@ -264,14 +268,13 @@ input {
     right: 20px;
     bottom: 20px;
 
-    border: 1px solid #e6cbd2;
+    border:
+        1px solid #e6cbd2;
 
     pointer-events: none;
 }
 
-
 .data {
-
     text-align: right;
 
     color: #9a6674;
@@ -279,9 +282,7 @@ input {
     margin-bottom: 50px;
 }
 
-
 .papel h2 {
-
     font-size: 40px;
 
     font-weight: normal;
@@ -289,9 +290,7 @@ input {
     margin-bottom: 30px;
 }
 
-
 .papel p:not(.data) {
-
     font-size: 18px;
 
     line-height: 2;
@@ -299,29 +298,25 @@ input {
     margin-bottom: 20px;
 }
 
-
 .texto-quatro {
-
     margin-top: 35px;
 
     padding-top: 30px;
 
-    border-top: 1px solid #ead7dc;
+    border-top:
+        1px solid #ead7dc;
 }
 
-
 .papel .botao {
-
     margin-top: 20px;
 }
 
 
 /* =====================================================
-   CORAÇÕES
+   PARTE 1 — CORAÇÕES
 ===================================================== */
 
 .coracoes {
-
     min-height: 100vh;
 
     position: relative;
@@ -335,7 +330,6 @@ input {
     justify-content: center;
 
     background:
-
         radial-gradient(
             circle at center,
             #2a1018,
@@ -343,22 +337,19 @@ input {
         );
 }
 
-
 .coracoes-conteudo {
-
     position: relative;
 
     z-index: 20;
 
     text-align: center;
 
-    animation: aparecer 1.5s ease;
+    animation:
+        aparecer 1.5s ease;
 }
 
-
 .coracoes h2 {
-
-    font-size: 75px;
+    font-size: clamp(55px, 9vw, 75px);
 
     font-weight: normal;
 
@@ -368,9 +359,7 @@ input {
         0 0 25px rgba(229,167,180,0.3);
 }
 
-
 .coracoes-intro {
-
     margin-top: 20px;
 
     color: #c7b1b8;
@@ -380,11 +369,10 @@ input {
 
 
 /* =====================================================
-   CHUVA INFINITA DE CORAÇÕES
+   CHUVA DE CORAÇÕES
 ===================================================== */
 
 .chuva-coracoes {
-
     position: absolute;
 
     inset: 0;
@@ -394,12 +382,12 @@ input {
     overflow: hidden;
 }
 
-
 .coracao-caindo {
-
     position: absolute;
 
     top: -80px;
+
+    left: var(--posicao);
 
     color: var(--vermelho-claro);
 
@@ -410,19 +398,16 @@ input {
     animation:
         cair var(--duracao) linear infinite;
 
-    animation-delay: var(--atraso);
-
-    left: var(--posicao);
+    animation-delay:
+        var(--atraso);
 
     text-shadow:
         0 0 15px rgba(229,167,180,0.45);
 }
 
-
 @keyframes cair {
 
     0% {
-
         transform:
             translateY(-100px)
             rotate(0deg);
@@ -439,7 +424,6 @@ input {
     }
 
     100% {
-
         transform:
             translateY(120vh)
             rotate(360deg);
@@ -450,12 +434,25 @@ input {
 
 
 /* =====================================================
-   PALAVRAS COMO ESTRELAS
+   PALAVRAS ENTRE OS CORAÇÕES
 ===================================================== */
 
-.palavra-estrela-fundo {
-
+.palavras-estrelas {
     position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.palavra-estrela-fundo {
+    position: absolute;
+
+    left: var(--x);
+
+    top: var(--y);
 
     color: #f2cbd3;
 
@@ -468,39 +465,33 @@ input {
     opacity: 0;
 
     animation:
-        piscar var(--tempo) ease-in-out infinite;
+        piscar var(--tempo)
+        ease-in-out infinite;
 
-    animation-delay: var(--atraso);
-
-    left: var(--x);
-
-    top: var(--y);
+    animation-delay:
+        var(--atraso);
 
     text-shadow:
         0 0 15px rgba(255,220,228,0.7);
 }
 
-
 @keyframes piscar {
 
-    0%, 100% {
+    0%,
+    100% {
         opacity: 0;
+
         transform: scale(0.8);
     }
 
     50% {
         opacity: 0.9;
+
         transform: scale(1);
     }
 }
 
-
-/* =====================================================
-   BOTÃO CONTINUAR
-===================================================== */
-
 .continuar {
-
     position: absolute;
 
     bottom: 50px;
@@ -514,7 +505,6 @@ input {
 ===================================================== */
 
 .investigacao {
-
     min-height: 100vh;
 
     padding: 100px 25px;
@@ -526,7 +516,6 @@ input {
     align-items: center;
 
     background:
-
         radial-gradient(
             circle at center,
             #1b0b10,
@@ -538,9 +527,7 @@ input {
     overflow: hidden;
 }
 
-
 .investigacao::before {
-
     content: "";
 
     position: absolute;
@@ -558,9 +545,24 @@ input {
     pointer-events: none;
 }
 
+.investigacao::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0,0,0,0.5) 100%
+        );
+
+    pointer-events: none;
+}
 
 .investigacao-conteudo {
-
     max-width: 850px;
 
     width: 100%;
@@ -572,9 +574,7 @@ input {
     text-align: center;
 }
 
-
 .codigo-vermelho {
-
     color: var(--vermelho-claro);
 
     font-family: monospace;
@@ -584,10 +584,8 @@ input {
     margin-bottom: 25px;
 }
 
-
 .investigacao h2 {
-
-    font-size: 48px;
+    font-size: clamp(35px, 6vw, 48px);
 
     font-weight: normal;
 
@@ -596,9 +594,7 @@ input {
     margin-bottom: 25px;
 }
 
-
 .texto-investigacao {
-
     color: #ad9ba1;
 
     line-height: 1.8;
@@ -606,18 +602,18 @@ input {
     font-size: 18px;
 }
 
-
 .arquivo {
-
     margin: 40px auto;
 
     max-width: 600px;
 
     padding: 25px;
 
-    background: rgba(255,255,255,0.03);
+    background:
+        rgba(255,255,255,0.03);
 
-    border: 1px solid rgba(229,167,180,0.15);
+    border:
+        1px solid rgba(229,167,180,0.15);
 
     text-align: left;
 
@@ -626,17 +622,16 @@ input {
     line-height: 2;
 
     color: #aa969d;
+
+    box-shadow:
+        inset 0 0 30px rgba(0,0,0,0.25);
 }
 
-
 .arquivo span {
-
     color: var(--vermelho-claro);
 }
 
-
 .pistas {
-
     display: flex;
 
     justify-content: center;
@@ -648,16 +643,15 @@ input {
     margin: 30px 0;
 }
 
-
 .pista {
-
     padding: 14px 20px;
 
     background: #10090c;
 
     color: #dcb8c1;
 
-    border: 1px solid #522632;
+    border:
+        1px solid #522632;
 
     border-radius: 8px;
 
@@ -666,17 +660,17 @@ input {
     transition: 0.3s;
 }
 
-
 .pista:hover {
-
     background: #261118;
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #a66b7c;
 }
 
-
 .texto-pista {
-
     min-height: 30px;
 
     color: #dcaeba;
@@ -688,36 +682,35 @@ input {
     max-width: 650px;
 
     line-height: 1.7;
+
+    transition:
+        opacity 0.3s ease;
 }
 
-
 .senha-area {
-
     margin-top: 50px;
 
     padding: 35px;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top:
+        1px solid rgba(255,255,255,0.08);
 }
 
-
 .senha-area p {
-
     color: #9f8c93;
 
     margin-bottom: 20px;
 }
 
-
 .senha-area input {
-
     width: min(400px, 100%);
 
     padding: 15px;
 
     background: #0b0809;
 
-    border: 1px solid #58303b;
+    border:
+        1px solid #58303b;
 
     color: white;
 
@@ -728,45 +721,45 @@ input {
     margin-bottom: 15px;
 }
 
-
 .senha-area input:focus {
+    border-color:
+        var(--vermelho);
 
-    border-color: var(--vermelho);
+    box-shadow:
+        0 0 20px rgba(200,121,137,0.12);
 }
 
-
 #resultadoSenha {
-
     min-height: 25px;
 
     margin-top: 15px;
 }
 
-
 .investigacao-final {
-
     display: none;
 
     margin-top: 40px;
 
-    animation: aparecer 1s ease;
+    animation:
+        aparecer 1s ease;
 }
-
 
 .arquivo-aberto {
-
     padding: 40px;
 
-    border: 1px solid #7c3d4e;
+    border:
+        1px solid #7c3d4e;
 
-    background: rgba(124,61,78,0.08);
+    background:
+        rgba(124,61,78,0.08);
 
     margin-bottom: 30px;
+
+    box-shadow:
+        0 0 50px rgba(124,61,78,0.08);
 }
 
-
 .arquivo-status {
-
     color: #e6a6b4;
 
     font-family: monospace;
@@ -774,9 +767,7 @@ input {
     letter-spacing: 3px;
 }
 
-
 .arquivo-aberto h3 {
-
     font-size: 30px;
 
     margin: 20px 0;
@@ -788,24 +779,34 @@ input {
 ===================================================== */
 
 .universo {
-
     min-height: 100vh;
 
     position: relative;
 
     overflow: hidden;
 
-    background: #020308;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #11162d 0%,
+            #060814 38%,
+            #020308 75%
+        );
 
     color: white;
 }
 
 
-.estrelas-fundo {
+/* =====================================================
+   ESTRELAS DE FUNDO
+===================================================== */
 
+.estrelas-fundo {
     position: absolute;
 
     inset: 0;
+
+    z-index: 1;
 
     background-image:
 
@@ -815,74 +816,176 @@ input {
         ),
 
         radial-gradient(
-            rgba(255,255,255,0.6) 1px,
+            rgba(255,255,255,0.8) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            rgba(229,167,180,0.7) 1px,
             transparent 1px
         );
 
     background-size:
-        90px 90px,
-        150px 150px;
+        80px 80px,
+        137px 137px,
+        211px 211px;
 
-    animation: estrelasMover 40s linear infinite;
+    background-position:
+        0 0,
+        30px 70px,
+        80px 30px;
 
-    opacity: 0.6;
+    animation:
+        estrelasMover 60s linear infinite;
+
+    opacity: 0.65;
 }
-
 
 @keyframes estrelasMover {
 
     from {
-        background-position: 0 0, 0 0;
+        background-position:
+            0 0,
+            30px 70px,
+            80px 30px;
     }
 
     to {
-        background-position: 300px 500px, -400px 300px;
+        background-position:
+            300px 500px,
+            -400px 300px,
+            200px -300px;
     }
 }
 
 
-.nebulosa {
+/* =====================================================
+   NEBULOSAS
+===================================================== */
 
+.nebulosa {
     position: absolute;
 
     border-radius: 50%;
 
-    filter: blur(80px);
+    filter: blur(90px);
 
     opacity: 0.18;
-}
 
+    z-index: 2;
+
+    pointer-events: none;
+}
 
 .nebulosa-1 {
-
-    width: 500px;
-
-    height: 300px;
-
-    background: #91364d;
-
-    top: 20%;
-
-    left: -10%;
-}
-
-
-.nebulosa-2 {
-
-    width: 500px;
+    width: 600px;
 
     height: 350px;
 
-    background: #432a69;
+    background:
+        #91364d;
 
-    right: -10%;
+    top: 10%;
 
-    bottom: 20%;
+    left: -15%;
+
+    transform:
+        rotate(-20deg);
+}
+
+.nebulosa-2 {
+    width: 600px;
+
+    height: 400px;
+
+    background:
+        #493878;
+
+    right: -15%;
+
+    bottom: 10%;
+
+    transform:
+        rotate(20deg);
 }
 
 
-.universo-intro {
+/* =====================================================
+   POEIRA CÓSMICA
+===================================================== */
 
+.poeira-cosmica {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(50px);
+
+    opacity: 0.15;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    animation:
+        flutuarCosmico 10s ease-in-out infinite alternate;
+}
+
+.poeira-1 {
+    width: 250px;
+    height: 150px;
+
+    background: #c87989;
+
+    top: 30%;
+    left: 20%;
+}
+
+.poeira-2 {
+    width: 300px;
+    height: 170px;
+
+    background: #705d9d;
+
+    top: 55%;
+    right: 20%;
+
+    animation-delay: -3s;
+}
+
+.poeira-3 {
+    width: 180px;
+    height: 180px;
+
+    background: #e5a7b4;
+
+    top: 15%;
+    right: 30%;
+
+    animation-delay: -6s;
+}
+
+@keyframes flutuarCosmico {
+
+    from {
+        transform:
+            translate(0,0)
+            scale(0.9);
+    }
+
+    to {
+        transform:
+            translate(40px,-25px)
+            scale(1.1);
+    }
+}
+
+
+/* =====================================================
+   INTRO DO UNIVERSO
+===================================================== */
+
+.universo-intro {
     min-height: 100vh;
 
     position: relative;
@@ -901,12 +1004,12 @@ input {
 
     padding: 30px;
 
-    transition: 1.5s;
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
 }
 
-
 .universo-mini {
-
     font-family: monospace;
 
     letter-spacing: 5px;
@@ -916,26 +1019,30 @@ input {
     margin-bottom: 30px;
 }
 
-
 .universo-intro h2 {
-
-    font-size: clamp(45px, 7vw, 85px);
+    font-size:
+        clamp(45px, 7vw, 85px);
 
     font-weight: normal;
 
     line-height: 1.1;
 
     margin-bottom: 30px;
+
+    text-shadow:
+        0 0 30px rgba(255,255,255,0.12);
 }
 
-
 .universo-intro > p:not(.universo-mini) {
-
     font-size: 20px;
 
     color: #aaa9b7;
 
     margin-bottom: 40px;
+}
+
+.botao-fones {
+    margin-top: 5px;
 }
 
 
@@ -944,7 +1051,6 @@ input {
 ===================================================== */
 
 .ceu {
-
     display: none;
 
     position: absolute;
@@ -955,46 +1061,116 @@ input {
 
     opacity: 0;
 
-    transition: 2s;
+    transition:
+        opacity 2s ease;
 
     overflow: hidden;
-}
 
-
-.via-lactea {
-
-    position: absolute;
-
-    width: 150%;
-
-    height: 350px;
-
-    left: -25%;
-
-    top: 25%;
-
-    transform: rotate(-18deg);
-
-    background:
-
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,0.2),
-            rgba(160,130,180,0.08) 35%,
-            transparent 70%
-        );
-
-    filter: blur(20px);
-
-    opacity: 0.7;
+    z-index: 8;
 }
 
 
 /* =====================================================
-   TELESCÓPIO
+   VIA LÁCTEA
+===================================================== */
+
+.via-lactea {
+    position: absolute;
+
+    width: 170%;
+
+    height: 420px;
+
+    left: -35%;
+
+    top: 25%;
+
+    transform:
+        rotate(-18deg);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,0.20) 0%,
+            rgba(194,176,220,0.13) 20%,
+            rgba(120,100,160,0.08) 40%,
+            transparent 72%
+        );
+
+    filter:
+        blur(25px);
+
+    opacity: 0.75;
+
+    z-index: 3;
+
+    animation:
+        galaxiaRespira 8s ease-in-out infinite alternate;
+}
+
+.via-lactea::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,0.07) 0px,
+            rgba(255,255,255,0.03) 4px,
+            transparent 9px
+        );
+
+    opacity: 0.6;
+}
+
+@keyframes galaxiaRespira {
+
+    from {
+        opacity: 0.5;
+
+        transform:
+            rotate(-18deg)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 0.85;
+
+        transform:
+            rotate(-18deg)
+            scale(1.05);
+    }
+}
+
+
+/* =====================================================
+   OBSERVATÓRIO
 ===================================================== */
 
 .observatorio {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 300px;
+
+    height: 330px;
+
+    opacity: 0.55;
+
+    z-index: 6;
+}
+
+.observatorio::after {
+    content: "";
 
     position: absolute;
 
@@ -1002,66 +1178,128 @@ input {
 
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: 250px;
+    width: 240px;
 
-    height: 300px;
+    height: 160px;
 
-    opacity: 0.35;
-}
-
-
-.telescopio {
-
-    position: absolute;
-
-    bottom: 100px;
-
-    left: 40px;
-
-    width: 170px;
-
-    height: 60px;
-
-    transform: rotate(-25deg);
-
-}
-
-
-.telescopio-corpo {
-
-    width: 170px;
-
-    height: 50px;
-
-    border-radius: 50px;
+    border-radius:
+        120px 120px 0 0;
 
     background:
         linear-gradient(
-            #292831,
+            90deg,
+            #07070b,
+            #171722,
+            #07070b
+        );
+
+    border-top:
+        1px solid #4d4a59;
+
+    box-shadow:
+        0 -20px 60px rgba(0,0,0,0.6);
+}
+
+.telescopio {
+    position: absolute;
+
+    bottom: 145px;
+
+    left: 40px;
+
+    width: 190px;
+
+    height: 65px;
+
+    transform:
+        rotate(-25deg);
+
+    z-index: 5;
+}
+
+.telescopio-corpo {
+    width: 190px;
+
+    height: 55px;
+
+    border-radius: 60px;
+
+    background:
+        linear-gradient(
+            #302f39,
+            #0c0c12
+        );
+
+    border:
+        1px solid #625e6d;
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.05);
+}
+
+.telescopio-ocular {
+    position: absolute;
+
+    right: -30px;
+
+    top: 13px;
+
+    width: 40px;
+
+    height: 40px;
+
+    background:
+        #111117;
+
+    border-radius: 6px;
+
+    border:
+        1px solid #4d4a56;
+}
+
+.tripode {
+    position: absolute;
+
+    bottom: 35px;
+
+    width: 3px;
+
+    height: 110px;
+
+    background:
+        linear-gradient(
+            #4a4853,
             #0d0d12
         );
 
-    border: 1px solid #575362;
+    transform-origin:
+        bottom center;
+
+    z-index: 5;
 }
 
+.tripode-1 {
+    left: 145px;
 
-.telescopio-ocular {
+    transform:
+        rotate(-18deg);
+}
 
-    position: absolute;
+.tripode-2 {
+    left: 145px;
 
-    right: -25px;
+    transform:
+        rotate(18deg);
+}
 
-    top: 12px;
+.tripode-3 {
+    left: 145px;
 
-    width: 35px;
-
-    height: 35px;
-
-    background: #111117;
-
-    border-radius: 5px;
+    transform:
+        rotate(0deg);
 }
 
 
@@ -1070,77 +1308,189 @@ input {
 ===================================================== */
 
 .estrela {
-
     position: absolute;
 
-    font-size: 25px;
+    font-size: 28px;
 
     color: white;
 
     cursor: pointer;
 
-    z-index: 15;
+    z-index: 20;
 
-    transition: 0.4s;
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease,
+        opacity 0.4s ease;
 
-    animation: brilhoEstrela 2s infinite alternate;
+    animation:
+        brilhoEstrela 2.5s ease-in-out infinite alternate;
 
     text-shadow:
         0 0 12px white,
-        0 0 30px #dcaeba;
+        0 0 30px #dcaeba,
+        0 0 50px rgba(229,167,180,0.5);
+
+    user-select: none;
 }
 
+.estrela::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -15px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(229,167,180,0.18),
+            transparent 65%
+        );
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.estrela:hover::after {
+    opacity: 1;
+}
 
 .estrela:hover {
+    transform:
+        scale(1.8);
 
-    transform: scale(2);
-
+    color:
+        #fff5f7;
 }
 
+.estrela[data-clicada="true"] {
+    color:
+        #e5a7b4;
 
-.estrela-1 { top: 20%; left: 20%; }
-.estrela-2 { top: 32%; left: 35%; }
-.estrela-3 { top: 18%; left: 50%; }
-.estrela-4 { top: 42%; left: 65%; }
-.estrela-5 { top: 25%; left: 80%; }
-.estrela-6 { top: 55%; left: 15%; }
-.estrela-7 { top: 65%; left: 35%; }
-.estrela-8 { top: 58%; left: 55%; }
-.estrela-9 { top: 72%; left: 75%; }
-.estrela-10 { top: 48%; left: 88%; }
+    text-shadow:
+        0 0 20px #e5a7b4,
+        0 0 50px #e5a7b4;
 
+    animation:
+        estrelaEncontrada 0.8s ease forwards;
+}
 
 @keyframes brilhoEstrela {
 
     from {
-        opacity: 0.45;
-        transform: scale(0.8);
+        opacity: 0.4;
+
+        transform:
+            scale(0.8);
     }
 
     to {
         opacity: 1;
-        transform: scale(1.2);
+
+        transform:
+            scale(1.2);
+    }
+}
+
+@keyframes estrelaEncontrada {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(2.2);
+    }
+
+    100% {
+        transform:
+            scale(1.3);
+
+        opacity: 0.55;
     }
 }
 
 
 /* =====================================================
-   PALAVRA DA ESTRELA
+   POSIÇÕES DAS ESTRELAS
+===================================================== */
+
+.estrela-1 {
+    top: 18%;
+    left: 13%;
+}
+
+.estrela-2 {
+    top: 31%;
+    left: 28%;
+}
+
+.estrela-3 {
+    top: 14%;
+    left: 47%;
+}
+
+.estrela-4 {
+    top: 38%;
+    left: 62%;
+}
+
+.estrela-5 {
+    top: 20%;
+    left: 82%;
+}
+
+.estrela-6 {
+    top: 56%;
+    left: 10%;
+}
+
+.estrela-7 {
+    top: 67%;
+    left: 31%;
+}
+
+.estrela-8 {
+    top: 58%;
+    left: 53%;
+}
+
+.estrela-9 {
+    top: 72%;
+    left: 75%;
+}
+
+.estrela-10 {
+    top: 45%;
+    left: 89%;
+}
+
+
+/* =====================================================
+   PALAVRA REVELADA
 ===================================================== */
 
 .palavra-estrela {
-
     position: absolute;
 
     left: 50%;
 
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%)
+        scale(0.7);
 
-    z-index: 30;
+    z-index: 40;
 
-    font-size: clamp(25px, 5vw, 50px);
+    font-size:
+        clamp(25px, 5vw, 50px);
 
     letter-spacing: 5px;
 
@@ -1148,53 +1498,66 @@ input {
 
     text-shadow:
         0 0 15px #e5a7b4,
-        0 0 40px #e5a7b4;
+        0 0 40px #e5a7b4,
+        0 0 80px rgba(229,167,180,0.5);
 
     opacity: 0;
 
     pointer-events: none;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.7s ease;
 }
 
 
 /* =====================================================
-   CONSTELAÇÃO BORBOLETA
+   CONSTELAÇÃO
 ===================================================== */
 
 .constelacao {
-
     position: absolute;
 
-    width: 400px;
+    width: 440px;
 
-    height: 300px;
+    height: 330px;
 
     left: 50%;
 
     top: 48%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%)
+        scale(0.7);
 
     opacity: 0;
 
-    transition: 3s;
+    transition:
+        opacity 3s ease,
+        transform 3s ease;
 
-    z-index: 5;
+    z-index: 10;
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(229,167,180,0.35)
+        );
 }
-
 
 .constelacao.mostrar {
-
     opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
 }
 
-
 .ponto {
-
     position: absolute;
 
-    width: 8px;
+    width: 9px;
 
-    height: 8px;
+    height: 9px;
 
     border-radius: 50%;
 
@@ -1202,9 +1565,29 @@ input {
 
     box-shadow:
         0 0 12px white,
-        0 0 25px #e5a7b4;
+        0 0 25px #e5a7b4,
+        0 0 45px rgba(229,167,180,0.6);
+
+    animation:
+        pulsarEstrela 2s ease-in-out infinite alternate;
 }
 
+@keyframes pulsarEstrela {
+
+    from {
+        opacity: 0.5;
+
+        transform:
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1.25);
+    }
+}
 
 .p1 { left: 50%; top: 48%; }
 .p2 { left: 38%; top: 35%; }
@@ -1217,18 +1600,25 @@ input {
 .p9 { left: 70%; top: 55%; }
 .p10 { left: 50%; top: 65%; }
 
-
 .linha {
-
     position: absolute;
 
     height: 1px;
 
-    background: rgba(255,255,255,0.45);
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.7),
+            transparent
+        );
 
-    transform-origin: left center;
+    transform-origin:
+        left center;
+
+    box-shadow:
+        0 0 5px rgba(229,167,180,0.4);
 }
-
 
 .l1 {
     width: 90px;
@@ -1292,29 +1682,29 @@ input {
 ===================================================== */
 
 .ceu-mensagem {
-
     position: absolute;
 
-    bottom: 40px;
+    bottom: 45px;
 
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     text-align: center;
 
-    z-index: 20;
+    z-index: 30;
 
     color: #aaa8b3;
 
     font-size: 17px;
 
     line-height: 1.7;
+
+    width: 90%;
 }
 
-
 .ceu-mensagem span {
-
     font-size: 13px;
 
     color: #777680;
@@ -1322,11 +1712,10 @@ input {
 
 
 /* =====================================================
-   FINAL UNIVERSO
+   FINAL DO UNIVERSO
 ===================================================== */
 
 .universo-final {
-
     display: none;
 
     min-height: 100vh;
@@ -1349,17 +1738,91 @@ input {
 
     background:
         radial-gradient(
-            circle,
-            rgba(30,20,40,0.75),
+            circle at center,
+            rgba(35,25,55,0.8),
             #020308 75%
         );
 
-    animation: aparecer 2s ease;
+    animation:
+        aparecerUniverso 2s ease forwards;
 }
 
+@keyframes aparecerUniverso {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.galaxia-final {
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.08),
+            rgba(130,100,180,0.06) 25%,
+            transparent 65%
+        );
+
+    filter:
+        blur(15px);
+
+    animation:
+        girarGalaxia 25s linear infinite;
+}
+
+@keyframes girarGalaxia {
+
+    from {
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+
+    to {
+        transform:
+            rotate(360deg)
+            scale(1.05);
+    }
+}
+
+.final-estrelas {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size:
+        100px 100px;
+
+    opacity: 0.45;
+}
+
+.universo-final p,
+.universo-final h3,
+.universo-final .botao {
+    position: relative;
+
+    z-index: 3;
+}
 
 .universo-final p {
-
     color: #aaa6b2;
 
     font-size: 19px;
@@ -1367,18 +1830,20 @@ input {
     margin-bottom: 25px;
 }
 
-
 .universo-final h3 {
-
     max-width: 750px;
 
-    font-size: clamp(30px, 5vw, 55px);
+    font-size:
+        clamp(30px, 5vw, 55px);
 
     font-weight: normal;
 
     line-height: 1.4;
 
     margin-bottom: 45px;
+
+    text-shadow:
+        0 0 25px rgba(229,167,180,0.18);
 }
 
 
@@ -1387,7 +1852,6 @@ input {
 ===================================================== */
 
 .proxima-parte {
-
     min-height: 500px;
 
     display: flex;
@@ -1409,19 +1873,16 @@ input {
         );
 }
 
-
 .proxima-parte h2 {
-
-    font-size: clamp(35px, 6vw, 60px);
+    font-size:
+        clamp(35px, 6vw, 60px);
 
     font-weight: normal;
 
     margin: 20px 0;
 }
 
-
 .proxima-parte p:last-child {
-
     color: #a9979d;
 
     font-size: 18px;
@@ -1433,7 +1894,6 @@ input {
 ===================================================== */
 
 footer {
-
     padding: 30px;
 
     text-align: center;
@@ -1454,44 +1914,52 @@ footer {
 
     from {
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(30px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
-
 }
-
 
 @keyframes subir {
 
     from {
         opacity: 0;
-        transform: translateY(50px);
+
+        transform:
+            translateY(50px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
-
 }
-
 
 @keyframes pulsar {
 
-    0%, 100% {
-        transform: scale(0.8);
+    0%,
+    100% {
+        transform:
+            scale(0.8);
+
         opacity: 0.2;
     }
 
     50% {
-        transform: scale(1.2);
+        transform:
+            scale(1.2);
+
         opacity: 0.5;
     }
-
 }
 
 
@@ -1521,6 +1989,11 @@ footer {
         font-size: 55px;
     }
 
+    .investigacao {
+        padding:
+            80px 20px;
+    }
+
     .investigacao h2 {
         font-size: 35px;
     }
@@ -1543,12 +2016,29 @@ footer {
     }
 
     .via-lactea {
-        width: 180%;
-        left: -40%;
+        width: 190%;
+        left: -45%;
     }
 
     .universo-intro h2 {
         font-size: 45px;
+    }
+
+    .universo-intro > p:not(.universo-mini) {
+        font-size: 17px;
+    }
+
+    .ceu-mensagem {
+        bottom: 25px;
+    }
+
+    .universo-final h3 {
+        font-size: 34px;
+    }
+
+    .galaxia-final {
+        width: 500px;
+        height: 500px;
     }
 
 }

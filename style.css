@@ -1,155 +1,12 @@
 /* =========================================
-   CONFIGURAÇÕES
+   PARTE 3 - MEMÓRIAS / FOTOS
 ========================================= */
 
-* {
-
-    margin: 0;
-
-    padding: 0;
-
-    box-sizing: border-box;
-
-}
-
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-
-body {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    background: #fff4f5;
-
-    color: #211719;
-
-    overflow-x: hidden;
-
-}
-
-
-/* =========================================
-   BOTÕES
-========================================= */
-
-.botao {
-
-    border: 1px solid #211719;
-
-    background: #211719;
-
-    color: #fff4f5;
-
-    padding: 16px 30px;
-
-    border-radius: 40px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-
-}
-
-
-.botao:hover {
-
-    background: #8f424b;
-
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 15px 30px
-        rgba(33, 23, 25, 0.25);
-
-}
-
-
-/* =========================================
-   BOTÕES DE NAVEGAÇÃO
-========================================= */
-
-.navegacao {
-
-    position: absolute;
-
-    z-index: 100;
-
-    bottom: 30px;
-
-    width: 48px;
-
-    height: 48px;
-
-    border-radius: 50%;
-
-    border: 1px solid
-        rgba(255, 255, 255, 0.35);
-
-    background:
-        rgba(0, 0, 0, 0.35);
-
-    color: #f2b6bc;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    backdrop-filter: blur(8px);
-
-    transition:
-        0.3s ease;
-
-}
-
-
-.navegacao:hover {
-
-    transform: translateY(-5px);
-
-    background: #8f424b;
-
-    color: white;
-
-}
-
-
-/* botão da direita */
-
-.navegacao-direita {
-
-    right: 30px;
-
-}
-
-
-/* botão da esquerda */
-
-.navegacao-esquerda {
-
-    left: 30px;
-
-}
-
-
-/* =========================================
-   TELA INICIAL
-========================================= */
-
-.inicio {
+.memorias {
 
     min-height: 100vh;
+
+    padding: 100px 25px;
 
     display: flex;
 
@@ -163,19 +20,17 @@ body {
 
     overflow: hidden;
 
-    padding: 40px 25px;
-
     background:
 
         radial-gradient(
             circle at 20% 20%,
-            #f3b8be 0%,
+            #f2b6bc,
             transparent 25%
         ),
 
         radial-gradient(
-            circle at 80% 75%,
-            #e99ba4 0%,
+            circle at 80% 80%,
+            #e5a0a8,
             transparent 25%
         ),
 
@@ -184,889 +39,208 @@ body {
 }
 
 
-.inicio-conteudo {
+.memorias-conteudo {
 
-    max-width: 750px;
+    width: min(1000px, 100%);
 
-    position: relative;
-
-    z-index: 2;
-
-    animation:
-        aparecer 1.2s ease;
+    animation: aparecer 1.2s ease;
 
 }
 
 
-.subtitulo {
+.memorias-subtitulo {
 
     font-family: Arial, sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 5px;
 
     color: #8f424b;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
 }
 
 
-.inicio h1 {
+.memorias h2 {
 
     font-size:
         clamp(
-            65px,
-            10vw,
-            110px
+            38px,
+            6vw,
+            65px
         );
 
     font-weight: normal;
 
     color: #211719;
 
-    line-height: 1;
+    margin-bottom: 20px;
 
 }
 
 
-.linha {
-
-    width: 70px;
-
-    height: 1px;
-
-    background: #8f424b;
-
-    margin: 28px auto;
-
-}
-
-
-.frase {
-
-    font-size: 20px;
-
-    line-height: 1.8;
+.memorias-texto {
 
     color: #634e52;
 
-    margin-bottom: 35px;
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 45px;
 
 }
 
 
 /* =========================================
-   BRILHOS
+   GALERIA
 ========================================= */
 
-.brilho {
-
-    position: absolute;
-
-    width: 250px;
-
-    height: 250px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(
-            217,
-            107,
-            117,
-            0.12
-        );
-
-    filter: blur(10px);
-
-    animation:
-        flutuar 7s
-        ease-in-out
-        infinite;
-
-}
-
-
-.brilho-1 {
-
-    top: -80px;
-
-    left: -60px;
-
-}
-
-
-.brilho-2 {
-
-    right: -80px;
-
-    top: 25%;
-
-    animation-delay: 2s;
-
-}
-
-
-.brilho-3 {
-
-    bottom: -100px;
-
-    left: 35%;
-
-    animation-delay: 4s;
-
-}
-
-
-/* =========================================
-   INDICADOR
-========================================= */
-
-.indicador {
-
-    position: absolute;
-
-    bottom: 30px;
-
-    left: 50%;
-
-    color: #8f424b;
-
-    font-size: 25px;
-
-    animation:
-        subirDescer 1.5s
-        infinite;
-
-}
-
-
-/* =========================================
-   CARTA
-========================================= */
-
-.carta {
-
-    min-height: 100vh;
-
-    padding: 120px 25px;
+.galeria {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
 
-    position: relative;
+    align-items: center;
 
-    background: #171112;
+    gap: 30px;
+
+    flex-wrap: wrap;
 
 }
 
 
-.papel {
+/* =========================================
+   CARTÃO DA FOTO
+========================================= */
 
-    width:
-        min(
-            750px,
-            100%
-        );
+.foto-card {
 
-    padding: 70px;
+    width: min(420px, 90vw);
 
-    position: relative;
+    padding: 15px;
 
     background: #fffafa;
 
     box-shadow:
-        0 25px 70px
-        rgba(0, 0, 0, 0.35);
+        0 20px 50px
+        rgba(33, 23, 25, 0.20);
 
-    border-radius: 4px;
+    transform: rotate(-2deg);
 
-}
-
-
-.papel::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 22px;
-
-    border: 1px solid #e5b9be;
-
-    pointer-events: none;
+    transition:
+        0.4s ease;
 
 }
 
 
-.decoracao-canto {
+.foto-card:hover {
 
-    position: absolute;
+    transform:
+        rotate(0deg)
+        translateY(-10px)
+        scale(1.02);
 
-    top: 32px;
-
-    right: 38px;
-
-    color: #a94f5a;
-
-    font-size: 20px;
-
-}
-
-
-.data {
-
-    text-align: right;
-
-    color: #987b80;
-
-    margin-bottom: 50px;
+    box-shadow:
+        0 30px 60px
+        rgba(33, 23, 25, 0.28);
 
 }
 
 
-.papel h2 {
+/* =========================================
+   IMAGEM
+========================================= */
 
-    font-size: 43px;
+.foto-card img {
 
-    font-weight: normal;
+    display: block;
 
-    color: #211719;
+    width: 100%;
 
-    margin-bottom: 35px;
+    height: 420px;
 
-}
+    object-fit: cover;
 
-
-.papel p:not(.data):not(.assinatura) {
-
-    font-size: 18px;
-
-    line-height: 2;
-
-    color: #503f42;
-
-    margin-bottom: 22px;
+    border-radius: 2px;
 
 }
 
 
-.assinatura {
+/* =========================================
+   LEGENDA
+========================================= */
 
-    margin-top: 45px;
+.foto-legenda {
+
+    padding: 18px 10px 8px;
 
     color: #634e52;
 
-    line-height: 1.7;
+    font-size: 15px;
 
     font-style: italic;
 
 }
 
 
-.assinatura span {
+.foto-legenda span {
 
     color: #a94f5a;
 
-    font-size: 25px;
-
-}
-
-
-.botao-carta {
-
-    margin-top: 25px;
-
-}
-
-
-/* =========================================
-   SEÇÃO "VOCÊ É..."
-========================================= */
-
-.elogios {
-
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            #3a1d21,
-            #0d0b0c 65%
-        );
-
-    color: white;
-
-}
-
-
-/* =========================================
-   CONTEÚDO CENTRAL
-========================================= */
-
-.elogios-conteudo {
-
-    position: relative;
-
-    z-index: 30;
-
-    padding: 30px;
-
-    animation:
-        aparecerTexto 1.5s ease;
-
-}
-
-
-.pequeno-texto {
-
-    font-family: Arial, sans-serif;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    font-size: 11px;
-
-    color: #e9aeb4;
-
-    margin-bottom: 25px;
-
-}
-
-
-.elogios h2 {
-
-    font-size:
-        clamp(
-            65px,
-            10vw,
-            110px
-        );
-
-    font-weight: normal;
-
-    color: #f2b6bc;
-
-    text-shadow:
-
-        0 0 20px
-        rgba(
-            242,
-            182,
-            188,
-            0.4
-        ),
-
-        0 0 60px
-        rgba(
-            242,
-            182,
-            188,
-            0.15
-        );
-
-}
-
-
-.texto-final {
-
-    margin-top: 25px;
-
-    color: #d8c1c4;
-
-    font-size: 18px;
-
-    font-style: italic;
-
-}
-
-
-/* =========================================
-   ESTRELAS
-========================================= */
-
-.estrela {
-
-    position: absolute;
-
-    color: #f2b6bc;
-
-    opacity: 0.5;
-
-    animation:
-        piscar 2s
-        infinite
-        alternate;
-
-}
-
-
-.estrela-1 {
-
-    top: 15%;
-
-    left: 15%;
-
-    font-size: 25px;
-
-}
-
-
-.estrela-2 {
-
-    top: 30%;
-
-    right: 15%;
-
-    font-size: 18px;
-
-}
-
-
-.estrela-3 {
-
-    bottom: 20%;
-
-    left: 25%;
-
     font-size: 20px;
 
-}
-
-
-.estrela-4 {
-
-    bottom: 15%;
-
-    right: 25%;
-
-    font-size: 28px;
+    margin-right: 6px;
 
 }
 
 
 /* =========================================
-   CORAÇÕES
+   FRASE FINAL
 ========================================= */
 
-.coracao {
+.memorias-final {
 
-    position: absolute;
+    margin-top: 45px;
 
-    top: -130px;
-
-    width: 100px;
-
-    height: 90px;
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    pointer-events: none;
-
-    animation:
-        cair
-        linear
-        forwards;
-
-}
-
-
-.coracao::before,
-.coracao::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 60px;
-
-    height: 90px;
-
-    background: #f2b6bc;
-
-    border-radius:
-        60px 60px 0 0;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0, 0, 0, 0.2);
-
-}
-
-
-.coracao::before {
-
-    left: 50px;
-
-    transform:
-        rotate(-45deg);
-
-    transform-origin:
-        0 100%;
-
-}
-
-
-.coracao::after {
-
-    left: 0;
-
-    transform:
-        rotate(45deg);
-
-    transform-origin:
-        100% 100%;
-
-}
-
-
-.coracao span {
-
-    position: relative;
-
-    z-index: 5;
-
-    width: 75px;
-
-    color: #321e21;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    text-align: center;
-
-    line-height: 1.1;
-
-}
-
-
-/* =========================================
-   PALAVRAS FORA DOS CORAÇÕES
-========================================= */
-
-.palavra-solta {
-
-    position: absolute;
-
-    z-index: 15;
-
-    color: #f2b6bc;
+    color: #8f424b;
 
     font-family: Georgia, serif;
 
-    font-size: 17px;
+    font-size: 18px;
 
     font-style: italic;
 
-    letter-spacing: 1px;
-
-    pointer-events: none;
-
-    text-shadow:
-        0 0 10px
-        rgba(
-            242,
-            182,
-            188,
-            0.5
-        );
-
-    animation:
-        aparecerSumir
-        4s
-        ease-in-out
-        forwards;
-
-}
-
-
-.palavra-solta.grande {
-
-    font-size: 22px;
-
 }
 
 
 /* =========================================
-   ANIMAÇÕES
-========================================= */
-
-@keyframes aparecer {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(30px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-@keyframes aparecerTexto {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(0.75);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1);
-
-    }
-
-}
-
-
-@keyframes subirDescer {
-
-    0%,
-    100% {
-
-        transform:
-            translate(-50%, 0);
-
-    }
-
-    50% {
-
-        transform:
-            translate(-50%, 8px);
-
-    }
-
-}
-
-
-@keyframes flutuar {
-
-    0%,
-    100% {
-
-        transform:
-            translate(0, 0);
-
-    }
-
-    50% {
-
-        transform:
-            translate(25px, -25px);
-
-    }
-
-}
-
-
-@keyframes piscar {
-
-    from {
-
-        opacity: 0.2;
-
-        transform:
-            scale(0.8);
-
-    }
-
-    to {
-
-        opacity: 0.8;
-
-        transform:
-            scale(1.2);
-
-    }
-
-}
-
-
-@keyframes cair {
-
-    0% {
-
-        transform:
-            translateY(-150px)
-            rotate(0deg);
-
-        opacity: 0;
-
-    }
-
-    10% {
-
-        opacity: 1;
-
-    }
-
-    100% {
-
-        transform:
-            translateY(115vh)
-            rotate(360deg);
-
-        opacity: 0;
-
-    }
-
-}
-
-
-@keyframes aparecerSumir {
-
-    0% {
-
-        opacity: 0;
-
-        transform:
-            scale(0.5)
-            translateY(10px);
-
-    }
-
-    20% {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-
-    }
-
-    70% {
-
-        opacity: 1;
-
-        transform:
-            scale(1.05)
-            translateY(-5px);
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            scale(0.7)
-            translateY(-15px);
-
-    }
-
-}
-
-
-/* =========================================
-   CELULAR
+   CELULAR - FOTOS
 ========================================= */
 
 @media (max-width: 750px) {
 
-    .papel {
+    .memorias {
 
         padding:
-            55px 35px;
+            90px 20px;
 
     }
 
 
-    .papel::before {
+    .foto-card {
 
-        inset: 15px;
-
-    }
-
-
-    .papel h2 {
-
-        font-size: 34px;
+        width: 90vw;
 
     }
 
 
-    .papel p:not(.data):not(.assinatura) {
+    .foto-card img {
 
-        font-size: 16px;
-
-    }
-
-
-    .navegacao {
-
-        width: 43px;
-
-        height: 43px;
-
-        bottom: 20px;
-
-    }
-
-
-    .navegacao-direita {
-
-        right: 20px;
-
-    }
-
-
-    .navegacao-esquerda {
-
-        left: 20px;
-
-    }
-
-
-    .elogios h2 {
-
-        font-size: 65px;
+        height: 350px;
 
     }
 

@@ -1,247 +1,393 @@
 /* =========================================
-   PARTE 3 - MEMÓRIAS / FOTOS
+   ABRIR CARTA
 ========================================= */
 
-.memorias {
+function abrirCarta() {
 
-    min-height: 100vh;
+    const carta =
+        document.getElementById("carta");
 
-    padding: 100px 25px;
+    carta.scrollIntoView({
 
-    display: flex;
+        behavior: "smooth"
 
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            #f2b6bc,
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 80% 80%,
-            #e5a0a8,
-            transparent 25%
-        ),
-
-        #fff4f5;
+    });
 
 }
 
 
-.memorias-conteudo {
 
-    width: min(1000px, 100%);
+/* =========================================
+   IR PARA OS CORAÇÕES
+========================================= */
 
-    animation: aparecer 1.2s ease;
+function irParaCoracoes() {
+
+    const elogios =
+        document.getElementById("elogios");
+
+
+    iniciarElogios();
+
+
+    setTimeout(() => {
+
+        elogios.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+    }, 100);
 
 }
 
 
-.memorias-subtitulo {
 
-    font-family: Arial, sans-serif;
+/* =========================================
+   VOLTAR PARA A CARTA
+========================================= */
 
-    font-size: 11px;
+function voltarCarta() {
 
-    letter-spacing: 5px;
+    const carta =
+        document.getElementById("carta");
 
-    color: #8f424b;
 
-    margin-bottom: 20px;
+    carta.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
 
 }
 
 
-.memorias h2 {
 
-    font-size:
-        clamp(
-            38px,
-            6vw,
-            65px
+/* =========================================
+   IR PARA AS FOTOS
+========================================= */
+
+function proximaParte() {
+
+    const memorias =
+        document.getElementById("memorias");
+
+
+    memorias.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+}
+
+
+
+/* =========================================
+   VOLTAR PARA "VOCÊ É..."
+========================================= */
+
+function voltarParaElogios() {
+
+    const elogios =
+        document.getElementById("elogios");
+
+
+    elogios.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+}
+
+
+
+/* =========================================
+   INICIAR TELA "VOCÊ É..."
+========================================= */
+
+let elogiosIniciados = false;
+
+let intervaloCoracoes;
+
+let intervaloPalavras;
+
+
+
+function iniciarElogios() {
+
+    if (elogiosIniciados) {
+
+        return;
+
+    }
+
+
+    elogiosIniciados = true;
+
+
+    const coracoes =
+        document.getElementById("coracoes");
+
+
+    const palavrasCoracoes = [
+
+        "incrível",
+        "maravilhoso",
+        "especial",
+        "lindo",
+        "único",
+        "gentil",
+        "admirável",
+        "divertido",
+        "fantástico",
+        "inesquecível",
+        "importante",
+        "extraordinário",
+        "brilhante",
+        "talentoso",
+        "querido",
+        "surpreendente",
+        "memorável",
+        "criativo",
+        "carinhoso",
+        "encantador",
+        "generoso",
+        "inteligente",
+        "autêntico",
+        "inspirador"
+
+    ];
+
+
+
+    const palavrasSoltas = [
+
+        "luz",
+        "alegria",
+        "carinho",
+        "amizade",
+        "sorriso",
+        "sonho",
+        "felicidade",
+        "paz",
+        "coragem",
+        "gentileza",
+        "esperança",
+        "brilho",
+        "bondade",
+        "força",
+        "calma",
+        "magia",
+        "risadas",
+        "memórias",
+        "presença",
+        "vida",
+        "sonhos",
+        "momentos",
+        "afeto",
+        "alegria"
+
+    ];
+
+
+
+    /* PRIMEIROS CORAÇÕES */
+
+    for (let i = 0; i < 18; i++) {
+
+        criarCoracao(
+            palavrasCoracoes
         );
 
-    font-weight: normal;
+    }
 
-    color: #211719;
 
-    margin-bottom: 20px;
 
-}
+    /* CHUVA INFINITA */
 
+    intervaloCoracoes =
+        setInterval(() => {
 
-.memorias-texto {
+            criarCoracao(
+                palavrasCoracoes
+            );
 
-    color: #634e52;
+        }, 350);
 
-    font-size: 18px;
 
-    line-height: 1.8;
 
-    margin-bottom: 45px;
+    /* PRIMEIRAS PALAVRAS */
 
-}
+    for (let i = 0; i < 8; i++) {
 
-
-/* =========================================
-   GALERIA
-========================================= */
-
-.galeria {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
-
-}
-
-
-/* =========================================
-   CARTÃO DA FOTO
-========================================= */
-
-.foto-card {
-
-    width: min(420px, 90vw);
-
-    padding: 15px;
-
-    background: #fffafa;
-
-    box-shadow:
-        0 20px 50px
-        rgba(33, 23, 25, 0.20);
-
-    transform: rotate(-2deg);
-
-    transition:
-        0.4s ease;
-
-}
-
-
-.foto-card:hover {
-
-    transform:
-        rotate(0deg)
-        translateY(-10px)
-        scale(1.02);
-
-    box-shadow:
-        0 30px 60px
-        rgba(33, 23, 25, 0.28);
-
-}
-
-
-/* =========================================
-   IMAGEM
-========================================= */
-
-.foto-card img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 420px;
-
-    object-fit: cover;
-
-    border-radius: 2px;
-
-}
-
-
-/* =========================================
-   LEGENDA
-========================================= */
-
-.foto-legenda {
-
-    padding: 18px 10px 8px;
-
-    color: #634e52;
-
-    font-size: 15px;
-
-    font-style: italic;
-
-}
-
-
-.foto-legenda span {
-
-    color: #a94f5a;
-
-    font-size: 20px;
-
-    margin-right: 6px;
-
-}
-
-
-/* =========================================
-   FRASE FINAL
-========================================= */
-
-.memorias-final {
-
-    margin-top: 45px;
-
-    color: #8f424b;
-
-    font-family: Georgia, serif;
-
-    font-size: 18px;
-
-    font-style: italic;
-
-}
-
-
-/* =========================================
-   CELULAR - FOTOS
-========================================= */
-
-@media (max-width: 750px) {
-
-    .memorias {
-
-        padding:
-            90px 20px;
+        criarPalavraSolta(
+            palavrasSoltas
+        );
 
     }
 
 
-    .foto-card {
 
-        width: 90vw;
+    /* PALAVRAS INFINITAS */
+
+    intervaloPalavras =
+        setInterval(() => {
+
+            criarPalavraSolta(
+                palavrasSoltas
+            );
+
+        }, 900);
+
+}
+
+
+
+/* =========================================
+   CRIAR CORAÇÃO
+========================================= */
+
+function criarCoracao(palavras) {
+
+    const coracoes =
+        document.getElementById("coracoes");
+
+
+    const coracao =
+        document.createElement("div");
+
+
+    const texto =
+        document.createElement("span");
+
+
+    coracao.classList.add(
+        "coracao"
+    );
+
+
+    texto.innerText =
+        palavras[
+            Math.floor(
+                Math.random() *
+                palavras.length
+            )
+        ];
+
+
+    coracao.appendChild(
+        texto
+    );
+
+
+    coracao.style.left =
+        Math.random() * 100 + "%";
+
+
+    const velocidade =
+        5 + Math.random() * 6;
+
+
+    coracao.style.animationDuration =
+        velocidade + "s";
+
+
+    coracao.style.animationDelay =
+        Math.random() * 1.5 + "s";
+
+
+    coracao.style.scale =
+        0.55 + Math.random() * 0.65;
+
+
+    coracoes.appendChild(
+        coracao
+    );
+
+
+    setTimeout(() => {
+
+        coracao.remove();
+
+    }, 13000);
+
+}
+
+
+
+/* =========================================
+   CRIAR PALAVRA SOLTA
+========================================= */
+
+function criarPalavraSolta(palavras) {
+
+    const container =
+        document.getElementById(
+            "palavrasSoltas"
+        );
+
+
+    const palavra =
+        document.createElement("div");
+
+
+    palavra.classList.add(
+        "palavra-solta"
+    );
+
+
+    palavra.innerText =
+        palavras[
+            Math.floor(
+                Math.random() *
+                palavras.length
+            )
+        ];
+
+
+    palavra.style.left =
+        Math.random() * 88 + 6 + "%";
+
+
+    palavra.style.top =
+        Math.random() * 82 + 6 + "%";
+
+
+    if (
+        Math.random() > 0.7
+    ) {
+
+        palavra.classList.add(
+            "grande"
+        );
 
     }
 
 
-    .foto-card img {
+    palavra.style.animationDuration =
+        3 + Math.random() * 3 + "s";
 
-        height: 350px;
 
-    }
+    container.appendChild(
+        palavra
+    );
+
+
+    setTimeout(() => {
+
+        palavra.remove();
+
+    }, 7000);
 
 }

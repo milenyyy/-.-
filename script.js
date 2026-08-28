@@ -8,12 +8,11 @@ function abrirCarta() {
         document.getElementById("carta");
 
     carta.scrollIntoView({
-
         behavior: "smooth"
-
     });
 
 }
+
 
 
 /* ==================================================
@@ -25,19 +24,32 @@ function mostrarMensagem() {
     const mensagem =
         document.getElementById("mensagem");
 
+
     mensagem.style.display =
         "block";
+
+
+    mensagem.classList.remove(
+        "aparecer"
+    );
+
+
+    void mensagem.offsetWidth;
+
 
     mensagem.classList.add(
         "aparecer"
     );
 
+
     mensagem.innerText =
         "E talvez essa seja a parte mais importante: algumas pessoas tornam os nossos dias mais especiais simplesmente por existirem. ♡";
 
+
     setTimeout(function () {
 
-        document.getElementById("coracoes")
+        document
+            .getElementById("coracoes")
             .scrollIntoView({
                 behavior: "smooth"
             });
@@ -47,55 +59,40 @@ function mostrarMensagem() {
 }
 
 
+
 /* ==================================================
-   LISTA DE PALAVRAS
+   PALAVRAS
 ================================================== */
 
 const palavras = [
 
     "INCRÍVEL",
-
     "MARAVILHOSO",
-
     "LINDO",
-
     "ESPECIAL",
-
     "ÚNICO",
-
     "ADMIRÁVEL",
-
     "GENTIL",
-
     "FORTE",
-
     "INTELIGENTE",
-
     "ENGRAÇADO",
-
     "IMPORTANTE",
-
     "AUTÊNTICO",
-
     "BRILHANTE",
-
     "EXTRAORDINÁRIO",
-
     "LEGAL",
-
     "CARISMÁTICO",
-
     "MEMORÁVEL",
-
-    "FODA",
-
-    "INSUBSTITUÍVEL"
+    "RARO",
+    "GENIAL",
+    "FODA"
 
 ];
 
 
+
 /* ==================================================
-   CRIAR CORAÇÕES
+   CORAÇÕES
 ================================================== */
 
 function criarCoracao() {
@@ -105,15 +102,16 @@ function criarCoracao() {
             "coracoesFundo"
         );
 
+
     if (!container) return;
 
 
     const coracao =
         document.createElement("div");
 
-    coracao.classList.add(
-        "coracao"
-    );
+
+    coracao.className =
+        "coracao";
 
 
     const palavra =
@@ -131,24 +129,16 @@ function criarCoracao() {
         "</span>";
 
 
-    const tamanho =
-        Math.random() * 25 + 25;
+    coracao.style.left =
+        Math.random() * 100 + "%";
 
 
-    const esquerda =
-        Math.random() * 100;
+    coracao.style.fontSize =
+        Math.random() * 25 + 25 + "px";
 
 
     const duracao =
         Math.random() * 8 + 8;
-
-
-    coracao.style.left =
-        esquerda + "%";
-
-
-    coracao.style.fontSize =
-        tamanho + "px";
 
 
     coracao.style.animationDuration =
@@ -169,6 +159,7 @@ function criarCoracao() {
 }
 
 
+
 /* ==================================================
    CORAÇÕES INFINITOS
 ================================================== */
@@ -179,8 +170,9 @@ setInterval(
 );
 
 
+
 /* ==================================================
-   PALAVRAS FORA DOS CORAÇÕES
+   PALAVRAS FORA
 ================================================== */
 
 function criarPalavra() {
@@ -190,15 +182,18 @@ function criarPalavra() {
             "palavrasFora"
         );
 
+
     if (!container) return;
 
 
     const palavra =
-        document.createElement("span");
+        document.createElement(
+            "span"
+        );
 
-    palavra.classList.add(
-        "palavra-flutuante"
-    );
+
+    palavra.className =
+        "palavra-flutuante";
 
 
     palavra.innerText =
@@ -242,6 +237,7 @@ setInterval(
 );
 
 
+
 /* ==================================================
    IR PARA PARTE 2
 ================================================== */
@@ -253,61 +249,614 @@ function irParaParte2() {
             "parte2"
         );
 
+
     parte2.scrollIntoView({
-
         behavior: "smooth"
-
     });
 
 }
 
 
+
 /* ==================================================
-   PRÓXIMO REGISTRO
+   INICIAR INVESTIGAÇÃO
 ================================================== */
 
-function proximoRegistro() {
+function iniciarInvestigacao() {
 
-    const registro =
+    const introducao =
         document.getElementById(
-            "registroExtra"
+            "investigacaoIntro"
         );
 
-    registro.style.display =
+
+    const sala =
+        document.getElementById(
+            "sala"
+        );
+
+
+    if (!introducao || !sala) {
+
+        console.error(
+            "Erro: elementos da investigação não foram encontrados."
+        );
+
+        return;
+
+    }
+
+
+    introducao.style.display =
+        "none";
+
+
+    sala.style.display =
         "block";
 
 
-    registro.classList.add(
+    sala.classList.remove(
         "aparecer"
     );
 
 
-    registro.scrollIntoView({
+    void sala.offsetWidth;
 
-        behavior: "smooth",
 
-        block: "center"
-
-    });
+    sala.classList.add(
+        "aparecer"
+    );
 
 }
+
 
 
 /* ==================================================
-   VOLTAR PARA CORAÇÕES
+   PISTAS
 ================================================== */
 
-function voltarCoracoes() {
+function mostrarPista(
+    tipo,
+    titulo,
+    texto
+) {
 
-    const coracoes =
+    const painel =
         document.getElementById(
-            "coracoes"
+            "painelPista"
         );
 
-    coracoes.scrollIntoView({
 
-        behavior: "smooth"
+    document.getElementById(
+        "pistaTipo"
+    ).innerText =
+        tipo;
 
-    });
+
+    document.getElementById(
+        "pistaTitulo"
+    ).innerText =
+        titulo;
+
+
+    document.getElementById(
+        "pistaTexto"
+    ).innerText =
+        texto;
+
+
+    painel.style.display =
+        "block";
 
 }
+
+
+
+/* ==================================================
+   CADERNO
+================================================== */
+
+function clicarCaderno() {
+
+    marcarPista(
+        "pista1"
+    );
+
+
+    mostrarPista(
+
+        "PISTA #01",
+
+        "O CADERNO",
+
+        "Entre algumas páginas existe uma anotação estranha: 03 — 17 — 09. Talvez esses números sejam importantes."
+
+    );
+
+}
+
+
+
+/* ==================================================
+   QUADRO
+================================================== */
+
+function clicarQuadro() {
+
+    marcarPista(
+        "pista2"
+    );
+
+
+    mostrarPista(
+
+        "PISTA #02",
+
+        "ATRÁS DO QUADRO",
+
+        "Você encontrou um pequeno número escrito atrás do quadro: 17."
+
+    );
+
+}
+
+
+
+/* ==================================================
+   TV
+================================================== */
+
+let cliquesTv = 0;
+
+
+function clicarTv() {
+
+    cliquesTv++;
+
+
+    marcarPista(
+        "pista3"
+    );
+
+
+    if (cliquesTv >= 3) {
+
+        mostrarPista(
+
+            "SINAL INTERCEPTADO",
+
+            "VOCÊ VIU ISSO?",
+
+            "A televisão pisca. Por menos de um segundo, aparece uma sequência: 03 — 17 — 09."
+
+        );
+
+    }
+
+    else {
+
+        mostrarPista(
+
+            "PISTA #03",
+
+            "TELEVISÃO",
+
+            "A televisão não tem sinal. Mas você sente que deveria tentar novamente."
+
+        );
+
+    }
+
+}
+
+
+
+/* ==================================================
+   VELA
+================================================== */
+
+function clicarVela() {
+
+    mostrarPista(
+
+        "OBJETO",
+
+        "A VELA",
+
+        "A chama continua acesa. Não parece haver nenhuma pista aqui... por enquanto."
+
+    );
+
+}
+
+
+
+/* ==================================================
+   SEGREDO
+================================================== */
+
+function clicarSegredo() {
+
+    marcarPista(
+        "pista4"
+    );
+
+
+    mostrarPista(
+
+        "PISTA ESCONDIDA",
+
+        "VOCÊ ENCONTROU",
+
+        "Um pequeno símbolo estava escondido no canto da sala. Talvez você esteja começando a enxergar coisas que não deveria."
+
+    );
+
+}
+
+
+
+/* ==================================================
+   MARCAR PISTA
+================================================== */
+
+function marcarPista(id) {
+
+    const elemento =
+        document.getElementById(
+            id
+        );
+
+
+    if (!elemento) return;
+
+
+    elemento.classList.add(
+        "pista-encontrada"
+    );
+
+
+    const texto =
+        elemento.innerText
+            .replace("□", "")
+            .replace("✓", "")
+            .trim();
+
+
+    elemento.innerText =
+        "✓ " + texto;
+
+}
+
+
+
+/* ==================================================
+   FECHAR PISTA
+================================================== */
+
+function fecharPista() {
+
+    const painel =
+        document.getElementById(
+            "painelPista"
+        );
+
+
+    painel.style.display =
+        "none";
+
+}
+
+
+
+/* ==================================================
+   ABRIR CAIXA
+================================================== */
+
+function abrirCaixa() {
+
+    const painel =
+        document.getElementById(
+            "caixaPainel"
+        );
+
+
+    painel.style.display =
+        "block";
+
+
+    document
+        .getElementById("codigo")
+        .focus();
+
+}
+
+
+
+/* ==================================================
+   FECHAR CAIXA
+================================================== */
+
+function fecharCaixa() {
+
+    document.getElementById(
+        "caixaPainel"
+    ).style.display =
+        "none";
+
+}
+
+
+
+/* ==================================================
+   VERIFICAR CÓDIGO
+================================================== */
+
+function verificarCodigo() {
+
+    const campo =
+        document.getElementById(
+            "codigo"
+        );
+
+
+    const resultado =
+        document.getElementById(
+            "resultadoCodigo"
+        );
+
+
+    const codigo =
+        campo.value
+            .trim()
+            .replace(/\s/g, "");
+
+
+    if (codigo === "031709") {
+
+        resultado.innerText =
+            "✓ ACESSO CONCEDIDO.";
+
+
+        resultado.style.color =
+            "#d67a87";
+
+
+        marcarPista(
+            "pista5"
+        );
+
+
+        setTimeout(function () {
+
+            fecharCaixa();
+
+
+            const arquivo =
+                document.getElementById(
+                    "arquivoDesbloqueado"
+                );
+
+
+            arquivo.style.display =
+                "block";
+
+
+            arquivo.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "center"
+
+            });
+
+        }, 900);
+
+    }
+
+    else {
+
+        resultado.innerText =
+            "✕ Código incorreto.";
+
+
+        resultado.style.color =
+            "#b94b5b";
+
+    }
+
+}
+
+
+
+/* ==================================================
+   CONTINUAR INVESTIGAÇÃO
+================================================== */
+
+function continuarInvestigacao() {
+
+    mostrarPista(
+
+        "ARQUIVO #002",
+
+        "AINDA NÃO TERMINOU",
+
+        "Você encontrou a primeira resposta. Mas existem outras partes deste arquivo que ainda estão bloqueadas."
+
+    );
+
+}
+
+
+
+/* ==================================================
+   EVENTOS DOS BOTÕES
+================================================== */
+
+/*
+   Aqui está uma parte importante da correção.
+
+   O JavaScript procura cada botão pelo ID
+   e conecta a função correspondente.
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* BOTÃO DA INVESTIGAÇÃO */
+
+        const botaoInvestigar =
+            document.getElementById(
+                "botaoInvestigar"
+            );
+
+
+        if (botaoInvestigar) {
+
+            botaoInvestigar.addEventListener(
+                "click",
+                iniciarInvestigacao
+            );
+
+        }
+
+
+        /* CADERNO */
+
+        const caderno =
+            document.getElementById(
+                "objetoCaderno"
+            );
+
+
+        if (caderno) {
+
+            caderno.addEventListener(
+                "click",
+                clicarCaderno
+            );
+
+        }
+
+
+        /* QUADRO */
+
+        const quadro =
+            document.getElementById(
+                "objetoQuadro"
+            );
+
+
+        if (quadro) {
+
+            quadro.addEventListener(
+                "click",
+                clicarQuadro
+            );
+
+        }
+
+
+        /* TV */
+
+        const tv =
+            document.getElementById(
+                "objetoTv"
+            );
+
+
+        if (tv) {
+
+            tv.addEventListener(
+                "click",
+                clicarTv
+            );
+
+        }
+
+
+        /* VELA */
+
+        const vela =
+            document.getElementById(
+                "objetoVela"
+            );
+
+
+        if (vela) {
+
+            vela.addEventListener(
+                "click",
+                clicarVela
+            );
+
+        }
+
+
+        /* CAIXA */
+
+        const caixa =
+            document.getElementById(
+                "objetoCaixa"
+            );
+
+
+        if (caixa) {
+
+            caixa.addEventListener(
+                "click",
+                abrirCaixa
+            );
+
+        }
+
+
+        /* SEGREDO */
+
+        const segredo =
+            document.getElementById(
+                "objetoSegredo"
+            );
+
+
+        if (segredo) {
+
+            segredo.addEventListener(
+                "click",
+                clicarSegredo
+            );
+
+        }
+
+
+        /* ENTER NO CÓDIGO */
+
+        const campoCodigo =
+            document.getElementById(
+                "codigo"
+            );
+
+
+        if (campoCodigo) {
+
+            campoCodigo.addEventListener(
+                "keydown",
+                function (evento) {
+
+                    if (
+                        evento.key === "Enter"
+                    ) {
+
+                        verificarCodigo();
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);

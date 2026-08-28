@@ -14,24 +14,12 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: #080607;
-    color: #eee5e8;
+
+    background: #080606;
+
+    color: #f5e8eb;
+
     overflow-x: hidden;
-}
-
-button,
-input {
-    font-family: Arial, sans-serif;
-}
-
-:root {
-    --preto: #080607;
-    --preto-2: #120b0e;
-    --vermelho: #c87989;
-    --vermelho-claro: #e5a7b4;
-    --vermelho-palido: #f4d5dc;
-    --vinho: #6f2639;
-    --branco: #fff5f7;
 }
 
 
@@ -40,77 +28,40 @@ input {
 ===================================================== */
 
 .botao {
-    border: 1px solid rgba(255,255,255,0.16);
+    border: none;
 
-    background:
-        linear-gradient(
-            135deg,
-            #c87989,
-            #8f4257
-        );
+    background: #b94f62;
 
     color: white;
 
-    padding: 15px 30px;
+    padding: 15px 28px;
 
-    border-radius: 40px;
+    border-radius: 30px;
 
     font-size: 15px;
 
     cursor: pointer;
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        filter 0.35s ease;
+    transition: 0.3s;
 
-    box-shadow:
-        0 10px 35px rgba(150,60,80,0.2);
+    font-family: Arial, sans-serif;
 
     position: relative;
-    overflow: hidden;
-}
 
-.botao::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 80%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.3),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    transition: 0.7s;
-}
-
-.botao:hover::before {
-    left: 140%;
+    z-index: 20;
 }
 
 .botao:hover {
-    transform: translateY(-4px) scale(1.02);
+    background: #d5687b;
 
-    box-shadow:
-        0 15px 45px rgba(200,121,137,0.35);
+    transform: translateY(-4px);
 
-    filter: brightness(1.1);
+    box-shadow: 0 10px 30px rgba(190, 70, 90, 0.3);
 }
 
 
 /* =====================================================
-   TEXTOS GERAIS
+   TEXTOS PEQUENOS
 ===================================================== */
 
 .subtitulo {
@@ -118,16 +69,16 @@ input {
 
     font-size: 12px;
 
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 
-    color: var(--vermelho-claro);
+    color: #c87586;
 
     margin-bottom: 20px;
 }
 
 
 /* =====================================================
-   PARTE 1 — INÍCIO
+   PARTE 1
 ===================================================== */
 
 .inicio {
@@ -143,65 +94,30 @@ input {
 
     padding: 30px;
 
-    position: relative;
-
-    overflow: hidden;
-
     background:
         radial-gradient(
-            circle at 50% 0%,
-            rgba(200,121,137,0.35),
-            transparent 40%
+            circle at top,
+            #5d1e2b,
+            transparent 45%
         ),
-
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(111,38,57,0.18),
-            transparent 40%
-        ),
-
-        #080607;
-}
-
-.inicio::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(229,167,180,0.15);
-
-    animation:
-        pulsar 5s infinite;
+        #10090b;
 }
 
 .inicio-conteudo {
     max-width: 700px;
-
-    position: relative;
-
-    z-index: 2;
-
-    animation:
-        aparecer 1.3s ease forwards;
 }
 
 .inicio h1 {
-    font-size: clamp(60px, 10vw, 90px);
+    font-size: 90px;
 
     font-weight: normal;
 
-    color: var(--branco);
+    color: #f4dce1;
 
     margin-bottom: 25px;
 
     text-shadow:
-        0 0 25px rgba(229,167,180,0.25);
+        0 0 30px rgba(210, 90, 110, 0.2);
 }
 
 .frase {
@@ -209,7 +125,7 @@ input {
 
     line-height: 1.7;
 
-    color: #cbb9bf;
+    color: #c9aeb5;
 
     margin-bottom: 35px;
 }
@@ -231,31 +147,28 @@ input {
     align-items: center;
 
     background:
-        radial-gradient(
-            circle at center,
-            #1b0e13,
-            #080607 70%
+        linear-gradient(
+            180deg,
+            #10090b,
+            #170b0f
         );
 }
 
 .papel {
-    width: min(750px, 100%);
+    max-width: 750px;
 
-    background: #fdf8f9;
+    background: #fffaf7;
 
-    color: #3f3035;
+    color: #40343c;
 
     padding: 70px;
 
     border-radius: 5px;
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,0.5);
+        0 20px 70px rgba(0, 0, 0, 0.5);
 
     position: relative;
-
-    animation:
-        subir 1s ease;
 }
 
 .papel::before {
@@ -268,8 +181,7 @@ input {
     right: 20px;
     bottom: 20px;
 
-    border:
-        1px solid #e6cbd2;
+    border: 1px solid #e7cbd2;
 
     pointer-events: none;
 }
@@ -277,7 +189,7 @@ input {
 .data {
     text-align: right;
 
-    color: #9a6674;
+    color: #9a6d78;
 
     margin-bottom: 50px;
 }
@@ -299,21 +211,12 @@ input {
 }
 
 .texto-quatro {
-    margin-top: 35px;
-
-    padding-top: 30px;
-
-    border-top:
-        1px solid #ead7dc;
-}
-
-.papel .botao {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 
 /* =====================================================
-   PARTE 1 — CORAÇÕES
+   CORAÇÕES
 ===================================================== */
 
 .coracoes {
@@ -332,44 +235,50 @@ input {
     background:
         radial-gradient(
             circle at center,
-            #2a1018,
-            #090607 75%
+            #571d2b,
+            #17090d 55%,
+            #050303
         );
 }
 
 .coracoes-conteudo {
     position: relative;
 
-    z-index: 20;
+    z-index: 10;
 
     text-align: center;
-
-    animation:
-        aparecer 1.5s ease;
 }
 
 .coracoes h2 {
-    font-size: clamp(55px, 9vw, 75px);
+    font-size: 85px;
 
     font-weight: normal;
 
-    color: var(--branco);
+    color: #fff0f3;
 
     text-shadow:
-        0 0 25px rgba(229,167,180,0.3);
+        0 0 30px rgba(255, 130, 150, 0.4);
 }
 
 .coracoes-intro {
     margin-top: 20px;
 
-    color: #c7b1b8;
+    color: #d9b9c1;
 
     font-size: 18px;
 }
 
+.continuar {
+    position: absolute;
+
+    bottom: 45px;
+
+    z-index: 50;
+}
+
 
 /* =====================================================
-   CHUVA DE CORAÇÕES
+   CORAÇÕES CAINDO
 ===================================================== */
 
 .chuva-coracoes {
@@ -387,54 +296,58 @@ input {
 
     top: -80px;
 
-    left: var(--posicao);
-
-    color: var(--vermelho-claro);
-
-    font-size: var(--tamanho);
-
-    opacity: 0;
+    color: #d96478;
 
     animation:
-        cair var(--duracao) linear infinite;
+        cair linear infinite;
 
-    animation-delay:
-        var(--atraso);
+    opacity: 0.8;
 
-    text-shadow:
-        0 0 15px rgba(229,167,180,0.45);
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+}
+
+.coracao-caindo span {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 8px;
+
+    font-family: Arial, sans-serif;
+
+    white-space: nowrap;
+
+    pointer-events: none;
 }
 
 @keyframes cair {
 
-    0% {
+    from {
         transform:
             translateY(-100px)
             rotate(0deg);
-
-        opacity: 0;
     }
 
-    10% {
-        opacity: 0.8;
-    }
-
-    90% {
-        opacity: 0.7;
-    }
-
-    100% {
+    to {
         transform:
-            translateY(120vh)
+            translateY(110vh)
             rotate(360deg);
-
-        opacity: 0;
     }
+
 }
 
 
 /* =====================================================
-   PALAVRAS ENTRE OS CORAÇÕES
+   PALAVRAS COMO ESTRELAS
 ===================================================== */
 
 .palavras-estrelas {
@@ -443,71 +356,339 @@ input {
     inset: 0;
 
     pointer-events: none;
-
-    overflow: hidden;
 }
 
-.palavra-estrela-fundo {
+.palavra-flutuante {
     position: absolute;
 
-    left: var(--x);
-
-    top: var(--y);
-
-    color: #f2cbd3;
+    color: #ffe9ee;
 
     font-family: Arial, sans-serif;
 
-    font-size: var(--tamanho-palavra);
-
-    letter-spacing: 2px;
-
-    opacity: 0;
-
-    animation:
-        piscar var(--tempo)
-        ease-in-out infinite;
-
-    animation-delay:
-        var(--atraso);
+    font-size: 13px;
 
     text-shadow:
-        0 0 15px rgba(255,220,228,0.7);
+        0 0 10px #e78395;
+
+    animation:
+        piscar 2.5s infinite ease-in-out;
 }
 
 @keyframes piscar {
 
-    0%,
-    100% {
+    0%, 100% {
         opacity: 0;
-
-        transform: scale(0.8);
+        transform: scale(0.7);
     }
 
     50% {
-        opacity: 0.9;
-
+        opacity: 1;
         transform: scale(1);
     }
-}
 
-.continuar {
-    position: absolute;
-
-    bottom: 50px;
-
-    z-index: 30;
 }
 
 
 /* =====================================================
-   PARTE 2 — INVESTIGAÇÃO
+   INVESTIGAÇÃO
 ===================================================== */
 
 .investigacao {
     min-height: 100vh;
 
-    padding: 100px 25px;
+    background:
+        radial-gradient(
+            circle at center,
+            #241014,
+            #070607 70%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 100px 30px;
+}
+
+.ruido {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.06;
+
+    pointer-events: none;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            #fff 3px
+        );
+
+    animation:
+        ruido 0.15s infinite;
+}
+
+@keyframes ruido {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+
+}
+
+.investigacao-conteudo {
+    width: 100%;
+
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+}
+
+.codigo-vermelho {
+    font-family: monospace;
+
+    color: #e05c70;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.investigacao h2 {
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+    color: #f3dce1;
+}
+
+.texto-investigacao {
+    color: #bda4aa;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+.arquivo {
+    border: 1px solid #572832;
+
+    background: rgba(20, 5, 9, 0.8);
+
+    padding: 25px;
+
+    text-align: left;
+
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    font-family: monospace;
+
+    line-height: 2;
+
+    box-shadow:
+        0 0 30px rgba(160, 40, 60, 0.1);
+}
+
+.arquivo span {
+    color: #e36a7b;
+}
+
+
+/* =====================================================
+   PISTAS
+===================================================== */
+
+.pistas {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+}
+
+.pista {
+    background: #12090c;
+
+    color: #dbaab4;
+
+    border: 1px solid #60303b;
+
+    padding: 13px 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-family: monospace;
+}
+
+.pista:hover {
+    background: #6b2634;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+.texto-pista {
+    min-height: 70px;
+
+    color: #f2cbd2;
+
+    font-family: monospace;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+    padding: 20px;
+}
+
+
+/* =====================================================
+   SENHA
+===================================================== */
+
+.senha-area {
+    margin-top: 20px;
+
+    padding: 30px;
+
+    border-top: 1px solid #32171d;
+}
+
+.senha-area p {
+    color: #b99da4;
+
+    margin-bottom: 15px;
+}
+
+#senha {
+    background: #090607;
+
+    border: 1px solid #63313c;
+
+    color: white;
+
+    padding: 14px 18px;
+
+    width: 250px;
+
+    max-width: 100%;
+
+    outline: none;
+
+    font-family: monospace;
+}
+
+#senha:focus {
+    border-color: #d05b6e;
+
+    box-shadow:
+        0 0 15px rgba(208, 91, 110, 0.2);
+}
+
+#resultadoSenha {
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   INVESTIGAÇÃO FINAL
+===================================================== */
+
+.investigacao-final {
+    display: none;
+
+    margin-top: 35px;
+
+    animation:
+        aparecer 1s ease forwards;
+}
+
+.arquivo-aberto {
+    padding: 35px;
+
+    border: 1px solid #75404b;
+
+    background:
+        rgba(70, 20, 30, 0.25);
+
+    margin-bottom: 25px;
+}
+
+.arquivo-status {
+    font-family: monospace;
+
+    color: #ef7182;
+
+    letter-spacing: 3px;
+}
+
+.arquivo-aberto h3 {
+    margin: 15px 0 20px;
+
+    font-size: 28px;
+
+    font-weight: normal;
+}
+
+.arquivo-aberto p {
+    color: #d3b9c0;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================================
+   LÍRIO
+===================================================== */
+
+.lirio {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #421923,
+            #11080b 60%,
+            #050303
+        );
 
     display: flex;
 
@@ -515,267 +696,257 @@ input {
 
     align-items: center;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #1b0b10,
-            #050405
-        );
-
-    position: relative;
-
-    overflow: hidden;
+    padding: 100px 30px;
 }
 
-.investigacao::before {
-    content: "";
-
+.lirio-fundo {
     position: absolute;
 
-    inset: 0;
+    width: 500px;
 
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 3px,
-            rgba(255,255,255,0.015) 4px
-        );
+    height: 500px;
 
-    pointer-events: none;
+    border-radius: 50%;
+
+    background: rgba(160, 50, 75, 0.15);
+
+    filter: blur(80px);
 }
 
-.investigacao::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            transparent 35%,
-            rgba(0,0,0,0.5) 100%
-        );
-
-    pointer-events: none;
-}
-
-.investigacao-conteudo {
-    max-width: 850px;
-
-    width: 100%;
-
+.lirio-conteudo {
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
+
+    max-width: 800px;
 
     text-align: center;
 }
 
-.codigo-vermelho {
-    color: var(--vermelho-claro);
-
+.lirio-mini {
     font-family: monospace;
 
     letter-spacing: 5px;
 
-    margin-bottom: 25px;
-}
-
-.investigacao h2 {
-    font-size: clamp(35px, 6vw, 48px);
-
-    font-weight: normal;
-
-    line-height: 1.3;
-
-    margin-bottom: 25px;
-}
-
-.texto-investigacao {
-    color: #ad9ba1;
-
-    line-height: 1.8;
-
-    font-size: 18px;
-}
-
-.arquivo {
-    margin: 40px auto;
-
-    max-width: 600px;
-
-    padding: 25px;
-
-    background:
-        rgba(255,255,255,0.03);
-
-    border:
-        1px solid rgba(229,167,180,0.15);
-
-    text-align: left;
-
-    font-family: monospace;
-
-    line-height: 2;
-
-    color: #aa969d;
-
-    box-shadow:
-        inset 0 0 30px rgba(0,0,0,0.25);
-}
-
-.arquivo span {
-    color: var(--vermelho-claro);
-}
-
-.pistas {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-    margin: 30px 0;
-}
-
-.pista {
-    padding: 14px 20px;
-
-    background: #10090c;
-
-    color: #dcb8c1;
-
-    border:
-        1px solid #522632;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.pista:hover {
-    background: #261118;
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        #a66b7c;
-}
-
-.texto-pista {
-    min-height: 30px;
-
-    color: #dcaeba;
-
-    font-style: italic;
-
-    margin: 20px auto;
-
-    max-width: 650px;
-
-    line-height: 1.7;
-
-    transition:
-        opacity 0.3s ease;
-}
-
-.senha-area {
-    margin-top: 50px;
-
-    padding: 35px;
-
-    border-top:
-        1px solid rgba(255,255,255,0.08);
-}
-
-.senha-area p {
-    color: #9f8c93;
-
-    margin-bottom: 20px;
-}
-
-.senha-area input {
-    width: min(400px, 100%);
-
-    padding: 15px;
-
-    background: #0b0809;
-
-    border:
-        1px solid #58303b;
-
-    color: white;
-
-    outline: none;
-
-    border-radius: 5px;
+    color: #d26a7c;
 
     margin-bottom: 15px;
 }
 
-.senha-area input:focus {
-    border-color:
-        var(--vermelho);
+.lirio h2 {
+    font-size: 65px;
 
-    box-shadow:
-        0 0 20px rgba(200,121,137,0.12);
-}
+    font-weight: normal;
 
-#resultadoSenha {
-    min-height: 25px;
+    color: #f7e5e9;
 
-    margin-top: 15px;
-}
-
-.investigacao-final {
-    display: none;
-
-    margin-top: 40px;
-
-    animation:
-        aparecer 1s ease;
-}
-
-.arquivo-aberto {
-    padding: 40px;
-
-    border:
-        1px solid #7c3d4e;
-
-    background:
-        rgba(124,61,78,0.08);
-
-    margin-bottom: 30px;
-
-    box-shadow:
-        0 0 50px rgba(124,61,78,0.08);
-}
-
-.arquivo-status {
-    color: #e6a6b4;
-
-    font-family: monospace;
-
-    letter-spacing: 3px;
-}
-
-.arquivo-aberto h3 {
-    font-size: 30px;
-
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 
 /* =====================================================
-   PARTE 3 — UNIVERSO
+   FLOR DO LÍRIO
+===================================================== */
+
+.flor-container {
+    height: 330px;
+
+    position: relative;
+
+    margin: 10px auto 25px;
+
+    width: 250px;
+}
+
+.lirio-flor {
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    left: 50%;
+
+    top: 25px;
+
+    transform:
+        translateX(-50%);
+
+    animation:
+        florBrilhar 4s infinite ease-in-out;
+}
+
+.petala {
+    position: absolute;
+
+    width: 70px;
+
+    height: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8f9,
+            #e8bfc8
+        );
+
+    border-radius:
+        70% 30% 70% 30%;
+
+    box-shadow:
+        0 0 20px rgba(255, 210, 220, 0.3);
+
+    left: 40px;
+
+    top: 25px;
+
+    transform-origin: 50% 90%;
+}
+
+.petala1 {
+    transform: rotate(0deg);
+}
+
+.petala2 {
+    transform: rotate(60deg);
+}
+
+.petala3 {
+    transform: rotate(120deg);
+}
+
+.petala4 {
+    transform: rotate(180deg);
+}
+
+.petala5 {
+    transform: rotate(240deg);
+}
+
+.petala6 {
+    transform: rotate(300deg);
+}
+
+.miolo {
+    position: absolute;
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #d69a55;
+
+    left: 60px;
+
+    top: 60px;
+
+    box-shadow:
+        0 0 15px rgba(230, 180, 90, 0.5);
+
+    z-index: 5;
+}
+
+.caule {
+    position: absolute;
+
+    width: 7px;
+
+    height: 220px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #29402b,
+            #668066
+        );
+
+    left: 50%;
+
+    top: 130px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 20px;
+}
+
+.folha {
+    position: absolute;
+
+    width: 75px;
+
+    height: 30px;
+
+    background: #3e623f;
+
+    border-radius:
+        100% 0 100% 0;
+}
+
+.folha1 {
+    left: 85px;
+
+    top: 215px;
+
+    transform: rotate(25deg);
+}
+
+.folha2 {
+    right: 80px;
+
+    top: 250px;
+
+    transform:
+        scaleX(-1)
+        rotate(25deg);
+}
+
+@keyframes florBrilhar {
+
+    0%, 100% {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.04);
+    }
+
+}
+
+
+/* =====================================================
+   TEXTO DO LÍRIO
+===================================================== */
+
+.texto-lirio {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #d9c1c7;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+}
+
+.texto-lirio p {
+    margin-bottom: 20px;
+}
+
+.botao-lirio {
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   UNIVERSO
 ===================================================== */
 
 .universo {
@@ -787,210 +958,15 @@ input {
 
     background:
         radial-gradient(
-            circle at 50% 45%,
-            #11162d 0%,
-            #060814 38%,
-            #020308 75%
+            circle at center,
+            #111a35,
+            #050711 65%,
+            #010207
         );
-
-    color: white;
 }
-
-
-/* =====================================================
-   ESTRELAS DE FUNDO
-===================================================== */
-
-.estrelas-fundo {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    background-image:
-
-        radial-gradient(
-            white 1px,
-            transparent 1px
-        ),
-
-        radial-gradient(
-            rgba(255,255,255,0.8) 1px,
-            transparent 1px
-        ),
-
-        radial-gradient(
-            rgba(229,167,180,0.7) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        80px 80px,
-        137px 137px,
-        211px 211px;
-
-    background-position:
-        0 0,
-        30px 70px,
-        80px 30px;
-
-    animation:
-        estrelasMover 60s linear infinite;
-
-    opacity: 0.65;
-}
-
-@keyframes estrelasMover {
-
-    from {
-        background-position:
-            0 0,
-            30px 70px,
-            80px 30px;
-    }
-
-    to {
-        background-position:
-            300px 500px,
-            -400px 300px,
-            200px -300px;
-    }
-}
-
-
-/* =====================================================
-   NEBULOSAS
-===================================================== */
-
-.nebulosa {
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(90px);
-
-    opacity: 0.18;
-
-    z-index: 2;
-
-    pointer-events: none;
-}
-
-.nebulosa-1 {
-    width: 600px;
-
-    height: 350px;
-
-    background:
-        #91364d;
-
-    top: 10%;
-
-    left: -15%;
-
-    transform:
-        rotate(-20deg);
-}
-
-.nebulosa-2 {
-    width: 600px;
-
-    height: 400px;
-
-    background:
-        #493878;
-
-    right: -15%;
-
-    bottom: 10%;
-
-    transform:
-        rotate(20deg);
-}
-
-
-/* =====================================================
-   POEIRA CÓSMICA
-===================================================== */
-
-.poeira-cosmica {
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(50px);
-
-    opacity: 0.15;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    animation:
-        flutuarCosmico 10s ease-in-out infinite alternate;
-}
-
-.poeira-1 {
-    width: 250px;
-    height: 150px;
-
-    background: #c87989;
-
-    top: 30%;
-    left: 20%;
-}
-
-.poeira-2 {
-    width: 300px;
-    height: 170px;
-
-    background: #705d9d;
-
-    top: 55%;
-    right: 20%;
-
-    animation-delay: -3s;
-}
-
-.poeira-3 {
-    width: 180px;
-    height: 180px;
-
-    background: #e5a7b4;
-
-    top: 15%;
-    right: 30%;
-
-    animation-delay: -6s;
-}
-
-@keyframes flutuarCosmico {
-
-    from {
-        transform:
-            translate(0,0)
-            scale(0.9);
-    }
-
-    to {
-        transform:
-            translate(40px,-25px)
-            scale(1.1);
-    }
-}
-
-
-/* =====================================================
-   INTRO DO UNIVERSO
-===================================================== */
 
 .universo-intro {
     min-height: 100vh;
-
-    position: relative;
-
-    z-index: 10;
 
     display: flex;
 
@@ -1002,47 +978,39 @@ input {
 
     text-align: center;
 
-    padding: 30px;
+    position: relative;
 
-    transition:
-        opacity 1.5s ease,
-        transform 1.5s ease;
+    z-index: 10;
+
+    padding: 30px;
 }
 
 .universo-mini {
     font-family: monospace;
 
+    color: #a5b8ef;
+
     letter-spacing: 5px;
 
-    color: #c894a2;
-
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .universo-intro h2 {
-    font-size:
-        clamp(45px, 7vw, 85px);
+    font-size: 60px;
 
     font-weight: normal;
 
-    line-height: 1.1;
+    color: #edf1ff;
 
-    margin-bottom: 30px;
-
-    text-shadow:
-        0 0 30px rgba(255,255,255,0.12);
+    margin-bottom: 25px;
 }
 
-.universo-intro > p:not(.universo-mini) {
-    font-size: 20px;
+.universo-intro p:not(.universo-mini) {
+    color: #adb7d8;
 
-    color: #aaa9b7;
+    font-size: 18px;
 
-    margin-bottom: 40px;
-}
-
-.botao-fones {
-    margin-top: 5px;
+    margin-bottom: 35px;
 }
 
 
@@ -1051,22 +1019,63 @@ input {
 ===================================================== */
 
 .ceu {
+    min-height: 100vh;
+
+    position: relative;
+
     display: none;
 
+    overflow: hidden;
+}
+
+.estrelas-fundo {
     position: absolute;
 
     inset: 0;
 
-    min-height: 100vh;
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
 
-    opacity: 0;
+    background-size: 70px 70px;
 
-    transition:
-        opacity 2s ease;
+    opacity: 0.45;
+}
 
-    overflow: hidden;
+.nebulosa {
+    position: absolute;
 
-    z-index: 8;
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.15;
+}
+
+.nebulosa-1 {
+    width: 500px;
+
+    height: 500px;
+
+    background: #69395f;
+
+    top: 10%;
+
+    left: 10%;
+}
+
+.nebulosa-2 {
+    width: 400px;
+
+    height: 400px;
+
+    background: #315b8a;
+
+    right: 5%;
+
+    bottom: 10%;
 }
 
 
@@ -1077,72 +1086,250 @@ input {
 .via-lactea {
     position: absolute;
 
-    width: 170%;
+    width: 150%;
 
-    height: 420px;
+    height: 180px;
 
-    left: -35%;
+    left: -25%;
 
-    top: 25%;
+    top: 40%;
 
     transform:
-        rotate(-18deg);
+        rotate(-15deg);
 
     background:
         radial-gradient(
-            ellipse at center,
-            rgba(255,255,255,0.20) 0%,
-            rgba(194,176,220,0.13) 20%,
-            rgba(120,100,160,0.08) 40%,
-            transparent 72%
+            ellipse,
+            rgba(255,255,255,0.25),
+            transparent 65%
         );
 
-    filter:
-        blur(25px);
+    filter: blur(20px);
 
-    opacity: 0.75;
-
-    z-index: 3;
-
-    animation:
-        galaxiaRespira 8s ease-in-out infinite alternate;
+    opacity: 0.4;
 }
 
-.via-lactea::before {
-    content: "";
 
+/* =====================================================
+   ESTRELAS CLICÁVEIS
+===================================================== */
+
+.estrela {
     position: absolute;
 
-    inset: 0;
+    color: white;
 
-    background:
-        repeating-radial-gradient(
-            ellipse at center,
-            rgba(255,255,255,0.07) 0px,
-            rgba(255,255,255,0.03) 4px,
-            transparent 9px
-        );
+    font-size: 24px;
 
-    opacity: 0.6;
+    cursor: pointer;
+
+    z-index: 15;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #b8c9ff;
+
+    animation:
+        estrelaPisca 2s infinite ease-in-out;
 }
 
-@keyframes galaxiaRespira {
+.estrela:hover {
+    transform: scale(1.8);
 
-    from {
-        opacity: 0.5;
+    color: #dfe7ff;
+}
 
-        transform:
-            rotate(-18deg)
-            scale(0.95);
+@keyframes estrelaPisca {
+
+    0%, 100% {
+        opacity: 0.4;
     }
 
-    to {
-        opacity: 0.85;
-
-        transform:
-            rotate(-18deg)
-            scale(1.05);
+    50% {
+        opacity: 1;
     }
+
+}
+
+
+/* POSIÇÕES */
+
+.estrela-1 {
+    top: 15%;
+    left: 15%;
+}
+
+.estrela-2 {
+    top: 25%;
+    left: 35%;
+}
+
+.estrela-3 {
+    top: 18%;
+    right: 25%;
+}
+
+.estrela-4 {
+    top: 35%;
+    right: 10%;
+}
+
+.estrela-5 {
+    top: 55%;
+    left: 12%;
+}
+
+.estrela-6 {
+    top: 65%;
+    left: 30%;
+}
+
+.estrela-7 {
+    top: 50%;
+    right: 35%;
+}
+
+.estrela-8 {
+    top: 72%;
+    right: 15%;
+}
+
+.estrela-9 {
+    top: 80%;
+    left: 55%;
+}
+
+.estrela-10 {
+    top: 30%;
+    left: 70%;
+}
+
+
+/* =====================================================
+   CONSTELAÇÃO
+===================================================== */
+
+.constelacao {
+    position: absolute;
+
+    width: 300px;
+
+    height: 250px;
+
+    left: 50%;
+
+    top: 45%;
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0;
+
+    transition: 1s;
+}
+
+.ponto {
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px white;
+}
+
+.p1 { left: 20px; top: 100px; }
+.p2 { left: 60px; top: 70px; }
+.p3 { left: 100px; top: 120px; }
+.p4 { left: 145px; top: 80px; }
+.p5 { left: 190px; top: 110px; }
+.p6 { left: 230px; top: 60px; }
+.p7 { left: 260px; top: 130px; }
+.p8 { left: 180px; top: 170px; }
+.p9 { left: 110px; top: 180px; }
+.p10 { left: 50px; top: 160px; }
+
+.linha {
+    position: absolute;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.5);
+
+    transform-origin: left;
+}
+
+.l1 { width: 50px; left: 25px; top: 104px; transform: rotate(-35deg); }
+.l2 { width: 60px; left: 65px; top: 74px; transform: rotate(45deg); }
+.l3 { width: 60px; left: 105px; top: 124px; transform: rotate(-40deg); }
+.l4 { width: 50px; left: 150px; top: 84px; transform: rotate(32deg); }
+.l5 { width: 50px; left: 195px; top: 114px; transform: rotate(-40deg); }
+.l6 { width: 50px; left: 235px; top: 64px; transform: rotate(70deg); }
+.l7 { width: 90px; left: 185px; top: 174px; transform: rotate(180deg); }
+.l8 { width: 65px; left: 115px; top: 184px; transform: rotate(190deg); }
+
+
+/* =====================================================
+   PALAVRA DA ESTRELA
+===================================================== */
+
+.palavra-estrela {
+    position: absolute;
+
+    left: 50%;
+
+    top: 75%;
+
+    transform:
+        translateX(-50%);
+
+    color: white;
+
+    font-size: 25px;
+
+    text-shadow:
+        0 0 20px #b9c9ff;
+
+    opacity: 0;
+
+    transition: 0.5s;
+}
+
+
+/* =====================================================
+   MENSAGEM DO CÉU
+===================================================== */
+
+.ceu-mensagem {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    text-align: center;
+
+    color: #dbe2ff;
+
+    z-index: 20;
+}
+
+.ceu-mensagem p {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.ceu-mensagem span {
+    color: #8995bc;
 }
 
 
@@ -1162,552 +1349,52 @@ input {
 
     width: 300px;
 
-    height: 330px;
-
-    opacity: 0.55;
-
-    z-index: 6;
-}
-
-.observatorio::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    width: 240px;
-
-    height: 160px;
-
-    border-radius:
-        120px 120px 0 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            #07070b,
-            #171722,
-            #07070b
-        );
-
-    border-top:
-        1px solid #4d4a59;
-
-    box-shadow:
-        0 -20px 60px rgba(0,0,0,0.6);
+    height: 150px;
 }
 
 .telescopio {
     position: absolute;
 
-    bottom: 145px;
+    width: 170px;
 
-    left: 40px;
+    height: 40px;
 
-    width: 190px;
+    left: 50px;
 
-    height: 65px;
+    top: 30px;
 
     transform:
-        rotate(-25deg);
-
-    z-index: 5;
+        rotate(-15deg);
 }
 
 .telescopio-corpo {
-    width: 190px;
+    width: 150px;
 
-    height: 55px;
+    height: 40px;
 
-    border-radius: 60px;
-
-    background:
-        linear-gradient(
-            #302f39,
-            #0c0c12
-        );
+    background: #171a26;
 
     border:
-        1px solid #625e6d;
+        2px solid #4c536d;
 
-    box-shadow:
-        0 0 30px rgba(255,255,255,0.05);
+    border-radius: 20px;
 }
 
 .telescopio-ocular {
     position: absolute;
 
-    right: -30px;
+    width: 35px;
 
-    top: 13px;
+    height: 25px;
 
-    width: 40px;
+    right: -25px;
 
-    height: 40px;
+    top: 8px;
 
-    background:
-        #111117;
-
-    border-radius: 6px;
+    background: #0a0b10;
 
     border:
-        1px solid #4d4a56;
-}
-
-.tripode {
-    position: absolute;
-
-    bottom: 35px;
-
-    width: 3px;
-
-    height: 110px;
-
-    background:
-        linear-gradient(
-            #4a4853,
-            #0d0d12
-        );
-
-    transform-origin:
-        bottom center;
-
-    z-index: 5;
-}
-
-.tripode-1 {
-    left: 145px;
-
-    transform:
-        rotate(-18deg);
-}
-
-.tripode-2 {
-    left: 145px;
-
-    transform:
-        rotate(18deg);
-}
-
-.tripode-3 {
-    left: 145px;
-
-    transform:
-        rotate(0deg);
-}
-
-
-/* =====================================================
-   ESTRELAS CLICÁVEIS
-===================================================== */
-
-.estrela {
-    position: absolute;
-
-    font-size: 28px;
-
-    color: white;
-
-    cursor: pointer;
-
-    z-index: 20;
-
-    transition:
-        transform 0.4s ease,
-        color 0.4s ease,
-        opacity 0.4s ease;
-
-    animation:
-        brilhoEstrela 2.5s ease-in-out infinite alternate;
-
-    text-shadow:
-        0 0 12px white,
-        0 0 30px #dcaeba,
-        0 0 50px rgba(229,167,180,0.5);
-
-    user-select: none;
-}
-
-.estrela::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -15px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(229,167,180,0.18),
-            transparent 65%
-        );
-
-    opacity: 0;
-
-    transition: 0.4s;
-}
-
-.estrela:hover::after {
-    opacity: 1;
-}
-
-.estrela:hover {
-    transform:
-        scale(1.8);
-
-    color:
-        #fff5f7;
-}
-
-.estrela[data-clicada="true"] {
-    color:
-        #e5a7b4;
-
-    text-shadow:
-        0 0 20px #e5a7b4,
-        0 0 50px #e5a7b4;
-
-    animation:
-        estrelaEncontrada 0.8s ease forwards;
-}
-
-@keyframes brilhoEstrela {
-
-    from {
-        opacity: 0.4;
-
-        transform:
-            scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1.2);
-    }
-}
-
-@keyframes estrelaEncontrada {
-
-    0% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(2.2);
-    }
-
-    100% {
-        transform:
-            scale(1.3);
-
-        opacity: 0.55;
-    }
-}
-
-
-/* =====================================================
-   POSIÇÕES DAS ESTRELAS
-===================================================== */
-
-.estrela-1 {
-    top: 18%;
-    left: 13%;
-}
-
-.estrela-2 {
-    top: 31%;
-    left: 28%;
-}
-
-.estrela-3 {
-    top: 14%;
-    left: 47%;
-}
-
-.estrela-4 {
-    top: 38%;
-    left: 62%;
-}
-
-.estrela-5 {
-    top: 20%;
-    left: 82%;
-}
-
-.estrela-6 {
-    top: 56%;
-    left: 10%;
-}
-
-.estrela-7 {
-    top: 67%;
-    left: 31%;
-}
-
-.estrela-8 {
-    top: 58%;
-    left: 53%;
-}
-
-.estrela-9 {
-    top: 72%;
-    left: 75%;
-}
-
-.estrela-10 {
-    top: 45%;
-    left: 89%;
-}
-
-
-/* =====================================================
-   PALAVRA REVELADA
-===================================================== */
-
-.palavra-estrela {
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        scale(0.7);
-
-    z-index: 40;
-
-    font-size:
-        clamp(25px, 5vw, 50px);
-
-    letter-spacing: 5px;
-
-    color: white;
-
-    text-shadow:
-        0 0 15px #e5a7b4,
-        0 0 40px #e5a7b4,
-        0 0 80px rgba(229,167,180,0.5);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.5s ease,
-        transform 0.7s ease;
-}
-
-
-/* =====================================================
-   CONSTELAÇÃO
-===================================================== */
-
-.constelacao {
-    position: absolute;
-
-    width: 440px;
-
-    height: 330px;
-
-    left: 50%;
-
-    top: 48%;
-
-    transform:
-        translate(-50%, -50%)
-        scale(0.7);
-
-    opacity: 0;
-
-    transition:
-        opacity 3s ease,
-        transform 3s ease;
-
-    z-index: 10;
-
-    filter:
-        drop-shadow(
-            0 0 15px rgba(229,167,180,0.35)
-        );
-}
-
-.constelacao.mostrar {
-    opacity: 1;
-
-    transform:
-        translate(-50%, -50%)
-        scale(1);
-}
-
-.ponto {
-    position: absolute;
-
-    width: 9px;
-
-    height: 9px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    box-shadow:
-        0 0 12px white,
-        0 0 25px #e5a7b4,
-        0 0 45px rgba(229,167,180,0.6);
-
-    animation:
-        pulsarEstrela 2s ease-in-out infinite alternate;
-}
-
-@keyframes pulsarEstrela {
-
-    from {
-        opacity: 0.5;
-
-        transform:
-            scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1.25);
-    }
-}
-
-.p1 { left: 50%; top: 48%; }
-.p2 { left: 38%; top: 35%; }
-.p3 { left: 25%; top: 20%; }
-.p4 { left: 15%; top: 35%; }
-.p5 { left: 30%; top: 55%; }
-.p6 { left: 70%; top: 35%; }
-.p7 { left: 85%; top: 20%; }
-.p8 { left: 95%; top: 35%; }
-.p9 { left: 70%; top: 55%; }
-.p10 { left: 50%; top: 65%; }
-
-.linha {
-    position: absolute;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.7),
-            transparent
-        );
-
-    transform-origin:
-        left center;
-
-    box-shadow:
-        0 0 5px rgba(229,167,180,0.4);
-}
-
-.l1 {
-    width: 90px;
-    left: 50%;
-    top: 48%;
-    transform: rotate(-145deg);
-}
-
-.l2 {
-    width: 80px;
-    left: 38%;
-    top: 35%;
-    transform: rotate(-140deg);
-}
-
-.l3 {
-    width: 70px;
-    left: 25%;
-    top: 20%;
-    transform: rotate(130deg);
-}
-
-.l4 {
-    width: 70px;
-    left: 15%;
-    top: 35%;
-    transform: rotate(35deg);
-}
-
-.l5 {
-    width: 80px;
-    left: 30%;
-    top: 55%;
-    transform: rotate(-10deg);
-}
-
-.l6 {
-    width: 90px;
-    left: 50%;
-    top: 48%;
-    transform: rotate(-35deg);
-}
-
-.l7 {
-    width: 80px;
-    left: 70%;
-    top: 35%;
-    transform: rotate(-40deg);
-}
-
-.l8 {
-    width: 70px;
-    left: 85%;
-    top: 20%;
-    transform: rotate(50deg);
-}
-
-
-/* =====================================================
-   MENSAGEM DO CÉU
-===================================================== */
-
-.ceu-mensagem {
-    position: absolute;
-
-    bottom: 45px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    text-align: center;
-
-    z-index: 30;
-
-    color: #aaa8b3;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-
-    width: 90%;
-}
-
-.ceu-mensagem span {
-    font-size: 13px;
-
-    color: #777680;
+        2px solid #4c536d;
 }
 
 
@@ -1716,143 +1403,7 @@ input {
 ===================================================== */
 
 .universo-final {
-    display: none;
-
-    min-height: 100vh;
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 50;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-direction: column;
-
-    text-align: center;
-
-    padding: 30px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(35,25,55,0.8),
-            #020308 75%
-        );
-
-    animation:
-        aparecerUniverso 2s ease forwards;
-}
-
-@keyframes aparecerUniverso {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.galaxia-final {
-    position: absolute;
-
-    width: 700px;
-
-    height: 700px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.08),
-            rgba(130,100,180,0.06) 25%,
-            transparent 65%
-        );
-
-    filter:
-        blur(15px);
-
-    animation:
-        girarGalaxia 25s linear infinite;
-}
-
-@keyframes girarGalaxia {
-
-    from {
-        transform:
-            rotate(0deg)
-            scale(1);
-    }
-
-    to {
-        transform:
-            rotate(360deg)
-            scale(1.05);
-    }
-}
-
-.final-estrelas {
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        radial-gradient(
-            white 1px,
-            transparent 1px
-        );
-
-    background-size:
-        100px 100px;
-
-    opacity: 0.45;
-}
-
-.universo-final p,
-.universo-final h3,
-.universo-final .botao {
-    position: relative;
-
-    z-index: 3;
-}
-
-.universo-final p {
-    color: #aaa6b2;
-
-    font-size: 19px;
-
-    margin-bottom: 25px;
-}
-
-.universo-final h3 {
-    max-width: 750px;
-
-    font-size:
-        clamp(30px, 5vw, 55px);
-
-    font-weight: normal;
-
-    line-height: 1.4;
-
-    margin-bottom: 45px;
-
-    text-shadow:
-        0 0 25px rgba(229,167,180,0.18);
-}
-
-
-/* =====================================================
-   PRÓXIMA PARTE
-===================================================== */
-
-.proxima-parte {
-    min-height: 500px;
+    min-height: 80vh;
 
     display: flex;
 
@@ -1867,23 +1418,68 @@ input {
     padding: 50px 30px;
 
     background:
-        linear-gradient(
-            #080607,
-            #170b10
+        radial-gradient(
+            circle,
+            #1a2140,
+            #03050b
         );
 }
 
-.proxima-parte h2 {
-    font-size:
-        clamp(35px, 6vw, 60px);
+.universo-final p {
+    color: #aeb8da;
+
+    font-size: 20px;
+
+    margin-bottom: 25px;
+}
+
+.universo-final h3 {
+    max-width: 700px;
+
+    font-size: 42px;
+
+    line-height: 1.5;
 
     font-weight: normal;
 
-    margin: 20px 0;
+    color: #e8ecff;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   PRÓXIMA PARTE
+===================================================== */
+
+.proxima-parte {
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    background: #080607;
+}
+
+.proxima-parte h2 {
+    font-size: 45px;
+
+    font-weight: normal;
+
+    margin-bottom: 20px;
 }
 
 .proxima-parte p:last-child {
-    color: #a9979d;
+    color: #9d858c;
 
     font-size: 18px;
 }
@@ -1898,16 +1494,16 @@ footer {
 
     text-align: center;
 
-    background: #030203;
+    background: #030303;
 
-    color: #a98f98;
+    color: #9e858c;
 
     font-family: Arial, sans-serif;
 }
 
 
 /* =====================================================
-   ANIMAÇÕES GERAIS
+   ANIMAÇÃO
 ===================================================== */
 
 @keyframes aparecer {
@@ -1916,7 +1512,7 @@ footer {
         opacity: 0;
 
         transform:
-            translateY(30px);
+            translateY(25px);
     }
 
     to {
@@ -1925,41 +1521,12 @@ footer {
         transform:
             translateY(0);
     }
+
 }
 
-@keyframes subir {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-@keyframes pulsar {
-
-    0%,
-    100% {
-        transform:
-            scale(0.8);
-
-        opacity: 0.2;
-    }
-
-    50% {
-        transform:
-            scale(1.2);
-
-        opacity: 0.5;
-    }
+.aparecer {
+    animation:
+        aparecer 0.8s ease forwards;
 }
 
 
@@ -1973,12 +1540,8 @@ footer {
         font-size: 60px;
     }
 
-    .frase {
-        font-size: 17px;
-    }
-
     .papel {
-        padding: 50px 30px;
+        padding: 45px 30px;
     }
 
     .papel h2 {
@@ -1989,56 +1552,34 @@ footer {
         font-size: 55px;
     }
 
-    .investigacao {
-        padding:
-            80px 20px;
-    }
-
     .investigacao h2 {
-        font-size: 35px;
-    }
-
-    .arquivo {
-        font-size: 12px;
-    }
-
-    .constelacao {
-        width: 300px;
-        height: 230px;
-    }
-
-    .observatorio {
-        display: none;
-    }
-
-    .estrela {
-        font-size: 20px;
-    }
-
-    .via-lactea {
-        width: 190%;
-        left: -45%;
-    }
-
-    .universo-intro h2 {
-        font-size: 45px;
-    }
-
-    .universo-intro > p:not(.universo-mini) {
-        font-size: 17px;
-    }
-
-    .ceu-mensagem {
-        bottom: 25px;
-    }
-
-    .universo-final h3 {
         font-size: 34px;
     }
 
-    .galaxia-final {
-        width: 500px;
-        height: 500px;
+    .lirio h2 {
+        font-size: 48px;
+    }
+
+    .texto-lirio {
+        font-size: 16px;
+    }
+
+    .universo-intro h2 {
+        font-size: 42px;
+    }
+
+    .universo-final h3 {
+        font-size: 30px;
+    }
+
+    .pistas {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .pista {
+        width: 220px;
     }
 
 }

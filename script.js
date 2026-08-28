@@ -1,126 +1,80 @@
 /* =====================================================
-   PARTE 1 — ABRIR CARTA
+   NAVEGAÇÃO
+===================================================== */
+
+function irPara(id) {
+
+    const elemento =
+        document.getElementById(id);
+
+    if (!elemento) return;
+
+    elemento.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* =====================================================
+   ABRIR CARTA
 ===================================================== */
 
 function abrirCarta() {
 
-    document.getElementById("carta")
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
+    irPara("carta");
 
 }
 
 
 /* =====================================================
-   IR PARA CORAÇÕES
+   CORAÇÕES
 ===================================================== */
 
-let elogiosIniciados = false;
+let coracoesAtivos = false;
 
 
 function irParaCoracoes() {
 
-    iniciarElogios();
+    irPara("elogios");
 
-    document.getElementById("elogios")
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
+    iniciarCoracoes();
 
 }
 
 
-/* =====================================================
-   VOLTAR PARA CARTA
-===================================================== */
+function iniciarCoracoes() {
 
-function voltarCarta() {
+    if (coracoesAtivos) return;
 
-    document.getElementById("carta")
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
-
-}
+    coracoesAtivos = true;
 
 
-/* =====================================================
-   CORAÇÕES INFINITOS
-===================================================== */
-
-function iniciarElogios() {
-
-    if (elogiosIniciados) {
-
-        return;
-
-    }
-
-    elogiosIniciados = true;
-
-
-    const palavrasCoracoes = [
+    const palavras = [
 
         "incrível",
-
         "maravilhoso",
-
         "especial",
-
         "lindo",
-
         "único",
-
-        "gentil",
-
         "admirável",
-
-        "divertido",
-
-        "fantástico",
-
         "inesquecível",
-
-        "importante",
-
-        "extraordinário",
-
-        "brilhante",
-
         "talentoso",
-
+        "brilhante",
+        "gentil",
         "querido",
-
-        "surpreendente",
-
-        "memorável",
-
-        "criativo",
-
-        "carinhoso",
-
-        "encantador",
-
-        "generoso",
-
+        "extraordinário",
+        "divertido",
         "inteligente",
-
         "autêntico",
-
-        "inspirador"
+        "fantástico",
+        "importante",
+        "memorável",
+        "criativo",
+        "inspirador",
+        "surpreendente",
+        "encantador"
 
     ];
 
@@ -128,80 +82,69 @@ function iniciarElogios() {
     const palavrasSoltas = [
 
         "luz",
-
         "alegria",
-
         "carinho",
-
         "amizade",
-
         "sorriso",
-
         "sonho",
-
         "felicidade",
-
-        "paz",
-
-        "coragem",
-
         "gentileza",
-
-        "esperança",
-
+        "coragem",
         "brilho",
-
         "bondade",
-
         "força",
-
-        "calma",
-
         "magia",
-
         "risadas",
-
         "memórias",
-
         "presença",
-
-        "vida",
-
-        "sonhos",
-
-        "momentos",
-
-        "afeto"
+        "afeto",
+        "calma",
+        "esperança",
+        "vida"
 
     ];
 
 
-    for (let i = 0; i < 18; i++) {
+    /* cria alguns imediatamente */
 
-        criarCoracao(palavrasCoracoes);
+    for (let i = 0; i < 20; i++) {
+
+        setTimeout(() => {
+
+            criarCoracao(palavras);
+
+        }, i * 180);
+
+    }
+
+
+    /* chuva infinita */
+
+    setInterval(() => {
+
+        criarCoracao(palavras);
+
+    }, 330);
+
+
+    /* estrelas/palavras */
+
+    for (let i = 0; i < 10; i++) {
+
+        setTimeout(() => {
+
+            criarPalavra(palavrasSoltas);
+
+        }, i * 300);
 
     }
 
 
     setInterval(() => {
 
-        criarCoracao(palavrasCoracoes);
+        criarPalavra(palavrasSoltas);
 
-    }, 350);
-
-
-    for (let i = 0; i < 8; i++) {
-
-        criarPalavraSolta(palavrasSoltas);
-
-    }
-
-
-    setInterval(() => {
-
-        criarPalavraSolta(palavrasSoltas);
-
-    }, 900);
+    }, 750);
 
 }
 
@@ -215,6 +158,8 @@ function criarCoracao(palavras) {
     const container =
         document.getElementById("coracoes");
 
+    if (!container) return;
+
 
     const coracao =
         document.createElement("div");
@@ -224,7 +169,8 @@ function criarCoracao(palavras) {
         document.createElement("span");
 
 
-    coracao.classList.add("coracao");
+    coracao.className =
+        "coracao";
 
 
     texto.innerText =
@@ -240,23 +186,27 @@ function criarCoracao(palavras) {
 
 
     coracao.style.left =
-        Math.random() * 100 + "%";
+        Math.random() * 105 - 3 + "%";
 
 
-    const velocidade =
-        5 + Math.random() * 6;
+    const tamanho =
+        .55 + Math.random() * .65;
+
+
+    coracao.style.transform =
+        `scale(${tamanho})`;
+
+
+    const duracao =
+        5 + Math.random() * 7;
 
 
     coracao.style.animationDuration =
-        velocidade + "s";
+        duracao + "s";
 
 
     coracao.style.animationDelay =
         Math.random() * 1.5 + "s";
-
-
-    coracao.style.scale =
-        0.55 + Math.random() * 0.65;
 
 
     container.appendChild(coracao);
@@ -266,28 +216,31 @@ function criarCoracao(palavras) {
 
         coracao.remove();
 
-    }, 13000);
+    }, (duracao + 2) * 1000);
 
 }
 
 
 /* =====================================================
-   PALAVRAS FORA DOS CORAÇÕES
+   PALAVRAS QUE APARECEM E SOMEM
 ===================================================== */
 
-function criarPalavraSolta(palavras) {
+function criarPalavra(palavras) {
 
     const container =
-        document.getElementById("palavrasSoltas");
+        document.getElementById(
+            "palavrasSoltas"
+        );
+
+    if (!container) return;
 
 
     const palavra =
-        document.createElement("div");
+        document.createElement("span");
 
 
-    palavra.classList.add(
-        "palavra-solta"
-    );
+    palavra.className =
+        "palavra-solta";
 
 
     palavra.innerText =
@@ -300,26 +253,18 @@ function criarPalavraSolta(palavras) {
 
 
     palavra.style.left =
-        (Math.random() * 88 + 6) + "%";
+        (5 + Math.random() * 88) + "%";
 
 
     palavra.style.top =
-        (Math.random() * 82 + 6) + "%";
+        (8 + Math.random() * 82) + "%";
 
 
-    if (Math.random() > 0.7) {
+    if (Math.random() > .7) {
 
-        palavra.classList.add(
-            "grande"
-        );
+        palavra.classList.add("grande");
 
     }
-
-
-    palavra.style.animationDuration =
-
-        (3 + Math.random() * 3) +
-        "s";
 
 
     container.appendChild(palavra);
@@ -329,7 +274,18 @@ function criarPalavraSolta(palavras) {
 
         palavra.remove();
 
-    }, 7000);
+    }, 4500);
+
+}
+
+
+/* =====================================================
+   VOLTAR PARA CARTA
+===================================================== */
+
+function voltarCarta() {
+
+    irPara("carta");
 
 }
 
@@ -340,48 +296,27 @@ function criarPalavraSolta(palavras) {
 
 function irParaParte2() {
 
-    document.getElementById("arquivo")
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
+    irPara("arquivo");
 
 }
 
 
 function voltarParte1() {
 
-    document.getElementById("elogios")
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
+    irPara("elogios");
 
 }
 
 
 function iniciarInvestigacao() {
 
-    document.getElementById("investigacao")
-        .scrollIntoView({
-
-            behavior: "smooth",
-
-            block: "start"
-
-        });
+    irPara("investigacao");
 
 }
 
 
 /* =====================================================
-   ARQUIVOS DA INVESTIGAÇÃO
+   ARQUIVOS
 ===================================================== */
 
 function abrirArquivo(numero) {
@@ -396,19 +331,22 @@ function abrirArquivo(numero) {
 
         resultado.innerHTML = `
 
-            <strong>
-                📼 TAPE_01
-            </strong>
+            <strong>TAPE_01 // AUDIO</strong>
 
             <br><br>
 
-            Parece que esta fita contém
-            uma mensagem escondida.
+            Arquivo de áudio encontrado.
 
             <br>
 
-            Talvez seja melhor procurar
-            outro arquivo primeiro...
+            Duração: 00:03:17
+
+            <br><br>
+
+            <em>
+            "Algumas pessoas deixam marcas
+            mesmo sem perceber."
+            </em>
 
         `;
 
@@ -419,18 +357,16 @@ function abrirArquivo(numero) {
 
         resultado.innerHTML = `
 
-            <strong>
-                📷 PHOTO_01
-            </strong>
+            <strong>PHOTO_01 // LOCKED</strong>
 
             <br><br>
 
-            ARQUIVO BLOQUEADO.
+            Esta fotografia está protegida.
 
             <br>
 
-            É necessário encontrar
-            a senha para visualizar.
+            Talvez exista uma chave
+            escondida em algum lugar.
 
         `;
 
@@ -441,22 +377,31 @@ function abrirArquivo(numero) {
 
         resultado.innerHTML = `
 
-            <strong>
-                📄 NOTE_01
-            </strong>
+            <strong>NOTE_01 // UNKNOWN</strong>
 
             <br><br>
 
             "Nem tudo que está escondido
-            realmente quer continuar escondido."
+            quer permanecer escondido."
 
             <br><br>
 
-            — arquivo desconhecido
+            — arquivo sem identificação
 
         `;
 
     }
+
+}
+
+
+/* =====================================================
+   IR PARA SENHA
+===================================================== */
+
+function irParaSenha() {
+
+    irPara("senha");
 
 }
 
@@ -485,35 +430,122 @@ function verificarSenha() {
             .toLowerCase();
 
 
-    /*
-       SENHA PROVISÓRIA.
-
-       Depois podemos trocar por uma
-       senha que tenha significado para vocês.
-    */
-
-    const senhaCorreta = "noah";
+    const senhaCorreta =
+        "borboletas em vidro";
 
 
     if (senha === senhaCorreta) {
 
         mensagem.innerHTML =
-            "✓ ACESSO CONCEDIDO. O arquivo foi desbloqueado.";
+            "✦ ACESSO CONCEDIDO ✦";
 
 
         mensagem.style.color =
-            "#86b99a";
+            "#d99aa3";
+
+
+        criarBorboletas();
 
 
     } else {
 
         mensagem.innerHTML =
-            "✕ ACESSO NEGADO. Essa não parece ser a senha.";
+            "ACESSO NEGADO — tente novamente.";
 
 
         mensagem.style.color =
-            "#c4878d";
+            "#9b5962";
 
     }
 
 }
+
+
+/* =====================================================
+   BORBOLETAS APÓS A SENHA
+===================================================== */
+
+function criarBorboletas() {
+
+    const container =
+        document.getElementById(
+            "borboletas"
+        );
+
+
+    for (let i = 0; i < 12; i++) {
+
+        const borboleta =
+            document.createElement("span");
+
+
+        borboleta.className =
+            "borboleta";
+
+
+        borboleta.innerHTML =
+            "🦋";
+
+
+        borboleta.style.left =
+            Math.random() * 100 + "%";
+
+
+        borboleta.style.top =
+            (50 + Math.random() * 40) + "%";
+
+
+        borboleta.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+
+        container.appendChild(
+            borboleta
+        );
+
+
+        setTimeout(() => {
+
+            borboleta.remove();
+
+        }, 5500);
+
+    }
+
+}
+
+
+/* =====================================================
+   ENTER NA SENHA
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const input =
+            document.getElementById(
+                "senhaInput"
+            );
+
+
+        if (!input) return;
+
+
+        input.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (
+                    event.key === "Enter"
+                ) {
+
+                    verificarSenha();
+
+                }
+
+            }
+        );
+
+    }
+);

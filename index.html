@@ -5,51 +5,36 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dear Noah 🖤</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
 
-<!-- ==================================================
-     PARTE 1 — INÍCIO
-================================================== -->
+<!-- =====================================================
+     PARTE 1 — A CARTA
+===================================================== -->
 
-<section
-    class="inicio"
-    id="inicio">
+<section class="inicio" id="inicio">
 
     <div class="inicio-conteudo">
 
-        <p class="subtitulo">
-            UMA PEQUENA CARTA
-        </p>
+        <p class="subtitulo">UMA PEQUENA CARTA</p>
 
-        <h1>
-            Dear Noah
-        </h1>
+        <h1>Dear Noah</h1>
 
         <p class="frase">
             Algumas coisas são difíceis de dizer...
             então talvez seja melhor escrever.
         </p>
 
-        <button
-            class="botao"
-            onclick="abrirCarta()">
-
+        <button class="botao" onclick="abrirCarta()">
             💌 Abrir carta
-
         </button>
 
     </div>
@@ -57,14 +42,11 @@
 </section>
 
 
+<!-- =====================================================
+     CARTA
+===================================================== -->
 
-<!-- ==================================================
-     PARTE 1 — CARTA
-================================================== -->
-
-<section
-    class="carta"
-    id="carta">
+<section class="carta" id="carta">
 
     <div class="papel">
 
@@ -72,9 +54,7 @@
             Para Noah,
         </p>
 
-        <h2>
-            Querido Noah,
-        </h2>
+        <h2>Querido Noah,</h2>
 
         <p>
             Talvez você não esperasse encontrar uma carta
@@ -88,519 +68,348 @@
 
         <p>
             Então fiz este pequeno lugar para guardar
-            algumas palavras.
+            algumas palavras, lembranças e momentos.
         </p>
 
-        <p>
+        <p class="texto-quatro">
+
             Meu bem, não sou boa com palavras como um certo
-            poeta ai mas cada palavra dessa carta será retirada
-            do meu coração, irei colocar cada pensamento e
-            sentimento em cada detalhe dessa carta, espero que goste...
+            poeta aí, mas cada palavra dessa carta será retirada
+            do meu coração. Irei colocar cada pensamento e
+            sentimento em cada detalhe dessa carta.
+            Espero que goste...
+
         </p>
 
-        <button
-            class="botao"
-            onclick="mostrarMensagem()">
-
+        <button class="botao" onclick="mostrarMensagem()">
             ✨ Tem mais uma coisa...
-
         </button>
-
-        <p
-            id="mensagem"
-            class="mensagem">
-        </p>
 
     </div>
 
 </section>
 
 
+<!-- =====================================================
+     CORAÇÕES
+===================================================== -->
 
-<!-- ==================================================
-     PARTE 1 — CORAÇÕES
-================================================== -->
+<section class="coracoes" id="coracoes">
 
-<section
-    class="coracoes"
-    id="coracoes">
+    <div class="chuva-coracoes" id="chuvaCoracoes"></div>
 
-    <div
-        class="coracoes-fundo"
-        id="coracoesFundo">
-    </div>
+    <div class="palavras-estrelas" id="palavrasEstrelas"></div>
 
-    <div
-        class="palavras-fora"
-        id="palavrasFora">
-    </div>
+    <div class="coracoes-conteudo">
 
-
-    <div class="voce-e">
-
-        <p class="mini-texto">
-            se eu tivesse que te descrever...
+        <p class="subtitulo">
+            MAS ANTES...
         </p>
 
-        <h2>
-            Você é...
-        </h2>
+        <h2>Você é...</h2>
 
-        <p class="texto-coracoes">
-            mais especial do que talvez imagine.
+        <p class="coracoes-intro">
+            Algumas coisas simplesmente não cabem
+            em uma única palavra.
         </p>
 
     </div>
 
-
-    <button
-        class="botao botao-proximo"
-        onclick="irParaParte2()">
-
-        ↓ Continuar
-
+    <button class="botao continuar" onclick="irParaParte2()">
+        🔎 Continuar
     </button>
 
 </section>
 
 
-
-<!-- ==================================================
+<!-- =====================================================
      PARTE 2 — INVESTIGAÇÃO
-================================================== -->
+===================================================== -->
 
-<section
-    class="investigacao"
-    id="parte2">
-
-
-    <div class="scanlines"></div>
+<section class="investigacao" id="investigacao">
 
     <div class="ruido"></div>
 
-
-    <!-- CABEÇALHO -->
-
-    <div class="investigacao-header">
-
-        <p>
-            ARQUIVO Nº 0027
-        </p>
-
-        <span>
-            STATUS: INCOMPLETO
-        </span>
-
-    </div>
-
-
-
-    <!-- ==================================================
-         INTRODUÇÃO
-    ================================================== -->
-
-    <div
-        class="investigacao-intro"
-        id="investigacaoIntro">
+    <div class="investigacao-conteudo">
 
         <p class="codigo-vermelho">
-            [ ARQUIVO ENCONTRADO ]
+            ARQUIVO Nº 02
         </p>
 
-        <h2>
-            Há alguma coisa<br>
-            escondida aqui.
-        </h2>
+        <h2>Você encontrou uma coisa que não deveria estar aqui.</h2>
 
-        <p>
-            Talvez você devesse investigar.
+        <p class="texto-investigacao">
+
+            Há algo escondido neste arquivo.
+            Mas ele não será entregue tão facilmente.
+
         </p>
 
-        <button
-            type="button"
-            class="botao botao-investigar"
-            id="botaoInvestigar">
-
-            🔎 Começar investigação
-
-        </button>
-
-    </div>
-
-
-
-    <!-- ==================================================
-         SALA
-    ================================================== -->
-
-    <div
-        class="sala"
-        id="sala">
-
-
-        <div class="objetivo">
-
-            <span>
-                OBJETIVO
-            </span>
+        <div class="arquivo">
 
             <p>
-                Encontre as pistas e descubra o código.
+                STATUS:
+                <span>ACESSO BLOQUEADO</span>
+            </p>
+
+            <p>
+                IDENTIDADE:
+                <span>NOAH</span>
+            </p>
+
+            <p>
+                NÍVEL:
+                <span>CONFIDENCIAL</span>
             </p>
 
         </div>
 
 
+        <div class="pistas">
 
-        <!-- CADERNO -->
+            <button class="pista" onclick="abrirPista(1)">
+                📼 Pista 01
+            </button>
 
-        <button
-            type="button"
-            class="objeto caderno"
-            id="objetoCaderno"
-            aria-label="Investigar caderno">
+            <button class="pista" onclick="abrirPista(2)">
+                🗝️ Pista 02
+            </button>
 
-            📓
+            <button class="pista" onclick="abrirPista(3)">
+                👁️ Pista 03
+            </button>
 
-        </button>
-
-
-
-        <!-- QUADRO -->
-
-        <button
-            type="button"
-            class="objeto quadro"
-            id="objetoQuadro"
-            aria-label="Investigar quadro">
-
-            <span>
-                ?
-            </span>
-
-        </button>
+        </div>
 
 
+        <div id="textoPista" class="texto-pista"></div>
 
-        <!-- TV -->
 
-        <button
-            type="button"
-            class="objeto tv"
-            id="objetoTv"
-            aria-label="Investigar televisão">
+        <div class="senha-area">
 
-            <div class="tv-tela">
+            <p>
+                Talvez as pistas tenham deixado
+                uma resposta escondida.
+            </p>
 
-                <span>
-                    NO SIGNAL
+            <input
+                type="text"
+                id="senha"
+                placeholder="Digite a senha..."
+                autocomplete="off"
+            >
+
+            <button class="botao" onclick="verificarSenha()">
+                🔓 Desbloquear
+            </button>
+
+            <p id="resultadoSenha"></p>
+
+        </div>
+
+
+        <div id="investigacaoFinal" class="investigacao-final">
+
+            <div class="arquivo-aberto">
+
+                <span class="arquivo-status">
+                    ACESSO CONCEDIDO
                 </span>
 
+                <h3>ARQUIVO DESBLOQUEADO</h3>
+
+                <p>
+                    Algumas coisas são escondidas
+                    não porque precisam permanecer em segredo...
+                </p>
+
+                <p>
+                    mas porque certas descobertas ficam
+                    mais bonitas quando são encontradas.
+                </p>
+
             </div>
 
+            <button class="botao" onclick="irParaParte3()">
+                🌌 Prosseguir
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PARTE 3 — UNIVERSO
+===================================================== -->
+
+<section class="universo" id="universo">
+
+    <div class="estrelas-fundo"></div>
+
+    <div class="nebulosa nebulosa-1"></div>
+    <div class="nebulosa nebulosa-2"></div>
+
+    <div class="universo-intro" id="universoIntro">
+
+        <p class="universo-mini">
+            ARQUIVO Nº 03
+        </p>
+
+        <h2>
+            Existem coisas<br>
+            que não cabem em palavras.
+        </h2>
+
+        <p>
+            Então talvez seja melhor olhar para o céu.
+        </p>
+
+        <button class="botao botao-fones" onclick="comecarUniverso()">
+            🎧 Coloque seus fones
         </button>
 
+    </div>
 
 
-        <!-- VELA -->
+    <!-- CÉU -->
 
-        <button
-            type="button"
-            class="objeto vela"
-            id="objetoVela"
-            aria-label="Investigar vela">
+    <div class="ceu" id="ceu">
 
-            🕯️
+        <div class="via-lactea"></div>
 
-        </button>
+        <div class="observatorio">
 
+            <div class="telescopio">
 
+                <div class="telescopio-corpo"></div>
 
-        <!-- CAIXA -->
+                <div class="telescopio-ocular"></div>
 
-        <button
-            type="button"
-            class="objeto caixa"
-            id="objetoCaixa"
-            aria-label="Abrir caixa">
-
-            🔒
-
-        </button>
-
-
-
-        <!-- SEGREDO -->
-
-        <button
-            type="button"
-            class="objeto segredo"
-            id="objetoSegredo"
-            aria-label="Investigar detalhe">
-
-            •
-
-        </button>
-
-
-
-        <!-- LISTA -->
-
-        <div class="caderno-investigacao">
-
-            <div class="caderno-titulo">
-                🗂 INVESTIGAÇÃO
             </div>
 
-            <div id="pista1">
-                □ Caderno
-            </div>
+        </div>
 
-            <div id="pista2">
-                □ Quadro
-            </div>
 
-            <div id="pista3">
-                □ Televisão
-            </div>
+        <!-- estrelas clicáveis -->
 
-            <div id="pista4">
-                □ Detalhe escondido
-            </div>
+        <div class="estrela estrela-1" onclick="clicarEstrela(1)">✦</div>
 
-            <div id="pista5">
-                □ Caixa
-            </div>
+        <div class="estrela estrela-2" onclick="clicarEstrela(2)">✦</div>
+
+        <div class="estrela estrela-3" onclick="clicarEstrela(3)">✦</div>
+
+        <div class="estrela estrela-4" onclick="clicarEstrela(4)">✦</div>
+
+        <div class="estrela estrela-5" onclick="clicarEstrela(5)">✦</div>
+
+        <div class="estrela estrela-6" onclick="clicarEstrela(6)">✦</div>
+
+        <div class="estrela estrela-7" onclick="clicarEstrela(7)">✦</div>
+
+        <div class="estrela estrela-8" onclick="clicarEstrela(8)">✦</div>
+
+        <div class="estrela estrela-9" onclick="clicarEstrela(9)">✦</div>
+
+        <div class="estrela estrela-10" onclick="clicarEstrela(10)">✦</div>
+
+
+        <!-- constelação -->
+
+        <div class="constelacao" id="constelacao">
+
+            <div class="ponto p1"></div>
+            <div class="ponto p2"></div>
+            <div class="ponto p3"></div>
+            <div class="ponto p4"></div>
+            <div class="ponto p5"></div>
+            <div class="ponto p6"></div>
+            <div class="ponto p7"></div>
+            <div class="ponto p8"></div>
+            <div class="ponto p9"></div>
+            <div class="ponto p10"></div>
+
+            <div class="linha l1"></div>
+            <div class="linha l2"></div>
+            <div class="linha l3"></div>
+            <div class="linha l4"></div>
+            <div class="linha l5"></div>
+            <div class="linha l6"></div>
+            <div class="linha l7"></div>
+            <div class="linha l8"></div>
+
+        </div>
+
+
+        <div id="palavraEstrela" class="palavra-estrela"></div>
+
+
+        <div class="ceu-mensagem">
+
+            <p>
+                Encontre as estrelas.
+            </p>
+
+            <span>
+                Cada uma guarda uma palavra.
+            </span>
 
         </div>
 
     </div>
 
 
+    <!-- FINAL DA PARTE 3 -->
 
-    <!-- ==================================================
-         PAINEL DAS PISTAS
-    ================================================== -->
+    <div class="universo-final" id="universoFinal">
 
-    <div
-        class="painel-pista"
-        id="painelPista">
+        <div class="galaxia-final"></div>
 
-        <button
-            type="button"
-            class="fechar-pista"
-            onclick="fecharPista()">
-
-            ×
-
-        </button>
-
-        <p
-            class="pista-tipo"
-            id="pistaTipo">
-        </p>
-
-        <h3
-            id="pistaTitulo">
-        </h3>
-
-        <p
-            id="pistaTexto">
-        </p>
-
-    </div>
-
-
-
-    <!-- ==================================================
-         CAIXA
-    ================================================== -->
-
-    <div
-        class="caixa-painel"
-        id="caixaPainel">
-
-        <button
-            type="button"
-            class="fechar-pista"
-            onclick="fecharCaixa()">
-
-            ×
-
-        </button>
-
-        <p class="pista-tipo">
-            CAIXA Nº 01
+        <p>
+            No meio de um universo tão grande...
         </p>
 
         <h3>
-            DIGITE O CÓDIGO
+            é curioso encontrar alguém
+            que consegue fazer o meu pequeno
+            mundo parecer maior.
         </h3>
 
-        <p class="texto-caixa">
-
-            As pistas parecem estar relacionadas.
-            Mas a resposta não está escrita diretamente.
-
-        </p>
-
-        <input
-            type="text"
-            id="codigo"
-            maxlength="6"
-            placeholder="______"
-            autocomplete="off">
-
-        <button
-            type="button"
-            class="botao"
-            onclick="verificarCodigo()">
-
-            Desbloquear
-
+        <button class="botao" onclick="continuarSite()">
+            ✨ Continuar
         </button>
-
-        <p
-            class="resultado-codigo"
-            id="resultadoCodigo">
-        </p>
-
-    </div>
-
-
-
-    <!-- ==================================================
-         ARQUIVO DESBLOQUEADO
-    ================================================== -->
-
-    <div
-        class="arquivo-desbloqueado"
-        id="arquivoDesbloqueado">
-
-        <p class="codigo-vermelho">
-            [ ARQUIVO DESBLOQUEADO ]
-        </p>
-
-        <h2>
-            Você encontrou a primeira resposta.
-        </h2>
-
-        <p>
-            Mas talvez essa investigação nunca tenha
-            sido apenas sobre descobrir um código.
-        </p>
-
-        <button
-            type="button"
-            class="botao"
-            onclick="mostrarCartaLirio()">
-
-            🌷 Abrir arquivo
-
-        </button>
-
-    </div>
-
-
-
-</section>
-
-
-
-<!-- ==================================================
-     CARTA DO LÍRIO
-================================================== -->
-
-<section
-    class="carta-lirio"
-    id="cartaLirio">
-
-
-    <div class="particulas"></div>
-
-
-    <div class="lirio-container">
-
-
-        <div class="titulo-lirio">
-
-            <p class="codigo-vermelho">
-                [ ARQUIVO ESPECIAL ]
-            </p>
-
-            <h2>
-                Para você.
-            </h2>
-
-        </div>
-
-
-
-        <!-- IMAGEM -->
-
-        <div class="moldura-lirio">
-
-            <div class="brilho-lirio"></div>
-
-            <img
-                src="imagens/lirio.jpg"
-                alt="Um lírio">
-
-        </div>
-
-
-
-        <!-- CARTA -->
-
-        <div class="papel-lirio">
-
-            <p class="assinatura">
-                Meu bem,
-            </p>
-
-            <p
-                id="textoLirio"
-                class="texto-lirio">
-            </p>
-
-            <p class="assinatura-final">
-                ♡
-            </p>
-
-        </div>
-
 
     </div>
 
 </section>
 
 
+<!-- =====================================================
+     PARTE FUTURA
+===================================================== -->
 
-<!-- ==================================================
-     CONTINUAÇÃO FUTURA
-================================================== -->
-
-<section class="continua">
+<section class="proxima-parte" id="proximaParte">
 
     <p class="subtitulo">
-        POR ENQUANTO...
+        CONTINUA...
     </p>
 
     <h2>
-        A história ainda não acabou.
+        Ainda há muito mais para descobrir.
     </h2>
 
     <p>
-        Existem outras partes esperando para serem descobertas.
+        Esta história ainda não terminou.
     </p>
 
 </section>
 
 
-
-<!-- ==================================================
+<!-- =====================================================
      RODAPÉ
-================================================== -->
+===================================================== -->
 
 <footer>
 
@@ -608,12 +417,7 @@
         Feito especialmente para Noah ♡
     </p>
 
-    <small>
-        isso é apenas o começo...
-    </small>
-
 </footer>
-
 
 
 <script src="script.js"></script>

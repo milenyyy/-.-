@@ -5,11 +5,15 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Dear Noah 🖤</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
 
@@ -21,7 +25,9 @@
      PARTE 1 — INÍCIO
 ================================================== -->
 
-<section class="inicio" id="inicio">
+<section
+    class="inicio"
+    id="inicio">
 
     <div class="inicio-conteudo">
 
@@ -56,7 +62,9 @@
      PARTE 1 — CARTA
 ================================================== -->
 
-<section class="carta" id="carta">
+<section
+    class="carta"
+    id="carta">
 
     <div class="papel">
 
@@ -68,26 +76,20 @@
             Querido Noah,
         </h2>
 
-
         <p>
             Talvez você não esperasse encontrar uma carta
             escondida em forma de site.
         </p>
-
 
         <p>
             Mas algumas mensagens merecem mais do que
             uma simples mensagem enviada pelo celular.
         </p>
 
-
         <p>
             Então fiz este pequeno lugar para guardar
             algumas palavras.
         </p>
-
-
-        <!-- TEXTO 4 -->
 
         <p>
             Meu bem, não sou boa com palavras como um certo
@@ -96,7 +98,6 @@
             sentimento em cada detalhe dessa carta, espero que goste...
         </p>
 
-
         <button
             class="botao"
             onclick="mostrarMensagem()">
@@ -104,7 +105,6 @@
             ✨ Tem mais uma coisa...
 
         </button>
-
 
         <p
             id="mensagem"
@@ -118,19 +118,17 @@
 
 
 <!-- ==================================================
-     PARTE 1 — VOCÊ É...
+     PARTE 1 — CORAÇÕES
 ================================================== -->
 
 <section
     class="coracoes"
     id="coracoes">
 
-
     <div
         class="coracoes-fundo"
         id="coracoesFundo">
     </div>
-
 
     <div
         class="palavras-fora"
@@ -181,7 +179,6 @@
     <div class="ruido"></div>
 
 
-
     <!-- CABEÇALHO -->
 
     <div class="investigacao-header">
@@ -210,17 +207,14 @@
             [ ARQUIVO ENCONTRADO ]
         </p>
 
-
         <h2>
             Há alguma coisa<br>
             escondida aqui.
         </h2>
 
-
         <p>
             Talvez você devesse investigar.
         </p>
-
 
         <button
             type="button"
@@ -236,15 +230,13 @@
 
 
     <!-- ==================================================
-         SALA DA INVESTIGAÇÃO
+         SALA
     ================================================== -->
 
     <div
         class="sala"
         id="sala">
 
-
-        <!-- OBJETIVO -->
 
         <div class="objetivo">
 
@@ -253,7 +245,7 @@
             </span>
 
             <p>
-                Encontre as pistas escondidas.
+                Encontre as pistas e descubra o código.
             </p>
 
         </div>
@@ -265,7 +257,8 @@
         <button
             type="button"
             class="objeto caderno"
-            id="objetoCaderno">
+            id="objetoCaderno"
+            aria-label="Investigar caderno">
 
             📓
 
@@ -278,7 +271,8 @@
         <button
             type="button"
             class="objeto quadro"
-            id="objetoQuadro">
+            id="objetoQuadro"
+            aria-label="Investigar quadro">
 
             <span>
                 ?
@@ -293,7 +287,8 @@
         <button
             type="button"
             class="objeto tv"
-            id="objetoTv">
+            id="objetoTv"
+            aria-label="Investigar televisão">
 
             <div class="tv-tela">
 
@@ -312,7 +307,8 @@
         <button
             type="button"
             class="objeto vela"
-            id="objetoVela">
+            id="objetoVela"
+            aria-label="Investigar vela">
 
             🕯️
 
@@ -325,7 +321,8 @@
         <button
             type="button"
             class="objeto caixa"
-            id="objetoCaixa">
+            id="objetoCaixa"
+            aria-label="Abrir caixa">
 
             🔒
 
@@ -338,7 +335,8 @@
         <button
             type="button"
             class="objeto segredo"
-            id="objetoSegredo">
+            id="objetoSegredo"
+            aria-label="Investigar detalhe">
 
             •
 
@@ -346,9 +344,7 @@
 
 
 
-        <!-- ==================================================
-             LISTA DE PISTAS
-        ================================================== -->
+        <!-- LISTA -->
 
         <div class="caderno-investigacao">
 
@@ -369,7 +365,7 @@
             </div>
 
             <div id="pista4">
-                □ Algo escondido
+                □ Detalhe escondido
             </div>
 
             <div id="pista5">
@@ -383,7 +379,7 @@
 
 
     <!-- ==================================================
-         PAINEL DE PISTA
+         PAINEL DAS PISTAS
     ================================================== -->
 
     <div
@@ -399,17 +395,14 @@
 
         </button>
 
-
         <p
             class="pista-tipo"
             id="pistaTipo">
         </p>
 
-
         <h3
             id="pistaTitulo">
         </h3>
-
 
         <p
             id="pistaTexto">
@@ -420,7 +413,7 @@
 
 
     <!-- ==================================================
-         PAINEL DA CAIXA
+         CAIXA
     ================================================== -->
 
     <div
@@ -436,22 +429,20 @@
 
         </button>
 
-
         <p class="pista-tipo">
             CAIXA Nº 01
         </p>
-
 
         <h3>
             DIGITE O CÓDIGO
         </h3>
 
-
         <p class="texto-caixa">
-            Talvez as pistas que você encontrou
-            tenham alguma coisa em comum.
-        </p>
 
+            As pistas parecem estar relacionadas.
+            Mas a resposta não está escrita diretamente.
+
+        </p>
 
         <input
             type="text"
@@ -459,7 +450,6 @@
             maxlength="6"
             placeholder="______"
             autocomplete="off">
-
 
         <button
             type="button"
@@ -469,7 +459,6 @@
             Desbloquear
 
         </button>
-
 
         <p
             class="resultado-codigo"
@@ -492,33 +481,26 @@
             [ ARQUIVO DESBLOQUEADO ]
         </p>
 
-
         <h2>
             Você encontrou a primeira resposta.
         </h2>
 
-
         <p>
-            Mas talvez essa investigação não seja
-            exatamente sobre o que você pensava.
+            Mas talvez essa investigação nunca tenha
+            sido apenas sobre descobrir um código.
         </p>
-
-
-        <p>
-            E isso foi apenas o começo.
-        </p>
-
 
         <button
             type="button"
             class="botao"
-            onclick="continuarInvestigacao()">
+            onclick="mostrarCartaLirio()">
 
-            ▶ Continuar
+            🌷 Abrir arquivo
 
         </button>
 
     </div>
+
 
 
 </section>
@@ -526,11 +508,79 @@
 
 
 <!-- ==================================================
-     FINAL TEMPORÁRIO
+     CARTA DO LÍRIO
 ================================================== -->
 
 <section
-    class="final-temporario">
+    class="carta-lirio"
+    id="cartaLirio">
+
+
+    <div class="particulas"></div>
+
+
+    <div class="lirio-container">
+
+
+        <div class="titulo-lirio">
+
+            <p class="codigo-vermelho">
+                [ ARQUIVO ESPECIAL ]
+            </p>
+
+            <h2>
+                Para você.
+            </h2>
+
+        </div>
+
+
+
+        <!-- IMAGEM -->
+
+        <div class="moldura-lirio">
+
+            <div class="brilho-lirio"></div>
+
+            <img
+                src="imagens/lirio.jpg"
+                alt="Um lírio">
+
+        </div>
+
+
+
+        <!-- CARTA -->
+
+        <div class="papel-lirio">
+
+            <p class="assinatura">
+                Meu bem,
+            </p>
+
+            <p
+                id="textoLirio"
+                class="texto-lirio">
+            </p>
+
+            <p class="assinatura-final">
+                ♡
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CONTINUAÇÃO FUTURA
+================================================== -->
+
+<section class="continua">
 
     <p class="subtitulo">
         POR ENQUANTO...

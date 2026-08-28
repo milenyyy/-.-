@@ -30,18 +30,24 @@ body {
 :root {
 
     --vermelho-claro: #f2c3c9;
+
     --vermelho: #b84c5c;
+
     --vermelho-escuro: #711f2d;
+
     --rosa: #ff9daa;
+
     --preto: #120e10;
+
     --preto-2: #1d1518;
+
     --cinza: #76666b;
 
 }
 
 
 /* ==================================================
-   BOTÕES
+   BOTÃO
 ================================================== */
 
 .botao {
@@ -536,7 +542,7 @@ body {
 
 
 /* ==================================================
-   PARTE 2 — INVESTIGAÇÃO
+   INVESTIGAÇÃO
 ================================================== */
 
 .investigacao {
@@ -630,8 +636,6 @@ body {
 
     justify-content: space-between;
 
-    align-items: center;
-
     border-bottom:
         1px solid
         #422229;
@@ -661,7 +665,7 @@ body {
 
 
 /* ==================================================
-   INTRODUÇÃO
+   INTRO
 ================================================== */
 
 .investigacao-intro {
@@ -855,10 +859,6 @@ body {
 }
 
 
-/* ==================================================
-   CADERNO
-================================================== */
-
 .caderno {
 
     left: 20%;
@@ -869,10 +869,6 @@ body {
 
 }
 
-
-/* ==================================================
-   QUADRO
-================================================== */
 
 .quadro {
 
@@ -890,9 +886,6 @@ body {
         9px solid
         #0b0809;
 
-    box-shadow:
-        inset 0 0 0 2px #634149;
-
 }
 
 
@@ -904,10 +897,6 @@ body {
 
 }
 
-
-/* ==================================================
-   TV
-================================================== */
 
 .tv {
 
@@ -924,10 +913,6 @@ body {
     border:
         12px solid
         #21191b;
-
-    box-shadow:
-        0 15px 30px
-        rgba(0,0,0,0.7);
 
 }
 
@@ -958,10 +943,6 @@ body {
 }
 
 
-/* ==================================================
-   VELA
-================================================== */
-
 .vela {
 
     left: 12%;
@@ -973,10 +954,6 @@ body {
 }
 
 
-/* ==================================================
-   CAIXA
-================================================== */
-
 .caixa {
 
     right: 27%;
@@ -987,10 +964,6 @@ body {
 
 }
 
-
-/* ==================================================
-   SEGREDO
-================================================== */
 
 .segredo {
 
@@ -1226,13 +1199,6 @@ body {
 }
 
 
-#codigo:focus {
-
-    border-color: #bd4f5d;
-
-}
-
-
 .resultado-codigo {
 
     margin-top: 20px;
@@ -1247,7 +1213,7 @@ body {
 
 
 /* ==================================================
-   ARQUIVO DESBLOQUEADO
+   ARQUIVO
 ================================================== */
 
 .arquivo-desbloqueado {
@@ -1286,16 +1252,229 @@ body {
 
     line-height: 1.8;
 
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
 }
 
 
 /* ==================================================
-   FINAL TEMPORÁRIO
+   CARTA DO LÍRIO
 ================================================== */
 
-.final-temporario {
+.carta-lirio {
+
+    min-height: 100vh;
+
+    padding: 120px 25px;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #fff4f5,
+            #f2c5cb 70%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.lirio-container {
+
+    width: min(850px, 100%);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.titulo-lirio {
+
+    margin-bottom: 45px;
+
+}
+
+
+.titulo-lirio h2 {
+
+    font-size: 60px;
+
+    font-weight: normal;
+
+    color: #27191d;
+
+}
+
+
+/* ==================================================
+   MOLDURA DO LÍRIO
+================================================== */
+
+.moldura-lirio {
+
+    width: min(350px, 85vw);
+
+    height: 430px;
+
+    margin: auto;
+
+    padding: 12px;
+
+    background: #fffdf8;
+
+    border:
+        1px solid
+        #c38b94;
+
+    box-shadow:
+        0 25px 60px
+        rgba(70, 30, 40, 0.2);
+
+    position: relative;
+
+    animation:
+        florAparecer 1.5s ease;
+
+}
+
+
+.moldura-lirio img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.brilho-lirio {
+
+    position: absolute;
+
+    inset: -20px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.65),
+            transparent 65%
+        );
+
+    z-index: -1;
+
+    animation:
+        brilho 4s infinite;
+
+}
+
+
+/* ==================================================
+   PAPEL DA CARTA
+================================================== */
+
+.papel-lirio {
+
+    max-width: 750px;
+
+    margin: 60px auto 0;
+
+    padding: 60px;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 20px 50px
+        rgba(80, 40, 50, 0.12);
+
+    border:
+        1px solid
+        #e5c8cd;
+
+    text-align: left;
+
+    position: relative;
+
+}
+
+
+.papel-lirio::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border:
+        1px solid
+        #ead9dc;
+
+    pointer-events: none;
+
+}
+
+
+.assinatura {
+
+    font-size: 20px;
+
+    margin-bottom: 30px;
+
+    color: #6c4b53;
+
+}
+
+
+.texto-lirio {
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: #38282d;
+
+    min-height: 250px;
+
+}
+
+
+.assinatura-final {
+
+    text-align: right;
+
+    font-size: 35px;
+
+    color: #a84757;
+
+    margin-top: 30px;
+
+}
+
+
+/* ==================================================
+   CONTINUAÇÃO
+================================================== */
+
+.continua {
 
     min-height: 500px;
 
@@ -1316,7 +1495,7 @@ body {
 }
 
 
-.final-temporario h2 {
+.continua h2 {
 
     font-size: 55px;
 
@@ -1324,12 +1503,10 @@ body {
 
     margin-bottom: 20px;
 
-    color: #24171b;
-
 }
 
 
-.final-temporario p:not(.subtitulo) {
+.continua p:not(.subtitulo) {
 
     color: #664c53;
 
@@ -1337,7 +1514,7 @@ body {
 
 
 /* ==================================================
-   RODAPÉ
+   FOOTER
 ================================================== */
 
 footer {
@@ -1373,21 +1550,48 @@ footer small {
 @keyframes aparecer {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(25px);
-
+        transform: translateY(25px);
     }
 
     to {
-
         opacity: 1;
+        transform: translateY(0);
+    }
 
+}
+
+
+@keyframes florAparecer {
+
+    from {
+        opacity: 0;
         transform:
-            translateY(0);
+            translateY(40px)
+            scale(0.92);
+    }
 
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes brilho {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
     }
 
 }
@@ -1406,15 +1610,11 @@ footer small {
     }
 
     10% {
-
         opacity: 0.9;
-
     }
 
     90% {
-
         opacity: 0.8;
-
     }
 
     100% {
@@ -1442,15 +1642,11 @@ footer small {
     }
 
     30% {
-
         opacity: 1;
-
     }
 
     70% {
-
         opacity: 1;
-
     }
 
     100% {
@@ -1492,28 +1688,23 @@ footer small {
 @keyframes ruido {
 
     0% {
-        transform:
-            translate(0,0);
+        transform: translate(0,0);
     }
 
     25% {
-        transform:
-            translate(2px,-1px);
+        transform: translate(2px,-1px);
     }
 
     50% {
-        transform:
-            translate(-1px,2px);
+        transform: translate(-1px,2px);
     }
 
     75% {
-        transform:
-            translate(1px,1px);
+        transform: translate(1px,1px);
     }
 
     100% {
-        transform:
-            translate(0,0);
+        transform: translate(0,0);
     }
 
 }
@@ -1566,11 +1757,6 @@ footer small {
 
     .voce-e h2 {
         font-size: 65px;
-    }
-
-
-    .fotos {
-        grid-template-columns: 1fr;
     }
 
 
@@ -1640,12 +1826,28 @@ footer small {
     }
 
 
-    .arquivo-desbloqueado h2 {
-        font-size: 34px;
+    .titulo-lirio h2 {
+        font-size: 42px;
     }
 
 
-    .final-temporario h2 {
+    .moldura-lirio {
+        height: 360px;
+    }
+
+
+    .papel-lirio {
+        padding: 45px 30px;
+    }
+
+
+    .texto-lirio {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+
+    .continua h2 {
         font-size: 38px;
     }
 

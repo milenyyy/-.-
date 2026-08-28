@@ -1,48 +1,11 @@
-/* =========================================
-   ABRIR CARTA
-========================================= */
+/* =====================================================
+   PARTE 1 — ABRIR CARTA
+===================================================== */
 
 function abrirCarta() {
 
-    const carta =
-        document.getElementById("carta");
-
-    carta.scrollIntoView({
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-
-/* =========================================
-   IR PARA OS CORAÇÕES
-========================================= */
-
-function irParaCoracoes() {
-
-    const elogios =
-        document.getElementById("elogios");
-
-
-    /*
-       Primeiro ativamos a animação
-       da seção.
-    */
-
-    iniciarElogios();
-
-
-    /*
-       Depois descemos suavemente
-       até ela.
-    */
-
-    setTimeout(() => {
-
-        elogios.scrollIntoView({
+    document.getElementById("carta")
+        .scrollIntoView({
 
             behavior: "smooth",
 
@@ -50,74 +13,55 @@ function irParaCoracoes() {
 
         });
 
-    }, 100);
-
 }
 
 
-
-/* =========================================
-   VOLTAR PARA A CARTA
-========================================= */
-
-function voltarCarta() {
-
-    const carta =
-        document.getElementById("carta");
-
-
-    carta.scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "start"
-
-    });
-
-}
-
-
-
-/* =========================================
-   PRÓXIMA PARTE
-========================================= */
-
-function proximaParte() {
-
-    /*
-       Por enquanto não existe
-       uma Parte 2.
-
-       Quando criarmos a próxima seção,
-       colocaremos o código aqui.
-    */
-
-    console.log(
-        "A próxima parte ainda está sendo criada ❤️"
-    );
-
-}
-
-
-
-/* =========================================
-   INICIAR TELA "VOCÊ É..."
-========================================= */
+/* =====================================================
+   IR PARA CORAÇÕES
+===================================================== */
 
 let elogiosIniciados = false;
 
-let intervaloCoracoes;
 
-let intervaloPalavras;
+function irParaCoracoes() {
+
+    iniciarElogios();
+
+    document.getElementById("elogios")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+}
 
 
+/* =====================================================
+   VOLTAR PARA CARTA
+===================================================== */
+
+function voltarCarta() {
+
+    document.getElementById("carta")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+}
+
+
+/* =====================================================
+   CORAÇÕES INFINITOS
+===================================================== */
 
 function iniciarElogios() {
-
-    /*
-       Evita criar várias chuvas
-       se o botão for clicado novamente.
-    */
 
     if (elogiosIniciados) {
 
@@ -125,151 +69,150 @@ function iniciarElogios() {
 
     }
 
-
     elogiosIniciados = true;
 
-
-    const coracoes =
-        document.getElementById("coracoes");
-
-
-    /*
-       Palavras DENTRO dos corações
-    */
 
     const palavrasCoracoes = [
 
         "incrível",
+
         "maravilhoso",
+
         "especial",
+
         "lindo",
+
         "único",
+
         "gentil",
+
         "admirável",
+
         "divertido",
+
         "fantástico",
+
         "inesquecível",
+
         "importante",
+
         "extraordinário",
+
         "brilhante",
+
         "talentoso",
+
         "querido",
+
         "surpreendente",
+
         "memorável",
+
         "criativo",
+
         "carinhoso",
+
         "encantador",
+
         "generoso",
+
         "inteligente",
+
         "autêntico",
+
         "inspirador"
 
     ];
 
 
-
-    /*
-       Palavras SOLTAS pela tela
-    */
-
     const palavrasSoltas = [
 
         "luz",
+
         "alegria",
+
         "carinho",
+
         "amizade",
+
         "sorriso",
+
         "sonho",
+
         "felicidade",
+
         "paz",
+
         "coragem",
+
         "gentileza",
+
         "esperança",
+
         "brilho",
+
         "bondade",
+
         "força",
+
         "calma",
+
         "magia",
+
         "risadas",
+
         "memórias",
+
         "presença",
+
         "vida",
+
         "sonhos",
+
         "momentos",
-        "afeto",
-        "alegria"
+
+        "afeto"
 
     ];
 
 
-
-    /*
-       Primeiros corações
-    */
-
     for (let i = 0; i < 18; i++) {
 
-        criarCoracao(
-            palavrasCoracoes
-        );
+        criarCoracao(palavrasCoracoes);
 
     }
 
 
+    setInterval(() => {
 
-    /*
-       CHUVA INFINITA
-    */
+        criarCoracao(palavrasCoracoes);
 
-    intervaloCoracoes =
-        setInterval(() => {
+    }, 350);
 
-            criarCoracao(
-                palavrasCoracoes
-            );
-
-        }, 350);
-
-
-
-    /*
-       Primeiras palavras
-    */
 
     for (let i = 0; i < 8; i++) {
 
-        criarPalavraSolta(
-            palavrasSoltas
-        );
+        criarPalavraSolta(palavrasSoltas);
 
     }
 
 
+    setInterval(() => {
 
-    /*
-       PALAVRAS INFINITAS
-    */
+        criarPalavraSolta(palavrasSoltas);
 
-    intervaloPalavras =
-        setInterval(() => {
-
-            criarPalavraSolta(
-                palavrasSoltas
-            );
-
-        }, 900);
+    }, 900);
 
 }
 
 
-
-/* =========================================
+/* =====================================================
    CRIAR CORAÇÃO
-========================================= */
+===================================================== */
 
 function criarCoracao(palavras) {
 
-    const coracoes =
+    const container =
         document.getElementById("coracoes");
 
 
@@ -281,15 +224,8 @@ function criarCoracao(palavras) {
         document.createElement("span");
 
 
-    coracao.classList.add(
-        "coracao"
-    );
+    coracao.classList.add("coracao");
 
-
-    /*
-       Escolhe uma palavra
-       aleatoriamente.
-    */
 
     texto.innerText =
         palavras[
@@ -300,23 +236,12 @@ function criarCoracao(palavras) {
         ];
 
 
-    coracao.appendChild(
-        texto
-    );
+    coracao.appendChild(texto);
 
-
-    /*
-       Posição horizontal
-       aleatória.
-    */
 
     coracao.style.left =
         Math.random() * 100 + "%";
 
-
-    /*
-       Velocidade aleatória.
-    */
 
     const velocidade =
         5 + Math.random() * 6;
@@ -326,35 +251,16 @@ function criarCoracao(palavras) {
         velocidade + "s";
 
 
-    /*
-       Pequeno atraso aleatório.
-    */
-
     coracao.style.animationDelay =
         Math.random() * 1.5 + "s";
 
-
-    /*
-       Tamanho aleatório.
-    */
 
     coracao.style.scale =
         0.55 + Math.random() * 0.65;
 
 
-    coracoes.appendChild(
-        coracao
-    );
+    container.appendChild(coracao);
 
-
-    /*
-       Depois que o coração
-       termina de cair,
-       ele é apagado.
-
-       Outro coração já estará
-       sendo criado pelo intervalo.
-    */
 
     setTimeout(() => {
 
@@ -365,17 +271,14 @@ function criarCoracao(palavras) {
 }
 
 
-
-/* =========================================
-   CRIAR PALAVRA SOLTA
-========================================= */
+/* =====================================================
+   PALAVRAS FORA DOS CORAÇÕES
+===================================================== */
 
 function criarPalavraSolta(palavras) {
 
     const container =
-        document.getElementById(
-            "palavrasSoltas"
-        );
+        document.getElementById("palavrasSoltas");
 
 
     const palavra =
@@ -387,10 +290,6 @@ function criarPalavraSolta(palavras) {
     );
 
 
-    /*
-       Escolhe uma palavra.
-    */
-
     palavra.innerText =
         palavras[
             Math.floor(
@@ -400,25 +299,15 @@ function criarPalavraSolta(palavras) {
         ];
 
 
-    /*
-       Posição aleatória.
-    */
-
     palavra.style.left =
-        Math.random() * 88 + 6 + "%";
+        (Math.random() * 88 + 6) + "%";
 
 
     palavra.style.top =
-        Math.random() * 82 + 6 + "%";
+        (Math.random() * 82 + 6) + "%";
 
 
-    /*
-       Algumas palavras ficam maiores.
-    */
-
-    if (
-        Math.random() > 0.7
-    ) {
+    if (Math.random() > 0.7) {
 
         palavra.classList.add(
             "grande"
@@ -427,27 +316,204 @@ function criarPalavraSolta(palavras) {
     }
 
 
-    /*
-       Tempo aleatório.
-    */
-
     palavra.style.animationDuration =
-        3 + Math.random() * 3 + "s";
+
+        (3 + Math.random() * 3) +
+        "s";
 
 
-    container.appendChild(
-        palavra
-    );
+    container.appendChild(palavra);
 
-
-    /*
-       Remove depois que desaparecer.
-    */
 
     setTimeout(() => {
 
         palavra.remove();
 
     }, 7000);
+
+}
+
+
+/* =====================================================
+   PARTE 2
+===================================================== */
+
+function irParaParte2() {
+
+    document.getElementById("arquivo")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+}
+
+
+function voltarParte1() {
+
+    document.getElementById("elogios")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+}
+
+
+function iniciarInvestigacao() {
+
+    document.getElementById("investigacao")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
+
+}
+
+
+/* =====================================================
+   ARQUIVOS DA INVESTIGAÇÃO
+===================================================== */
+
+function abrirArquivo(numero) {
+
+    const resultado =
+        document.getElementById(
+            "resultadoArquivo"
+        );
+
+
+    if (numero === 1) {
+
+        resultado.innerHTML = `
+
+            <strong>
+                📼 TAPE_01
+            </strong>
+
+            <br><br>
+
+            Parece que esta fita contém
+            uma mensagem escondida.
+
+            <br>
+
+            Talvez seja melhor procurar
+            outro arquivo primeiro...
+
+        `;
+
+    }
+
+
+    if (numero === 2) {
+
+        resultado.innerHTML = `
+
+            <strong>
+                📷 PHOTO_01
+            </strong>
+
+            <br><br>
+
+            ARQUIVO BLOQUEADO.
+
+            <br>
+
+            É necessário encontrar
+            a senha para visualizar.
+
+        `;
+
+    }
+
+
+    if (numero === 3) {
+
+        resultado.innerHTML = `
+
+            <strong>
+                📄 NOTE_01
+            </strong>
+
+            <br><br>
+
+            "Nem tudo que está escondido
+            realmente quer continuar escondido."
+
+            <br><br>
+
+            — arquivo desconhecido
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   SENHA
+===================================================== */
+
+function verificarSenha() {
+
+    const input =
+        document.getElementById(
+            "senhaInput"
+        );
+
+
+    const mensagem =
+        document.getElementById(
+            "mensagemSenha"
+        );
+
+
+    const senha =
+        input.value
+            .trim()
+            .toLowerCase();
+
+
+    /*
+       SENHA PROVISÓRIA.
+
+       Depois podemos trocar por uma
+       senha que tenha significado para vocês.
+    */
+
+    const senhaCorreta = "noah";
+
+
+    if (senha === senhaCorreta) {
+
+        mensagem.innerHTML =
+            "✓ ACESSO CONCEDIDO. O arquivo foi desbloqueado.";
+
+
+        mensagem.style.color =
+            "#86b99a";
+
+
+    } else {
+
+        mensagem.innerHTML =
+            "✕ ACESSO NEGADO. Essa não parece ser a senha.";
+
+
+        mensagem.style.color =
+            "#c4878d";
+
+    }
 
 }

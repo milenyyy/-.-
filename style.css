@@ -1,6 +1,6 @@
-/* =====================================================
+/* ==================================================
    CONFIGURAÇÕES
-===================================================== */
+================================================== */
 
 * {
     margin: 0;
@@ -30,134 +30,104 @@ body {
 :root {
 
     --vermelho-claro: #f2c3c9;
-
     --vermelho: #b84c5c;
-
     --vermelho-escuro: #711f2d;
-
-    --vermelho-brilho: #ff9daa;
-
+    --rosa: #ff9daa;
     --preto: #120e10;
-
     --preto-2: #1d1518;
-
     --cinza: #76666b;
-
-    --branco: #fffafa;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    BOTÕES
-===================================================== */
+================================================== */
 
 .botao {
 
     border: none;
 
-    background:
-        var(--vermelho);
+    background: var(--vermelho);
 
     color: white;
 
-    padding:
-        15px 30px;
+    padding: 15px 30px;
 
-    border-radius:
-        30px;
+    border-radius: 30px;
 
-    font-size:
-        15px;
+    font-size: 15px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    transition:
-        0.3s;
+    transition: 0.3s;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     box-shadow:
         0 8px 25px
-        rgba(100, 20, 35, 0.16);
+        rgba(100, 20, 35, 0.18);
 
 }
+
 
 .botao:hover {
 
-    background:
-        var(--vermelho-escuro);
+    background: var(--vermelho-escuro);
 
-    transform:
-        translateY(-4px);
+    transform: translateY(-4px);
 
     box-shadow:
         0 15px 35px
-        rgba(100, 20, 35, 0.25);
+        rgba(100, 20, 35, 0.3);
 
 }
 
 
-/* =====================================================
-   SUBTÍTULOS
-===================================================== */
+/* ==================================================
+   SUBTÍTULO
+================================================== */
 
 .subtitulo {
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    letter-spacing:
-        5px;
+    letter-spacing: 5px;
 
-    color:
-        var(--vermelho-escuro);
+    color: var(--vermelho-escuro);
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
 }
 
 
-/* =====================================================
-   PARTE 1 — INÍCIO
-===================================================== */
+/* ==================================================
+   INÍCIO
+================================================== */
 
 .inicio {
 
-    min-height:
-        100vh;
+    min-height: 100vh;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    text-align:
-        center;
+    text-align: center;
 
-    padding:
-        30px;
+    padding: 30px;
 
-    position:
-        relative;
+    position: relative;
 
     background:
 
         radial-gradient(
             circle at 20% 20%,
-            #f0b6bf,
+            #efb6bf,
             transparent 32%
         ),
 
@@ -174,24 +144,19 @@ body {
 
 .inicio::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        420px;
+    width: 420px;
 
-    height:
-        420px;
+    height: 420px;
 
     border:
         1px solid
         rgba(113, 31, 45, 0.12);
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     animation:
         pulsar 5s infinite;
@@ -201,14 +166,11 @@ body {
 
 .inicio-conteudo {
 
-    max-width:
-        700px;
+    max-width: 700px;
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        2;
+    z-index: 2;
 
     animation:
         aparecer 1.2s ease;
@@ -218,235 +180,179 @@ body {
 
 .inicio h1 {
 
-    font-size:
-        90px;
+    font-size: 90px;
 
-    font-weight:
-        normal;
+    font-weight: normal;
 
-    color:
-        var(--preto);
+    color: var(--preto);
 
-    margin-bottom:
-        25px;
-
-    text-shadow:
-        3px 3px 0
-        rgba(184, 76, 92, 0.12);
+    margin-bottom: 25px;
 
 }
 
 
 .frase {
 
-    font-size:
-        20px;
+    font-size: 20px;
 
-    line-height:
-        1.7;
+    line-height: 1.7;
 
-    color:
-        var(--cinza);
+    color: var(--cinza);
 
-    margin-bottom:
-        35px;
+    margin-bottom: 35px;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    CARTA
-===================================================== */
+================================================== */
 
 .carta {
 
-    min-height:
-        100vh;
+    min-height: 100vh;
 
-    padding:
-        100px 30px;
+    padding: 100px 30px;
 
-    display:
-        flex;
+    display: flex;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    align-items:
-        center;
+    align-items: center;
 
-    background:
-        #fffafa;
+    background: #fffafa;
 
 }
 
 
 .papel {
 
-    max-width:
-        750px;
+    max-width: 750px;
 
-    width:
-        100%;
+    width: 100%;
 
-    background:
-        #fffdf8;
+    background: #fffdf8;
 
-    padding:
-        70px;
+    padding: 70px;
 
-    border-radius:
-        5px;
+    border-radius: 5px;
 
     box-shadow:
         0 20px 60px
         rgba(50, 20, 30, 0.13);
 
-    position:
-        relative;
+    position: relative;
 
 }
 
 
 .papel::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        20px;
+    top: 20px;
 
-    left:
-        20px;
+    left: 20px;
 
-    right:
-        20px;
+    right: 20px;
 
-    bottom:
-        20px;
+    bottom: 20px;
 
     border:
         1px solid
         #e7cdd2;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
 }
 
 
 .data {
 
-    text-align:
-        right;
+    text-align: right;
 
-    color:
-        #98747c;
+    color: #98747c;
 
-    margin-bottom:
-        50px;
+    margin-bottom: 50px;
 
 }
 
 
 .papel h2 {
 
-    font-size:
-        40px;
+    font-size: 40px;
 
-    font-weight:
-        normal;
+    font-weight: normal;
 
-    margin-bottom:
-        30px;
+    margin-bottom: 30px;
 
-    color:
-        var(--preto);
+    color: var(--preto);
 
 }
 
 
 .papel p:not(.data):not(.mensagem) {
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    line-height:
-        2;
+    line-height: 2;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
-    color:
-        #493b40;
+    color: #493b40;
 
 }
 
 
 .papel .botao {
 
-    margin-top:
-        20px;
+    margin-top: 20px;
 
 }
 
 
 .mensagem {
 
-    display:
-        none;
+    display: none;
 
-    margin-top:
-        30px;
+    margin-top: 30px;
 
-    padding:
-        25px;
+    padding: 25px;
 
-    background:
-        #f6dce1;
+    background: #f6dce1;
 
     border-left:
         4px solid
         var(--vermelho);
 
-    border-radius:
-        12px;
+    border-radius: 12px;
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    line-height:
-        1.8;
+    line-height: 1.8;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    CORAÇÕES
-===================================================== */
+================================================== */
 
 .coracoes {
 
-    min-height:
-        100vh;
+    min-height: 100vh;
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
     background:
 
@@ -456,48 +362,110 @@ body {
             #171012 70%
         );
 
-    color:
-        white;
+    color: white;
 
 }
 
 
-.coracoes::before {
+.coracoes-fundo {
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
+    inset: 0;
 
-    width:
-        600px;
+    overflow: hidden;
 
-    height:
-        600px;
+    z-index: 5;
 
-    background:
-        rgba(185, 75, 91, 0.13);
+    pointer-events: none;
 
-    border-radius:
-        50%;
+}
 
-    filter:
-        blur(100px);
+
+.coracao {
+
+    position: absolute;
+
+    top: -100px;
+
+    color: #f3aeb9;
+
+    font-size: 25px;
+
+    animation:
+        cair linear infinite;
+
+    opacity: 0.85;
+
+}
+
+
+.coracao span {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: #551d27;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+}
+
+
+.palavras-fora {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.palavra-flutuante {
+
+    position: absolute;
+
+    z-index: 8;
+
+    color: #f3c5cc;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    animation:
+        estrela 4s ease-in-out infinite;
+
+    opacity: 0;
 
 }
 
 
 .voce-e {
 
-    text-align:
-        center;
+    text-align: center;
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        20;
+    z-index: 20;
 
     animation:
         aparecer 1.5s ease;
@@ -507,203 +475,53 @@ body {
 
 .mini-texto {
 
-    font-family:
-        Arial,
-        sans-serif;
+    text-transform: uppercase;
 
-    text-transform:
-        uppercase;
+    letter-spacing: 4px;
 
-    letter-spacing:
-        4px;
+    font-size: 11px;
 
-    font-size:
-        11px;
+    color: #e7a9b2;
 
-    color:
-        #e7a9b2;
-
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
 }
 
 
 .voce-e h2 {
 
-    font-size:
-        90px;
+    font-size: 90px;
 
-    font-weight:
-        normal;
+    font-weight: normal;
 
-    color:
-        #fffafa;
-
-    text-shadow:
-        0 0 30px
-        rgba(243, 197, 204, 0.3);
+    color: #fffafa;
 
 }
 
 
 .texto-coracoes {
 
-    margin-top:
-        20px;
+    margin-top: 20px;
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    color:
-        #d9c1c5;
-
-}
-
-
-.coracoes-fundo {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    overflow:
-        hidden;
-
-    z-index:
-        5;
-
-    pointer-events:
-        none;
-
-}
-
-
-.coracao {
-
-    position:
-        absolute;
-
-    top:
-        -100px;
-
-    color:
-        #f3aeb9;
-
-    font-size:
-        25px;
-
-    animation:
-        cair linear infinite;
-
-    opacity:
-        0.85;
-
-    text-shadow:
-        0 0 15px
-        rgba(255, 150, 170, 0.5);
-
-}
-
-
-.coracao span {
-
-    position:
-        absolute;
-
-    left:
-        50%;
-
-    top:
-        50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    color:
-        #551d27;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        7px;
-
-    font-weight:
-        bold;
-
-    white-space:
-        nowrap;
-
-}
-
-
-.palavras-fora {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    pointer-events:
-        none;
-
-}
-
-
-.palavra-flutuante {
-
-    position:
-        absolute;
-
-    z-index:
-        8;
-
-    color:
-        #f3c5cc;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
-    animation:
-        estrela 4s ease-in-out infinite;
-
-    opacity:
-        0;
+    color: #d9c1c5;
 
 }
 
 
 .botao-proximo {
 
-    position:
-        absolute;
+    position: absolute;
 
-    bottom:
-        35px;
+    bottom: 35px;
 
-    left:
-        50%;
+    left: 50%;
 
     transform:
         translateX(-50%);
 
-    z-index:
-        30;
+    z-index: 30;
 
 }
 
@@ -717,186 +535,36 @@ body {
 }
 
 
-/* =====================================================
-   GALERIA
-===================================================== */
-
-.galeria {
-
-    padding:
-        120px 30px;
-
-    max-width:
-        1100px;
-
-    margin:
-        auto;
-
-    text-align:
-        center;
-
-    background:
-        #fff7f8;
-
-}
-
-
-.galeria h2 {
-
-    font-size:
-        50px;
-
-    font-weight:
-        normal;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.descricao {
-
-    color:
-        var(--cinza);
-
-    margin-bottom:
-        50px;
-
-}
-
-
-.fotos {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        25px;
-
-}
-
-
-.foto {
-
-    background:
-        white;
-
-    padding:
-        12px;
-
-    border-radius:
-        15px;
-
-    box-shadow:
-        0 10px 30px
-        rgba(70, 40, 60, 0.08);
-
-    transition:
-        0.4s;
-
-    cursor:
-        pointer;
-
-}
-
-
-.foto:hover {
-
-    transform:
-        translateY(-10px)
-        rotate(1deg);
-
-}
-
-
-.foto img {
-
-    width:
-        100%;
-
-    height:
-        350px;
-
-    object-fit:
-        cover;
-
-    border-radius:
-        10px;
-
-}
-
-
-.legenda {
-
-    text-align:
-        left;
-
-    padding:
-        18px 10px 10px;
-
-}
-
-
-.legenda h3 {
-
-    margin-bottom:
-        7px;
-
-}
-
-
-.legenda p {
-
-    color:
-        #806f77;
-
-}
-
-
-/* =====================================================
+/* ==================================================
    PARTE 2 — INVESTIGAÇÃO
-===================================================== */
+================================================== */
 
 .investigacao {
 
-    min-height:
-        100vh;
+    min-height: 100vh;
 
-    background:
-        #0c090a;
+    background: #0c090a;
 
-    color:
-        #eee;
+    color: #eee;
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    padding:
-        60px 25px 100px;
+    padding: 60px 25px 100px;
 
 }
 
 
 .investigacao::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
     background:
         radial-gradient(
@@ -905,45 +573,37 @@ body {
             rgba(0,0,0,0.55)
         );
 
-    z-index:
-        20;
+    z-index: 20;
 
 }
 
 
 .ruido {
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
-    opacity:
-        0.07;
+    opacity: 0.07;
 
     background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
     animation:
         ruido 0.2s infinite;
 
-    z-index:
-        10;
+    z-index: 10;
 
 }
 
 
 .scanlines {
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
     background:
         repeating-linear-gradient(
@@ -953,175 +613,134 @@ body {
             rgba(255,255,255,0.025) 4px
         );
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
-    z-index:
-        11;
+    z-index: 11;
 
 }
 
 
 .investigacao-header {
 
-    max-width:
-        1100px;
+    max-width: 1100px;
 
-    margin:
-        0 auto 60px;
+    margin: 0 auto 60px;
 
-    display:
-        flex;
+    display: flex;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
-    align-items:
-        center;
+    align-items: center;
 
     border-bottom:
         1px solid
         #422229;
 
-    padding-bottom:
-        15px;
+    padding-bottom: 15px;
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        30;
+    z-index: 30;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
-    color:
-        #9c7379;
+    color: #9c7379;
 
 }
 
 
 .investigacao-header span {
 
-    color:
-        #bd4f5d;
+    color: #bd4f5d;
 
 }
 
 
-/* =====================================================
-   INTRO
-===================================================== */
+/* ==================================================
+   INTRODUÇÃO
+================================================== */
 
 .investigacao-intro {
 
-    min-height:
-        65vh;
+    min-height: 65vh;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    text-align:
-        center;
+    text-align: center;
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        30;
+    z-index: 30;
 
 }
 
 
 .codigo-vermelho {
 
-    color:
-        #d15c6b;
+    color: #d15c6b;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
-    margin-bottom:
-        25px;
+    margin-bottom: 25px;
 
 }
 
 
 .investigacao-intro h2 {
 
-    font-size:
-        65px;
+    font-size: 65px;
 
-    font-weight:
-        normal;
+    font-weight: normal;
 
-    color:
-        #f0c5ca;
+    color: #f0c5ca;
 
-    line-height:
-        1.2;
+    line-height: 1.2;
 
-    margin-bottom:
-        25px;
+    margin-bottom: 25px;
 
 }
 
 
 .investigacao-intro > p:not(.codigo-vermelho) {
 
-    color:
-        #927b80;
+    color: #927b80;
 
-    font-size:
-        18px;
+    font-size: 18px;
 
-    margin-bottom:
-        35px;
+    margin-bottom: 35px;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    SALA
-===================================================== */
+================================================== */
 
 .sala {
 
-    display:
-        none;
+    display: none;
 
-    width:
-        min(1100px, 100%);
+    width: min(1100px, 100%);
 
-    height:
-        650px;
+    height: 650px;
 
-    margin:
-        auto;
+    margin: auto;
 
-    position:
-        relative;
+    position: relative;
 
     background:
 
@@ -1139,126 +758,93 @@ body {
 
     box-shadow:
         inset 0 0 100px
-        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.8);
 
-        0 0 80px
-        rgba(120,30,50,0.08);
-
-    z-index:
-        25;
+    z-index: 25;
 
 }
 
 
 .sala::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        0;
+    left: 0;
 
-    right:
-        0;
+    right: 0;
 
-    top:
-        65%;
+    top: 65%;
 
-    height:
-        1px;
+    height: 1px;
 
-    background:
-        #4a272d;
+    background: #4a272d;
 
 }
 
 
-/* =====================================================
-   OBJETIVO
-===================================================== */
-
 .objetivo {
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        20px;
+    top: 20px;
 
-    left:
-        25px;
+    left: 25px;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    z-index:
-        50;
+    z-index: 50;
 
 }
 
 
 .objetivo span {
 
-    color:
-        #bd4f5d;
+    color: #bd4f5d;
 
-    font-size:
-        10px;
+    font-size: 10px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
 }
 
 
 .objetivo p {
 
-    color:
-        #79666b;
+    color: #79666b;
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    margin-top:
-        5px;
+    margin-top: 5px;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    OBJETOS
-===================================================== */
+================================================== */
 
 .objeto {
 
-    border:
-        none;
+    border: none;
 
-    background:
-        transparent;
+    background: transparent;
 
-    position:
-        absolute;
+    position: absolute;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    z-index:
-        40;
+    z-index: 40;
 
-    transition:
-        0.3s;
+    transition: 0.3s;
 
 }
 
 
 .objeto:hover {
 
-    transform:
-        scale(1.08);
+    transform: scale(1.08);
 
     filter:
         drop-shadow(
@@ -1269,113 +855,71 @@ body {
 }
 
 
-/* =====================================================
-   VELA
-===================================================== */
+/* ==================================================
+   CADERNO
+================================================== */
 
-.vela {
+.caderno {
 
-    left:
-        15%;
+    left: 20%;
 
-    bottom:
-        25%;
+    bottom: 14%;
 
-    font-size:
-        55px;
-
-    filter:
-        grayscale(0.7);
+    font-size: 65px;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    QUADRO
-===================================================== */
+================================================== */
 
 .quadro {
 
-    left:
-        38%;
+    left: 38%;
 
-    top:
-        18%;
+    top: 18%;
 
-    width:
-        160px;
+    width: 160px;
 
-    height:
-        110px;
+    height: 110px;
 
-    background:
-        #302124;
+    background: #302124;
 
     border:
         9px solid
         #0b0809;
 
     box-shadow:
-        inset 0 0 0 2px #634149,
-
-        0 10px 25px
-        rgba(0,0,0,0.5);
+        inset 0 0 0 2px #634149;
 
 }
 
 
 .quadro span {
 
-    font-size:
-        45px;
+    font-size: 45px;
 
-    color:
-        #5f444a;
+    color: #5f444a;
 
 }
 
 
-/* =====================================================
-   CADERNO
-===================================================== */
-
-.caderno {
-
-    left:
-        23%;
-
-    bottom:
-        14%;
-
-    font-size:
-        65px;
-
-    filter:
-        grayscale(0.5);
-
-}
-
-
-/* =====================================================
+/* ==================================================
    TV
-===================================================== */
+================================================== */
 
 .tv {
 
-    right:
-        17%;
+    right: 17%;
 
-    top:
-        28%;
+    top: 28%;
 
-    width:
-        220px;
+    width: 220px;
 
-    height:
-        150px;
+    height: 150px;
 
-    background:
-        #0a0809;
+    background: #0a0809;
 
     border:
         12px solid
@@ -1388,61 +932,25 @@ body {
 }
 
 
-.tv::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    bottom:
-        -35px;
-
-    left:
-        45px;
-
-    width:
-        110px;
-
-    height:
-        35px;
-
-    border-bottom:
-        5px solid
-        #171113;
-
-}
-
-
 .tv-tela {
 
-    width:
-        100%;
+    width: 100%;
 
-    height:
-        100%;
+    height: 100%;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    background:
-        #151113;
+    background: #151113;
 
-    color:
-        #6d555a;
+    color: #6d555a;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    font-size:
-        10px;
+    font-size: 10px;
 
     animation:
         tvPiscando 2s infinite;
@@ -1450,169 +958,150 @@ body {
 }
 
 
-/* =====================================================
-   CAIXA
-===================================================== */
+/* ==================================================
+   VELA
+================================================== */
 
-.caixa {
+.vela {
 
-    right:
-        28%;
+    left: 12%;
 
-    bottom:
-        13%;
+    bottom: 25%;
 
-    font-size:
-        60px;
+    font-size: 55px;
 
 }
 
 
-/* =====================================================
+/* ==================================================
+   CAIXA
+================================================== */
+
+.caixa {
+
+    right: 27%;
+
+    bottom: 13%;
+
+    font-size: 60px;
+
+}
+
+
+/* ==================================================
    SEGREDO
-===================================================== */
+================================================== */
 
 .segredo {
 
-    right:
-        8%;
+    right: 8%;
 
-    bottom:
-        8%;
+    bottom: 8%;
 
-    color:
-        #5e3b42;
+    color: #5e3b42;
 
-    font-size:
-        30px;
+    font-size: 30px;
 
-    opacity:
-        0.5;
+    opacity: 0.5;
 
 }
 
 
 .segredo:hover {
 
-    color:
-        #e36b7b;
+    color: #e36b7b;
 
 }
 
 
-/* =====================================================
-   CADERNO DE INVESTIGAÇÃO
-===================================================== */
+/* ==================================================
+   LISTA DE PISTAS
+================================================== */
 
 .caderno-investigacao {
 
-    position:
-        absolute;
+    position: absolute;
 
-    right:
-        20px;
+    right: 20px;
 
-    top:
-        20px;
+    top: 20px;
 
-    width:
-        210px;
+    width: 210px;
 
-    padding:
-        15px;
+    padding: 15px;
 
     background:
-        rgba(15,10,12,0.88);
+        rgba(15,10,12,0.92);
 
     border:
         1px solid
         #48252c;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    color:
-        #8e777b;
+    color: #8e777b;
 
-    z-index:
-        60;
+    z-index: 60;
 
 }
 
 
 .caderno-titulo {
 
-    color:
-        #d15c6b;
+    color: #d15c6b;
 
     border-bottom:
         1px solid
         #45242a;
 
-    padding-bottom:
-        10px;
+    padding-bottom: 10px;
 
-    margin-bottom:
-        12px;
+    margin-bottom: 12px;
 
 }
 
 
 .caderno-investigacao div:not(.caderno-titulo) {
 
-    margin:
-        9px 0;
-
-    transition:
-        0.4s;
+    margin: 9px 0;
 
 }
 
 
 .pista-encontrada {
 
-    color:
-        #e8b1b8 !important;
+    color: #e8b1b8 !important;
 
-    text-decoration:
-        line-through;
+    text-decoration: line-through;
 
 }
 
 
-/* =====================================================
-   PAINEL DE PISTA
-===================================================== */
+/* ==================================================
+   PAINÉIS
+================================================== */
 
 .painel-pista,
 .caixa-painel {
 
-    display:
-        none;
+    display: none;
 
-    position:
-        fixed;
+    position: fixed;
 
-    top:
-        50%;
+    top: 50%;
 
-    left:
-        50%;
+    left: 50%;
 
     transform:
         translate(-50%, -50%);
 
-    width:
-        min(500px, 90%);
+    width: min(500px, 90%);
 
-    padding:
-        40px;
+    padding: 40px;
 
-    background:
-        #171012;
+    background: #171012;
 
     border:
         1px solid
@@ -1622,11 +1111,9 @@ body {
         0 30px 100px
         rgba(0,0,0,0.8);
 
-    z-index:
-        200;
+    z-index: 200;
 
-    text-align:
-        center;
+    text-align: center;
 
     animation:
         aparecer 0.4s ease;
@@ -1636,49 +1123,36 @@ body {
 
 .fechar-pista {
 
-    position:
-        absolute;
+    position: absolute;
 
-    right:
-        15px;
+    right: 15px;
 
-    top:
-        10px;
+    top: 10px;
 
-    background:
-        transparent;
+    background: transparent;
 
-    border:
-        none;
+    border: none;
 
-    color:
-        #7d5c63;
+    color: #7d5c63;
 
-    font-size:
-        25px;
+    font-size: 25px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
 }
 
 
 .pista-tipo {
 
-    color:
-        #d15c6b;
+    color: #d15c6b;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
 }
 
@@ -1686,332 +1160,221 @@ body {
 .painel-pista h3,
 .caixa-painel h3 {
 
-    color:
-        #f1c5ca;
+    color: #f1c5ca;
 
-    font-size:
-        30px;
+    font-size: 30px;
 
-    font-weight:
-        normal;
+    font-weight: normal;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
 }
 
 
 .painel-pista > p:not(.pista-tipo) {
 
-    color:
-        #b8a4a8;
+    color: #b8a4a8;
 
-    line-height:
-        1.8;
+    line-height: 1.8;
 
-    font-size:
-        16px;
+    font-size: 16px;
 
 }
 
 
-/* =====================================================
-   CAIXA
-===================================================== */
+/* ==================================================
+   INPUT
+================================================== */
 
 .texto-caixa {
 
-    color:
-        #927e83;
+    color: #927e83;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    margin-bottom:
-        25px;
+    margin-bottom: 25px;
 
 }
 
 
 #codigo {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        180px;
+    width: 180px;
 
-    margin:
-        0 auto 20px;
+    margin: 0 auto 20px;
 
-    padding:
-        13px;
+    padding: 13px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    background:
-        #0b0809;
+    background: #0b0809;
 
     border:
         1px solid
         #61303a;
 
-    color:
-        #efc1c7;
+    color: #efc1c7;
 
-    outline:
-        none;
+    outline: none;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    letter-spacing:
-        5px;
+    letter-spacing: 5px;
 
 }
 
 
 #codigo:focus {
 
-    border-color:
-        #bd4f5d;
+    border-color: #bd4f5d;
 
 }
 
 
 .resultado-codigo {
 
-    margin-top:
-        20px;
+    margin-top: 20px;
 
-    font-family:
-        monospace;
+    font-family: monospace;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    min-height:
-        18px;
+    min-height: 18px;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    ARQUIVO DESBLOQUEADO
-===================================================== */
+================================================== */
 
 .arquivo-desbloqueado {
 
-    display:
-        none;
+    display: none;
 
-    width:
-        min(700px, 100%);
+    width: min(700px, 100%);
 
-    margin:
-        80px auto 0;
+    margin: 80px auto 0;
 
-    text-align:
-        center;
+    text-align: center;
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        50;
-
-    animation:
-        aparecer 1s ease;
+    z-index: 50;
 
 }
 
 
 .arquivo-desbloqueado h2 {
 
-    font-size:
-        45px;
+    font-size: 45px;
 
-    font-weight:
-        normal;
+    font-weight: normal;
 
-    color:
-        #efc5ca;
+    color: #efc5ca;
 
-    margin-bottom:
-        25px;
+    margin-bottom: 25px;
 
 }
 
 
 .arquivo-desbloqueado > p:not(.codigo-vermelho) {
 
-    color:
-        #a89499;
+    color: #a89499;
 
-    line-height:
-        1.8;
+    line-height: 1.8;
 
-    margin-bottom:
-        15px;
+    margin-bottom: 15px;
 
 }
 
 
-/* =====================================================
-   BOTÃO VOLTAR
-===================================================== */
+/* ==================================================
+   FINAL TEMPORÁRIO
+================================================== */
 
-.botao-voltar {
+.final-temporario {
 
-    position:
-        absolute;
+    min-height: 500px;
 
-    left:
-        25px;
+    padding: 100px 30px;
 
-    top:
-        25px;
+    display: flex;
 
-    z-index:
-        80;
+    flex-direction: column;
 
-    background:
-        transparent;
+    align-items: center;
 
-    border:
-        none;
+    justify-content: center;
 
-    color:
-        #806970;
+    text-align: center;
 
-    cursor:
-        pointer;
-
-    font-family:
-        monospace;
-
-    transition:
-        0.3s;
+    background: #f0c3ca;
 
 }
 
 
-.botao-voltar:hover {
+.final-temporario h2 {
 
-    color:
-        #e5aab2;
+    font-size: 55px;
 
-    transform:
-        translateX(-4px);
+    font-weight: normal;
 
-}
+    margin-bottom: 20px;
 
-
-/* =====================================================
-   SURPRESA TEMPORÁRIA
-===================================================== */
-
-.surpresa {
-
-    min-height:
-        500px;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        50px 30px;
-
-    background:
-        #f0c3ca;
+    color: #24171b;
 
 }
 
 
-.surpresa h2 {
+.final-temporario p:not(.subtitulo) {
 
-    font-size:
-        50px;
-
-    font-weight:
-        normal;
-
-    color:
-        #24171b;
-
-    margin-bottom:
-        20px;
+    color: #664c53;
 
 }
 
 
-.surpresa p:not(.subtitulo) {
-
-    color:
-        #664c53;
-
-}
-
-
-/* =====================================================
+/* ==================================================
    RODAPÉ
-===================================================== */
+================================================== */
 
 footer {
 
-    padding:
-        35px;
+    padding: 35px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    background:
-        #130f11;
+    background: #130f11;
 
-    color:
-        #b88e95;
+    color: #b88e95;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
 }
 
 
 footer small {
 
-    display:
-        block;
+    display: block;
 
-    margin-top:
-        10px;
+    margin-top: 10px;
 
-    color:
-        #6e565b;
+    color: #6e565b;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    ANIMAÇÕES
-===================================================== */
+================================================== */
 
 @keyframes aparecer {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(25px);
@@ -2020,8 +1383,7 @@ footer small {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(0);
@@ -2039,22 +1401,19 @@ footer small {
             translateY(-100px)
             rotate(0deg);
 
-        opacity:
-            0;
+        opacity: 0;
 
     }
 
     10% {
 
-        opacity:
-            0.9;
+        opacity: 0.9;
 
     }
 
     90% {
 
-        opacity:
-            0.8;
+        opacity: 0.8;
 
     }
 
@@ -2064,8 +1423,7 @@ footer small {
             translateY(110vh)
             rotate(360deg);
 
-        opacity:
-            0;
+        opacity: 0;
 
     }
 
@@ -2076,8 +1434,7 @@ footer small {
 
     0% {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             scale(0.7);
@@ -2086,22 +1443,19 @@ footer small {
 
     30% {
 
-        opacity:
-            1;
+        opacity: 1;
 
     }
 
     70% {
 
-        opacity:
-            1;
+        opacity: 1;
 
     }
 
     100% {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             scale(1.2);
@@ -2119,8 +1473,7 @@ footer small {
         transform:
             scale(0.8);
 
-        opacity:
-            0.3;
+        opacity: 0.3;
 
     }
 
@@ -2129,8 +1482,7 @@ footer small {
         transform:
             scale(1.1);
 
-        opacity:
-            0.7;
+        opacity: 0.7;
 
     }
 
@@ -2171,230 +1523,130 @@ footer small {
 
     0%,
     100% {
-        opacity:
-            0.7;
+        opacity: 0.7;
     }
 
     50% {
-        opacity:
-            0.35;
+        opacity: 0.35;
     }
 
 }
 
 
-/* =====================================================
+/* ==================================================
    CELULAR
-===================================================== */
+================================================== */
 
 @media (max-width: 750px) {
 
     .inicio h1 {
-
-        font-size:
-            58px;
-
+        font-size: 58px;
     }
 
 
     .frase {
-
-        font-size:
-            17px;
-
+        font-size: 17px;
     }
 
 
     .papel {
-
-        padding:
-            45px 30px;
-
+        padding: 45px 30px;
     }
 
 
     .papel h2 {
-
-        font-size:
-            32px;
-
+        font-size: 32px;
     }
 
 
     .papel p:not(.data):not(.mensagem) {
-
-        font-size:
-            16px;
-
+        font-size: 16px;
     }
 
 
     .voce-e h2 {
-
-        font-size:
-            65px;
-
-    }
-
-
-    .texto-coracoes {
-
-        padding:
-            0 25px;
-
+        font-size: 65px;
     }
 
 
     .fotos {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .galeria h2 {
-
-        font-size:
-            40px;
-
+        grid-template-columns: 1fr;
     }
 
 
     .investigacao {
-
-        padding:
-            40px 12px 80px;
-
+        padding: 40px 12px 80px;
     }
 
 
     .investigacao-header {
-
-        font-size:
-            9px;
-
-        letter-spacing:
-            1px;
-
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 
 
     .investigacao-intro h2 {
-
-        font-size:
-            42px;
-
+        font-size: 42px;
     }
 
 
     .sala {
-
-        height:
-            570px;
-
+        height: 570px;
     }
 
 
     .caderno-investigacao {
-
-        width:
-            150px;
-
-        font-size:
-            9px;
-
-        right:
-            10px;
-
-        top:
-            10px;
-
+        width: 150px;
+        font-size: 9px;
+        right: 10px;
+        top: 10px;
     }
 
 
     .tv {
-
-        width:
-            145px;
-
-        height:
-            105px;
-
-        right:
-            10%;
-
+        width: 145px;
+        height: 105px;
+        right: 10%;
     }
 
 
     .quadro {
-
-        width:
-            110px;
-
-        height:
-            80px;
-
-        left:
-            34%;
-
+        width: 110px;
+        height: 80px;
+        left: 34%;
     }
 
 
     .quadro span {
-
-        font-size:
-            30px;
-
+        font-size: 30px;
     }
 
 
     .vela {
-
-        left:
-            10%;
-
-        font-size:
-            40px;
-
+        left: 10%;
+        font-size: 40px;
     }
 
 
     .caderno {
-
-        font-size:
-            48px;
-
-        left:
-            18%;
-
+        font-size: 48px;
+        left: 18%;
     }
 
 
     .caixa {
-
-        font-size:
-            45px;
-
-        right:
-            25%;
-
+        font-size: 45px;
+        right: 25%;
     }
 
 
     .arquivo-desbloqueado h2 {
-
-        font-size:
-            34px;
-
+        font-size: 34px;
     }
 
 
-    .surpresa h2 {
-
-        font-size:
-            38px;
-
+    .final-temporario h2 {
+        font-size: 38px;
     }
 
 }

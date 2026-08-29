@@ -14,12 +14,22 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
+    background: #fff8fa;
+    color: #3d3035;
+}
 
-    background: #080606;
 
-    color: #f5e8eb;
+/* =====================================================
+   CORES
+===================================================== */
 
-    overflow-x: hidden;
+:root {
+    --vermelho: #d98295;
+    --vermelho-escuro: #a94f65;
+    --vermelho-claro: #f8dce3;
+    --rosa-pastel: #fff0f3;
+    --branco: #fffdfd;
+    --preto: #171216;
 }
 
 
@@ -29,12 +39,10 @@ body {
 
 .botao {
     border: none;
-
-    background: #b94f62;
-
+    background: var(--vermelho);
     color: white;
 
-    padding: 15px 28px;
+    padding: 15px 30px;
 
     border-radius: 30px;
 
@@ -45,18 +53,15 @@ body {
     transition: 0.3s;
 
     font-family: Arial, sans-serif;
-
-    position: relative;
-
-    z-index: 20;
 }
 
 .botao:hover {
-    background: #d5687b;
+    background: var(--vermelho-escuro);
 
     transform: translateY(-4px);
 
-    box-shadow: 0 10px 30px rgba(190, 70, 90, 0.3);
+    box-shadow:
+        0 12px 30px rgba(150, 60, 80, 0.25);
 }
 
 
@@ -71,7 +76,7 @@ body {
 
     letter-spacing: 4px;
 
-    color: #c87586;
+    color: var(--vermelho-escuro);
 
     margin-bottom: 20px;
 }
@@ -97,10 +102,10 @@ body {
     background:
         radial-gradient(
             circle at top,
-            #5d1e2b,
+            #f5cbd5,
             transparent 45%
         ),
-        #10090b;
+        #fff8fa;
 }
 
 .inicio-conteudo {
@@ -112,12 +117,9 @@ body {
 
     font-weight: normal;
 
-    color: #f4dce1;
+    color: #402f35;
 
     margin-bottom: 25px;
-
-    text-shadow:
-        0 0 30px rgba(210, 90, 110, 0.2);
 }
 
 .frase {
@@ -125,14 +127,14 @@ body {
 
     line-height: 1.7;
 
-    color: #c9aeb5;
+    color: #76636c;
 
     margin-bottom: 35px;
 }
 
 
 /* =====================================================
-   CARTA
+   CARTA INICIAL
 ===================================================== */
 
 .carta {
@@ -149,24 +151,22 @@ body {
     background:
         linear-gradient(
             180deg,
-            #10090b,
-            #170b0f
+            #fff8fa,
+            #fdecef
         );
 }
 
 .papel {
     max-width: 750px;
 
-    background: #fffaf7;
-
-    color: #40343c;
+    background: #fffdf8;
 
     padding: 70px;
 
     border-radius: 5px;
 
     box-shadow:
-        0 20px 70px rgba(0, 0, 0, 0.5);
+        0 20px 50px rgba(100, 40, 55, 0.14);
 
     position: relative;
 }
@@ -181,7 +181,7 @@ body {
     right: 20px;
     bottom: 20px;
 
-    border: 1px solid #e7cbd2;
+    border: 1px solid #e8cbd2;
 
     pointer-events: none;
 }
@@ -189,7 +189,7 @@ body {
 .data {
     text-align: right;
 
-    color: #9a6d78;
+    color: #9a6b77;
 
     margin-bottom: 50px;
 }
@@ -211,7 +211,7 @@ body {
 }
 
 .texto-quatro {
-    margin-top: 30px;
+    color: #674952;
 }
 
 
@@ -232,12 +232,13 @@ body {
 
     justify-content: center;
 
+    text-align: center;
+
     background:
         radial-gradient(
             circle at center,
-            #571d2b,
-            #17090d 55%,
-            #050303
+            #fff,
+            #f8dce3
         );
 }
 
@@ -245,35 +246,30 @@ body {
     position: relative;
 
     z-index: 10;
-
-    text-align: center;
 }
 
 .coracoes h2 {
-    font-size: 85px;
+    font-size: 80px;
 
     font-weight: normal;
 
-    color: #fff0f3;
+    color: #4a3038;
 
-    text-shadow:
-        0 0 30px rgba(255, 130, 150, 0.4);
+    margin-bottom: 20px;
 }
 
 .coracoes-intro {
-    margin-top: 20px;
+    font-size: 19px;
 
-    color: #d9b9c1;
-
-    font-size: 18px;
+    color: #80636d;
 }
 
 .continuar {
     position: absolute;
 
-    bottom: 45px;
+    bottom: 50px;
 
-    z-index: 50;
+    z-index: 20;
 }
 
 
@@ -286,9 +282,9 @@ body {
 
     inset: 0;
 
-    pointer-events: none;
-
     overflow: hidden;
+
+    pointer-events: none;
 }
 
 .coracao-caindo {
@@ -296,40 +292,17 @@ body {
 
     top: -80px;
 
-    color: #d96478;
+    color: #d98295;
+
+    font-size: 35px;
 
     animation:
-        cair linear infinite;
+        cairCoracao linear infinite;
 
     opacity: 0.8;
-
-    font-family: Arial, sans-serif;
-
-    text-align: center;
 }
 
-.coracao-caindo span {
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    color: white;
-
-    font-size: 8px;
-
-    font-family: Arial, sans-serif;
-
-    white-space: nowrap;
-
-    pointer-events: none;
-}
-
-@keyframes cair {
+@keyframes cairCoracao {
 
     from {
         transform:
@@ -347,7 +320,7 @@ body {
 
 
 /* =====================================================
-   PALAVRAS COMO ESTRELAS
+   PALAVRAS FORA DOS CORAÇÕES
 ===================================================== */
 
 .palavras-estrelas {
@@ -358,54 +331,53 @@ body {
     pointer-events: none;
 }
 
-.palavra-flutuante {
+.palavra-caindo {
     position: absolute;
 
-    color: #ffe9ee;
+    color: #a94f65;
 
     font-family: Arial, sans-serif;
 
-    font-size: 13px;
+    font-size: 17px;
 
-    text-shadow:
-        0 0 10px #e78395;
+    opacity: 0;
 
     animation:
-        piscar 2.5s infinite ease-in-out;
+        aparecerSumir 4s ease-in-out infinite;
 }
 
-@keyframes piscar {
+@keyframes aparecerSumir {
 
-    0%, 100% {
+    0% {
         opacity: 0;
-        transform: scale(0.7);
+        transform: scale(0.6);
     }
 
-    50% {
+    35% {
         opacity: 1;
         transform: scale(1);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
     }
 
 }
 
 
 /* =====================================================
-   INVESTIGAÇÃO
+   PARTE 2 — INVESTIGAÇÃO
 ===================================================== */
 
 .investigacao {
     min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #241014,
-            #070607 70%
-        );
-
-    position: relative;
-
-    overflow: hidden;
+    padding: 100px 30px;
 
     display: flex;
 
@@ -413,115 +385,77 @@ body {
 
     justify-content: center;
 
-    padding: 100px 30px;
-}
+    position: relative;
 
-.ruido {
-    position: absolute;
+    overflow: hidden;
 
-    inset: 0;
-
-    opacity: 0.06;
-
-    pointer-events: none;
-
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            #fff 3px
+    background:
+        radial-gradient(
+            circle at center,
+            #291b20,
+            #0e0a0c
         );
 
-    animation:
-        ruido 0.15s infinite;
-}
-
-@keyframes ruido {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(3px);
-    }
-
-    100% {
-        transform: translateY(-3px);
-    }
-
+    color: white;
 }
 
 .investigacao-conteudo {
+    max-width: 800px;
+
     width: 100%;
 
-    max-width: 850px;
+    text-align: center;
 
     position: relative;
 
-    z-index: 5;
-
-    text-align: center;
+    z-index: 2;
 }
 
 .codigo-vermelho {
+    color: #ed899e;
+
     font-family: monospace;
 
-    color: #e05c70;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 20px;
+    letter-spacing: 4px;
 }
 
 .investigacao h2 {
-    font-size: 48px;
+    font-size: 45px;
 
     font-weight: normal;
 
-    margin-bottom: 25px;
-
-    color: #f3dce1;
+    margin: 25px 0;
 }
 
 .texto-investigacao {
-    color: #bda4aa;
+    color: #cdbbc0;
 
     line-height: 1.8;
-
-    margin-bottom: 40px;
 }
 
 .arquivo {
-    border: 1px solid #572832;
+    margin: 40px auto;
 
-    background: rgba(20, 5, 9, 0.8);
+    max-width: 550px;
 
     padding: 25px;
 
+    border: 1px solid #75404e;
+
+    background: rgba(255,255,255,0.03);
+
     text-align: left;
 
-    max-width: 600px;
-
-    margin: 0 auto 35px;
-
     font-family: monospace;
+}
 
-    line-height: 2;
-
-    box-shadow:
-        0 0 30px rgba(160, 40, 60, 0.1);
+.arquivo p {
+    margin: 12px 0;
 }
 
 .arquivo span {
-    color: #e36a7b;
+    color: #ed899e;
 }
-
-
-/* =====================================================
-   PISTAS
-===================================================== */
 
 .pistas {
     display: flex;
@@ -532,421 +466,102 @@ body {
 
     flex-wrap: wrap;
 
-    margin-bottom: 30px;
+    margin: 35px 0;
 }
 
 .pista {
-    background: #12090c;
+    background: transparent;
 
-    color: #dbaab4;
+    border: 1px solid #8f5362;
 
-    border: 1px solid #60303b;
+    color: white;
 
-    padding: 13px 20px;
+    padding: 14px 20px;
+
+    border-radius: 5px;
 
     cursor: pointer;
 
     transition: 0.3s;
-
-    font-family: monospace;
 }
 
 .pista:hover {
-    background: #6b2634;
-
-    color: white;
-
-    transform: translateY(-3px);
+    background: #8f5362;
 }
 
 .texto-pista {
-    min-height: 70px;
+    min-height: 50px;
 
-    color: #f2cbd2;
+    color: #f1a7b5;
 
-    font-family: monospace;
-
-    line-height: 1.8;
+    line-height: 1.7;
 
     margin-bottom: 25px;
-
-    padding: 20px;
 }
-
-
-/* =====================================================
-   SENHA
-===================================================== */
 
 .senha-area {
-    margin-top: 20px;
-
-    padding: 30px;
-
-    border-top: 1px solid #32171d;
+    margin-top: 30px;
 }
 
-.senha-area p {
-    color: #b99da4;
+.senha-area input {
+    width: min(350px, 90%);
 
-    margin-bottom: 15px;
-}
+    padding: 14px;
 
-#senha {
-    background: #090607;
+    border-radius: 5px;
 
-    border: 1px solid #63313c;
+    border: 1px solid #70404c;
+
+    background: #171114;
 
     color: white;
 
-    padding: 14px 18px;
-
-    width: 250px;
-
-    max-width: 100%;
-
     outline: none;
 
-    font-family: monospace;
-}
-
-#senha:focus {
-    border-color: #d05b6e;
-
-    box-shadow:
-        0 0 15px rgba(208, 91, 110, 0.2);
+    margin: 15px 5px;
 }
 
 #resultadoSenha {
-    margin-top: 20px;
+    margin-top: 15px;
+
+    color: #f19aad;
 }
-
-
-/* =====================================================
-   INVESTIGAÇÃO FINAL
-===================================================== */
 
 .investigacao-final {
     display: none;
 
-    margin-top: 35px;
+    margin-top: 50px;
 
-    animation:
-        aparecer 1s ease forwards;
+    animation: aparecer 1s ease forwards;
 }
 
 .arquivo-aberto {
-    padding: 35px;
+    border: 1px solid #bd667c;
 
-    border: 1px solid #75404b;
+    padding: 40px;
 
-    background:
-        rgba(70, 20, 30, 0.25);
+    margin-bottom: 30px;
 
-    margin-bottom: 25px;
+    background: rgba(255,255,255,0.04);
 }
 
 .arquivo-status {
-    font-family: monospace;
+    color: #f18ea2;
 
-    color: #ef7182;
+    font-family: monospace;
 
     letter-spacing: 3px;
 }
 
 .arquivo-aberto h3 {
-    margin: 15px 0 20px;
+    font-size: 30px;
 
-    font-size: 28px;
-
-    font-weight: normal;
-}
-
-.arquivo-aberto p {
-    color: #d3b9c0;
-
-    line-height: 1.8;
-
-    margin-bottom: 12px;
+    margin: 20px 0;
 }
 
 
 /* =====================================================
-   LÍRIO
-===================================================== */
-
-.lirio {
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 40%,
-            #421923,
-            #11080b 60%,
-            #050303
-        );
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 100px 30px;
-}
-
-.lirio-fundo {
-    position: absolute;
-
-    width: 500px;
-
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: rgba(160, 50, 75, 0.15);
-
-    filter: blur(80px);
-}
-
-.lirio-conteudo {
-    position: relative;
-
-    z-index: 5;
-
-    max-width: 800px;
-
-    text-align: center;
-}
-
-.lirio-mini {
-    font-family: monospace;
-
-    letter-spacing: 5px;
-
-    color: #d26a7c;
-
-    margin-bottom: 15px;
-}
-
-.lirio h2 {
-    font-size: 65px;
-
-    font-weight: normal;
-
-    color: #f7e5e9;
-
-    margin-bottom: 20px;
-}
-
-
-/* =====================================================
-   FLOR DO LÍRIO
-===================================================== */
-
-.flor-container {
-    height: 330px;
-
-    position: relative;
-
-    margin: 10px auto 25px;
-
-    width: 250px;
-}
-
-.lirio-flor {
-    position: absolute;
-
-    width: 150px;
-
-    height: 150px;
-
-    left: 50%;
-
-    top: 25px;
-
-    transform:
-        translateX(-50%);
-
-    animation:
-        florBrilhar 4s infinite ease-in-out;
-}
-
-.petala {
-    position: absolute;
-
-    width: 70px;
-
-    height: 105px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8f9,
-            #e8bfc8
-        );
-
-    border-radius:
-        70% 30% 70% 30%;
-
-    box-shadow:
-        0 0 20px rgba(255, 210, 220, 0.3);
-
-    left: 40px;
-
-    top: 25px;
-
-    transform-origin: 50% 90%;
-}
-
-.petala1 {
-    transform: rotate(0deg);
-}
-
-.petala2 {
-    transform: rotate(60deg);
-}
-
-.petala3 {
-    transform: rotate(120deg);
-}
-
-.petala4 {
-    transform: rotate(180deg);
-}
-
-.petala5 {
-    transform: rotate(240deg);
-}
-
-.petala6 {
-    transform: rotate(300deg);
-}
-
-.miolo {
-    position: absolute;
-
-    width: 30px;
-
-    height: 30px;
-
-    border-radius: 50%;
-
-    background: #d69a55;
-
-    left: 60px;
-
-    top: 60px;
-
-    box-shadow:
-        0 0 15px rgba(230, 180, 90, 0.5);
-
-    z-index: 5;
-}
-
-.caule {
-    position: absolute;
-
-    width: 7px;
-
-    height: 220px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #29402b,
-            #668066
-        );
-
-    left: 50%;
-
-    top: 130px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius: 20px;
-}
-
-.folha {
-    position: absolute;
-
-    width: 75px;
-
-    height: 30px;
-
-    background: #3e623f;
-
-    border-radius:
-        100% 0 100% 0;
-}
-
-.folha1 {
-    left: 85px;
-
-    top: 215px;
-
-    transform: rotate(25deg);
-}
-
-.folha2 {
-    right: 80px;
-
-    top: 250px;
-
-    transform:
-        scaleX(-1)
-        rotate(25deg);
-}
-
-@keyframes florBrilhar {
-
-    0%, 100% {
-        transform:
-            translateX(-50%)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translateX(-50%)
-            scale(1.04);
-    }
-
-}
-
-
-/* =====================================================
-   TEXTO DO LÍRIO
-===================================================== */
-
-.texto-lirio {
-    max-width: 700px;
-
-    margin: auto;
-
-    color: #d9c1c7;
-
-    font-size: 18px;
-
-    line-height: 1.9;
-}
-
-.texto-lirio p {
-    margin-bottom: 20px;
-}
-
-.botao-lirio {
-    margin-top: 20px;
-}
-
-
-/* =====================================================
-   UNIVERSO
+   PARTE 3 — UNIVERSO
 ===================================================== */
 
 .universo {
@@ -956,43 +571,85 @@ body {
 
     overflow: hidden;
 
-    background:
+    background: #07060a;
+
+    color: white;
+}
+
+.estrelas-fundo {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
         radial-gradient(
-            circle at center,
-            #111a35,
-            #050711 65%,
-            #010207
+            white 1px,
+            transparent 1px
         );
+
+    background-size: 75px 75px;
+
+    opacity: 0.5;
+}
+
+.nebulosa {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.18;
+}
+
+.nebulosa-1 {
+    width: 500px;
+    height: 300px;
+
+    background: #bd6078;
+
+    top: 20%;
+    left: 10%;
+}
+
+.nebulosa-2 {
+    width: 400px;
+    height: 400px;
+
+    background: #714b70;
+
+    right: 5%;
+    bottom: 10%;
 }
 
 .universo-intro {
     min-height: 100vh;
 
+    position: relative;
+
+    z-index: 5;
+
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
-
     justify-content: center;
 
+    align-items: center;
+
     text-align: center;
-
-    position: relative;
-
-    z-index: 10;
 
     padding: 30px;
 }
 
 .universo-mini {
+    color: #e58b9d;
+
     font-family: monospace;
 
-    color: #a5b8ef;
+    letter-spacing: 4px;
 
-    letter-spacing: 5px;
-
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .universo-intro h2 {
@@ -1000,17 +657,17 @@ body {
 
     font-weight: normal;
 
-    color: #edf1ff;
+    line-height: 1.2;
 
     margin-bottom: 25px;
 }
 
-.universo-intro p:not(.universo-mini) {
-    color: #adb7d8;
+.universo-intro p {
+    color: #cfc5ca;
 
     font-size: 18px;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 
@@ -1028,124 +685,81 @@ body {
     overflow: hidden;
 }
 
-.estrelas-fundo {
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        radial-gradient(
-            white 1px,
-            transparent 1px
-        );
-
-    background-size: 70px 70px;
-
-    opacity: 0.45;
-}
-
-.nebulosa {
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(80px);
-
-    opacity: 0.15;
-}
-
-.nebulosa-1 {
-    width: 500px;
-
-    height: 500px;
-
-    background: #69395f;
-
-    top: 10%;
-
-    left: 10%;
-}
-
-.nebulosa-2 {
-    width: 400px;
-
-    height: 400px;
-
-    background: #315b8a;
-
-    right: 5%;
-
-    bottom: 10%;
-}
-
-
-/* =====================================================
-   VIA LÁCTEA
-===================================================== */
-
 .via-lactea {
     position: absolute;
 
     width: 150%;
 
-    height: 180px;
+    height: 300px;
 
     left: -25%;
 
-    top: 40%;
+    top: 35%;
 
-    transform:
-        rotate(-15deg);
+    transform: rotate(-18deg);
 
     background:
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,0.25),
-            transparent 65%
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.2),
+            rgba(255,255,255,0.08),
+            transparent
         );
 
-    filter: blur(20px);
-
-    opacity: 0.4;
+    filter: blur(25px);
 }
 
 
 /* =====================================================
-   ESTRELAS CLICÁVEIS
+   ESTRELAS
 ===================================================== */
 
 .estrela {
     position: absolute;
 
+    z-index: 10;
+
     color: white;
 
-    font-size: 24px;
+    font-size: 28px;
 
     cursor: pointer;
 
-    z-index: 15;
+    transition: 0.4s;
 
     text-shadow:
         0 0 10px white,
-        0 0 25px #b8c9ff;
+        0 0 25px white;
 
     animation:
-        estrelaPisca 2s infinite ease-in-out;
+        piscar 2s infinite alternate;
 }
 
 .estrela:hover {
-    transform: scale(1.8);
+    transform: scale(1.7);
 
-    color: #dfe7ff;
+    color: #ffdbe2;
 }
 
-@keyframes estrelaPisca {
+.estrela.encontrada {
+    color: #ed8fa2;
 
-    0%, 100% {
-        opacity: 0.4;
+    transform: scale(1.5);
+
+    text-shadow:
+        0 0 15px #ed8fa2,
+        0 0 35px #ed8fa2;
+}
+
+@keyframes piscar {
+
+    from {
+        opacity: 0.5;
     }
 
-    50% {
+    to {
         opacity: 1;
     }
 
@@ -1156,52 +770,105 @@ body {
 
 .estrela-1 {
     top: 15%;
-    left: 15%;
+    left: 12%;
 }
 
 .estrela-2 {
     top: 25%;
-    left: 35%;
+    left: 30%;
 }
 
 .estrela-3 {
-    top: 18%;
+    top: 12%;
     right: 25%;
 }
 
 .estrela-4 {
-    top: 35%;
-    right: 10%;
+    top: 40%;
+    left: 20%;
 }
 
 .estrela-5 {
     top: 55%;
-    left: 12%;
+    left: 42%;
 }
 
 .estrela-6 {
-    top: 65%;
-    left: 30%;
+    top: 28%;
+    right: 12%;
 }
 
 .estrela-7 {
-    top: 50%;
-    right: 35%;
+    bottom: 25%;
+    left: 15%;
 }
 
 .estrela-8 {
-    top: 72%;
-    right: 15%;
+    bottom: 18%;
+    right: 28%;
 }
 
 .estrela-9 {
-    top: 80%;
-    left: 55%;
+    bottom: 35%;
+    right: 10%;
 }
 
 .estrela-10 {
-    top: 30%;
-    left: 70%;
+    top: 65%;
+    left: 65%;
+}
+
+
+/* =====================================================
+   TELESCÓPIO
+===================================================== */
+
+.observatorio {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 8%;
+
+    width: 180px;
+
+    height: 300px;
+}
+
+.telescopio {
+    position: absolute;
+
+    bottom: 100px;
+
+    left: 20px;
+
+    transform: rotate(-20deg);
+}
+
+.telescopio-corpo {
+    width: 140px;
+
+    height: 45px;
+
+    background: #17141a;
+
+    border: 2px solid #615964;
+
+    border-radius: 25px;
+}
+
+.telescopio-ocular {
+    width: 35px;
+
+    height: 25px;
+
+    background: #252029;
+
+    position: absolute;
+
+    right: -30px;
+
+    top: 10px;
 }
 
 
@@ -1214,68 +881,39 @@ body {
 
     width: 300px;
 
-    height: 250px;
+    height: 200px;
 
-    left: 50%;
+    right: 20%;
 
-    top: 45%;
-
-    transform:
-        translate(-50%, -50%);
-
-    opacity: 0;
-
-    transition: 1s;
+    top: 25%;
 }
 
 .ponto {
     position: absolute;
 
-    width: 8px;
-
-    height: 8px;
-
-    background: white;
+    width: 7px;
+    height: 7px;
 
     border-radius: 50%;
 
-    box-shadow:
-        0 0 15px white;
-}
+    background: white;
 
-.p1 { left: 20px; top: 100px; }
-.p2 { left: 60px; top: 70px; }
-.p3 { left: 100px; top: 120px; }
-.p4 { left: 145px; top: 80px; }
-.p5 { left: 190px; top: 110px; }
-.p6 { left: 230px; top: 60px; }
-.p7 { left: 260px; top: 130px; }
-.p8 { left: 180px; top: 170px; }
-.p9 { left: 110px; top: 180px; }
-.p10 { left: 50px; top: 160px; }
+    box-shadow: 0 0 12px white;
+}
 
 .linha {
     position: absolute;
 
     height: 1px;
 
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.3);
 
     transform-origin: left;
 }
 
-.l1 { width: 50px; left: 25px; top: 104px; transform: rotate(-35deg); }
-.l2 { width: 60px; left: 65px; top: 74px; transform: rotate(45deg); }
-.l3 { width: 60px; left: 105px; top: 124px; transform: rotate(-40deg); }
-.l4 { width: 50px; left: 150px; top: 84px; transform: rotate(32deg); }
-.l5 { width: 50px; left: 195px; top: 114px; transform: rotate(-40deg); }
-.l6 { width: 50px; left: 235px; top: 64px; transform: rotate(70deg); }
-.l7 { width: 90px; left: 185px; top: 174px; transform: rotate(180deg); }
-.l8 { width: 65px; left: 115px; top: 184px; transform: rotate(190deg); }
-
 
 /* =====================================================
-   PALAVRA DA ESTRELA
+   PALAVRAS DAS ESTRELAS
 ===================================================== */
 
 .palavra-estrela {
@@ -1285,15 +923,13 @@ body {
 
     top: 75%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    color: white;
+    color: #f0a4b2;
 
-    font-size: 25px;
+    font-size: 20px;
 
-    text-shadow:
-        0 0 20px #b9c9ff;
+    text-align: center;
 
     opacity: 0;
 
@@ -1308,143 +944,193 @@ body {
 .ceu-mensagem {
     position: absolute;
 
-    bottom: 30px;
+    bottom: 35px;
 
     left: 50%;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     text-align: center;
 
-    color: #dbe2ff;
+    color: #c9c0c5;
 
-    z-index: 20;
+    z-index: 5;
 }
 
 .ceu-mensagem p {
-    font-size: 20px;
+    font-size: 18px;
 
     margin-bottom: 5px;
 }
 
-.ceu-mensagem span {
-    color: #8995bc;
+
+/* =====================================================
+   MENSAGEM APÓS AS 10 ESTRELAS
+===================================================== */
+
+.mensagem-universo {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(5, 4, 8, 0.78);
+
+    backdrop-filter: blur(8px);
+
+    padding: 25px;
+}
+
+.mensagem-universo-caixa {
+    max-width: 650px;
+
+    padding: 55px;
+
+    text-align: center;
+
+    border: 1px solid #c86b80;
+
+    background:
+        rgba(20, 13, 18, 0.94);
+
+    box-shadow:
+        0 0 60px rgba(200, 90, 115, 0.15);
+
+    animation:
+        aparecer 1s ease forwards;
+}
+
+.mensagem-universo-caixa h2 {
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+.mensagem-universo-caixa > p:not(.universo-mini) {
+    color: #d7cbd0;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
 }
 
 
 /* =====================================================
-   OBSERVATÓRIO
+   PARTE 4 — LÍRIO
 ===================================================== */
 
-.observatorio {
-    position: absolute;
+.lirio {
+    min-height: 100vh;
 
-    bottom: 0;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    width: 300px;
-
-    height: 150px;
-}
-
-.telescopio {
-    position: absolute;
-
-    width: 170px;
-
-    height: 40px;
-
-    left: 50px;
-
-    top: 30px;
-
-    transform:
-        rotate(-15deg);
-}
-
-.telescopio-corpo {
-    width: 150px;
-
-    height: 40px;
-
-    background: #171a26;
-
-    border:
-        2px solid #4c536d;
-
-    border-radius: 20px;
-}
-
-.telescopio-ocular {
-    position: absolute;
-
-    width: 35px;
-
-    height: 25px;
-
-    right: -25px;
-
-    top: 8px;
-
-    background: #0a0b10;
-
-    border:
-        2px solid #4c536d;
-}
-
-
-/* =====================================================
-   FINAL DO UNIVERSO
-===================================================== */
-
-.universo-final {
-    min-height: 80vh;
+    padding: 100px 30px;
 
     display: flex;
-
-    flex-direction: column;
 
     justify-content: center;
 
     align-items: center;
 
-    text-align: center;
-
-    padding: 50px 30px;
-
     background:
-        radial-gradient(
-            circle,
-            #1a2140,
-            #03050b
+        linear-gradient(
+            180deg,
+            #f8dce3,
+            #fff8fa
         );
 }
 
-.universo-final p {
-    color: #aeb8da;
+.carta-lirio {
+    width: min(800px, 100%);
 
-    font-size: 20px;
+    background: #fffdf8;
 
-    margin-bottom: 25px;
+    padding: 65px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 60px rgba(100, 45, 60, 0.16);
+
+    border: 1px solid #ead1d7;
 }
 
-.universo-final h3 {
-    max-width: 700px;
+.carta-lirio::before {
+    content: "";
 
-    font-size: 42px;
+    position: absolute;
 
-    line-height: 1.5;
+    inset: 20px;
 
-    font-weight: normal;
+    border: 1px solid #ecd7dc;
 
-    color: #e8ecff;
+    pointer-events: none;
+}
 
-    margin-bottom: 40px;
+
+/* FOTO DO LÍRIO */
+
+.foto-lirio {
+    width: 250px;
+
+    height: 300px;
+
+    margin: 20px auto 40px;
+
+    padding: 10px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(80, 40, 50, 0.15);
+
+    transform: rotate(-2deg);
+}
+
+.foto-lirio img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.conteudo-lirio {
+    position: relative;
+
+    z-index: 2;
+}
+
+.conteudo-lirio p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+
+    color: #59434b;
+}
+
+.assinatura-lirio {
+    margin: 35px 0;
+
+    color: #9c6573;
+
+    font-size: 18px;
+
+    font-style: italic;
 }
 
 
@@ -1467,7 +1153,7 @@ body {
 
     padding: 50px 30px;
 
-    background: #080607;
+    background: #fff8fa;
 }
 
 .proxima-parte h2 {
@@ -1476,12 +1162,6 @@ body {
     font-weight: normal;
 
     margin-bottom: 20px;
-}
-
-.proxima-parte p:last-child {
-    color: #9d858c;
-
-    font-size: 18px;
 }
 
 
@@ -1494,9 +1174,9 @@ footer {
 
     text-align: center;
 
-    background: #030303;
+    background: #3e2930;
 
-    color: #9e858c;
+    color: white;
 
     font-family: Arial, sans-serif;
 }
@@ -1511,22 +1191,15 @@ footer {
     from {
         opacity: 0;
 
-        transform:
-            translateY(25px);
+        transform: translateY(25px);
     }
 
     to {
         opacity: 1;
 
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
-}
-
-.aparecer {
-    animation:
-        aparecer 0.8s ease forwards;
 }
 
 
@@ -1549,37 +1222,32 @@ footer {
     }
 
     .coracoes h2 {
-        font-size: 55px;
+        font-size: 60px;
     }
 
     .investigacao h2 {
-        font-size: 34px;
-    }
-
-    .lirio h2 {
-        font-size: 48px;
-    }
-
-    .texto-lirio {
-        font-size: 16px;
+        font-size: 32px;
     }
 
     .universo-intro h2 {
-        font-size: 42px;
+        font-size: 40px;
     }
 
-    .universo-final h3 {
-        font-size: 30px;
+    .mensagem-universo-caixa {
+        padding: 35px 25px;
     }
 
-    .pistas {
-        flex-direction: column;
-
-        align-items: center;
+    .mensagem-universo-caixa h2 {
+        font-size: 36px;
     }
 
-    .pista {
-        width: 220px;
+    .carta-lirio {
+        padding: 50px 30px;
+    }
+
+    .foto-lirio {
+        width: 210px;
+        height: 260px;
     }
 
 }

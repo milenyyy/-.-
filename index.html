@@ -17,15 +17,6 @@
 
 
 <!-- =====================================================
-     MÚSICA
-===================================================== -->
-
-<audio id="musicaUniverso" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-
-<!-- =====================================================
      PARTE 1 — A CARTA
 ===================================================== -->
 
@@ -146,7 +137,8 @@
         </p>
 
         <h2>
-            Você encontrou uma coisa que não deveria estar aqui.
+            Você encontrou uma coisa
+            que não deveria estar aqui.
         </h2>
 
         <p class="texto-investigacao">
@@ -177,8 +169,6 @@
         </div>
 
 
-        <!-- PISTAS -->
-
         <div class="pistas">
 
             <button class="pista" onclick="abrirPista(1)">
@@ -198,8 +188,6 @@
 
         <div id="textoPista" class="texto-pista"></div>
 
-
-        <!-- SENHA -->
 
         <div class="senha-area">
 
@@ -224,8 +212,6 @@
         </div>
 
 
-        <!-- INVESTIGAÇÃO RESOLVIDA -->
-
         <div id="investigacaoFinal" class="investigacao-final">
 
             <div class="arquivo-aberto">
@@ -248,94 +234,11 @@
 
             </div>
 
-            <button class="botao" onclick="irParaLirio()">
-                🌷 Prosseguir
+            <button class="botao" onclick="irParaParte3()">
+                🌌 Prosseguir
             </button>
 
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PARTE 2.5 — O LÍRIO
-===================================================== -->
-
-<section class="lirio" id="lirio">
-
-    <div class="lirio-fundo"></div>
-
-    <div class="petalas"></div>
-
-    <div class="lirio-conteudo">
-
-        <p class="lirio-mini">
-            ARQUIVO ESPECIAL
-        </p>
-
-        <h2>
-            O lírio.
-        </h2>
-
-        <div class="flor-container">
-
-            <div class="lirio-flor">
-
-                <div class="petala petala1"></div>
-                <div class="petala petala2"></div>
-                <div class="petala petala3"></div>
-                <div class="petala petala4"></div>
-                <div class="petala petala5"></div>
-                <div class="petala petala6"></div>
-
-                <div class="miolo"></div>
-
-            </div>
-
-            <div class="caule"></div>
-
-            <div class="folha folha1"></div>
-            <div class="folha folha2"></div>
-
-        </div>
-
-
-        <div class="texto-lirio">
-
-            <p>
-                Eu poderia dizer que você é a rosa mais linda
-                que já vi, mas, na verdade, você é o lírio mais
-                encantador que já apareceu para mim.
-            </p>
-
-            <p>
-                A flor mais bela do meu jardim, a flor mais
-                preciosa do meu buquê.
-            </p>
-
-            <p>
-                Você é a típica flor que não arrancamos,
-                porque gostamos dela.
-            </p>
-
-            <p>
-                Você é a flor que cuidamos, regamos e
-                deixamos crescer.
-            </p>
-
-            <p>
-                Você é tão belo quanto um lírio em meio
-                a um buquê cheio de rosas.
-            </p>
-
-        </div>
-
-
-        <button class="botao botao-lirio" onclick="irParaParte3()">
-            🌌 Agora olhe para o céu...
-        </button>
 
     </div>
 
@@ -354,7 +257,7 @@
     <div class="nebulosa nebulosa-2"></div>
 
 
-    <!-- INTRO -->
+    <!-- INTRODUÇÃO -->
 
     <div class="universo-intro" id="universoIntro">
 
@@ -372,7 +275,7 @@
         </p>
 
         <button class="botao botao-fones" onclick="comecarUniverso()">
-            🎧 Coloque seus fones
+            🌌 Entrar no universo
         </button>
 
     </div>
@@ -402,16 +305,35 @@
 
         <!-- ESTRELAS -->
 
-        <div class="estrela estrela-1" onclick="clicarEstrela(1)">✦</div>
-        <div class="estrela estrela-2" onclick="clicarEstrela(2)">✦</div>
-        <div class="estrela estrela-3" onclick="clicarEstrela(3)">✦</div>
-        <div class="estrela estrela-4" onclick="clicarEstrela(4)">✦</div>
-        <div class="estrela estrela-5" onclick="clicarEstrela(5)">✦</div>
-        <div class="estrela estrela-6" onclick="clicarEstrela(6)">✦</div>
-        <div class="estrela estrela-7" onclick="clicarEstrela(7)">✦</div>
-        <div class="estrela estrela-8" onclick="clicarEstrela(8)">✦</div>
-        <div class="estrela estrela-9" onclick="clicarEstrela(9)">✦</div>
-        <div class="estrela estrela-10" onclick="clicarEstrela(10)">✦</div>
+        <div class="estrela estrela-1"
+             onclick="clicarEstrela(1)">✦</div>
+
+        <div class="estrela estrela-2"
+             onclick="clicarEstrela(2)">✦</div>
+
+        <div class="estrela estrela-3"
+             onclick="clicarEstrela(3)">✦</div>
+
+        <div class="estrela estrela-4"
+             onclick="clicarEstrela(4)">✦</div>
+
+        <div class="estrela estrela-5"
+             onclick="clicarEstrela(5)">✦</div>
+
+        <div class="estrela estrela-6"
+             onclick="clicarEstrela(6)">✦</div>
+
+        <div class="estrela estrela-7"
+             onclick="clicarEstrela(7)">✦</div>
+
+        <div class="estrela estrela-8"
+             onclick="clicarEstrela(8)">✦</div>
+
+        <div class="estrela estrela-9"
+             onclick="clicarEstrela(9)">✦</div>
+
+        <div class="estrela estrela-10"
+             onclick="clicarEstrela(10)">✦</div>
 
 
         <!-- CONSTELAÇÃO -->
@@ -441,7 +363,11 @@
         </div>
 
 
-        <div id="palavraEstrela" class="palavra-estrela"></div>
+        <!-- PALAVRA DE CADA ESTRELA -->
+
+        <div id="palavraEstrela"
+             class="palavra-estrela">
+        </div>
 
 
         <div class="ceu-mensagem">
@@ -456,27 +382,114 @@
 
         </div>
 
+
+        <!-- =================================================
+             MENSAGEM APÓS ENCONTRAR TODAS
+        ================================================== -->
+
+        <div id="mensagemUniverso"
+             class="mensagem-universo">
+
+            <div class="mensagem-universo-caixa">
+
+                <p class="universo-mini">
+                    VOCÊ ENCONTROU TODAS
+                </p>
+
+                <h2>
+                    E no fim...
+                </h2>
+
+                <p>
+                    talvez você tenha percebido que,
+                    mesmo em um universo cheio de estrelas,
+                    algumas pessoas ainda conseguem se destacar.
+                </p>
+
+                <button class="botao"
+                        onclick="irParaLirio()">
+
+                    🌷 Próximo
+
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
 
+</section>
 
-    <!-- FINAL UNIVERSO -->
 
-    <div class="universo-final" id="universoFinal">
+<!-- =====================================================
+     PARTE 4 — CARTA DO LÍRIO
+===================================================== -->
 
-        <div class="galaxia-final"></div>
+<section class="lirio" id="lirio">
 
-        <p>
-            No meio de um universo tão grande...
+    <div class="carta-lirio">
+
+        <p class="subtitulo">
+            UMA CARTA PARA VOCÊ
         </p>
 
-        <h3>
-            é curioso encontrar alguém
-            que consegue fazer o meu pequeno
-            mundo parecer maior.
-        </h3>
 
-        <button class="botao" onclick="continuarSite()">
-            ✨ Continuar
+        <!-- FOTO REAL DO LÍRIO -->
+
+        <div class="foto-lirio">
+
+            <img
+                src="imagens/lirio.jpg"
+                alt="Um lírio">
+
+        </div>
+
+
+        <div class="conteudo-lirio">
+
+            <p>
+                Eu poderia dizer que você é a rosa mais linda
+                que já vi, mas, na verdade, você é o lírio mais
+                encantador que já apareceu para mim.
+            </p>
+
+            <p>
+                A flor mais bela do meu jardim,
+                a flor mais preciosa do meu buquê.
+            </p>
+
+            <p>
+                Você é a típica flor que não arrancamos,
+                porque gostamos dela.
+            </p>
+
+            <p>
+                Você é a flor que cuidamos, regamos
+                e deixamos crescer.
+            </p>
+
+            <p>
+                Você é tão belo quanto um lírio em meio
+                a um buquê cheio de rosas.
+            </p>
+
+        </div>
+
+
+        <div class="assinatura-lirio">
+
+            Com carinho,<br>
+            Mileny ♡
+
+        </div>
+
+
+        <button class="botao"
+                onclick="continuarDepoisDoLirio()">
+
+            ✨ Próximo
+
         </button>
 
     </div>
@@ -488,7 +501,8 @@
      PARTE FUTURA
 ===================================================== -->
 
-<section class="proxima-parte" id="proximaParte">
+<section class="proxima-parte"
+         id="proximaParte">
 
     <p class="subtitulo">
         CONTINUA...

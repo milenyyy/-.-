@@ -1,28 +1,4 @@
 /* =====================================================
-   CONFIGURAÇÕES
-===================================================== */
-
-const palavrasCoracoes = [
-    "Incrível",
-    "Maravilhoso",
-    "Lindo",
-    "Especial",
-    "Encantador",
-    "Único",
-    "Fantástico",
-    "Brilhante",
-    "Admirável",
-    "Gentil",
-    "Carinhoso",
-    "Precioso",
-    "Surpreendente",
-    "Extraordinário",
-    "Importante",
-    "Inesquecível"
-];
-
-
-/* =====================================================
    ABRIR CARTA
 ===================================================== */
 
@@ -39,13 +15,17 @@ function abrirCarta() {
 
 
 /* =====================================================
-   BOTÃO "TEM MAIS UMA COISA"
+   MENSAGEM DA CARTA
 ===================================================== */
 
 function mostrarMensagem() {
 
     const coracoes =
         document.getElementById("coracoes");
+
+    criarCoracoes();
+
+    criarPalavras();
 
     coracoes.scrollIntoView({
         behavior: "smooth"
@@ -58,119 +38,103 @@ function mostrarMensagem() {
    CRIAR CORAÇÕES INFINITOS
 ===================================================== */
 
-function criarCoracao() {
+function criarCoracoes() {
 
     const container =
         document.getElementById("chuvaCoracoes");
 
-    const coracao =
-        document.createElement("div");
+    const simbolos = ["♡", "♥", "❤"];
 
-    coracao.className =
-        "coracao-caindo";
+    for (let i = 0; i < 35; i++) {
 
-    const palavra =
-        palavrasCoracoes[
-            Math.floor(
-                Math.random() *
-                palavrasCoracoes.length
-            )
-        ];
+        const coracao =
+            document.createElement("div");
 
-    coracao.innerHTML =
-        `♥ <span>${palavra}</span>`;
+        coracao.classList.add("coracao-caindo");
 
-    const tamanho =
-        Math.random() * 35 + 35;
+        coracao.innerText =
+            simbolos[
+                Math.floor(
+                    Math.random() *
+                    simbolos.length
+                )
+            ];
 
-    const esquerda =
-        Math.random() * 100;
+        coracao.style.left =
+            Math.random() * 100 + "%";
 
-    const duracao =
-        Math.random() * 7 + 6;
+        coracao.style.animationDuration =
+            (5 + Math.random() * 8) + "s";
 
-    coracao.style.left =
-        esquerda + "%";
+        coracao.style.animationDelay =
+            (-Math.random() * 10) + "s";
 
-    coracao.style.fontSize =
-        tamanho + "px";
+        coracao.style.fontSize =
+            (18 + Math.random() * 30) + "px";
 
-    coracao.style.animationDuration =
-        duracao + "s";
+        container.appendChild(coracao);
 
-    container.appendChild(coracao);
-
-
-    setTimeout(() => {
-
-        coracao.remove();
-
-    }, duracao * 1000);
+    }
 
 }
 
 
 /* =====================================================
-   PALAVRAS FORA DOS CORAÇÕES
+   PALAVRAS APARECENDO COMO ESTRELAS
 ===================================================== */
 
-function criarPalavraEstrela() {
+function criarPalavras() {
 
     const container =
         document.getElementById("palavrasEstrelas");
 
-    const palavra =
-        document.createElement("div");
+    const palavras = [
+        "incrível",
+        "maravilhoso",
+        "lindo",
+        "especial",
+        "único",
+        "encantador",
+        "gentil",
+        "extraordinário",
+        "precioso",
+        "brilhante",
+        "admirável",
+        "inesquecível",
+        "fantástico",
+        "importante",
+        "raro"
+    ];
 
-    palavra.className =
-        "palavra-flutuante";
+    palavras.forEach((palavra, index) => {
 
-    palavra.innerText =
-        palavrasCoracoes[
-            Math.floor(
-                Math.random() *
-                palavrasCoracoes.length
-            )
-        ];
+        const elemento =
+            document.createElement("span");
 
-    palavra.style.left =
-        Math.random() * 90 + "%";
+        elemento.classList.add(
+            "palavra-caindo"
+        );
 
-    palavra.style.top =
-        Math.random() * 90 + "%";
+        elemento.innerText = palavra;
 
-    palavra.style.animationDelay =
-        Math.random() * 3 + "s";
+        elemento.style.left =
+            (5 + Math.random() * 90) + "%";
 
-    container.appendChild(palavra);
+        elemento.style.top =
+            (5 + Math.random() * 85) + "%";
 
+        elemento.style.animationDelay =
+            (index * 0.5) + "s";
 
-    setTimeout(() => {
+        container.appendChild(elemento);
 
-        palavra.remove();
-
-    }, 5000);
+    });
 
 }
 
 
 /* =====================================================
-   INICIAR CHUVA
-===================================================== */
-
-setInterval(
-    criarCoracao,
-    350
-);
-
-setInterval(
-    criarPalavraEstrela,
-    900
-);
-
-
-/* =====================================================
-   IR PARA PARTE 2
+   IR PARA INVESTIGAÇÃO
 ===================================================== */
 
 function irParaParte2() {
@@ -194,46 +158,27 @@ function abrirPista(numero) {
     const texto =
         document.getElementById("textoPista");
 
-    texto.classList.remove("aparecer");
-
-    void texto.offsetWidth;
-
-    texto.classList.add("aparecer");
-
 
     if (numero === 1) {
 
-        texto.innerHTML =
-            `
-            > PISTA 01 ENCONTRADA...<br><br>
-            "Nem tudo que está escondido
-            está realmente longe."
-            `;
+        texto.innerText =
+            "Talvez você devesse prestar atenção nas coisas que parecem estar fora do lugar...";
 
     }
 
 
     if (numero === 2) {
 
-        texto.innerHTML =
-            `
-            > PISTA 02 ENCONTRADA...<br><br>
-            "Talvez a resposta esteja em algo
-            que nós dois gostamos."
-            `;
+        texto.innerText =
+            "Talvez a resposta esteja em algo que nós dois gostamos.";
 
     }
 
 
     if (numero === 3) {
 
-        texto.innerHTML =
-            `
-            > PISTA 03 ENCONTRADA...<br><br>
-            "Talvez seja algum personagem...
-            ou o nome do livro de um bobo da corte
-            e sua princesa..."
-            `;
+        texto.innerText =
+            "Talvez seja algum personagem... ou o nome do livro de um bobo da corte e sua princesa...";
 
     }
 
@@ -241,7 +186,7 @@ function abrirPista(numero) {
 
 
 /* =====================================================
-   VERIFICAR SENHA
+   SENHA
 ===================================================== */
 
 function verificarSenha() {
@@ -252,49 +197,35 @@ function verificarSenha() {
     const resultado =
         document.getElementById("resultadoSenha");
 
-    const final =
-        document.getElementById("investigacaoFinal");
-
     const senha =
         campo.value.trim().toLowerCase();
 
 
     if (senha === "borboletas em vidro") {
 
-        resultado.innerHTML =
-            "✓ SENHA CORRETA. ARQUIVO DESBLOQUEADO.";
+        resultado.innerText =
+            "✓ ACESSO CONCEDIDO";
 
         resultado.style.color =
-            "#e87889";
+            "#f3a1b1";
 
-        final.style.display =
-            "block";
+
+        const final =
+            document.getElementById(
+                "investigacaoFinal"
+            );
+
+        final.style.display = "block";
 
     } else {
 
-        resultado.innerHTML =
-            "✕ Senha incorreta. Talvez você ainda não tenha encontrado todas as respostas.";
+        resultado.innerText =
+            "✕ Senha incorreta. Talvez você ainda precise investigar um pouco mais...";
 
         resultado.style.color =
-            "#b85d6c";
+            "#d98295";
 
     }
-
-}
-
-
-/* =====================================================
-   IR PARA O LÍRIO
-===================================================== */
-
-function irParaLirio() {
-
-    const lirio =
-        document.getElementById("lirio");
-
-    lirio.scrollIntoView({
-        behavior: "smooth"
-    });
 
 }
 
@@ -327,106 +258,187 @@ function comecarUniverso() {
     const ceu =
         document.getElementById("ceu");
 
-    const musica =
-        document.getElementById("musicaUniverso");
+    intro.style.display = "none";
 
-
-    intro.style.display =
-        "none";
-
-    ceu.style.display =
-        "block";
-
-
-    musica.play()
-        .catch(() => {
-
-            console.log(
-                "O navegador bloqueou a reprodução."
-            );
-
-        });
+    ceu.style.display = "block";
 
 }
 
 
 /* =====================================================
-   ESTRELAS
+   ESTRELAS ENCONTRADAS
 ===================================================== */
+
+const estrelasEncontradas = new Set();
+
 
 const palavrasEstrelas = {
 
-    1: "luz",
-    2: "sonho",
-    3: "carinho",
-    4: "amizade",
-    5: "riso",
-    6: "calma",
-    7: "brilho",
-    8: "magia",
-    9: "universo",
-    10: "especial"
+    1: "especial",
+
+    2: "incrível",
+
+    3: "único",
+
+    4: "brilhante",
+
+    5: "maravilhoso",
+
+    6: "gentil",
+
+    7: "precioso",
+
+    8: "encantador",
+
+    9: "admirável",
+
+    10: "inesquecível"
 
 };
 
 
-let estrelasEncontradas = [];
-
+/* =====================================================
+   CLICAR NAS ESTRELAS
+===================================================== */
 
 function clicarEstrela(numero) {
 
+    const estrela =
+        document.querySelector(
+            ".estrela-" + numero
+        );
+
+
+    /* Evita clicar duas vezes */
+
+    if (estrelasEncontradas.has(numero)) {
+        return;
+    }
+
+
+    estrelasEncontradas.add(numero);
+
+    estrela.classList.add("encontrada");
+
+
+    /* Mostrar palavra */
+
     const palavra =
-        document.getElementById("palavraEstrela");
+        document.getElementById(
+            "palavraEstrela"
+        );
 
     palavra.innerText =
         palavrasEstrelas[numero];
 
-    palavra.style.opacity =
-        "1";
-
-
-    if (!estrelasEncontradas.includes(numero)) {
-
-        estrelasEncontradas.push(numero);
-
-    }
-
-
-    if (estrelasEncontradas.length >= 10) {
-
-        const constelacao =
-            document.getElementById("constelacao");
-
-        constelacao.style.opacity =
-            "1";
-
-        palavra.innerText =
-            "Você encontrou todas as estrelas. ✦";
-
-    }
+    palavra.style.opacity = "1";
 
 
     setTimeout(() => {
 
-        palavra.style.opacity =
-            "0";
+        palavra.style.opacity = "0";
 
-    }, 2500);
+    }, 1800);
+
+
+    /* Verificar se encontrou TODAS */
+
+    if (estrelasEncontradas.size === 10) {
+
+        setTimeout(() => {
+
+            mostrarMensagemUniverso();
+
+        }, 1200);
+
+    }
 
 }
 
 
 /* =====================================================
-   CONTINUAR SITE
+   MOSTRAR MENSAGEM DO UNIVERSO
 ===================================================== */
 
-function continuarSite() {
+function mostrarMensagemUniverso() {
+
+    const mensagem =
+        document.getElementById(
+            "mensagemUniverso"
+        );
+
+    mensagem.style.display = "flex";
+
+}
+
+
+/* =====================================================
+   IR PARA CARTA DO LÍRIO
+===================================================== */
+
+function irParaLirio() {
+
+    const lirio =
+        document.getElementById("lirio");
+
+    lirio.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CONTINUAR DEPOIS DO LÍRIO
+===================================================== */
+
+function continuarDepoisDoLirio() {
 
     const proxima =
-        document.getElementById("proximaParte");
+        document.getElementById(
+            "proximaParte"
+        );
 
     proxima.scrollIntoView({
         behavior: "smooth"
     });
 
 }
+
+
+/* =====================================================
+   ANIMAÇÃO DE ENTRADA
+===================================================== */
+
+const observador =
+    new IntersectionObserver(
+        (entradas) => {
+
+            entradas.forEach(
+                (entrada) => {
+
+                    if (entrada.isIntersecting) {
+
+                        entrada.target.classList.add(
+                            "aparecer"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+document
+    .querySelectorAll(
+        ".papel, .carta-lirio, .arquivo-aberto"
+    )
+    .forEach(
+        elemento => observador.observe(elemento)
+    );

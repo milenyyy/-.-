@@ -1,828 +1,1676 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
 
-<head>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <meta charset="UTF-8">
+html {
+    scroll-behavior: smooth;
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+body {
+    font-family: Georgia, "Times New Roman", serif;
 
-    <title>Dear Noah 🖤</title>
+    background: #fff7f8;
 
-    <link rel="stylesheet" href="style.css">
+    color: #351820;
 
-</head>
+    overflow-x: hidden;
+}
 
-<body>
+button,
+input {
+    font-family: inherit;
+}
 
 
-<!-- =====================================================
-     PARTE 1 — A CARTA
-===================================================== -->
+/* =====================================================
+   CORES
+===================================================== */
 
-<section class="inicio" id="inicio">
+:root {
 
-    <div class="inicio-conteudo">
+    --vermelho: #c9576d;
 
-        <p class="subtitulo">
-            UMA PEQUENA CARTA
-        </p>
+    --vermelho-claro: #e58b9c;
 
-        <h1>
-            Dear Noah
-        </h1>
+    --vermelho-suave: #f3b5c0;
 
-        <p class="frase">
-            Algumas coisas são difíceis de dizer...
-            então talvez seja melhor escrever.
-        </p>
+    --vinho: #681f31;
 
-        <button class="botao" onclick="abrirCarta()">
-            💌 Abrir carta
-        </button>
+    --branco: #fff;
 
-    </div>
+    --creme: #fff7f8;
 
-</section>
+    --texto: #351820;
 
+}
 
-<!-- =====================================================
-     CARTA
-===================================================== -->
 
-<section class="carta" id="carta">
+/* =====================================================
+   BOTÕES
+===================================================== */
 
-    <div class="papel">
+.botao {
 
-        <p class="data">
-            Para Noah,
-        </p>
+    border: none;
 
-        <h2>
-            Querido Noah,
-        </h2>
+    background:
+        linear-gradient(
+            135deg,
+            #d66c81,
+            #bd4d65
+        );
 
-        <p>
-            Talvez você não esperasse encontrar uma carta
-            escondida em forma de site.
-        </p>
+    color: white;
 
-        <p>
-            Mas algumas mensagens merecem mais do que
-            uma simples mensagem enviada pelo celular.
-        </p>
+    padding: 15px 30px;
 
-        <p>
-            Então fiz este pequeno lugar para guardar
-            algumas palavras, lembranças e momentos.
-        </p>
+    border-radius: 50px;
 
-        <p class="texto-quatro">
+    font-size: 16px;
 
-            Meu bem, não sou boa com palavras como um certo
-            poeta aí, mas cada palavra dessa carta será retirada
-            do meu coração. Irei colocar cada pensamento e
-            sentimento em cada detalhe dessa carta.
-            Espero que goste...
+    cursor: pointer;
 
-        </p>
+    box-shadow:
+        0 10px 25px rgba(105, 30, 50, 0.18);
 
-        <button class="botao" onclick="mostrarMensagem()">
-            ✨ Tem mais uma coisa...
-        </button>
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
 
-    </div>
+}
 
-</section>
+.botao:hover {
 
+    transform: translateY(-3px);
 
-<!-- =====================================================
-     CORAÇÕES
-===================================================== -->
+    box-shadow:
+        0 15px 30px rgba(105, 30, 50, 0.25);
 
-<section class="coracoes" id="coracoes">
+    background:
+        linear-gradient(
+            135deg,
+            #e58b9c,
+            #c9576d
+        );
 
-    <div class="chuva-coracoes" id="chuvaCoracoes"></div>
+}
 
-    <div
-        class="palavras-estrelas"
-        id="palavrasEstrelas">
-    </div>
 
-    <div class="coracoes-conteudo">
+/* =====================================================
+   SUBTÍTULOS
+===================================================== */
 
-        <p class="subtitulo">
-            MAS ANTES...
-        </p>
+.subtitulo {
 
-        <h2>
-            Você é...
-        </h2>
+    color: #c9576d;
 
-        <p class="coracoes-intro">
-            Algumas coisas simplesmente não cabem
-            em uma única palavra.
-        </p>
+    letter-spacing: 5px;
 
-    </div>
+    font-size: 12px;
 
-    <button
-        class="botao continuar"
-        onclick="irParaParte2()">
+    text-transform: uppercase;
 
-        🔎 Continuar
+    margin-bottom: 18px;
 
-    </button>
+}
 
-</section>
 
+/* =====================================================
+   PARTE 1
+===================================================== */
 
-<!-- =====================================================
-     PARTE 2 — INVESTIGAÇÃO
-===================================================== -->
+.inicio {
 
-<section
-    class="investigacao"
-    id="investigacao">
+    min-height: 100vh;
 
-    <div class="ruido"></div>
+    display: flex;
 
-    <div class="investigacao-conteudo">
+    justify-content: center;
 
-        <p class="codigo-vermelho">
-            ARQUIVO Nº 02
-        </p>
+    align-items: center;
 
-        <h2>
-            Você encontrou uma coisa
-            que não deveria estar aqui.
-        </h2>
+    text-align: center;
 
-        <p class="texto-investigacao">
+    padding: 40px;
 
-            Há algo escondido neste arquivo.
-            Mas ele não será entregue tão facilmente.
+    background:
+        radial-gradient(
+            circle at center,
+            #f4b6c1 0%,
+            #e895a5 25%,
+            #d76b80 55%,
+            #c9576d 100%
+        );
 
-        </p>
+    color: white;
 
+}
 
-        <!-- ARQUIVO -->
+.inicio-conteudo {
 
-        <div class="arquivo">
+    max-width: 700px;
 
-            <p>
-                STATUS:
-                <span>
-                    ACESSO BLOQUEADO
-                </span>
-            </p>
+    animation: aparecer 1.2s ease forwards;
 
-            <p>
-                IDENTIDADE:
-                <span>
-                    NOAH
-                </span>
-            </p>
+}
 
-            <p>
-                NÍVEL:
-                <span>
-                    CONFIDENCIAL
-                </span>
-            </p>
+.inicio h1 {
 
-        </div>
+    font-size: clamp(65px, 10vw, 120px);
 
+    font-weight: normal;
 
-        <!-- PISTAS -->
+    margin-bottom: 20px;
 
-        <div class="pistas">
+}
 
-            <button
-                class="pista"
-                onclick="abrirPista(1)">
+.frase {
 
-                📼 Pista 01
+    font-size: 19px;
 
-            </button>
+    line-height: 1.7;
 
-            <button
-                class="pista"
-                onclick="abrirPista(2)">
+    margin-bottom: 35px;
 
-                🗝️ Pista 02
+}
 
-            </button>
 
-            <button
-                class="pista"
-                onclick="abrirPista(3)">
+/* =====================================================
+   CARTA
+===================================================== */
 
-                👁️ Pista 03
+.carta {
 
-            </button>
+    min-height: 100vh;
 
-        </div>
+    display: flex;
 
+    justify-content: center;
 
-        <div
-            id="textoPista"
-            class="texto-pista">
-        </div>
+    align-items: center;
 
+    padding: 80px 25px;
 
-        <!-- SENHA -->
+    background:
+        linear-gradient(
+            180deg,
+            #fff7f8,
+            #ffecef
+        );
 
-        <div class="senha-area">
+}
 
-            <p>
-                Talvez as pistas tenham deixado
-                uma resposta escondida.
-            </p>
+.papel {
 
-            <input
-                type="text"
-                id="senha"
-                placeholder="Digite a senha..."
-                autocomplete="off"
-            >
+    width: min(750px, 92%);
 
-            <br>
+    padding: 65px;
 
-            <button
-                class="botao"
-                onclick="verificarSenha()">
+    background: white;
 
-                🔓 Desbloquear
+    border: 1px solid #f1c5cd;
 
-            </button>
+    box-shadow:
+        0 20px 60px rgba(90, 20, 35, .12);
 
-            <p id="resultadoSenha"></p>
+    position: relative;
 
-        </div>
+}
 
+.papel::before {
 
-        <!-- FINAL DA INVESTIGAÇÃO -->
+    content: "";
 
-        <div
-            id="investigacaoFinal"
-            class="investigacao-final">
+    position: absolute;
 
-            <div class="arquivo-aberto">
+    inset: 15px;
 
-                <span class="arquivo-status">
-                    ACESSO CONCEDIDO
-                </span>
+    border: 1px solid #f5d5db;
 
-                <h3>
-                    ARQUIVO DESBLOQUEADO
-                </h3>
+    pointer-events: none;
 
-                <p>
-                    Algumas coisas são escondidas
-                    não porque precisam permanecer
-                    em segredo...
-                </p>
+}
 
-                <p>
-                    mas porque certas descobertas ficam
-                    mais bonitas quando são encontradas.
-                </p>
+.data {
 
-            </div>
+    color: #c9576d;
 
-            <button
-                class="botao"
-                onclick="irParaParte3()">
+    font-size: 14px;
 
-                🌌 Prosseguir
+    margin-bottom: 30px;
 
-            </button>
+}
 
-        </div>
+.papel h2 {
 
-    </div>
+    color: #8f3046;
 
-</section>
+    font-size: 38px;
 
+    margin-bottom: 30px;
 
-<!-- =====================================================
-     PARTE 3 — UNIVERSO
-===================================================== -->
+}
 
-<section
-    class="universo"
-    id="universo">
+.papel p:not(.data) {
 
-    <div class="estrelas-fundo"></div>
+    font-size: 18px;
 
-    <div
-        class="nebulosa nebulosa-1">
-    </div>
+    line-height: 1.8;
 
-    <div
-        class="nebulosa nebulosa-2">
-    </div>
+    margin-bottom: 20px;
 
+}
 
-    <!-- INTRODUÇÃO -->
+.texto-quatro {
 
-    <div
-        class="universo-intro"
-        id="universoIntro">
+    color: #5e3540;
 
-        <p class="universo-mini">
-            ARQUIVO Nº 03
-        </p>
+    font-style: italic;
 
-        <h2>
+}
 
-            Existem coisas<br>
-            que não cabem em palavras.
 
-        </h2>
+/* =====================================================
+   PARTE DOS CORAÇÕES
+===================================================== */
 
-        <p>
-            Então talvez seja melhor olhar para o céu.
-        </p>
+.coracoes {
 
-        <button
-            class="botao botao-fones"
-            onclick="comecarUniverso()">
+    position: relative;
 
-            🌌 Olhar para o céu
+    min-height: 100vh;
 
-        </button>
+    overflow: hidden;
 
-    </div>
+    display: flex;
 
+    justify-content: center;
 
-    <!-- =================================================
-         CÉU
-    ================================================= -->
+    align-items: center;
 
-    <div
-        class="ceu"
-        id="ceu">
+    background:
+        radial-gradient(
+            circle at center,
+            #e88d9e 0%,
+            #d76b80 35%,
+            #c9576d 70%,
+            #b8425b 100%
+        );
 
-        <div class="via-lactea"></div>
+    color: white;
 
+}
 
-        <!-- TELESCÓPIO -->
+.coracoes-conteudo {
 
-        <div class="observatorio">
+    position: relative;
 
-            <div class="telescopio">
+    z-index: 10;
 
-                <div
-                    class="telescopio-corpo">
-                </div>
+    text-align: center;
 
-                <div
-                    class="telescopio-ocular">
-                </div>
+    padding: 40px;
 
-            </div>
+}
 
-        </div>
+.coracoes .subtitulo {
 
+    color: #ffe5ea;
 
-        <!-- =================================================
-             ESTRELAS CLICÁVEIS
-        ================================================= -->
+}
 
-        <div
-            class="estrela estrela-1"
-            onclick="clicarEstrela(1)">
-            ✦
-        </div>
+.coracoes h2 {
 
-        <div
-            class="estrela estrela-2"
-            onclick="clicarEstrela(2)">
-            ✦
-        </div>
+    font-size: clamp(65px, 9vw, 110px);
 
-        <div
-            class="estrela estrela-3"
-            onclick="clicarEstrela(3)">
-            ✦
-        </div>
+    font-weight: normal;
 
-        <div
-            class="estrela estrela-4"
-            onclick="clicarEstrela(4)">
-            ✦
-        </div>
+    margin-bottom: 20px;
 
-        <div
-            class="estrela estrela-5"
-            onclick="clicarEstrela(5)">
-            ✦
-        </div>
+    text-shadow:
+        0 4px 25px rgba(100, 20, 40, .2);
 
-        <div
-            class="estrela estrela-6"
-            onclick="clicarEstrela(6)">
-            ✦
-        </div>
+}
 
-        <div
-            class="estrela estrela-7"
-            onclick="clicarEstrela(7)">
-            ✦
-        </div>
+.coracoes-intro {
 
-        <div
-            class="estrela estrela-8"
-            onclick="clicarEstrela(8)">
-            ✦
-        </div>
+    font-size: 19px;
 
-        <div
-            class="estrela estrela-9"
-            onclick="clicarEstrela(9)">
-            ✦
-        </div>
+    line-height: 1.6;
 
-        <div
-            class="estrela estrela-10"
-            onclick="clicarEstrela(10)">
-            ✦
-        </div>
+}
 
 
-        <!-- =================================================
-             CONSTELAÇÃO
-        ================================================= -->
+/* =====================================================
+   CORAÇÕES FLUTUANDO
+===================================================== */
 
-        <div
-            class="constelacao"
-            id="constelacao">
+.chuva-coracoes {
 
-            <div class="ponto p1"></div>
-            <div class="ponto p2"></div>
-            <div class="ponto p3"></div>
-            <div class="ponto p4"></div>
-            <div class="ponto p5"></div>
-            <div class="ponto p6"></div>
-            <div class="ponto p7"></div>
-            <div class="ponto p8"></div>
-            <div class="ponto p9"></div>
-            <div class="ponto p10"></div>
+    position: absolute;
 
-            <div class="linha l1"></div>
-            <div class="linha l2"></div>
-            <div class="linha l3"></div>
-            <div class="linha l4"></div>
-            <div class="linha l5"></div>
-            <div class="linha l6"></div>
-            <div class="linha l7"></div>
-            <div class="linha l8"></div>
+    inset: 0;
 
-        </div>
+    overflow: hidden;
 
+    pointer-events: none;
 
-        <!-- PALAVRA DA ESTRELA -->
+    z-index: 1;
 
-        <div
-            id="palavraEstrela"
-            class="palavra-estrela">
-        </div>
+}
 
+.coracao-caindo {
 
-        <!-- =================================================
-             MENSAGEM
-        ================================================= -->
+    position: absolute;
 
-        <div class="ceu-mensagem">
+    top: -80px;
 
-            <p>
-                Encontre as estrelas.
-            </p>
+    color: rgba(255, 255, 255, .6);
 
-            <span>
-                Cada uma guarda uma palavra.
-            </span>
+    animation:
+        cairCoracao linear infinite;
 
-        </div>
+    text-shadow:
+        0 0 15px rgba(255, 255, 255, .4);
 
+}
 
-        <!-- =================================================
-             MENSAGEM APÓS TODAS AS ESTRELAS
-        ================================================= -->
+@keyframes cairCoracao {
 
-        <div
-            class="universo-final"
-            id="mensagemUniverso">
+    0% {
 
-            <div class="galaxia-final"></div>
+        transform:
+            translateY(-80px)
+            rotate(0deg);
 
-            <p>
-                Você encontrou todas elas.
-            </p>
+        opacity: 0;
 
-            <h3>
+    }
 
-                No meio de um universo tão grande...
-                é curioso encontrar alguém
-                que consegue fazer o meu pequeno
-                mundo parecer maior.
+    15% {
+        opacity: .65;
+    }
 
-            </h3>
+    80% {
+        opacity: .5;
+    }
 
-            <button
-                class="botao"
-                onclick="irParaLirio()">
+    100% {
 
-                🌸 Próximo
+        transform:
+            translateY(110vh)
+            rotate(360deg);
 
-            </button>
+        opacity: 0;
 
-        </div>
+    }
 
-    </div>
+}
 
-</section>
 
+/* =====================================================
+   PALAVRAS
+===================================================== */
 
-<!-- =====================================================
-     PARTE 4 — CARTA DO LÍRIO
-===================================================== -->
+.palavras-estrelas {
 
-<section
-    class="carta-lirio"
-    id="lirio">
+    position: absolute;
 
-    <div>
+    inset: 0;
 
-        <!-- FOTO REAL DO LÍRIO -->
+    pointer-events: none;
 
-        <img
-            src="lirio.jpg"
-            alt="Lírio"
-            class="foto-lirio"
-        >
+    overflow: hidden;
 
+    z-index: 2;
 
-        <h2>
-            Para você...
-        </h2>
+}
 
+.palavra-caindo {
 
-        <p>
+    position: absolute;
 
-            Eu poderia dizer que você é a rosa
-            mais linda que já vi, mas, na verdade,
-            você é o lírio mais encantador que já
-            apareceu para mim.
+    display: block;
 
-        </p>
+    white-space: nowrap;
 
+    color: rgba(255, 255, 255, .75);
 
-        <p>
+    font-size: 15px;
 
-            A flor mais bela do meu jardim,
-            a flor mais preciosa do meu buquê.
+    letter-spacing: 1px;
 
-        </p>
+    opacity: 0;
 
+    animation:
+        palavraAparecer 5s ease-in-out infinite;
 
-        <p>
+}
 
-            Você é a típica flor que não arrancamos,
-            porque gostamos dela.
+@keyframes palavraAparecer {
 
-        </p>
+    0% {
+        opacity: 0;
+        transform: scale(.8);
+    }
 
+    25% {
+        opacity: .75;
+    }
 
-        <p>
+    70% {
+        opacity: .75;
+    }
 
-            Você é a flor que cuidamos, regamos
-            e deixamos crescer.
+    100% {
+        opacity: 0;
+        transform: scale(1.08);
+    }
 
-        </p>
+}
 
+.continuar {
 
-        <p>
+    position: absolute;
 
-            Você é tão belo quanto um lírio
-            em meio a um buquê cheio de rosas.
+    bottom: 45px;
 
-        </p>
+    left: 50%;
 
+    transform: translateX(-50%);
 
-        <button
-            class="botao"
-            onclick="continuarDepoisDoLirio()">
+    z-index: 20;
 
-            💌 Próximo
+}
 
-        </button>
 
-    </div>
+/* =====================================================
+   INVESTIGAÇÃO
+===================================================== */
 
-</section>
+.investigacao {
 
+    min-height: 100vh;
 
-<!-- =====================================================
-     PARTE 5 — CARTA FINAL / LOCALIZAÇÃO
-===================================================== -->
+    padding: 100px 25px;
 
-<section
-    class="carta-final"
-    id="cartaFinal">
+    background:
+        linear-gradient(
+            135deg,
+            #fff8f9,
+            #f8dfe4
+        );
 
-    <div class="localizacao-caixa">
+    color: #351820;
 
-        <p class="subtitulo">
-            ÚLTIMO ARQUIVO
-        </p>
+}
 
-        <h2>
-            Uma última descoberta...
-        </h2>
+.investigacao-conteudo {
 
-        <p>
+    width: min(850px, 94%);
 
-            Talvez algumas cartas não devam
-            ser abertas em qualquer lugar.
+    margin: auto;
 
-        </p>
+}
 
+.codigo-vermelho {
 
-        <div class="destino-localizacao">
+    color: #bd4d65;
 
-            <span>
-                DESTINO
-            </span>
+    letter-spacing: 5px;
 
-            <strong>
-                📍 Umuarama — Paraná
-            </strong>
+    font-size: 13px;
 
-        </div>
+    margin-bottom: 25px;
 
+}
 
-        <p>
+.investigacao h2 {
 
-            Existe uma carta esperando por você.
-            Mas ela só poderá ser encontrada
-            quando você estiver aqui.
+    color: #681f31;
 
-        </p>
+    font-size: clamp(32px, 5vw, 58px);
 
+    margin-bottom: 20px;
 
-        <button
-            class="botao"
-            onclick="verificarLocalizacao()">
+}
 
-            📍 Verificar localização
+.texto-investigacao {
 
-        </button>
+    font-size: 18px;
 
+    margin-bottom: 30px;
 
-        <p
-            id="resultadoLocalizacao">
-        </p>
+}
 
+.arquivo {
 
-        <!-- =================================================
-             CARTA ESCONDIDA
-        ================================================= -->
+    padding: 25px;
 
-        <div
-            id="cartaFinalConteudo">
+    background: #fff;
 
-            <h2>
-                Noah,
-            </h2>
+    border-left: 4px solid #c9576d;
 
+    box-shadow:
+        0 10px 30px rgba(80, 20, 35, .08);
 
-            <p>
+    margin-bottom: 30px;
 
-                Em tão pouco tempo você se tornou
-                uma pessoa muito especial para mim.
+}
 
-                Você se tornou a pessoa em quem confio,
-                a pessoa com quem sei que posso ser eu mesma,
-                sem medo de ser julgada ou acusada.
+.arquivo p {
 
-            </p>
+    margin-bottom: 10px;
 
+    font-family: monospace;
 
-            <p>
+}
 
-                Você foi a pessoa que me ajudou quando
-                precisei, quando eu queria falar com ninguém,
-                quando não sentia mais emoção no dia e
-                quando não tinha vontade de me socializar
-                com ninguém.
+.arquivo span {
 
-                Você me ajudou.
+    color: #c9576d;
 
-            </p>
+    font-weight: bold;
 
+}
 
-            <p>
 
-                Hoje sinto felicidade todos os dias
-                quando recebo uma mensagem sua.
+/* =====================================================
+   PISTAS
+===================================================== */
 
-                Fico esperando ansiosamente por nossas
-                conversas e amo a sua companhia,
-                a sua amizade.
+.pistas {
 
-            </p>
+    display: flex;
 
+    flex-wrap: wrap;
 
-            <p>
+    gap: 10px;
 
-                É tão bom saber que tenho uma pessoa
-                tão especial quanto você.
+    margin-bottom: 20px;
 
-                Uma pessoa incrível, animada, gentil,
-                engraçada e que ajuda os outros
-                nos momentos difíceis.
+}
 
-            </p>
+.pista {
 
+    border: 1px solid #df9baa;
 
-            <p>
+    background: white;
 
-                Você é uma pessoa que todos querem
-                ter por perto, alguém que todos querem
-                como amigo.
+    color: #681f31;
 
-            </p>
+    padding: 12px 18px;
 
+    border-radius: 8px;
 
-            <p>
+    cursor: pointer;
 
-                Bem no começo, quando conheci você,
-                eu sentia que queria muito ser sua amiga.
+    transition: .3s;
 
-                E hoje você é meu melhor amigo.
+}
 
-            </p>
+.pista:hover {
 
+    background: #f8dbe1;
 
-            <p>
+    transform: translateY(-2px);
 
-                Agradeço pela sua amizade.
+}
 
-                Agradeço por todos os nossos momentos,
-                por todas as risadas e pelos momentos
-                de raiva também, kakak.
+.texto-pista {
 
-            </p>
+    min-height: 30px;
 
+    color: #9d3d53;
 
-            <p>
+    font-style: italic;
 
-                Quero que saiba que você é muito
-                especial para mim.
+    margin: 15px 0 30px;
 
-            </p>
+}
 
 
-            <p class="assinatura-final">
+/* =====================================================
+   SENHA
+===================================================== */
 
-                I love you. ♡
+.senha-area {
 
-            </p>
+    padding: 30px;
 
+    background: rgba(255, 255, 255, .75);
 
-            <button
-                class="botao"
-                onclick="finalizarCarta()">
+    border: 1px solid #edc2ca;
 
-                ♡ Fim
+}
 
-            </button>
+.senha-area p {
 
-        </div>
+    margin-bottom: 15px;
 
-    </div>
+}
 
-</section>
+.senha-area input {
 
+    padding: 13px;
 
-<!-- =====================================================
-     RODAPÉ
-===================================================== -->
+    border: 1px solid #d9a0ac;
 
-<footer>
+    outline: none;
 
-    <p>
-        Feito especialmente para Noah ♡
-    </p>
+    width: min(300px, 100%);
 
-</footer>
+    margin-right: 8px;
 
+}
 
-<script src="script.js"></script>
+.senha-area input:focus {
 
-</body>
+    border-color: #c9576d;
 
-</html>
+}
+
+#resultadoSenha {
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   INVESTIGAÇÃO FINAL
+===================================================== */
+
+.investigacao-final {
+
+    display: none;
+
+    margin-top: 35px;
+
+    animation: aparecer .8s ease forwards;
+
+}
+
+.arquivo-aberto {
+
+    background: #fff;
+
+    border: 1px solid #e5a8b5;
+
+    padding: 35px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(80, 20, 35, .1);
+
+}
+
+.arquivo-status {
+
+    color: #c9576d;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+}
+
+.arquivo-aberto h3 {
+
+    color: #681f31;
+
+    font-size: 30px;
+
+    margin: 15px 0;
+
+}
+
+
+/* =====================================================
+   UNIVERSO
+===================================================== */
+
+.universo {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #542033 0%,
+            #32121f 40%,
+            #180b11 75%,
+            #090609 100%
+        );
+
+    color: white;
+
+}
+
+.universo-intro {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    position: relative;
+
+    z-index: 20;
+
+}
+
+.universo-mini {
+
+    color: #e58b9c;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+}
+
+.universo-intro h2 {
+
+    font-size: clamp(42px, 7vw, 80px);
+
+    font-weight: normal;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+}
+
+.universo-intro p {
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =====================================================
+   CÉU
+===================================================== */
+
+.ceu {
+
+    display: none;
+
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   FUNDO ESTRELADO
+===================================================== */
+
+.estrelas-fundo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(circle, white 1px, transparent 1px),
+
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+
+    background-size:
+        90px 90px,
+        150px 150px;
+
+    background-position:
+        10px 20px,
+        60px 80px;
+
+    opacity: .45;
+
+}
+
+
+/* =====================================================
+   VIA LÁCTEA
+===================================================== */
+
+.via-lactea {
+
+    position: absolute;
+
+    width: 150%;
+
+    height: 35%;
+
+    left: -25%;
+
+    top: 30%;
+
+    transform:
+        rotate(-18deg);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.18),
+            rgba(213,160,180,.08),
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+}
+
+
+/* =====================================================
+   NEBULOSAS
+===================================================== */
+
+.nebulosa {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(45px);
+
+    pointer-events: none;
+
+}
+
+.nebulosa-1 {
+
+    width: 400px;
+
+    height: 300px;
+
+    background:
+        rgba(193, 76, 112, .15);
+
+    top: 5%;
+
+    left: 10%;
+
+}
+
+.nebulosa-2 {
+
+    width: 350px;
+
+    height: 350px;
+
+    background:
+        rgba(111, 61, 130, .14);
+
+    bottom: 5%;
+
+    right: 10%;
+
+}
+
+
+/* =====================================================
+   ESTRELAS CLICÁVEIS
+===================================================== */
+
+.estrela {
+
+    position: absolute;
+
+    z-index: 15;
+
+    border: none;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    padding: 10px;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 8px white,
+        0 0 20px #e58b9c,
+        0 0 35px #e58b9c;
+
+    animation:
+        brilhoEstrela 2.5s ease-in-out infinite;
+
+    transition:
+        transform .3s,
+        opacity .3s;
+
+}
+
+.estrela:hover {
+
+    transform: scale(1.7);
+
+}
+
+.estrela.encontrada {
+
+    color: #e58b9c;
+
+    transform: scale(1.5);
+
+    opacity: .35;
+
+    pointer-events: none;
+
+}
+
+
+/* POSIÇÕES */
+
+.estrela-1 {
+    top: 14%;
+    left: 12%;
+}
+
+.estrela-2 {
+    top: 25%;
+    left: 30%;
+}
+
+.estrela-3 {
+    top: 12%;
+    right: 25%;
+}
+
+.estrela-4 {
+    top: 40%;
+    right: 12%;
+}
+
+.estrela-5 {
+    top: 62%;
+    right: 28%;
+}
+
+.estrela-6 {
+    top: 75%;
+    left: 18%;
+}
+
+.estrela-7 {
+    top: 53%;
+    left: 38%;
+}
+
+.estrela-8 {
+    top: 78%;
+    right: 45%;
+}
+
+.estrela-9 {
+    top: 34%;
+    left: 62%;
+}
+
+.estrela-10 {
+    top: 20%;
+    right: 8%;
+}
+
+
+@keyframes brilhoEstrela {
+
+    0%,
+    100% {
+
+        opacity: .55;
+
+        transform: scale(.9);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.15);
+
+    }
+
+}
+
+
+/* =====================================================
+   CONSTELAÇÃO
+===================================================== */
+
+.constelacao {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 300px;
+
+    right: 8%;
+
+    bottom: 15%;
+
+    opacity: .45;
+
+}
+
+.ponto {
+
+    position: absolute;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px white;
+
+}
+
+.p1 { left: 10%; top: 20%; }
+.p2 { left: 30%; top: 10%; }
+.p3 { left: 48%; top: 25%; }
+.p4 { left: 65%; top: 15%; }
+.p5 { left: 80%; top: 35%; }
+.p6 { left: 70%; top: 60%; }
+.p7 { left: 52%; top: 75%; }
+.p8 { left: 35%; top: 60%; }
+.p9 { left: 20%; top: 75%; }
+.p10 { left: 5%; top: 50%; }
+
+.linha {
+
+    position: absolute;
+
+    height: 1px;
+
+    background: rgba(255,255,255,.5);
+
+    transform-origin: left center;
+
+}
+
+
+/* =====================================================
+   PALAVRA DA ESTRELA
+===================================================== */
+
+.palavra-estrela {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 30;
+
+    color: white;
+
+    font-size: clamp(30px, 5vw, 55px);
+
+    text-shadow:
+        0 0 20px #e58b9c;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .4s ease;
+
+}
+
+
+/* =====================================================
+   TEXTO DO CÉU
+===================================================== */
+
+.ceu-mensagem {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    bottom: 35px;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    width: 90%;
+
+}
+
+.ceu-mensagem p {
+
+    font-size: 22px;
+
+    margin-bottom: 5px;
+
+}
+
+.ceu-mensagem span {
+
+    color: #e5a0af;
+
+}
+
+.ceu-mensagem small {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.55);
+
+}
+
+
+/* =====================================================
+   FINAL DO UNIVERSO
+===================================================== */
+
+.universo-final {
+
+    display: none;
+
+    position: absolute;
+
+    z-index: 50;
+
+    inset: 0;
+
+    background:
+        rgba(17, 6, 12, .9);
+
+    backdrop-filter: blur(8px);
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+.universo-final p {
+
+    color: #e58b9c;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+.universo-final h3 {
+
+    max-width: 700px;
+
+    font-size: clamp(30px, 5vw, 55px);
+
+    font-weight: normal;
+
+    line-height: 1.3;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =====================================================
+   CARTA DO LÍRIO
+===================================================== */
+
+.carta-lirio {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff8f9,
+            #ffe8ed
+        );
+
+}
+
+.papel-lirio {
+
+    width: min(760px, 94%);
+
+    padding: 55px;
+
+    background: white;
+
+    border:
+        1px solid #edb8c2;
+
+    box-shadow:
+        0 20px 60px rgba(100, 30, 50, .12);
+
+    text-align: center;
+
+    position: relative;
+
+}
+
+.flor-decoracao {
+
+    color: #c9576d;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+.foto-lirio {
+
+    display: block;
+
+    width: min(360px, 90%);
+
+    height: 280px;
+
+    object-fit: cover;
+
+    margin: 0 auto 35px;
+
+    border-radius: 3px;
+
+    border:
+        8px solid white;
+
+    box-shadow:
+        0 10px 35px rgba(70, 20, 35, .18);
+
+}
+
+.papel-lirio h2 {
+
+    color: #8f3046;
+
+    font-size: 45px;
+
+    margin-bottom: 30px;
+
+    font-weight: normal;
+
+}
+
+.papel-lirio p:not(.data) {
+
+    color: #4b2b34;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =====================================================
+   CARTA FINAL / LOCALIZAÇÃO
+===================================================== */
+
+.carta-final {
+
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9576d,
+            #e58b9c
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.localizacao-caixa {
+
+    width: min(800px, 94%);
+
+    background: #fff;
+
+    padding: 60px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px rgba(80, 15, 30, .2);
+
+}
+
+.localizacao-caixa h2 {
+
+    color: #681f31;
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+}
+
+.localizacao-caixa > p {
+
+    color: #513039;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+}
+
+.destino-localizacao {
+
+    border:
+        1px solid #edb3be;
+
+    padding: 25px;
+
+    margin: 30px 0;
+
+    background: #fff7f8;
+
+}
+
+.destino-localizacao span {
+
+    display: block;
+
+    color: #c9576d;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+.destino-localizacao strong {
+
+    color: #681f31;
+
+    font-size: 24px;
+
+}
+
+
+/* =====================================================
+   CARTA FINAL ESCONDIDA
+===================================================== */
+
+.carta-final-conteudo {
+
+    display: none;
+
+    text-align: left;
+
+    margin-top: 45px;
+
+    padding-top: 40px;
+
+    border-top:
+        1px solid #efc4cb;
+
+    animation:
+        aparecer .8s ease forwards;
+
+}
+
+.carta-final-conteudo h2 {
+
+    text-align: left;
+
+    font-size: 42px;
+
+}
+
+.carta-final-conteudo p:not(.data) {
+
+    color: #4b2b34;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 22px;
+
+}
+
+.linha-decorativa {
+
+    text-align: center;
+
+    color: #c9576d;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+.assinatura-final {
+
+    text-align: center;
+
+    color: #c9576d !important;
+
+    font-size: 27px !important;
+
+    font-style: italic;
+
+    margin-top: 40px;
+
+}
+
+
+/* =====================================================
+   RESULTADO LOCALIZAÇÃO
+===================================================== */
+
+.resultado-localizacao {
+
+    margin-top: 20px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer {
+
+    background: #681f31;
+
+    color: #f6c8d0;
+
+    text-align: center;
+
+    padding: 25px;
+
+}
+
+footer p {
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   ANIMAÇÃO
+===================================================== */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .papel,
+    .papel-lirio,
+    .localizacao-caixa {
+
+        padding: 35px 22px;
+
+    }
+
+    .papel h2 {
+
+        font-size: 32px;
+
+    }
+
+    .papel-lirio h2 {
+
+        font-size: 36px;
+
+    }
+
+    .foto-lirio {
+
+        height: 230px;
+
+    }
+
+    .pistas {
+
+        flex-direction: column;
+
+    }
+
+    .pista {
+
+        width: 100%;
+
+    }
+
+    .senha-area input {
+
+        width: 100%;
+
+        margin: 0 0 10px;
+
+    }
+
+    .senha-area .botao {
+
+        width: 100%;
+
+    }
+
+    .constelacao {
+
+        right: -100px;
+
+        opacity: .25;
+
+    }
+
+}

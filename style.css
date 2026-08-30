@@ -3,9 +3,9 @@
 ===================================================== */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -14,17 +14,14 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-
-    background: #fff7f8;
-
-    color: #351820;
-
+    background: #fff8f8;
+    color: #241316;
     overflow-x: hidden;
 }
 
-button,
-input {
-    font-family: inherit;
+section {
+    min-height: 100vh;
+    position: relative;
 }
 
 
@@ -34,19 +31,12 @@ input {
 
 :root {
 
-    --vermelho: #c9576d;
-
-    --vermelho-claro: #e58b9c;
-
-    --vermelho-suave: #f3b5c0;
-
-    --vinho: #681f31;
-
-    --branco: #fff;
-
-    --creme: #fff7f8;
-
-    --texto: #351820;
+    --vermelho: #b94d64;
+    --vermelho-escuro: #641f31;
+    --vermelho-claro: #e7a0ad;
+    --rosa-papel: #fff7f8;
+    --branco: #fffafa;
+    --preto: #100b0d;
 
 }
 
@@ -59,30 +49,22 @@ input {
 
     border: none;
 
-    background:
-        linear-gradient(
-            135deg,
-            #d66c81,
-            #bd4d65
-        );
+    padding: 15px 28px;
+
+    border-radius: 40px;
+
+    background: var(--vermelho);
 
     color: white;
 
-    padding: 15px 30px;
-
-    border-radius: 50px;
-
-    font-size: 16px;
+    font-size: 15px;
 
     cursor: pointer;
 
-    box-shadow:
-        0 10px 25px rgba(105, 30, 50, 0.18);
+    transition: 0.3s;
 
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease;
+    box-shadow:
+        0 10px 30px rgba(100, 31, 49, 0.20);
 
 }
 
@@ -90,34 +72,10 @@ input {
 
     transform: translateY(-3px);
 
+    background: var(--vermelho-escuro);
+
     box-shadow:
-        0 15px 30px rgba(105, 30, 50, 0.25);
-
-    background:
-        linear-gradient(
-            135deg,
-            #e58b9c,
-            #c9576d
-        );
-
-}
-
-
-/* =====================================================
-   SUBTÍTULOS
-===================================================== */
-
-.subtitulo {
-
-    color: #c9576d;
-
-    letter-spacing: 5px;
-
-    font-size: 12px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 18px;
+        0 15px 35px rgba(100, 31, 49, 0.30);
 
 }
 
@@ -128,28 +86,21 @@ input {
 
 .inicio {
 
-    min-height: 100vh;
-
     display: flex;
-
-    justify-content: center;
 
     align-items: center;
 
-    text-align: center;
+    justify-content: center;
 
-    padding: 40px;
+    text-align: center;
 
     background:
         radial-gradient(
             circle at center,
-            #f4b6c1 0%,
-            #e895a5 25%,
-            #d76b80 55%,
-            #c9576d 100%
+            #f3c0c8 0%,
+            #e8a2ae 30%,
+            #fff8f8 75%
         );
-
-    color: white;
 
 }
 
@@ -157,15 +108,30 @@ input {
 
     max-width: 700px;
 
-    animation: aparecer 1.2s ease forwards;
+    padding: 30px;
+
+}
+
+.subtitulo {
+
+    color: var(--vermelho-escuro);
+
+    letter-spacing: 6px;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
 
 }
 
 .inicio h1 {
 
-    font-size: clamp(65px, 10vw, 120px);
+    font-size: clamp(60px, 10vw, 110px);
 
-    font-weight: normal;
+    color: #fffafa;
+
+    text-shadow:
+        0 5px 25px rgba(100, 31, 49, 0.35);
 
     margin-bottom: 20px;
 
@@ -188,120 +154,85 @@ input {
 
 .carta {
 
-    min-height: 100vh;
-
     display: flex;
-
-    justify-content: center;
 
     align-items: center;
 
-    padding: 80px 25px;
+    justify-content: center;
 
     background:
         linear-gradient(
-            180deg,
-            #fff7f8,
-            #ffecef
+            135deg,
+            #fffafa,
+            #f8dce1
         );
+
+    padding: 80px 20px;
 
 }
 
 .papel {
 
-    width: min(750px, 92%);
+    width: min(800px, 92%);
 
     padding: 65px;
 
-    background: white;
+    background: #fffdfd;
 
-    border: 1px solid #f1c5cd;
+    border: 1px solid #e7b8c1;
 
     box-shadow:
-        0 20px 60px rgba(90, 20, 35, .12);
+        0 25px 80px rgba(100, 31, 49, 0.18);
 
-    position: relative;
+    line-height: 1.9;
 
-}
-
-.papel::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 15px;
-
-    border: 1px solid #f5d5db;
-
-    pointer-events: none;
-
-}
-
-.data {
-
-    color: #c9576d;
-
-    font-size: 14px;
-
-    margin-bottom: 30px;
+    font-size: 17px;
 
 }
 
 .papel h2 {
 
-    color: #8f3046;
+    color: var(--vermelho-escuro);
 
-    font-size: 38px;
+    margin-bottom: 25px;
 
-    margin-bottom: 30px;
+    font-size: 32px;
 
 }
 
-.papel p:not(.data) {
-
-    font-size: 18px;
-
-    line-height: 1.8;
+.papel p {
 
     margin-bottom: 20px;
 
 }
 
-.texto-quatro {
+.data {
 
-    color: #5e3540;
-
-    font-style: italic;
+    color: var(--vermelho);
 
 }
 
 
 /* =====================================================
-   PARTE DOS CORAÇÕES
+   CORAÇÕES
 ===================================================== */
 
 .coracoes {
-
-    position: relative;
-
-    min-height: 100vh;
 
     overflow: hidden;
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
+
+    justify-content: center;
 
     background:
         radial-gradient(
-            circle at center,
-            #e88d9e 0%,
-            #d76b80 35%,
-            #c9576d 70%,
-            #b8425b 100%
+            circle,
+            #f0aeb9,
+            #df8999,
+            #c86c80
         );
 
     color: white;
@@ -310,47 +241,33 @@ input {
 
 .coracoes-conteudo {
 
-    position: relative;
-
-    z-index: 10;
-
     text-align: center;
 
-    padding: 40px;
+    position: relative;
 
-}
-
-.coracoes .subtitulo {
-
-    color: #ffe5ea;
+    z-index: 5;
 
 }
 
 .coracoes h2 {
 
-    font-size: clamp(65px, 9vw, 110px);
-
-    font-weight: normal;
+    font-size: clamp(60px, 9vw, 100px);
 
     margin-bottom: 20px;
 
     text-shadow:
-        0 4px 25px rgba(100, 20, 40, .2);
+        0 5px 30px rgba(80, 15, 30, 0.35);
 
 }
 
 .coracoes-intro {
 
-    font-size: 19px;
-
-    line-height: 1.6;
+    font-size: 18px;
 
 }
 
 
-/* =====================================================
-   CORAÇÕES FLUTUANDO
-===================================================== */
+/* corações mais bonitos */
 
 .chuva-coracoes {
 
@@ -360,64 +277,48 @@ input {
 
     overflow: hidden;
 
-    pointer-events: none;
-
-    z-index: 1;
-
 }
 
 .coracao-caindo {
 
     position: absolute;
 
-    top: -80px;
+    top: -50px;
 
-    color: rgba(255, 255, 255, .6);
+    color: rgba(255, 255, 255, 0.7);
 
     animation:
         cairCoracao linear infinite;
 
-    text-shadow:
-        0 0 15px rgba(255, 255, 255, .4);
+    pointer-events: none;
 
 }
 
 @keyframes cairCoracao {
 
-    0% {
-
+    from {
         transform:
-            translateY(-80px)
+            translateY(-50px)
             rotate(0deg);
-
         opacity: 0;
-
     }
 
-    15% {
-        opacity: .65;
+    10% {
+        opacity: 0.8;
     }
 
-    80% {
-        opacity: .5;
+    90% {
+        opacity: 0.8;
     }
 
-    100% {
-
+    to {
         transform:
             translateY(110vh)
-            rotate(360deg);
-
+            rotate(180deg);
         opacity: 0;
-
     }
 
 }
-
-
-/* =====================================================
-   PALAVRAS
-===================================================== */
 
 .palavras-estrelas {
 
@@ -427,51 +328,31 @@ input {
 
     pointer-events: none;
 
-    overflow: hidden;
-
-    z-index: 2;
-
 }
 
 .palavra-caindo {
 
     position: absolute;
 
-    display: block;
-
-    white-space: nowrap;
-
-    color: rgba(255, 255, 255, .75);
+    color: rgba(255,255,255,0.22);
 
     font-size: 15px;
 
-    letter-spacing: 1px;
-
-    opacity: 0;
-
     animation:
-        palavraAparecer 5s ease-in-out infinite;
+        palavraFlutuar 5s ease-in-out infinite;
 
 }
 
-@keyframes palavraAparecer {
+@keyframes palavraFlutuar {
 
-    0% {
-        opacity: 0;
-        transform: scale(.8);
+    0%,100% {
+        transform: translateY(0);
+        opacity: 0.15;
     }
 
-    25% {
-        opacity: .75;
-    }
-
-    70% {
-        opacity: .75;
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(1.08);
+    50% {
+        transform: translateY(-15px);
+        opacity: 0.55;
     }
 
 }
@@ -480,41 +361,36 @@ input {
 
     position: absolute;
 
-    bottom: 45px;
+    bottom: 60px;
 
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 20;
+    z-index: 10;
 
 }
 
 
 /* =====================================================
-   INVESTIGAÇÃO
+   PARTE 2 — INVESTIGAÇÃO
 ===================================================== */
 
 .investigacao {
 
-    min-height: 100vh;
-
-    padding: 100px 25px;
-
     background:
-        linear-gradient(
-            135deg,
-            #fff8f9,
-            #f8dfe4
+        radial-gradient(
+            circle at center,
+            #35131e,
+            #170d10 60%,
+            #080607
         );
 
-    color: #351820;
+    color: #eee;
+
+    padding: 80px 20px;
 
 }
 
 .investigacao-conteudo {
 
-    width: min(850px, 94%);
+    width: min(900px, 92%);
 
     margin: auto;
 
@@ -522,7 +398,7 @@ input {
 
 .codigo-vermelho {
 
-    color: #bd4d65;
+    color: #d9798c;
 
     letter-spacing: 5px;
 
@@ -534,17 +410,15 @@ input {
 
 .investigacao h2 {
 
-    color: #681f31;
+    font-size: clamp(35px, 5vw, 60px);
 
-    font-size: clamp(32px, 5vw, 58px);
-
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
 }
 
 .texto-investigacao {
 
-    font-size: 18px;
+    color: #c8aeb3;
 
     margin-bottom: 30px;
 
@@ -552,14 +426,11 @@ input {
 
 .arquivo {
 
-    padding: 25px;
+    border-left: 3px solid var(--vermelho);
 
-    background: #fff;
+    padding: 20px;
 
-    border-left: 4px solid #c9576d;
-
-    box-shadow:
-        0 10px 30px rgba(80, 20, 35, .08);
+    background: rgba(255,255,255,0.03);
 
     margin-bottom: 30px;
 
@@ -567,7 +438,7 @@ input {
 
 .arquivo p {
 
-    margin-bottom: 10px;
+    margin: 8px 0;
 
     font-family: monospace;
 
@@ -575,105 +446,69 @@ input {
 
 .arquivo span {
 
-    color: #c9576d;
-
-    font-weight: bold;
+    color: #df7e92;
 
 }
-
-
-/* =====================================================
-   PISTAS
-===================================================== */
 
 .pistas {
 
     display: flex;
 
-    flex-wrap: wrap;
-
     gap: 10px;
 
-    margin-bottom: 20px;
+    flex-wrap: wrap;
 
 }
 
 .pista {
 
-    border: 1px solid #df9baa;
-
-    background: white;
-
-    color: #681f31;
-
     padding: 12px 18px;
 
-    border-radius: 8px;
+    background: #241317;
+
+    border: 1px solid #713344;
+
+    color: white;
 
     cursor: pointer;
-
-    transition: .3s;
 
 }
 
 .pista:hover {
 
-    background: #f8dbe1;
-
-    transform: translateY(-2px);
+    background: #542331;
 
 }
 
 .texto-pista {
 
-    min-height: 30px;
+    min-height: 45px;
 
-    color: #9d3d53;
+    margin: 20px 0;
 
-    font-style: italic;
-
-    margin: 15px 0 30px;
+    color: #e4a6b2;
 
 }
-
-
-/* =====================================================
-   SENHA
-===================================================== */
 
 .senha-area {
 
-    padding: 30px;
-
-    background: rgba(255, 255, 255, .75);
-
-    border: 1px solid #edc2ca;
-
-}
-
-.senha-area p {
-
-    margin-bottom: 15px;
+    margin-top: 35px;
 
 }
 
 .senha-area input {
 
-    padding: 13px;
+    padding: 14px;
 
-    border: 1px solid #d9a0ac;
+    background: #100b0d;
+
+    border: 1px solid #683343;
+
+    color: white;
 
     outline: none;
 
-    width: min(300px, 100%);
-
-    margin-right: 8px;
-
-}
-
-.senha-area input:focus {
-
-    border-color: #c9576d;
+    margin-top: 12px;
 
 }
 
@@ -681,43 +516,31 @@ input {
 
     margin-top: 15px;
 
-    font-weight: bold;
-
 }
-
-
-/* =====================================================
-   INVESTIGAÇÃO FINAL
-===================================================== */
 
 .investigacao-final {
 
     display: none;
 
-    margin-top: 35px;
-
-    animation: aparecer .8s ease forwards;
+    margin-top: 40px;
 
 }
 
 .arquivo-aberto {
 
-    background: #fff;
-
-    border: 1px solid #e5a8b5;
+    border: 1px solid #9e4c62;
 
     padding: 35px;
 
-    margin-bottom: 25px;
+    background: rgba(100,31,49,0.18);
 
-    box-shadow:
-        0 15px 40px rgba(80, 20, 35, .1);
+    margin-bottom: 25px;
 
 }
 
 .arquivo-status {
 
-    color: #c9576d;
+    color: #ed93a4;
 
     letter-spacing: 4px;
 
@@ -727,39 +550,89 @@ input {
 
 .arquivo-aberto h3 {
 
-    color: #681f31;
+    margin: 15px 0;
 
     font-size: 30px;
-
-    margin: 15px 0;
 
 }
 
 
 /* =====================================================
-   UNIVERSO
+   PARTE 3 — UNIVERSO
 ===================================================== */
 
 .universo {
 
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #542033 0%,
-            #32121f 40%,
-            #180b11 75%,
-            #090609 100%
-        );
+    background: #030407;
 
     color: white;
 
+    overflow: hidden;
+
 }
+
+
+/* estrelas de fundo */
+
+.estrelas-fundo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,.5) 1px, transparent 1px);
+
+    background-size:
+        90px 90px,
+        150px 150px;
+
+    opacity: .45;
+
+}
+
+
+/* nebulosas */
+
+.nebulosa {
+
+    position: absolute;
+
+    width: 600px;
+
+    height: 600px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: .18;
+
+}
+
+.nebulosa-1 {
+
+    background: #8d173e;
+
+    top: -200px;
+
+    left: -150px;
+
+}
+
+.nebulosa-2 {
+
+    background: #40165f;
+
+    bottom: -250px;
+
+    right: -200px;
+
+}
+
+
+/* INTRO */
 
 .universo-intro {
 
@@ -769,27 +642,25 @@ input {
 
     flex-direction: column;
 
-    justify-content: center;
-
     align-items: center;
+
+    justify-content: center;
 
     text-align: center;
 
-    padding: 40px;
-
     position: relative;
 
-    z-index: 20;
+    z-index: 3;
 
 }
 
 .universo-mini {
 
-    color: #e58b9c;
+    letter-spacing: 6px;
 
-    letter-spacing: 5px;
+    font-size: 12px;
 
-    font-size: 13px;
+    color: #d97891;
 
     margin-bottom: 20px;
 
@@ -797,187 +668,96 @@ input {
 
 .universo-intro h2 {
 
-    font-size: clamp(42px, 7vw, 80px);
+    font-size: clamp(45px, 7vw, 90px);
 
-    font-weight: normal;
+    line-height: 1.05;
 
-    line-height: 1.1;
-
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
 }
 
 .universo-intro p {
 
-    font-size: 18px;
+    color: #c7c3c8;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
 }
 
 
-/* =====================================================
-   CÉU
-===================================================== */
+/* CÉU */
 
 .ceu {
 
     display: none;
 
-    position: relative;
-
     min-height: 100vh;
 
-    width: 100%;
+    position: relative;
 
     overflow: hidden;
 
 }
 
 
-/* =====================================================
-   FUNDO ESTRELADO
-===================================================== */
-
-.estrelas-fundo {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-
-        radial-gradient(circle, white 1px, transparent 1px),
-
-        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
-
-    background-size:
-        90px 90px,
-        150px 150px;
-
-    background-position:
-        10px 20px,
-        60px 80px;
-
-    opacity: .45;
-
-}
-
-
-/* =====================================================
-   VIA LÁCTEA
-===================================================== */
+/* VIA LÁCTEA */
 
 .via-lactea {
 
     position: absolute;
 
-    width: 150%;
+    width: 130%;
 
-    height: 35%;
+    height: 350px;
 
-    left: -25%;
+    top: 35%;
 
-    top: 30%;
+    left: -15%;
 
-    transform:
-        rotate(-18deg);
+    transform: rotate(-18deg);
 
     background:
         radial-gradient(
             ellipse,
-            rgba(255,255,255,.18),
-            rgba(213,160,180,.08),
+            rgba(255,255,255,.25),
+            rgba(150,100,160,.08),
             transparent 70%
         );
 
-    filter: blur(12px);
+    filter: blur(18px);
 
 }
 
 
-/* =====================================================
-   NEBULOSAS
-===================================================== */
-
-.nebulosa {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(45px);
-
-    pointer-events: none;
-
-}
-
-.nebulosa-1 {
-
-    width: 400px;
-
-    height: 300px;
-
-    background:
-        rgba(193, 76, 112, .15);
-
-    top: 5%;
-
-    left: 10%;
-
-}
-
-.nebulosa-2 {
-
-    width: 350px;
-
-    height: 350px;
-
-    background:
-        rgba(111, 61, 130, .14);
-
-    bottom: 5%;
-
-    right: 10%;
-
-}
-
-
-/* =====================================================
-   ESTRELAS CLICÁVEIS
-===================================================== */
+/* ESTRELAS CLICÁVEIS */
 
 .estrela {
 
     position: absolute;
 
-    z-index: 15;
+    width: 55px;
+
+    height: 55px;
 
     border: none;
 
     background: transparent;
 
-    color: #fff;
+    color: white;
 
     font-size: 30px;
 
     cursor: pointer;
 
-    padding: 10px;
+    z-index: 10;
 
-    line-height: 1;
+    transition: .3s;
 
     text-shadow:
         0 0 8px white,
-        0 0 20px #e58b9c,
-        0 0 35px #e58b9c;
+        0 0 20px white;
 
-    animation:
-        brilhoEstrela 2.5s ease-in-out infinite;
-
-    transition:
-        transform .3s,
-        opacity .3s;
+    animation: pulsarEstrela 2s infinite;
 
 }
 
@@ -985,111 +765,63 @@ input {
 
     transform: scale(1.7);
 
+    color: #ffdce3;
+
 }
 
 .estrela.encontrada {
 
-    color: #e58b9c;
+    color: #df718b;
 
     transform: scale(1.5);
 
-    opacity: .35;
-
-    pointer-events: none;
+    text-shadow:
+        0 0 15px #df718b,
+        0 0 35px #df718b;
 
 }
 
 
 /* POSIÇÕES */
 
-.estrela-1 {
-    top: 14%;
-    left: 12%;
-}
-
-.estrela-2 {
-    top: 25%;
-    left: 30%;
-}
-
-.estrela-3 {
-    top: 12%;
-    right: 25%;
-}
-
-.estrela-4 {
-    top: 40%;
-    right: 12%;
-}
-
-.estrela-5 {
-    top: 62%;
-    right: 28%;
-}
-
-.estrela-6 {
-    top: 75%;
-    left: 18%;
-}
-
-.estrela-7 {
-    top: 53%;
-    left: 38%;
-}
-
-.estrela-8 {
-    top: 78%;
-    right: 45%;
-}
-
-.estrela-9 {
-    top: 34%;
-    left: 62%;
-}
-
-.estrela-10 {
-    top: 20%;
-    right: 8%;
-}
+.estrela-1 { top: 15%; left: 12%; }
+.estrela-2 { top: 25%; left: 30%; }
+.estrela-3 { top: 12%; left: 52%; }
+.estrela-4 { top: 30%; left: 72%; }
+.estrela-5 { top: 50%; left: 20%; }
+.estrela-6 { top: 65%; left: 40%; }
+.estrela-7 { top: 52%; left: 60%; }
+.estrela-8 { top: 72%; left: 78%; }
+.estrela-9 { top: 80%; left: 15%; }
+.estrela-10 { top: 42%; left: 87%; }
 
 
-@keyframes brilhoEstrela {
+@keyframes pulsarEstrela {
 
-    0%,
-    100% {
-
+    0%,100% {
         opacity: .55;
-
-        transform: scale(.9);
-
     }
 
     50% {
-
         opacity: 1;
-
-        transform: scale(1.15);
-
     }
 
 }
 
 
-/* =====================================================
-   CONSTELAÇÃO
-===================================================== */
+/* CONSTELAÇÃO */
 
 .constelacao {
 
     position: absolute;
 
-    width: 350px;
+    width: 250px;
 
-    height: 300px;
+    height: 180px;
 
-    right: 8%;
+    top: 40%;
 
-    bottom: 15%;
+    left: 43%;
 
     opacity: .45;
 
@@ -1103,25 +835,21 @@ input {
 
     height: 5px;
 
-    border-radius: 50%;
-
     background: white;
 
-    box-shadow:
-        0 0 10px white;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px white;
 
 }
 
 .p1 { left: 10%; top: 20%; }
-.p2 { left: 30%; top: 10%; }
-.p3 { left: 48%; top: 25%; }
-.p4 { left: 65%; top: 15%; }
-.p5 { left: 80%; top: 35%; }
-.p6 { left: 70%; top: 60%; }
-.p7 { left: 52%; top: 75%; }
-.p8 { left: 35%; top: 60%; }
-.p9 { left: 20%; top: 75%; }
-.p10 { left: 5%; top: 50%; }
+.p2 { left: 35%; top: 5%; }
+.p3 { left: 55%; top: 25%; }
+.p4 { left: 80%; top: 10%; }
+.p5 { left: 90%; top: 55%; }
+.p6 { left: 60%; top: 80%; }
+
 
 .linha {
 
@@ -1129,16 +857,74 @@ input {
 
     height: 1px;
 
-    background: rgba(255,255,255,.5);
+    background: rgba(255,255,255,.35);
 
     transform-origin: left center;
 
 }
 
+.l1 {
+    width: 65px;
+    left: 10%;
+    top: 20%;
+    transform: rotate(-20deg);
+}
 
-/* =====================================================
-   PALAVRA DA ESTRELA
-===================================================== */
+.l2 {
+    width: 55px;
+    left: 35%;
+    top: 5%;
+    transform: rotate(25deg);
+}
+
+.l3 {
+    width: 65px;
+    left: 55%;
+    top: 25%;
+    transform: rotate(-15deg);
+}
+
+.l4 {
+    width: 65px;
+    left: 80%;
+    top: 10%;
+    transform: rotate(70deg);
+}
+
+.l5 {
+    width: 75px;
+    left: 90%;
+    top: 55%;
+    transform: rotate(150deg);
+}
+
+
+/* CONTADOR */
+
+.contador-estrelas {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 30px;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    background: rgba(0,0,0,.4);
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* PALAVRA */
 
 .palavra-estrela {
 
@@ -1148,53 +934,45 @@ input {
 
     top: 50%;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%,-50%);
 
-    z-index: 30;
+    color: #f1b3bf;
 
-    color: white;
-
-    font-size: clamp(30px, 5vw, 55px);
-
-    text-shadow:
-        0 0 20px #e58b9c;
+    font-size: 28px;
 
     opacity: 0;
 
-    pointer-events: none;
+    transition: .4s;
 
-    transition:
-        opacity .4s ease;
+    text-shadow:
+        0 0 15px #d75d7b;
+
+    z-index: 20;
 
 }
 
 
-/* =====================================================
-   TEXTO DO CÉU
-===================================================== */
+/* TEXTO DO CÉU */
 
 .ceu-mensagem {
 
     position: absolute;
 
-    z-index: 10;
+    bottom: 35px;
 
     left: 50%;
-
-    bottom: 35px;
 
     transform: translateX(-50%);
 
     text-align: center;
 
-    width: 90%;
+    color: #ddd;
 
 }
 
 .ceu-mensagem p {
 
-    font-size: 22px;
+    font-size: 18px;
 
     margin-bottom: 5px;
 
@@ -1202,43 +980,31 @@ input {
 
 .ceu-mensagem span {
 
-    color: #e5a0af;
+    font-size: 13px;
 
-}
-
-.ceu-mensagem small {
-
-    display: block;
-
-    margin-top: 10px;
-
-    color: rgba(255,255,255,.55);
+    color: #888;
 
 }
 
 
 /* =====================================================
-   FINAL DO UNIVERSO
+   MENSAGEM DEPOIS DAS ESTRELAS
+   GLITCH / MACABRO
 ===================================================== */
 
-.universo-final {
+.mensagem-universo {
 
     display: none;
 
     position: absolute;
 
-    z-index: 50;
-
     inset: 0;
 
-    background:
-        rgba(17, 6, 12, .9);
-
-    backdrop-filter: blur(8px);
-
-    justify-content: center;
+    z-index: 50;
 
     align-items: center;
+
+    justify-content: center;
 
     flex-direction: column;
 
@@ -1246,151 +1012,148 @@ input {
 
     padding: 30px;
 
-}
-
-.universo-final p {
-
-    color: #e58b9c;
-
-    font-size: 18px;
-
-    margin-bottom: 20px;
-
-}
-
-.universo-final h3 {
-
-    max-width: 700px;
-
-    font-size: clamp(30px, 5vw, 55px);
-
-    font-weight: normal;
-
-    line-height: 1.3;
-
-    margin-bottom: 35px;
-
-}
-
-
-/* =====================================================
-   CARTA DO LÍRIO
-===================================================== */
-
-.carta-lirio {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 90px 20px;
-
     background:
-        linear-gradient(
-            180deg,
-            #fff8f9,
-            #ffe8ed
+        radial-gradient(
+            circle at center,
+            #250b13 0%,
+            #09070a 50%,
+            #020204 100%
         );
 
 }
 
-.papel-lirio {
 
-    width: min(760px, 94%);
+/* glitch */
 
-    padding: 55px;
+.mensagem-universo::before {
 
-    background: white;
+    content: "";
 
-    border:
-        1px solid #edb8c2;
+    position: absolute;
 
-    box-shadow:
-        0 20px 60px rgba(100, 30, 50, .12);
+    inset: 0;
 
-    text-align: center;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(255,255,255,.025) 4px
+        );
 
-    position: relative;
-
-}
-
-.flor-decoracao {
-
-    color: #c9576d;
-
-    font-size: 30px;
-
-    margin-bottom: 20px;
+    pointer-events: none;
 
 }
 
-.foto-lirio {
+.glitch-linha {
 
-    display: block;
+    width: 200px;
 
-    width: min(360px, 90%);
+    height: 1px;
 
-    height: 280px;
-
-    object-fit: cover;
-
-    margin: 0 auto 35px;
-
-    border-radius: 3px;
-
-    border:
-        8px solid white;
-
-    box-shadow:
-        0 10px 35px rgba(70, 20, 35, .18);
-
-}
-
-.papel-lirio h2 {
-
-    color: #8f3046;
-
-    font-size: 45px;
+    background: #a43c55;
 
     margin-bottom: 30px;
 
-    font-weight: normal;
+    box-shadow:
+        -50px 0 #eee,
+        50px 0 #58192b;
+
+    animation: glitchLinha .7s infinite;
 
 }
 
-.papel-lirio p:not(.data) {
+@keyframes glitchLinha {
 
-    color: #4b2b34;
+    0%,100% {
+        transform: translateX(0);
+    }
 
-    font-size: 18px;
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+}
+
+.arquivo-glitch {
+
+    color: #b84e67;
+
+    letter-spacing: 5px;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+.mensagem-universo h2 {
+
+    position: relative;
+
+    font-family: monospace;
+
+    font-size: clamp(35px, 7vw, 75px);
+
+    color: #eee;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        3px 0 #6c1730,
+        -3px 0 #9d5268;
+
+}
+
+.mensagem-estrelas-texto {
+
+    max-width: 650px;
 
     line-height: 1.8;
 
-    margin-bottom: 20px;
+    color: #bdb4b7;
+
+    font-size: 17px;
+
+}
+
+.frase-final-estrelas {
+
+    margin: 25px 0 35px;
+
+    color: #e0a0ad;
+
+    font-size: 21px;
+
+    font-style: italic;
 
 }
 
 
 /* =====================================================
-   CARTA FINAL / LOCALIZAÇÃO
+   PARTE 4 — LÍRIO
 ===================================================== */
 
-.carta-final {
-
-    min-height: 100vh;
-
-    padding: 100px 20px;
+.lirio {
 
     background:
         linear-gradient(
             135deg,
-            #c9576d,
-            #e58b9c
+            #fffafa,
+            #f3d6dc
         );
+
+    padding: 90px 20px;
 
     display: flex;
 
@@ -1400,159 +1163,222 @@ input {
 
 }
 
-.localizacao-caixa {
+.carta-lirio {
 
-    width: min(800px, 94%);
+    width: min(850px, 94%);
 
-    background: #fff;
+    background: #fffdfd;
 
     padding: 60px;
 
     text-align: center;
 
+    border: 1px solid #e2aeb9;
+
     box-shadow:
-        0 25px 70px rgba(80, 15, 30, .2);
+        0 30px 90px rgba(91, 27, 42, .20);
 
 }
 
-.localizacao-caixa h2 {
+.lirio-arquivo {
 
-    color: #681f31;
+    color: var(--vermelho);
 
-    font-size: clamp(38px, 6vw, 65px);
+    letter-spacing: 5px;
 
-    font-weight: normal;
+    font-size: 11px;
 
-    margin-bottom: 25px;
-
-}
-
-.localizacao-caixa > p {
-
-    color: #513039;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
 }
 
-.destino-localizacao {
+.foto-lirio {
 
-    border:
-        1px solid #edb3be;
+    width: min(500px, 100%);
 
-    padding: 25px;
+    margin: auto;
 
-    margin: 30px 0;
+    overflow: hidden;
 
-    background: #fff7f8;
+    border: 8px solid white;
+
+    box-shadow:
+        0 15px 40px rgba(70,20,30,.20);
 
 }
 
-.destino-localizacao span {
+.foto-lirio img {
+
+    width: 100%;
 
     display: block;
 
-    color: #c9576d;
-
-    letter-spacing: 4px;
-
-    font-size: 12px;
-
-    margin-bottom: 10px;
+    height: auto;
 
 }
 
-.destino-localizacao strong {
+.pequena-frase {
 
-    color: #681f31;
+    margin: 30px auto;
 
-    font-size: 24px;
-
-}
-
-
-/* =====================================================
-   CARTA FINAL ESCONDIDA
-===================================================== */
-
-.carta-final-conteudo {
-
-    display: none;
-
-    text-align: left;
-
-    margin-top: 45px;
-
-    padding-top: 40px;
-
-    border-top:
-        1px solid #efc4cb;
-
-    animation:
-        aparecer .8s ease forwards;
-
-}
-
-.carta-final-conteudo h2 {
-
-    text-align: left;
-
-    font-size: 42px;
-
-}
-
-.carta-final-conteudo p:not(.data) {
-
-    color: #4b2b34;
-
-    font-size: 18px;
-
-    line-height: 1.9;
-
-    margin-bottom: 22px;
-
-}
-
-.linha-decorativa {
-
-    text-align: center;
-
-    color: #c9576d;
-
-    font-size: 25px;
-
-    margin-bottom: 25px;
-
-}
-
-.assinatura-final {
-
-    text-align: center;
-
-    color: #c9576d !important;
-
-    font-size: 27px !important;
+    color: #8d5361;
 
     font-style: italic;
 
-    margin-top: 40px;
+}
+
+.carta-lirio h2 {
+
+    color: var(--vermelho-escuro);
+
+    font-size: 38px;
+
+    margin-bottom: 35px;
+
+}
+
+.texto-lirio {
+
+    text-align: left;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+
+}
+
+.texto-lirio p {
+
+    margin-bottom: 20px;
+
+}
+
+.amor {
+
+    text-align: center;
+
+    color: var(--vermelho);
+
+    font-size: 27px;
+
+    margin-top: 35px;
 
 }
 
 
 /* =====================================================
-   RESULTADO LOCALIZAÇÃO
+   LOCALIZAÇÃO
 ===================================================== */
 
-.resultado-localizacao {
+.localizacao {
 
-    margin-top: 20px;
+    display: flex;
 
-    font-weight: bold;
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #efb0bb,
+            #fff8f8 70%
+        );
+
+    padding: 60px 20px;
+
+}
+
+.carta-localizacao {
+
+    background: #fff;
+
+    width: min(700px, 92%);
+
+    text-align: center;
+
+    padding: 70px 45px;
+
+    box-shadow:
+        0 25px 70px rgba(90,30,45,.18);
+
+    border: 1px solid #e2b0b9;
+
+}
+
+.carta-localizacao h2 {
+
+    font-size: 45px;
+
+    color: var(--vermelho-escuro);
+
+    margin-bottom: 20px;
+
+}
+
+.carta-localizacao > p {
+
+    line-height: 1.8;
+
+}
+
+.coordenadas {
+
+    margin: 40px 0;
+
+    padding: 30px;
+
+    border: 1px solid #d99aa7;
+
+    background: #fff6f8;
+
+}
+
+.coordenadas span {
+
+    display: block;
+
+    color: var(--vermelho);
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+
+    margin-bottom: 15px;
+
+}
+
+.coordenadas strong {
+
+    display: block;
+
+    color: #541b2b;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+}
+
+.coordenadas small {
+
+    color: #795762;
+
+}
+
+.localizacao-final {
+
+    font-style: italic;
+
+    color: #76505b;
+
+}
+
+.cadeado {
+
+    margin-top: 30px;
+
+    font-size: 35px;
 
 }
 
@@ -1563,46 +1389,13 @@ input {
 
 footer {
 
-    background: #681f31;
+    background: #160b0e;
 
-    color: #f6c8d0;
+    color: #dca0ac;
 
     text-align: center;
 
     padding: 25px;
-
-}
-
-footer p {
-
-    font-size: 15px;
-
-}
-
-
-/* =====================================================
-   ANIMAÇÃO
-===================================================== */
-
-@keyframes aparecer {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
 
 }
 
@@ -1611,31 +1404,12 @@ footer p {
    CELULAR
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     .papel,
-    .papel-lirio,
-    .localizacao-caixa {
+    .carta-lirio {
 
-        padding: 35px 22px;
-
-    }
-
-    .papel h2 {
-
-        font-size: 32px;
-
-    }
-
-    .papel-lirio h2 {
-
-        font-size: 36px;
-
-    }
-
-    .foto-lirio {
-
-        height: 230px;
+        padding: 35px 25px;
 
     }
 
@@ -1655,21 +1429,29 @@ footer p {
 
         width: 100%;
 
-        margin: 0 0 10px;
+        margin-bottom: 10px;
 
     }
 
-    .senha-area .botao {
+    .contador-estrelas {
 
-        width: 100%;
+        top: 15px;
+
+        right: 15px;
+
+        font-size: 10px;
 
     }
 
     .constelacao {
 
-        right: -100px;
+        left: 25%;
 
-        opacity: .25;
+    }
+
+    .mensagem-estrelas-texto {
+
+        font-size: 15px;
 
     }
 

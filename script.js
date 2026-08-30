@@ -15,7 +15,7 @@ function abrirCarta() {
 
 
 /* =====================================================
-   MENSAGEM DA CARTA
+   MOSTRAR MENSAGEM
 ===================================================== */
 
 function mostrarMensagem() {
@@ -43,11 +43,13 @@ function criarCoracoes() {
     const container =
         document.getElementById("chuvaCoracoes");
 
-    if (container.children.length > 0) {
-        return;
-    }
+    container.innerHTML = "";
 
-    const simbolos = ["♡", "♥", "❤"];
+    const simbolos = [
+        "♡",
+        "♥",
+        "❤"
+    ];
 
     for (let i = 0; i < 35; i++) {
 
@@ -70,15 +72,17 @@ function criarCoracoes() {
             Math.random() * 100 + "%";
 
         coracao.style.animationDuration =
-            (6 + Math.random() * 7) + "s";
+            (5 + Math.random() * 8) + "s";
 
         coracao.style.animationDelay =
             (-Math.random() * 10) + "s";
 
         coracao.style.fontSize =
-            (15 + Math.random() * 25) + "px";
+            (18 + Math.random() * 30) + "px";
 
-        container.appendChild(coracao);
+        container.appendChild(
+            coracao
+        );
 
     }
 
@@ -86,7 +90,7 @@ function criarCoracoes() {
 
 
 /* =====================================================
-   PALAVRAS
+   PALAVRAS COMO ESTRELAS
 ===================================================== */
 
 function criarPalavras() {
@@ -96,9 +100,7 @@ function criarPalavras() {
             "palavrasEstrelas"
         );
 
-    if (container.children.length > 0) {
-        return;
-    }
+    container.innerHTML = "";
 
     const palavras = [
 
@@ -120,6 +122,7 @@ function criarPalavras() {
 
     ];
 
+
     palavras.forEach(
         (palavra, index) => {
 
@@ -131,16 +134,28 @@ function criarPalavras() {
             );
 
             elemento.innerText =
-                palavra;
+                "✦ " + palavra;
+
 
             elemento.style.left =
-                (5 + Math.random() * 90) + "%";
+                (3 + Math.random() * 90)
+                + "%";
+
 
             elemento.style.top =
-                (5 + Math.random() * 85) + "%";
+                (8 + Math.random() * 75)
+                + "%";
+
 
             elemento.style.animationDelay =
-                (index * 0.4) + "s";
+                (Math.random() * 5)
+                + "s";
+
+
+            elemento.style.fontSize =
+                (13 + Math.random() * 8)
+                + "px";
+
 
             container.appendChild(
                 elemento
@@ -250,9 +265,13 @@ function verificarSenha() {
         final.style.display =
             "block";
 
-    }
 
-    else {
+        final.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    } else {
 
         resultado.innerText =
             "✕ Senha incorreta. Talvez você ainda precise investigar um pouco mais...";
@@ -354,9 +373,7 @@ function clicarEstrela(numero) {
 
 
     if (
-        estrelasEncontradas.has(
-            numero
-        )
+        estrelasEncontradas.has(numero)
     ) {
 
         return;
@@ -374,51 +391,48 @@ function clicarEstrela(numero) {
     );
 
 
-    /* palavra */
-
     const palavra =
         document.getElementById(
             "palavraEstrela"
         );
 
+
     palavra.innerText =
         palavrasEstrelas[numero];
+
 
     palavra.style.opacity =
         "1";
 
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        palavra.style.opacity =
-            "0";
+            palavra.style.opacity =
+                "0";
 
-    }, 1400);
-
-
-    /* contador */
-
-    const contador =
-        document.getElementById(
-            "contadorEstrelas"
-        );
-
-    contador.innerText =
-        estrelasEncontradas.size +
-        " / 10 estrelas encontradas";
+        },
+        1800
+    );
 
 
-    /* TODAS ENCONTRADAS */
+    /*
+     * Quando as 10 estrelas
+     * forem encontradas
+     */
 
     if (
         estrelasEncontradas.size === 10
     ) {
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            mostrarMensagemUniverso();
+                mostrarMensagemUniverso();
 
-        }, 1000);
+            },
+            1200
+        );
 
     }
 
@@ -426,7 +440,7 @@ function clicarEstrela(numero) {
 
 
 /* =====================================================
-   MENSAGEM APÓS AS 10 ESTRELAS
+   MOSTRAR MENSAGEM APÓS AS ESTRELAS
 ===================================================== */
 
 function mostrarMensagemUniverso() {
@@ -436,14 +450,21 @@ function mostrarMensagemUniverso() {
             "mensagemUniverso"
         );
 
-    mensagem.style.display =
-        "flex";
+
+    mensagem.classList.add(
+        "mostrar"
+    );
+
+
+    mensagem.scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
 
 
 /* =====================================================
-   IR PARA CARTA DO LÍRIO
+   IR PARA O LÍRIO
 ===================================================== */
 
 function irParaLirio() {
@@ -453,6 +474,7 @@ function irParaLirio() {
             "lirio"
         );
 
+
     lirio.scrollIntoView({
         behavior: "smooth"
     });
@@ -461,29 +483,167 @@ function irParaLirio() {
 
 
 /* =====================================================
-   CONTINUAR DEPOIS DO LÍRIO
+   VERIFICAR LOCALIZAÇÃO
 ===================================================== */
 
-function continuarDepoisDoLirio() {
+function verificarLocalizacao() {
 
-    const proxima =
+    const resultado =
         document.getElementById(
-            "proximaParte"
+            "resultadoLocalizacao"
         );
 
-    proxima.scrollIntoView({
-        behavior: "smooth"
-    });
+
+    const cartaFinal =
+        document.getElementById(
+            "cartaLocalizacao"
+        );
+
+
+    if (
+        !navigator.geolocation
+    ) {
+
+        resultado.innerText =
+            "Seu navegador não permite verificar a localização.";
+
+        return;
+
+    }
+
+
+    resultado.innerText =
+        "📍 Verificando sua localização...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(posicao) {
+
+            const latitude =
+                posicao.coords.latitude;
+
+
+            const longitude =
+                posicao.coords.longitude;
+
+
+            /*
+             * Umuarama - Paraná
+             *
+             * Coordenadas aproximadas:
+             *
+             * Latitude:  -23.7658
+             * Longitude: -53.3250
+             */
+
+            const latitudeUmuarama =
+                -23.7658;
+
+
+            const longitudeUmuarama =
+                -53.3250;
+
+
+            /*
+             * Área aproximada de desbloqueio.
+             *
+             * Não precisa estar exatamente
+             * no centro da cidade.
+             */
+
+            const distanciaLatitude =
+                Math.abs(
+                    latitude -
+                    latitudeUmuarama
+                );
+
+
+            const distanciaLongitude =
+                Math.abs(
+                    longitude -
+                    longitudeUmuarama
+                );
+
+
+            /*
+             * Área de aproximadamente
+             * alguns quilômetros.
+             */
+
+            if (
+
+                distanciaLatitude < 0.15 &&
+
+                distanciaLongitude < 0.15
+
+            ) {
+
+                resultado.innerText =
+                    "♡ Localização confirmada. Você encontrou o último arquivo.";
+
+
+                cartaFinal.style.display =
+                    "block";
+
+
+                cartaFinal.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+
+            } else {
+
+                resultado.innerText =
+                    "✦ Ainda não... parece que você precisa chegar um pouco mais perto do lugar certo.";
+
+            }
+
+        },
+
+
+        function(erro) {
+
+            if (
+                erro.code ===
+                1
+            ) {
+
+                resultado.innerText =
+                    "📍 Você precisa permitir o acesso à localização para continuar.";
+
+            } else {
+
+                resultado.innerText =
+                    "Não foi possível verificar sua localização. Tente novamente.";
+
+            }
+
+        },
+
+        {
+
+            enableHighAccuracy: true,
+
+            timeout: 10000,
+
+            maximumAge: 0
+
+        }
+
+    );
 
 }
 
 
 /* =====================================================
-   OBSERVADOR DE ANIMAÇÃO
+   ANIMAÇÃO DE ENTRADA
 ===================================================== */
 
 const observador =
     new IntersectionObserver(
+
         (entradas) => {
 
             entradas.forEach(
@@ -503,9 +663,11 @@ const observador =
             );
 
         },
+
         {
             threshold: 0.15
         }
+
     );
 
 
@@ -514,6 +676,11 @@ document
         ".papel, .carta-lirio, .arquivo-aberto"
     )
     .forEach(
-        elemento =>
-            observador.observe(elemento)
+        elemento => {
+
+            observador.observe(
+                elemento
+            );
+
+        }
     );

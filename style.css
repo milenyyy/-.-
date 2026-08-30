@@ -1,1253 +1,528 @@
 /* =====================================================
-   CONFIGURAÇÕES
+   NOVO DESIGN — ESTRELAS
+   Mantém as estrelas, mas deixa a área mais bonita
 ===================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Fundo do céu mais elegante */
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #fff8fa;
-    color: #3d3035;
-}
-
-
-/* =====================================================
-   CORES
-===================================================== */
-
-:root {
-    --vermelho: #d98295;
-    --vermelho-escuro: #a94f65;
-    --vermelho-claro: #f8dce3;
-    --rosa-pastel: #fff0f3;
-    --branco: #fffdfd;
-    --preto: #171216;
-}
-
-
-/* =====================================================
-   BOTÕES
-===================================================== */
-
-.botao {
-    border: none;
-    background: var(--vermelho);
-    color: white;
-
-    padding: 15px 30px;
-
-    border-radius: 30px;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-family: Arial, sans-serif;
-}
-
-.botao:hover {
-    background: var(--vermelho-escuro);
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 12px 30px rgba(150, 60, 80, 0.25);
-}
-
-
-/* =====================================================
-   TEXTOS PEQUENOS
-===================================================== */
-
-.subtitulo {
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 4px;
-
-    color: var(--vermelho-escuro);
-
-    margin-bottom: 20px;
-}
-
-
-/* =====================================================
-   PARTE 1
-===================================================== */
-
-.inicio {
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 30px;
-
+.ceu {
     background:
         radial-gradient(
-            circle at top,
-            #f5cbd5,
-            transparent 45%
+            circle at 50% 45%,
+            rgba(95, 55, 90, 0.18),
+            transparent 35%
         ),
-        #fff8fa;
-}
-
-.inicio-conteudo {
-    max-width: 700px;
-}
-
-.inicio h1 {
-    font-size: 90px;
-
-    font-weight: normal;
-
-    color: #402f35;
-
-    margin-bottom: 25px;
-}
-
-.frase {
-    font-size: 20px;
-
-    line-height: 1.7;
-
-    color: #76636c;
-
-    margin-bottom: 35px;
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(229, 167, 180, 0.08),
+            transparent 25%
+        ),
+        #020308;
 }
 
 
-/* =====================================================
-   CARTA INICIAL
-===================================================== */
+/* Pequeno brilho atrás das estrelas */
 
-.carta {
-    min-height: 100vh;
-
-    padding: 100px 30px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff8fa,
-            #fdecef
-        );
-}
-
-.papel {
-    max-width: 750px;
-
-    background: #fffdf8;
-
-    padding: 70px;
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 20px 50px rgba(100, 40, 55, 0.14);
-
-    position: relative;
-}
-
-.papel::before {
+.ceu::before {
     content: "";
-
     position: absolute;
+    width: 500px;
+    height: 500px;
 
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+    left: 50%;
+    top: 48%;
 
-    border: 1px solid #e8cbd2;
-
-    pointer-events: none;
-}
-
-.data {
-    text-align: right;
-
-    color: #9a6b77;
-
-    margin-bottom: 50px;
-}
-
-.papel h2 {
-    font-size: 40px;
-
-    font-weight: normal;
-
-    margin-bottom: 30px;
-}
-
-.papel p:not(.data) {
-    font-size: 18px;
-
-    line-height: 2;
-
-    margin-bottom: 20px;
-}
-
-.texto-quatro {
-    color: #674952;
-}
-
-
-/* =====================================================
-   CORAÇÕES
-===================================================== */
-
-.coracoes {
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
+    transform: translate(-50%, -50%);
 
     background:
         radial-gradient(
-            circle at center,
-            #fff,
-            #f8dce3
+            circle,
+            rgba(255,255,255,0.06),
+            transparent 65%
         );
-}
 
-.coracoes-conteudo {
-    position: relative;
+    border-radius: 50%;
 
-    z-index: 10;
-}
+    pointer-events: none;
 
-.coracoes h2 {
-    font-size: 80px;
-
-    font-weight: normal;
-
-    color: #4a3038;
-
-    margin-bottom: 20px;
-}
-
-.coracoes-intro {
-    font-size: 19px;
-
-    color: #80636d;
-}
-
-.continuar {
-    position: absolute;
-
-    bottom: 50px;
-
-    z-index: 20;
+    z-index: 2;
 }
 
 
 /* =====================================================
-   CORAÇÕES CAINDO
+   ESTRELAS — NOVO VISUAL
 ===================================================== */
 
-.chuva-coracoes {
-    position: absolute;
+.estrela {
+    width: 38px;
+    height: 38px;
 
-    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    overflow: hidden;
+    font-size: 21px;
 
-    pointer-events: none;
-}
+    color: #fff;
 
-.coracao-caindo {
-    position: absolute;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.16),
+            rgba(229,167,180,0.04) 55%,
+            transparent 70%
+        );
 
-    top: -80px;
+    border: 1px solid rgba(255,255,255,0.12);
 
-    color: #d98295;
+    border-radius: 50%;
 
-    font-size: 35px;
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.35),
+        0 0 25px rgba(229,167,180,0.2);
 
-    animation:
-        cairCoracao linear infinite;
+    backdrop-filter: blur(3px);
 
-    opacity: 0.8;
-}
-
-@keyframes cairCoracao {
-
-    from {
-        transform:
-            translateY(-100px)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translateY(110vh)
-            rotate(360deg);
-    }
-
-}
-
-
-/* =====================================================
-   PALAVRAS FORA DOS CORAÇÕES
-===================================================== */
-
-.palavras-estrelas {
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-}
-
-.palavra-caindo {
-    position: absolute;
-
-    color: #a94f65;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 17px;
-
-    opacity: 0;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
 
     animation:
-        aparecerSumir 4s ease-in-out infinite;
+        estrelaFlutuando 3s ease-in-out infinite;
 }
 
-@keyframes aparecerSumir {
+
+/* brilho maior ao passar o mouse */
+
+.estrela:hover {
+    transform: scale(1.35);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.35),
+            rgba(229,167,180,0.12) 55%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 15px white,
+        0 0 35px rgba(229,167,180,0.7),
+        0 0 65px rgba(229,167,180,0.25);
+}
+
+
+/* estrela encontrada */
+
+.estrela.encontrada {
+    color: #e5a7b4;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(229,167,180,0.35),
+            rgba(229,167,180,0.08) 55%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 15px #e5a7b4,
+        0 0 40px rgba(229,167,180,0.65);
+
+    transform: scale(1.15);
+
+    animation:
+        estrelaEncontrada 0.8s ease forwards;
+}
+
+
+/* movimento delicado */
+
+@keyframes estrelaFlutuando {
+
+    0%, 100% {
+        opacity: 0.65;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* quando encontrada */
+
+@keyframes estrelaEncontrada {
 
     0% {
-        opacity: 0;
-        transform: scale(0.6);
-    }
-
-    35% {
-        opacity: 1;
         transform: scale(1);
+        opacity: 1;
     }
 
-    70% {
+    40% {
+        transform: scale(1.7);
         opacity: 1;
     }
 
     100% {
-        opacity: 0;
-        transform: scale(1.2);
+        transform: scale(1.15);
+        opacity: 0.9;
     }
 
 }
 
 
 /* =====================================================
-   PARTE 2 — INVESTIGAÇÃO
+   PALAVRA ENCONTRADA
 ===================================================== */
 
-.investigacao {
-    min-height: 100vh;
+.palavra-estrela {
+    padding: 18px 30px;
 
-    padding: 100px 30px;
+    background:
+        rgba(5, 4, 8, 0.72);
 
-    display: flex;
+    border:
+        1px solid rgba(229,167,180,0.25);
 
-    align-items: center;
+    border-radius: 50px;
 
-    justify-content: center;
+    backdrop-filter: blur(10px);
 
-    position: relative;
+    letter-spacing: 6px;
 
-    overflow: hidden;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 30px rgba(229,167,180,0.15);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+/* =====================================================
+   MENSAGEM DE TODAS AS ESTRELAS
+===================================================== */
+
+.mensagem-universo {
+    backdrop-filter: blur(8px);
 
     background:
         radial-gradient(
             circle at center,
-            #291b20,
-            #0e0a0c
+            rgba(30,20,40,0.82),
+            rgba(2,3,8,0.96)
         );
-
-    color: white;
 }
 
-.investigacao-conteudo {
-    max-width: 800px;
-
-    width: 100%;
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.codigo-vermelho {
-    color: #ed899e;
-
-    font-family: monospace;
-
-    letter-spacing: 4px;
-}
-
-.investigacao h2 {
-    font-size: 45px;
-
-    font-weight: normal;
-
-    margin: 25px 0;
-}
-
-.texto-investigacao {
-    color: #cdbbc0;
-
-    line-height: 1.8;
-}
-
-.arquivo {
-    margin: 40px auto;
-
-    max-width: 550px;
-
-    padding: 25px;
-
-    border: 1px solid #75404e;
-
-    background: rgba(255,255,255,0.03);
-
-    text-align: left;
-
-    font-family: monospace;
-}
-
-.arquivo p {
-    margin: 12px 0;
-}
-
-.arquivo span {
-    color: #ed899e;
-}
-
-.pistas {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-
-    margin: 35px 0;
-}
-
-.pista {
-    background: transparent;
-
-    border: 1px solid #8f5362;
-
-    color: white;
-
-    padding: 14px 20px;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.pista:hover {
-    background: #8f5362;
-}
-
-.texto-pista {
-    min-height: 50px;
-
-    color: #f1a7b5;
-
-    line-height: 1.7;
-
-    margin-bottom: 25px;
-}
-
-.senha-area {
-    margin-top: 30px;
-}
-
-.senha-area input {
-    width: min(350px, 90%);
-
-    padding: 14px;
-
-    border-radius: 5px;
-
-    border: 1px solid #70404c;
-
-    background: #171114;
-
-    color: white;
-
-    outline: none;
-
-    margin: 15px 5px;
-}
-
-#resultadoSenha {
-    margin-top: 15px;
-
-    color: #f19aad;
-}
-
-.investigacao-final {
-    display: none;
-
-    margin-top: 50px;
-
-    animation: aparecer 1s ease forwards;
-}
-
-.arquivo-aberto {
-    border: 1px solid #bd667c;
-
-    padding: 40px;
-
-    margin-bottom: 30px;
-
-    background: rgba(255,255,255,0.04);
-}
-
-.arquivo-status {
-    color: #f18ea2;
-
-    font-family: monospace;
-
-    letter-spacing: 3px;
-}
-
-.arquivo-aberto h3 {
-    font-size: 30px;
-
-    margin: 20px 0;
-}
-
-
-/* =====================================================
-   PARTE 3 — UNIVERSO
-===================================================== */
-
-.universo {
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background: #07060a;
-
-    color: white;
-}
-
-.estrelas-fundo {
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        radial-gradient(
-            white 1px,
-            transparent 1px
-        );
-
-    background-size: 75px 75px;
-
-    opacity: 0.5;
-}
-
-.nebulosa {
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(80px);
-
-    opacity: 0.18;
-}
-
-.nebulosa-1 {
-    width: 500px;
-    height: 300px;
-
-    background: #bd6078;
-
-    top: 20%;
-    left: 10%;
-}
-
-.nebulosa-2 {
-    width: 400px;
-    height: 400px;
-
-    background: #714b70;
-
-    right: 5%;
-    bottom: 10%;
-}
-
-.universo-intro {
-    min-height: 100vh;
-
-    position: relative;
-
-    z-index: 5;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 30px;
-}
-
-.universo-mini {
-    color: #e58b9d;
-
-    font-family: monospace;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-}
-
-.universo-intro h2 {
-    font-size: 60px;
-
-    font-weight: normal;
-
-    line-height: 1.2;
-
-    margin-bottom: 25px;
-}
-
-.universo-intro p {
-    color: #cfc5ca;
-
-    font-size: 18px;
-
-    margin-bottom: 30px;
-}
-
-
-/* =====================================================
-   CÉU
-===================================================== */
-
-.ceu {
-    min-height: 100vh;
-
-    position: relative;
-
-    display: none;
-
-    overflow: hidden;
-}
-
-.via-lactea {
-    position: absolute;
-
-    width: 150%;
-
-    height: 300px;
-
-    left: -25%;
-
-    top: 35%;
-
-    transform: rotate(-18deg);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.08),
-            rgba(255,255,255,0.2),
-            rgba(255,255,255,0.08),
-            transparent
-        );
-
-    filter: blur(25px);
-}
-
-
-/* =====================================================
-   ESTRELAS
-===================================================== */
-
-.estrela {
-    position: absolute;
-
-    z-index: 10;
-
-    color: white;
-
-    font-size: 28px;
-
-    cursor: pointer;
-
-    transition: 0.4s;
-
-    text-shadow:
-        0 0 10px white,
-        0 0 25px white;
-
-    animation:
-        piscar 2s infinite alternate;
-}
-
-.estrela:hover {
-    transform: scale(1.7);
-
-    color: #ffdbe2;
-}
-
-.estrela.encontrada {
-    color: #ed8fa2;
-
-    transform: scale(1.5);
-
-    text-shadow:
-        0 0 15px #ed8fa2,
-        0 0 35px #ed8fa2;
-}
-
-@keyframes piscar {
-
-    from {
-        opacity: 0.5;
-    }
-
-    to {
-        opacity: 1;
-    }
-
-}
-
-
-/* POSIÇÕES */
-
-.estrela-1 {
-    top: 15%;
-    left: 12%;
-}
-
-.estrela-2 {
-    top: 25%;
-    left: 30%;
-}
-
-.estrela-3 {
-    top: 12%;
-    right: 25%;
-}
-
-.estrela-4 {
-    top: 40%;
-    left: 20%;
-}
-
-.estrela-5 {
-    top: 55%;
-    left: 42%;
-}
-
-.estrela-6 {
-    top: 28%;
-    right: 12%;
-}
-
-.estrela-7 {
-    bottom: 25%;
-    left: 15%;
-}
-
-.estrela-8 {
-    bottom: 18%;
-    right: 28%;
-}
-
-.estrela-9 {
-    bottom: 35%;
-    right: 10%;
-}
-
-.estrela-10 {
-    top: 65%;
-    left: 65%;
-}
-
-
-/* =====================================================
-   TELESCÓPIO
-===================================================== */
-
-.observatorio {
-    position: absolute;
-
-    bottom: 0;
-
-    left: 8%;
-
-    width: 180px;
-
-    height: 300px;
-}
-
-.telescopio {
-    position: absolute;
-
-    bottom: 100px;
-
-    left: 20px;
-
-    transform: rotate(-20deg);
-}
-
-.telescopio-corpo {
-    width: 140px;
-
-    height: 45px;
-
-    background: #17141a;
-
-    border: 2px solid #615964;
-
-    border-radius: 25px;
-}
-
-.telescopio-ocular {
-    width: 35px;
-
-    height: 25px;
-
-    background: #252029;
-
-    position: absolute;
-
-    right: -30px;
-
-    top: 10px;
-}
-
-
-/* =====================================================
-   CONSTELAÇÃO
-===================================================== */
-
-.constelacao {
-    position: absolute;
-
-    width: 300px;
-
-    height: 200px;
-
-    right: 20%;
-
-    top: 25%;
-}
-
-.ponto {
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    box-shadow: 0 0 12px white;
-}
-
-.linha {
-    position: absolute;
-
-    height: 1px;
-
-    background: rgba(255,255,255,0.3);
-
-    transform-origin: left;
-}
-
-
-/* =====================================================
-   PALAVRAS DAS ESTRELAS
-===================================================== */
-
-.palavra-estrela {
-    position: absolute;
-
-    left: 50%;
-
-    top: 75%;
-
-    transform: translateX(-50%);
-
-    color: #f0a4b2;
-
-    font-size: 20px;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transition: 0.5s;
-}
-
-
-/* =====================================================
-   MENSAGEM DO CÉU
-===================================================== */
-
-.ceu-mensagem {
-    position: absolute;
-
-    bottom: 35px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    text-align: center;
-
-    color: #c9c0c5;
-
-    z-index: 5;
-}
-
-.ceu-mensagem p {
-    font-size: 18px;
-
-    margin-bottom: 5px;
-}
-
-
-/* =====================================================
-   MENSAGEM APÓS AS 10 ESTRELAS
-===================================================== */
-
-.mensagem-universo {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 100;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        rgba(5, 4, 8, 0.78);
-
-    backdrop-filter: blur(8px);
-
-    padding: 25px;
-}
 
 .mensagem-universo-caixa {
+
     max-width: 650px;
 
-    padding: 55px;
+    padding: 55px 45px;
 
-    text-align: center;
+    border:
+        1px solid rgba(229,167,180,0.25);
 
-    border: 1px solid #c86b80;
+    border-radius: 18px;
 
     background:
-        rgba(20, 13, 18, 0.94);
+        rgba(8,6,10,0.7);
 
     box-shadow:
-        0 0 60px rgba(200, 90, 115, 0.15);
+        0 0 60px rgba(229,167,180,0.12),
+        inset 0 0 40px rgba(255,255,255,0.02);
 
-    animation:
-        aparecer 1s ease forwards;
-}
+    backdrop-filter: blur(12px);
 
-.mensagem-universo-caixa h2 {
-    font-size: 48px;
-
-    font-weight: normal;
-
-    margin-bottom: 25px;
-}
-
-.mensagem-universo-caixa > p:not(.universo-mini) {
-    color: #d7cbd0;
-
-    line-height: 1.8;
-
-    font-size: 18px;
-
-    margin-bottom: 30px;
 }
 
 
 /* =====================================================
-   PARTE 4 — LÍRIO
+   CARTA FINAL — LOCALIZAÇÃO
 ===================================================== */
 
-.lirio {
+.carta-final {
+
     min-height: 100vh;
 
-    padding: 100px 30px;
+    padding: 100px 25px;
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
 
-    background:
-        linear-gradient(
-            180deg,
-            #f8dce3,
-            #fff8fa
-        );
-}
-
-.carta-lirio {
-    width: min(800px, 100%);
-
-    background: #fffdf8;
-
-    padding: 65px;
+    justify-content: center;
 
     text-align: center;
 
-    position: relative;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(200,121,137,0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            #170b10,
+            #080607
+        );
 
-    box-shadow:
-        0 20px 60px rgba(100, 45, 60, 0.16);
-
-    border: 1px solid #ead1d7;
 }
 
-.carta-lirio::before {
+
+/* cartão da localização */
+
+.localizacao-caixa {
+
+    width: min(700px, 100%);
+
+    padding: 60px 45px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(253,248,249,0.97);
+
+    color: #3f3035;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.55);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* moldura interna */
+
+.localizacao-caixa::before {
+
     content: "";
 
     position: absolute;
 
-    inset: 20px;
+    inset: 18px;
 
-    border: 1px solid #ecd7dc;
+    border:
+        1px solid #e6cbd2;
 
     pointer-events: none;
+
 }
 
 
-/* FOTO DO LÍRIO */
+/* título */
 
-.foto-lirio {
-    width: 250px;
+.localizacao-caixa h2 {
 
-    height: 300px;
+    font-size:
+        clamp(34px, 6vw, 55px);
 
-    margin: 20px auto 40px;
+    font-weight: normal;
 
-    padding: 10px;
+    margin:
+        20px 0 15px;
 
-    background: white;
-
-    box-shadow:
-        0 10px 30px rgba(80, 40, 50, 0.15);
-
-    transform: rotate(-2deg);
 }
 
-.foto-lirio img {
-    width: 100%;
 
-    height: 100%;
+/* texto */
 
-    object-fit: cover;
+.localizacao-caixa > p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
 }
 
-.conteudo-lirio {
-    position: relative;
 
-    z-index: 2;
+/* destino */
+
+.destino-localizacao {
+
+    margin:
+        35px auto;
+
+    padding: 20px;
+
+    max-width: 450px;
+
+    border-radius: 12px;
+
+    background:
+        #f7e8ec;
+
+    border:
+        1px solid #e5c1ca;
+
 }
 
-.conteudo-lirio p {
+
+.destino-localizacao span {
+
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #9a6674;
+
+    margin-bottom: 8px;
+
+}
+
+
+.destino-localizacao strong {
+
+    font-size: 25px;
+
+    font-weight: normal;
+
+    color: #6f2639;
+
+}
+
+
+/* resultado da localização */
+
+#resultadoLocalizacao {
+
+    min-height: 28px;
+
+    margin:
+        20px 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+}
+
+
+.localizacao-sucesso {
+
+    color: #6f2639 !important;
+
+    font-weight: bold;
+
+}
+
+
+/* carta escondida antes da localização */
+
+#cartaFinalConteudo {
+
+    display: none;
+
+    margin-top: 45px;
+
+    padding-top: 40px;
+
+    border-top:
+        1px solid #ead7dc;
+
+    text-align: left;
+
+}
+
+
+/* texto da carta */
+
+#cartaFinalConteudo p {
+
     font-size: 18px;
 
     line-height: 2;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    color: #59434b;
 }
 
-.assinatura-lirio {
-    margin: 35px 0;
 
-    color: #9c6573;
+/* assinatura */
 
-    font-size: 18px;
+.assinatura-final {
+
+    margin-top: 40px;
+
+    text-align: right;
+
+    color: #9a6674;
 
     font-style: italic;
-}
-
-
-/* =====================================================
-   PRÓXIMA PARTE
-===================================================== */
-
-.proxima-parte {
-    min-height: 500px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 50px 30px;
-
-    background: #fff8fa;
-}
-
-.proxima-parte h2 {
-    font-size: 45px;
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-}
-
-
-/* =====================================================
-   RODAPÉ
-===================================================== */
-
-footer {
-    padding: 30px;
-
-    text-align: center;
-
-    background: #3e2930;
-
-    color: white;
-
-    font-family: Arial, sans-serif;
-}
-
-
-/* =====================================================
-   ANIMAÇÃO
-===================================================== */
-
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
 
 }
 
 
 /* =====================================================
-   CELULAR
+   RESPONSIVO — NOVA PARTE
 ===================================================== */
 
 @media (max-width: 750px) {
 
-    .inicio h1 {
-        font-size: 60px;
+    .estrela {
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 18px;
+
     }
 
-    .papel {
-        padding: 45px 30px;
+
+    .palavra-estrela {
+
+        padding: 14px 20px;
+
+        font-size: 22px;
+
+        letter-spacing: 3px;
+
     }
 
-    .papel h2 {
-        font-size: 32px;
-    }
-
-    .coracoes h2 {
-        font-size: 60px;
-    }
-
-    .investigacao h2 {
-        font-size: 32px;
-    }
-
-    .universo-intro h2 {
-        font-size: 40px;
-    }
 
     .mensagem-universo-caixa {
-        padding: 35px 25px;
+
+        margin: 20px;
+
+        padding: 40px 25px;
+
     }
 
-    .mensagem-universo-caixa h2 {
-        font-size: 36px;
+
+    .localizacao-caixa {
+
+        padding: 50px 25px;
+
     }
 
-    .carta-lirio {
-        padding: 50px 30px;
+
+    .localizacao-caixa::before {
+
+        inset: 12px;
+
     }
 
-    .foto-lirio {
-        width: 210px;
-        height: 260px;
+
+    #cartaFinalConteudo p {
+
+        font-size: 16px;
+
+        line-height: 1.9;
+
     }
 
 }

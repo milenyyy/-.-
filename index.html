@@ -17,32 +17,24 @@
 
 
 <!-- =====================================================
-     PARTE 1 — ABERTURA
+     PARTE 1 — A CARTA
 ===================================================== -->
 
 <section class="inicio" id="inicio">
 
     <div class="inicio-conteudo">
 
-        <p class="subtitulo">
-            UMA PEQUENA CARTA
-        </p>
+        <p class="subtitulo">UMA PEQUENA CARTA</p>
 
-        <h1>
-            Dear Noah
-        </h1>
+        <h1>Dear Noah</h1>
 
         <p class="frase">
             Algumas coisas são difíceis de dizer...
             então talvez seja melhor escrever.
         </p>
 
-        <button
-            class="botao"
-            onclick="abrirCarta()">
-
+        <button class="botao" onclick="abrirCarta()">
             💌 Abrir carta
-
         </button>
 
     </div>
@@ -50,9 +42,8 @@
 </section>
 
 
-
 <!-- =====================================================
-     PARTE 1 — CARTA
+     CARTA
 ===================================================== -->
 
 <section class="carta" id="carta">
@@ -63,9 +54,7 @@
             Para Noah,
         </p>
 
-        <h2>
-            Querido Noah,
-        </h2>
+        <h2>Querido Noah,</h2>
 
         <p>
             Talvez você não esperasse encontrar uma carta
@@ -92,12 +81,8 @@
 
         </p>
 
-        <button
-            class="botao"
-            onclick="mostrarMensagem()">
-
+        <button class="botao" onclick="mostrarMensagem()">
             ✨ Tem mais uma coisa...
-
         </button>
 
     </div>
@@ -105,24 +90,15 @@
 </section>
 
 
-
 <!-- =====================================================
-     PARTE 1.5 — VOCÊ É...
+     CORAÇÕES
 ===================================================== -->
 
-<section
-    class="coracoes"
-    id="coracoes">
+<section class="coracoes" id="coracoes">
 
-    <div
-        class="chuva-coracoes"
-        id="chuvaCoracoes">
-    </div>
+    <div class="chuva-coracoes" id="chuvaCoracoes"></div>
 
-    <div
-        class="palavras-estrelas"
-        id="palavrasEstrelas">
-    </div>
+    <div class="palavras-estrelas" id="palavrasEstrelas"></div>
 
     <div class="coracoes-conteudo">
 
@@ -130,9 +106,7 @@
             MAS ANTES...
         </p>
 
-        <h2>
-            Você é...
-        </h2>
+        <h2>Você é...</h2>
 
         <p class="coracoes-intro">
             Algumas coisas simplesmente não cabem
@@ -141,25 +115,20 @@
 
     </div>
 
-    <button
-        class="botao continuar"
-        onclick="irParaParte2()">
-
+    <button class="botao continuar" onclick="irParaParte2()">
         🔎 Continuar
-
     </button>
 
 </section>
-
 
 
 <!-- =====================================================
      PARTE 2 — INVESTIGAÇÃO
 ===================================================== -->
 
-<section
-    class="investigacao"
-    id="investigacao">
+<section class="investigacao" id="investigacao">
+
+    <div class="ruido"></div>
 
     <div class="investigacao-conteudo">
 
@@ -168,8 +137,7 @@
         </p>
 
         <h2>
-            Você encontrou uma coisa
-            que não deveria estar aqui.
+            Você encontrou uma coisa que não deveria estar aqui.
         </h2>
 
         <p class="texto-investigacao">
@@ -178,7 +146,6 @@
             Mas ele não será entregue tão facilmente.
 
         </p>
-
 
         <div class="arquivo">
 
@@ -200,46 +167,25 @@
         </div>
 
 
-
-        <!-- PISTAS -->
-
         <div class="pistas">
 
-            <button
-                class="pista"
-                onclick="abrirPista(1)">
-
+            <button class="pista" onclick="abrirPista(1)">
                 📼 Pista 01
-
             </button>
 
-            <button
-                class="pista"
-                onclick="abrirPista(2)">
-
+            <button class="pista" onclick="abrirPista(2)">
                 🗝️ Pista 02
-
             </button>
 
-            <button
-                class="pista"
-                onclick="abrirPista(3)">
-
+            <button class="pista" onclick="abrirPista(3)">
                 👁️ Pista 03
-
             </button>
 
         </div>
 
 
-        <div
-            id="textoPista"
-            class="texto-pista">
-        </div>
+        <div id="textoPista" class="texto-pista"></div>
 
-
-
-        <!-- SENHA -->
 
         <div class="senha-area">
 
@@ -255,12 +201,8 @@
                 autocomplete="off"
             >
 
-            <button
-                class="botao"
-                onclick="verificarSenha()">
-
+            <button class="botao" onclick="verificarSenha()">
                 🔓 Desbloquear
-
             </button>
 
             <p id="resultadoSenha"></p>
@@ -268,12 +210,7 @@
         </div>
 
 
-
-        <!-- ARQUIVO ABERTO -->
-
-        <div
-            id="investigacaoFinal"
-            class="investigacao-final">
+        <div id="investigacaoFinal" class="investigacao-final">
 
             <div class="arquivo-aberto">
 
@@ -281,9 +218,7 @@
                     ACESSO CONCEDIDO
                 </span>
 
-                <h3>
-                    ARQUIVO DESBLOQUEADO
-                </h3>
+                <h3>ARQUIVO DESBLOQUEADO</h3>
 
                 <p>
                     Algumas coisas são escondidas
@@ -297,12 +232,8 @@
 
             </div>
 
-            <button
-                class="botao"
-                onclick="irParaParte3()">
-
+            <button class="botao" onclick="irParaParte3()">
                 🌌 Prosseguir
-
             </button>
 
         </div>
@@ -312,166 +243,64 @@
 </section>
 
 
-
 <!-- =====================================================
      PARTE 3 — UNIVERSO
 ===================================================== -->
 
-<section
-    class="universo"
-    id="universo">
-
+<section class="universo" id="universo">
 
     <div class="estrelas-fundo"></div>
 
     <div class="nebulosa nebulosa-1"></div>
-
     <div class="nebulosa nebulosa-2"></div>
 
+    <!-- INTRODUÇÃO -->
 
-    <!-- INTRO -->
-
-    <div
-        class="universo-intro"
-        id="universoIntro">
+    <div class="universo-intro" id="universoIntro">
 
         <p class="universo-mini">
             ARQUIVO Nº 03
         </p>
 
         <h2>
-
             Existem coisas<br>
             que não cabem em palavras.
-
         </h2>
 
         <p>
             Então talvez seja melhor olhar para o céu.
         </p>
 
-        <button
-            class="botao"
-            onclick="comecarUniverso()">
-
-            🌌 Olhar para o céu
-
+        <button class="botao" onclick="comecarUniverso()">
+            ✦ Observar o céu
         </button>
 
     </div>
 
 
-
     <!-- CÉU -->
 
-    <div
-        class="ceu"
-        id="ceu">
-
+    <div class="ceu" id="ceu">
 
         <div class="via-lactea"></div>
 
+        <!-- estrelas -->
 
-
-        <!-- ESTRELAS CLICÁVEIS -->
-
-        <button
-            class="estrela estrela-1"
-            onclick="clicarEstrela(1)"
-            aria-label="Estrela 1">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-2"
-            onclick="clicarEstrela(2)"
-            aria-label="Estrela 2">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-3"
-            onclick="clicarEstrela(3)"
-            aria-label="Estrela 3">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-4"
-            onclick="clicarEstrela(4)"
-            aria-label="Estrela 4">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-5"
-            onclick="clicarEstrela(5)"
-            aria-label="Estrela 5">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-6"
-            onclick="clicarEstrela(6)"
-            aria-label="Estrela 6">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-7"
-            onclick="clicarEstrela(7)"
-            aria-label="Estrela 7">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-8"
-            onclick="clicarEstrela(8)"
-            aria-label="Estrela 8">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-9"
-            onclick="clicarEstrela(9)"
-            aria-label="Estrela 9">
-
-            ✦
-
-        </button>
-
-        <button
-            class="estrela estrela-10"
-            onclick="clicarEstrela(10)"
-            aria-label="Estrela 10">
-
-            ✦
-
-        </button>
-
+        <button class="estrela estrela-1" onclick="clicarEstrela(1)">✦</button>
+        <button class="estrela estrela-2" onclick="clicarEstrela(2)">✦</button>
+        <button class="estrela estrela-3" onclick="clicarEstrela(3)">✦</button>
+        <button class="estrela estrela-4" onclick="clicarEstrela(4)">✦</button>
+        <button class="estrela estrela-5" onclick="clicarEstrela(5)">✦</button>
+        <button class="estrela estrela-6" onclick="clicarEstrela(6)">✦</button>
+        <button class="estrela estrela-7" onclick="clicarEstrela(7)">✦</button>
+        <button class="estrela estrela-8" onclick="clicarEstrela(8)">✦</button>
+        <button class="estrela estrela-9" onclick="clicarEstrela(9)">✦</button>
+        <button class="estrela estrela-10" onclick="clicarEstrela(10)">✦</button>
 
 
         <!-- CONSTELAÇÃO -->
 
-        <div
-            class="constelacao"
-            id="constelacao">
+        <div class="constelacao">
 
             <div class="ponto p1"></div>
             <div class="ponto p2"></div>
@@ -479,31 +308,24 @@
             <div class="ponto p4"></div>
             <div class="ponto p5"></div>
             <div class="ponto p6"></div>
-            <div class="ponto p7"></div>
-            <div class="ponto p8"></div>
-            <div class="ponto p9"></div>
-            <div class="ponto p10"></div>
 
             <div class="linha l1"></div>
             <div class="linha l2"></div>
             <div class="linha l3"></div>
             <div class="linha l4"></div>
             <div class="linha l5"></div>
-            <div class="linha l6"></div>
-            <div class="linha l7"></div>
-            <div class="linha l8"></div>
 
         </div>
 
 
+        <!-- contador -->
 
-        <!-- PALAVRA DA ESTRELA -->
-
-        <div
-            id="palavraEstrela"
-            class="palavra-estrela">
+        <div class="contador-estrelas" id="contadorEstrelas">
+            0 / 10 estrelas encontradas
         </div>
 
+
+        <div id="palavraEstrela" class="palavra-estrela"></div>
 
 
         <div class="ceu-mensagem">
@@ -516,330 +338,225 @@
                 Cada uma guarda uma palavra.
             </span>
 
-            <small id="contadorEstrelas">
-                0 / 10 encontradas
-            </small>
-
-        </div>
-
-
-
-        <!-- MENSAGEM FINAL DO UNIVERSO -->
-
-        <div
-            class="universo-final"
-            id="mensagemUniverso">
-
-            <div class="galaxia-final"></div>
-
-            <p>
-                Você encontrou todas elas.
-            </p>
-
-            <h3>
-
-                No meio de um universo tão grande...
-                é curioso encontrar alguém
-                que consegue fazer o meu pequeno
-                mundo parecer maior.
-
-            </h3>
-
-            <button
-                class="botao"
-                onclick="irParaLirio()">
-
-                🌸 Próximo
-
-            </button>
-
         </div>
 
     </div>
 
-</section>
 
+    <!-- =================================================
+         MENSAGEM DEPOIS DAS ESTRELAS
+    ================================================= -->
+
+    <div class="mensagem-universo" id="mensagemUniverso">
+
+        <div class="glitch-linha"></div>
+
+        <p class="arquivo-glitch">
+            ARQUIVO 03 // CONCLUÍDO
+        </p>
+
+        <h2
+            data-text="VOCÊ ENCONTROU TODAS."
+        >
+            VOCÊ ENCONTROU TODAS.
+        </h2>
+
+        <p class="mensagem-estrelas-texto">
+
+            Talvez as estrelas não estivessem escondendo
+            uma resposta.
+
+            <br><br>
+
+            Talvez elas só estivessem tentando te mostrar
+            que algumas pessoas são como constelações:
+            você precisa parar por um instante para perceber
+            o quanto elas iluminam.
+
+        </p>
+
+        <p class="frase-final-estrelas">
+
+            E você é uma dessas pessoas.
+
+        </p>
+
+        <button class="botao" onclick="irParaLirio()">
+            🌸 Próximo
+        </button>
+
+    </div>
+
+</section>
 
 
 <!-- =====================================================
      PARTE 4 — CARTA DO LÍRIO
 ===================================================== -->
 
-<section
-    class="carta-lirio"
-    id="lirio">
+<section class="lirio" id="lirio">
 
-    <div class="papel-lirio">
+    <div class="lirio-fundo"></div>
 
+    <div class="carta-lirio">
 
-        <div class="flor-decoracao">
-            ♡
+        <p class="lirio-arquivo">
+            ARQUIVO Nº 04
+        </p>
+
+        <div class="foto-lirio">
+
+            <img
+                src="imagens/lirio.jpg"
+                alt="Lírio"
+            >
+
+        </div>
+
+        <p class="pequena-frase">
+            Algumas flores não precisam ser entregues
+            para serem lembradas.
+        </p>
+
+        <h2>
+            Uma pequena carta para você.
+        </h2>
+
+        <div class="texto-lirio">
+
+            <p>
+                Noah,
+            </p>
+
+            <p>
+                Em tão pouco tempo você se tornou uma pessoa
+                muito especial para mim.
+            </p>
+
+            <p>
+                Se tornou a pessoa em quem confio, a pessoa
+                com quem sei que posso ser eu mesma sem medo
+                de ser julgada ou acusada.
+            </p>
+
+            <p>
+                Você foi a pessoa que me ajudou quando precisei,
+                quando eu não queria falar com ninguém, quando
+                eu não sentia emoção no dia e quando não tinha
+                vontade de me socializar com ninguém.
+            </p>
+
+            <p>
+                E talvez você nem saiba o quanto isso significou
+                para mim.
+            </p>
+
+            <p>
+                Hoje sinto felicidade quando recebo uma mensagem
+                sua e fico esperando ansiosamente pelas nossas
+                conversas.
+            </p>
+
+            <p>
+                Amo sua companhia e sua amizade.
+            </p>
+
+            <p>
+                É tão bom saber que tenho uma pessoa tão especial
+                quanto você: uma pessoa incrível, animada,
+                gentil, engraçada e que ajuda os outros nos
+                momentos difíceis.
+            </p>
+
+            <p>
+                Você é o tipo de pessoa que todos querem ter
+                por perto.
+            </p>
+
+            <p>
+                Bem no começo, quando conheci você, eu sentia
+                que queria muito ser sua amiga.
+            </p>
+
+            <p>
+                E hoje você é meu melhor amigo.
+            </p>
+
+            <p>
+                Agradeço pela sua amizade.
+                Agradeço por todos os nossos momentos,
+                por todas as risadas e pelos momentos de raiva
+                também kakak.
+            </p>
+
+            <p>
+                Quero que saiba que você é muito especial para mim.
+            </p>
+
+            <p class="amor">
+                I love you. ♡
+            </p>
+
         </div>
 
 
-        <!-- FOTO REAL -->
-
-        <img
-            src="imagens/lirio.jpg"
-            alt="Lírio"
-            class="foto-lirio"
-        >
-
-
-        <p class="data">
-            Para você,
-        </p>
-
-
-        <h2>
-            O lírio
-        </h2>
-
-
-        <p>
-
-            Eu poderia dizer que você é a rosa mais linda
-            que já vi, mas, na verdade, você é o lírio mais
-            encantador que já apareceu para mim.
-
-        </p>
-
-
-        <p>
-
-            A flor mais bela do meu jardim,
-            a flor mais preciosa do meu buquê.
-
-        </p>
-
-
-        <p>
-
-            Você é a típica flor que não arrancamos,
-            porque gostamos dela.
-
-        </p>
-
-
-        <p>
-
-            Você é a flor que cuidamos, regamos
-            e deixamos crescer.
-
-        </p>
-
-
-        <p>
-
-            Você é tão belo quanto um lírio
-            em meio a um buquê cheio de rosas.
-
-        </p>
-
-
-        <button
-            class="botao"
-            onclick="irParaCartaFinal()">
-
-            💌 Próximo
-
+        <button class="botao" onclick="continuarDepoisDoLirio()">
+            📍 Próximo
         </button>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
-     PARTE 5 — CARTA DE LOCALIZAÇÃO
+     PARTE 5 — LOCALIZAÇÃO
 ===================================================== -->
 
-<section
-    class="carta-final"
-    id="cartaFinal">
+<section class="localizacao" id="proximaParte">
 
-    <div class="localizacao-caixa">
-
+    <div class="carta-localizacao">
 
         <p class="subtitulo">
-            ÚLTIMA CARTA
+            ÚLTIMO ARQUIVO
         </p>
-
 
         <h2>
-            Uma última descoberta...
+            Uma última coisa.
         </h2>
 
-
-        <p class="texto-localizacao">
-
-            Talvez algumas cartas não devam
-            ser abertas em qualquer lugar.
-
+        <p>
+            Algumas cartas não podem ser abertas
+            em qualquer lugar.
         </p>
 
+        <div class="coordenadas">
 
-        <div class="destino-localizacao">
-
-            <span>
-                DESTINO
-            </span>
+            <span>LOCALIZAÇÃO NECESSÁRIA</span>
 
             <strong>
-                📍 Umuarama — Paraná
+                UMUARAMA — PARANÁ
             </strong>
+
+            <small>
+                O arquivo só poderá ser aberto
+                quando você estiver aqui.
+            </small>
 
         </div>
 
-
-        <p>
-
-            Existe uma carta esperando por você.
-
-            Mas ela só poderá ser encontrada
-            quando você estiver aqui.
-
+        <p class="localizacao-final">
+            Talvez algumas coisas tenham que esperar
+            o lugar certo para acontecer.
         </p>
 
-
-        <button
-            class="botao"
-            onclick="verificarLocalizacao()">
-
-            📍 Verificar localização
-
-        </button>
-
-
-        <p
-            id="resultadoLocalizacao"
-            class="resultado-localizacao">
-        </p>
-
-
-
-        <!-- CARTA ESCONDIDA -->
-
-        <div
-            id="cartaFinalConteudo"
-            class="carta-final-conteudo">
-
-
-            <div class="linha-decorativa">
-                ♡
-            </div>
-
-
-            <p class="data">
-                Para Noah,
-            </p>
-
-
-            <h2>
-                Noah,
-            </h2>
-
-
-            <p>
-
-                Em tão pouco tempo você se tornou
-                uma pessoa muito especial para mim.
-
-                Você se tornou a pessoa em quem confio,
-                a pessoa com quem sei que posso ser eu mesma,
-                sem me julgar ou me acusar.
-
-            </p>
-
-
-            <p>
-
-                Você foi a pessoa que me ajudou quando
-                precisei, quando eu queria falar com ninguém,
-                quando não sentia mais emoção no dia e
-                quando não tinha vontade de me socializar
-                com ninguém.
-
-                Você me ajudou.
-
-            </p>
-
-
-            <p>
-
-                Hoje sinto felicidade todos os dias
-                quando recebo uma mensagem sua.
-
-                Fico esperando ansiosamente por nossas
-                conversas e amo a sua companhia,
-                a sua amizade.
-
-            </p>
-
-
-            <p>
-
-                É tão bom saber que tenho uma pessoa
-                tão especial quanto você.
-
-                Uma pessoa incrível, animada, gentil,
-                engraçada e que ajuda os outros
-                nos momentos difíceis.
-
-            </p>
-
-
-            <p>
-
-                Você é a pessoa que todos querem
-                ter por perto, querem ser seus amigos.
-
-            </p>
-
-
-            <p>
-
-                Bem no começo, quando conheci você,
-                eu sentia que queria muito ser sua amiga.
-
-                E hoje você é meu melhor amigo.
-
-            </p>
-
-
-            <p>
-
-                Agradeço pela sua amizade.
-
-                Agradeço por todos os nossos momentos,
-                por todas as risadas e pelos momentos
-                de raiva também, kakak.
-
-            </p>
-
-
-            <p>
-
-                Quero que saiba que você é muito
-                especial para mim.
-
-            </p>
-
-
-            <p class="assinatura-final">
-
-                I love you. ♡
-
-            </p>
-
-
+        <div class="cadeado">
+            🔒
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -853,7 +570,6 @@
     </p>
 
 </footer>
-
 
 
 <script src="script.js"></script>

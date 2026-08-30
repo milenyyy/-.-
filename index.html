@@ -17,7 +17,7 @@
 
 
 <!-- =====================================================
-     PARTE 1 — A CARTA
+     PARTE 1 — ABERTURA
 ===================================================== -->
 
 <section class="inicio" id="inicio">
@@ -37,8 +37,12 @@
             então talvez seja melhor escrever.
         </p>
 
-        <button class="botao" onclick="abrirCarta()">
+        <button
+            class="botao"
+            onclick="abrirCarta()">
+
             💌 Abrir carta
+
         </button>
 
     </div>
@@ -46,8 +50,9 @@
 </section>
 
 
+
 <!-- =====================================================
-     CARTA
+     PARTE 1 — CARTA
 ===================================================== -->
 
 <section class="carta" id="carta">
@@ -87,8 +92,12 @@
 
         </p>
 
-        <button class="botao" onclick="mostrarMensagem()">
+        <button
+            class="botao"
+            onclick="mostrarMensagem()">
+
             ✨ Tem mais uma coisa...
+
         </button>
 
     </div>
@@ -96,13 +105,19 @@
 </section>
 
 
+
 <!-- =====================================================
-     CORAÇÕES
+     PARTE 1.5 — VOCÊ É...
 ===================================================== -->
 
-<section class="coracoes" id="coracoes">
+<section
+    class="coracoes"
+    id="coracoes">
 
-    <div class="chuva-coracoes" id="chuvaCoracoes"></div>
+    <div
+        class="chuva-coracoes"
+        id="chuvaCoracoes">
+    </div>
 
     <div
         class="palavras-estrelas"
@@ -137,6 +152,7 @@
 </section>
 
 
+
 <!-- =====================================================
      PARTE 2 — INVESTIGAÇÃO
 ===================================================== -->
@@ -144,8 +160,6 @@
 <section
     class="investigacao"
     id="investigacao">
-
-    <div class="ruido"></div>
 
     <div class="investigacao-conteudo">
 
@@ -166,32 +180,25 @@
         </p>
 
 
-        <!-- ARQUIVO -->
-
         <div class="arquivo">
 
             <p>
                 STATUS:
-                <span>
-                    ACESSO BLOQUEADO
-                </span>
+                <span>ACESSO BLOQUEADO</span>
             </p>
 
             <p>
                 IDENTIDADE:
-                <span>
-                    NOAH
-                </span>
+                <span>NOAH</span>
             </p>
 
             <p>
                 NÍVEL:
-                <span>
-                    CONFIDENCIAL
-                </span>
+                <span>CONFIDENCIAL</span>
             </p>
 
         </div>
+
 
 
         <!-- PISTAS -->
@@ -231,6 +238,7 @@
         </div>
 
 
+
         <!-- SENHA -->
 
         <div class="senha-area">
@@ -247,8 +255,6 @@
                 autocomplete="off"
             >
 
-            <br>
-
             <button
                 class="botao"
                 onclick="verificarSenha()">
@@ -262,7 +268,8 @@
         </div>
 
 
-        <!-- FINAL DA INVESTIGAÇÃO -->
+
+        <!-- ARQUIVO ABERTO -->
 
         <div
             id="investigacaoFinal"
@@ -280,8 +287,7 @@
 
                 <p>
                     Algumas coisas são escondidas
-                    não porque precisam permanecer
-                    em segredo...
+                    não porque precisam permanecer em segredo...
                 </p>
 
                 <p>
@@ -306,6 +312,7 @@
 </section>
 
 
+
 <!-- =====================================================
      PARTE 3 — UNIVERSO
 ===================================================== -->
@@ -314,18 +321,15 @@
     class="universo"
     id="universo">
 
+
     <div class="estrelas-fundo"></div>
 
-    <div
-        class="nebulosa nebulosa-1">
-    </div>
+    <div class="nebulosa nebulosa-1"></div>
 
-    <div
-        class="nebulosa nebulosa-2">
-    </div>
+    <div class="nebulosa nebulosa-2"></div>
 
 
-    <!-- INTRODUÇÃO -->
+    <!-- INTRO -->
 
     <div
         class="universo-intro"
@@ -347,7 +351,7 @@
         </p>
 
         <button
-            class="botao botao-fones"
+            class="botao"
             onclick="comecarUniverso()">
 
             🌌 Olhar para o céu
@@ -357,104 +361,113 @@
     </div>
 
 
-    <!-- =================================================
-         CÉU
-    ================================================= -->
+
+    <!-- CÉU -->
 
     <div
         class="ceu"
         id="ceu">
 
+
         <div class="via-lactea"></div>
 
 
-        <!-- TELESCÓPIO -->
 
-        <div class="observatorio">
+        <!-- ESTRELAS CLICÁVEIS -->
 
-            <div class="telescopio">
-
-                <div
-                    class="telescopio-corpo">
-                </div>
-
-                <div
-                    class="telescopio-ocular">
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             ESTRELAS CLICÁVEIS
-        ================================================= -->
-
-        <div
+        <button
             class="estrela estrela-1"
-            onclick="clicarEstrela(1)">
-            ✦
-        </div>
+            onclick="clicarEstrela(1)"
+            aria-label="Estrela 1">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-2"
-            onclick="clicarEstrela(2)">
-            ✦
-        </div>
+            onclick="clicarEstrela(2)"
+            aria-label="Estrela 2">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-3"
-            onclick="clicarEstrela(3)">
-            ✦
-        </div>
+            onclick="clicarEstrela(3)"
+            aria-label="Estrela 3">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-4"
-            onclick="clicarEstrela(4)">
-            ✦
-        </div>
+            onclick="clicarEstrela(4)"
+            aria-label="Estrela 4">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-5"
-            onclick="clicarEstrela(5)">
-            ✦
-        </div>
+            onclick="clicarEstrela(5)"
+            aria-label="Estrela 5">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-6"
-            onclick="clicarEstrela(6)">
-            ✦
-        </div>
+            onclick="clicarEstrela(6)"
+            aria-label="Estrela 6">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-7"
-            onclick="clicarEstrela(7)">
-            ✦
-        </div>
+            onclick="clicarEstrela(7)"
+            aria-label="Estrela 7">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-8"
-            onclick="clicarEstrela(8)">
-            ✦
-        </div>
+            onclick="clicarEstrela(8)"
+            aria-label="Estrela 8">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-9"
-            onclick="clicarEstrela(9)">
-            ✦
-        </div>
+            onclick="clicarEstrela(9)"
+            aria-label="Estrela 9">
 
-        <div
+            ✦
+
+        </button>
+
+        <button
             class="estrela estrela-10"
-            onclick="clicarEstrela(10)">
+            onclick="clicarEstrela(10)"
+            aria-label="Estrela 10">
+
             ✦
-        </div>
+
+        </button>
 
 
-        <!-- =================================================
-             CONSTELAÇÃO
-        ================================================= -->
+
+        <!-- CONSTELAÇÃO -->
 
         <div
             class="constelacao"
@@ -483,6 +496,7 @@
         </div>
 
 
+
         <!-- PALAVRA DA ESTRELA -->
 
         <div
@@ -491,9 +505,6 @@
         </div>
 
 
-        <!-- =================================================
-             MENSAGEM
-        ================================================= -->
 
         <div class="ceu-mensagem">
 
@@ -505,12 +516,15 @@
                 Cada uma guarda uma palavra.
             </span>
 
+            <small id="contadorEstrelas">
+                0 / 10 encontradas
+            </small>
+
         </div>
 
 
-        <!-- =================================================
-             MENSAGEM APÓS TODAS AS ESTRELAS
-        ================================================= -->
+
+        <!-- MENSAGEM FINAL DO UNIVERSO -->
 
         <div
             class="universo-final"
@@ -546,6 +560,7 @@
 </section>
 
 
+
 <!-- =====================================================
      PARTE 4 — CARTA DO LÍRIO
 ===================================================== -->
@@ -554,28 +569,38 @@
     class="carta-lirio"
     id="lirio">
 
-    <div>
+    <div class="papel-lirio">
 
-        <!-- FOTO REAL DO LÍRIO -->
+
+        <div class="flor-decoracao">
+            ♡
+        </div>
+
+
+        <!-- FOTO REAL -->
 
         <img
-            src="lirio.jpg"
+            src="imagens/lirio.jpg"
             alt="Lírio"
             class="foto-lirio"
         >
 
 
+        <p class="data">
+            Para você,
+        </p>
+
+
         <h2>
-            Para você...
+            O lírio
         </h2>
 
 
         <p>
 
-            Eu poderia dizer que você é a rosa
-            mais linda que já vi, mas, na verdade,
-            você é o lírio mais encantador que já
-            apareceu para mim.
+            Eu poderia dizer que você é a rosa mais linda
+            que já vi, mas, na verdade, você é o lírio mais
+            encantador que já apareceu para mim.
 
         </p>
 
@@ -614,7 +639,7 @@
 
         <button
             class="botao"
-            onclick="continuarDepoisDoLirio()">
+            onclick="irParaCartaFinal()">
 
             💌 Próximo
 
@@ -625,8 +650,9 @@
 </section>
 
 
+
 <!-- =====================================================
-     PARTE 5 — CARTA FINAL / LOCALIZAÇÃO
+     PARTE 5 — CARTA DE LOCALIZAÇÃO
 ===================================================== -->
 
 <section
@@ -635,15 +661,18 @@
 
     <div class="localizacao-caixa">
 
+
         <p class="subtitulo">
-            ÚLTIMO ARQUIVO
+            ÚLTIMA CARTA
         </p>
+
 
         <h2>
             Uma última descoberta...
         </h2>
 
-        <p>
+
+        <p class="texto-localizacao">
 
             Talvez algumas cartas não devam
             ser abertas em qualquer lugar.
@@ -667,6 +696,7 @@
         <p>
 
             Existe uma carta esperando por você.
+
             Mas ela só poderá ser encontrada
             quando você estiver aqui.
 
@@ -683,16 +713,28 @@
 
 
         <p
-            id="resultadoLocalizacao">
+            id="resultadoLocalizacao"
+            class="resultado-localizacao">
         </p>
 
 
-        <!-- =================================================
-             CARTA ESCONDIDA
-        ================================================= -->
+
+        <!-- CARTA ESCONDIDA -->
 
         <div
-            id="cartaFinalConteudo">
+            id="cartaFinalConteudo"
+            class="carta-final-conteudo">
+
+
+            <div class="linha-decorativa">
+                ♡
+            </div>
+
+
+            <p class="data">
+                Para Noah,
+            </p>
+
 
             <h2>
                 Noah,
@@ -706,7 +748,7 @@
 
                 Você se tornou a pessoa em quem confio,
                 a pessoa com quem sei que posso ser eu mesma,
-                sem medo de ser julgada ou acusada.
+                sem me julgar ou me acusar.
 
             </p>
 
@@ -750,9 +792,8 @@
 
             <p>
 
-                Você é uma pessoa que todos querem
-                ter por perto, alguém que todos querem
-                como amigo.
+                Você é a pessoa que todos querem
+                ter por perto, querem ser seus amigos.
 
             </p>
 
@@ -793,19 +834,12 @@
             </p>
 
 
-            <button
-                class="botao"
-                onclick="finalizarCarta()">
-
-                ♡ Fim
-
-            </button>
-
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -819,6 +853,7 @@
     </p>
 
 </footer>
+
 
 
 <script src="script.js"></script>

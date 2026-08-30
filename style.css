@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: #fff;
+    background: #ffffff;
     color: #4a1c27;
     overflow-x: hidden;
 }
@@ -30,7 +30,7 @@ button {
 
 
 /* =====================================================
-   CORES PRINCIPAIS
+   CORES
 ===================================================== */
 
 :root {
@@ -41,16 +41,15 @@ button {
     --vermelho-escuro: #7d263c;
 
     --branco: #ffffff;
-    --creme: #fffafa;
 
-    --preto: #09090d;
+    --preto: #07070a;
     --preto-2: #111117;
 
 }
 
 
 /* =====================================================
-   BOTÕES
+   BOTÃO
 ===================================================== */
 
 .botao {
@@ -67,15 +66,10 @@ button {
 
     font-size: 16px;
 
-    letter-spacing: 0.5px;
-
     box-shadow:
         0 6px 20px rgba(217, 91, 114, 0.25);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    transition: 0.3s ease;
 
 }
 
@@ -90,15 +84,9 @@ button {
 
 }
 
-.botao:active {
-
-    transform: scale(0.96);
-
-}
-
 
 /* =====================================================
-   PARTE 1 — INÍCIO
+   PARTE 1
 ===================================================== */
 
 .inicio {
@@ -120,12 +108,12 @@ button {
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(243, 161, 177, 0.25),
+            rgba(243,161,177,0.25),
             transparent 30%
         ),
         radial-gradient(
             circle at 80% 70%,
-            rgba(217, 91, 114, 0.18),
+            rgba(217,91,114,0.18),
             transparent 35%
         ),
         linear-gradient(
@@ -133,42 +121,6 @@ button {
             #ffffff,
             #fff6f8
         );
-
-}
-
-.inicio::before {
-
-    content: "♡";
-
-    position: absolute;
-
-    top: 12%;
-
-    left: 12%;
-
-    font-size: 70px;
-
-    color: rgba(217, 91, 114, 0.12);
-
-    animation: flutuar 5s ease-in-out infinite;
-
-}
-
-.inicio::after {
-
-    content: "♡";
-
-    position: absolute;
-
-    right: 13%;
-
-    bottom: 14%;
-
-    font-size: 100px;
-
-    color: rgba(217, 91, 114, 0.1);
-
-    animation: flutuar 6s ease-in-out infinite reverse;
 
 }
 
@@ -194,8 +146,6 @@ button {
 
     margin-bottom: 18px;
 
-    text-transform: uppercase;
-
 }
 
 .inicio h1 {
@@ -207,9 +157,6 @@ button {
     font-weight: normal;
 
     margin-bottom: 20px;
-
-    text-shadow:
-        0 4px 15px rgba(125, 38, 60, 0.15);
 
 }
 
@@ -224,24 +171,6 @@ button {
     font-size: 18px;
 
     line-height: 1.8;
-
-}
-
-
-/* =====================================================
-   ANIMAÇÃO FLUTUAR
-===================================================== */
-
-@keyframes flutuar {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-18px);
-    }
 
 }
 
@@ -277,32 +206,14 @@ button {
 
     padding: 65px;
 
-    background: #fff;
+    background: white;
 
     border: 1px solid #f1c4ce;
 
     box-shadow:
-        0 20px 60px rgba(125, 38, 60, 0.12);
-
-    border-radius: 5px;
+        0 20px 60px rgba(125,38,60,0.12);
 
     position: relative;
-
-    opacity: 0;
-
-    transform: translateY(40px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-
-}
-
-.papel.aparecer {
-
-    opacity: 1;
-
-    transform: translateY(0);
 
 }
 
@@ -323,8 +234,6 @@ button {
 .data {
 
     color: var(--vermelho);
-
-    font-size: 14px;
 
     margin-bottom: 25px;
 
@@ -356,9 +265,9 @@ button {
 
 .texto-quatro {
 
-    margin-top: 30px;
-
     font-style: italic;
+
+    margin-top: 30px;
 
 }
 
@@ -386,7 +295,7 @@ button {
     background:
         linear-gradient(
             135deg,
-            #fff,
+            #ffffff,
             #fff3f6
         );
 
@@ -406,7 +315,7 @@ button {
 
     color: var(--vermelho-escuro);
 
-    font-size: clamp(45px, 8vw, 75px);
+    font-size: clamp(45px,8vw,75px);
 
     font-weight: normal;
 
@@ -481,7 +390,7 @@ button {
 
 
 /* =====================================================
-   PALAVRAS-ESTRELAS — PARTE 2
+   PALAVRAS DA PARTE 2
 ===================================================== */
 
 .palavras-estrelas {
@@ -490,15 +399,7 @@ button {
 
     inset: 0;
 
-    width: 100%;
-
-    height: 100%;
-
-    overflow: hidden;
-
     pointer-events: none;
-
-    z-index: 2;
 
 }
 
@@ -506,24 +407,20 @@ button {
 
     position: absolute;
 
-    font-family: Georgia, "Times New Roman", serif;
+    color: white;
 
     font-size: 16px;
 
     font-weight: bold;
 
-    color: #ffffff;
-
     letter-spacing: 1px;
 
     opacity: 0;
 
-    transform: scale(0.5);
-
     text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #ff6f91,
-        0 0 20px #d94362;
+        0 0 5px white,
+        0 0 12px #ff6f91,
+        0 0 25px #d94362;
 
     animation:
         estrelaPalavra
@@ -539,30 +436,14 @@ button {
 
     text-shadow:
         0 0 5px #ff9eb3,
-        0 0 12px #ff5475,
-        0 0 25px #c91f45;
+        0 0 15px #ff5475,
+        0 0 30px #c91f45;
 
 }
 
 .palavra-caindo:nth-child(4n) {
 
-    color: #ffffff;
-
-    text-shadow:
-        0 0 5px white,
-        0 0 15px #ff6f91,
-        0 0 30px #e6395b;
-
-}
-
-.palavra-caindo:nth-child(5n) {
-
-    color: #f7c4cf;
-
-    text-shadow:
-        0 0 5px #f7c4cf,
-        0 0 15px #ff456b,
-        0 0 25px #b51e3f;
+    color: white;
 
 }
 
@@ -572,47 +453,27 @@ button {
 
         opacity: 0;
 
-        transform:
-            scale(0.5)
-            translateY(8px);
+        transform: scale(0.5);
 
-        filter: blur(3px);
+        filter: blur(4px);
 
     }
 
-    20% {
+    25% {
 
         opacity: 1;
 
-        transform:
-            scale(1)
-            translateY(0);
+        transform: scale(1);
 
         filter: blur(0);
 
     }
 
-    50% {
+    55% {
 
         opacity: 1;
 
-        transform:
-            scale(1.05)
-            translateY(-3px);
-
-        filter: blur(0);
-
-    }
-
-    75% {
-
-        opacity: 0.8;
-
-        transform:
-            scale(0.9)
-            translateY(-5px);
-
-        filter: blur(1px);
+        transform: scale(1.05);
 
     }
 
@@ -620,9 +481,7 @@ button {
 
         opacity: 0;
 
-        transform:
-            scale(0.4)
-            translateY(-12px);
+        transform: scale(0.4);
 
         filter: blur(4px);
 
@@ -660,7 +519,6 @@ button {
 
 /* =====================================================
    PARTE 2 — INVESTIGAÇÃO
-   ESTILO MACABRO / GLITCH
 ===================================================== */
 
 .investigacao {
@@ -679,21 +537,19 @@ button {
 
     padding: 80px 20px;
 
-    color: #fff;
+    color: white;
 
     background:
-
         radial-gradient(
-            circle at 50% 40%,
-            rgba(120, 20, 40, 0.2),
-            transparent 35%
+            circle at center,
+            rgba(100,15,35,0.2),
+            transparent 40%
         ),
-
         linear-gradient(
             135deg,
-            #08080b,
-            #12090d,
-            #070709
+            #07070a,
+            #13090d,
+            #050507
         );
 
 }
@@ -709,12 +565,10 @@ button {
     background:
         repeating-linear-gradient(
             0deg,
-            transparent 0px,
+            transparent,
             transparent 3px,
-            rgba(255,255,255,0.015) 4px
+            rgba(255,255,255,0.018) 4px
         );
-
-    pointer-events: none;
 
 }
 
@@ -724,17 +578,14 @@ button {
 
     inset: 0;
 
-    opacity: 0.12;
-
-    pointer-events: none;
+    opacity: 0.15;
 
     background:
         repeating-linear-gradient(
             90deg,
-            transparent 0,
-            transparent 2px,
-            rgba(255, 70, 100, 0.08) 3px,
-            transparent 4px
+            transparent,
+            transparent 3px,
+            rgba(255,60,90,0.08) 4px
         );
 
     animation: ruidoGlitch 0.25s infinite;
@@ -767,7 +618,7 @@ button {
 
 .investigacao-conteudo {
 
-    width: min(850px, 95%);
+    width: min(850px,95%);
 
     position: relative;
 
@@ -812,7 +663,7 @@ button {
 
     font-family: monospace;
 
-    font-size: clamp(28px, 5vw, 52px);
+    font-size: clamp(28px,5vw,52px);
 
     line-height: 1.25;
 
@@ -845,7 +696,7 @@ button {
 
 .arquivo {
 
-    width: min(500px, 100%);
+    width: min(500px,100%);
 
     margin: 0 auto 35px;
 
@@ -855,10 +706,7 @@ button {
 
     background: rgba(255,255,255,0.025);
 
-    border: 1px solid rgba(255, 82, 111, 0.3);
-
-    box-shadow:
-        0 0 30px rgba(255, 40, 70, 0.05);
+    border: 1px solid rgba(255,82,111,0.3);
 
     font-family: monospace;
 
@@ -911,29 +759,26 @@ button {
 
     font-family: monospace;
 
-    transition:
-        0.3s ease;
+    transition: 0.3s ease;
 
 }
 
 .pista:hover {
 
-    color: #fff;
+    color: white;
 
     border-color: #ff5573;
 
-    background: rgba(255, 70, 100, 0.08);
+    background: rgba(255,70,100,0.08);
 
     box-shadow:
-        0 0 20px rgba(255, 70, 100, 0.15);
-
-    transform: translateY(-2px);
+        0 0 20px rgba(255,70,100,0.15);
 
 }
 
 
 /* =====================================================
-   TEXTO DAS PISTAS
+   TEXTO PISTA
 ===================================================== */
 
 .texto-pista {
@@ -946,12 +791,10 @@ button {
 
     font-family: monospace;
 
-    font-size: 15px;
-
     line-height: 1.7;
 
     text-shadow:
-        0 0 8px rgba(255, 80, 110, 0.5);
+        0 0 8px rgba(255,80,110,0.5);
 
 }
 
@@ -966,7 +809,8 @@ button {
 
     padding: 30px;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top:
+        1px solid rgba(255,255,255,0.08);
 
 }
 
@@ -976,13 +820,11 @@ button {
 
     margin-bottom: 18px;
 
-    line-height: 1.6;
-
 }
 
 #senha {
 
-    width: min(350px, 90%);
+    width: min(350px,90%);
 
     padding: 14px 18px;
 
@@ -1004,9 +846,6 @@ button {
 
     border-color: #ff607b;
 
-    box-shadow:
-        0 0 15px rgba(255, 70, 100, 0.15);
-
 }
 
 #resultadoSenha {
@@ -1021,7 +860,7 @@ button {
 
 
 /* =====================================================
-   FINAL DA INVESTIGAÇÃO
+   ARQUIVO ABERTO
 ===================================================== */
 
 .investigacao-final {
@@ -1036,32 +875,14 @@ button {
 
     padding: 40px;
 
-    background:
-        rgba(255,255,255,0.025);
+    background: rgba(255,255,255,0.025);
 
     border:
-
         1px solid
-
-        rgba(255, 90, 115, 0.45);
+        rgba(255,90,115,0.45);
 
     box-shadow:
-        0 0 35px rgba(255, 50, 80, 0.08);
-
-    opacity: 0;
-
-    transform: translateY(30px);
-
-    transition:
-        0.8s ease;
-
-}
-
-.arquivo-aberto.aparecer {
-
-    opacity: 1;
-
-    transform: translateY(0);
+        0 0 35px rgba(255,50,80,0.08);
 
 }
 
@@ -1083,13 +904,11 @@ button {
 
 .arquivo-aberto h3 {
 
-    color: white;
-
     font-family: monospace;
 
-    margin-bottom: 20px;
-
     font-size: 25px;
+
+    margin-bottom: 20px;
 
 }
 
@@ -1119,19 +938,14 @@ button {
     background:
         radial-gradient(
             ellipse at center,
-            #172044 0%,
-            #080b18 45%,
-            #020307 100%
+            #172044,
+            #080b18 50%,
+            #020307
         );
 
     color: white;
 
 }
-
-
-/* =====================================================
-   ESTRELAS DO FUNDO
-===================================================== */
 
 .estrelas-fundo {
 
@@ -1175,12 +989,6 @@ button {
             1px 1px at 90% 35%,
             white,
             transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 50% 85%,
-            white,
-            transparent
         );
 
     background-size: 300px 300px;
@@ -1214,11 +1022,9 @@ button {
 
     border-radius: 50%;
 
-    filter: blur(60px);
+    filter: blur(70px);
 
     opacity: 0.2;
-
-    pointer-events: none;
 
 }
 
@@ -1252,7 +1058,7 @@ button {
 
 
 /* =====================================================
-   INTRO DO UNIVERSO
+   INTRO UNIVERSO
 ===================================================== */
 
 .universo-intro {
@@ -1279,13 +1085,13 @@ button {
 
 .universo-mini {
 
+    color: #aab9e9;
+
     font-family: monospace;
 
     font-size: 12px;
 
     letter-spacing: 5px;
-
-    color: #aab9e9;
 
     margin-bottom: 25px;
 
@@ -1293,7 +1099,7 @@ button {
 
 .universo-intro h2 {
 
-    font-size: clamp(35px, 7vw, 70px);
+    font-size: clamp(35px,7vw,70px);
 
     font-weight: normal;
 
@@ -1303,7 +1109,7 @@ button {
 
 }
 
-.universo-intro > p:not(.universo-mini) {
+.universo-intro > p {
 
     color: #aeb5ca;
 
@@ -1330,11 +1136,6 @@ button {
 
 }
 
-
-/* =====================================================
-   VIA LÁCTEA
-===================================================== */
-
 .via-lactea {
 
     position: absolute;
@@ -1347,8 +1148,7 @@ button {
 
     left: -25%;
 
-    transform:
-        rotate(-20deg);
+    transform: rotate(-20deg);
 
     background:
         linear-gradient(
@@ -1361,75 +1161,6 @@ button {
         );
 
     filter: blur(20px);
-
-    opacity: 0.6;
-
-}
-
-
-/* =====================================================
-   TELESCÓPIO
-===================================================== */
-
-.observatorio {
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 8%;
-
-    width: 180px;
-
-    height: 230px;
-
-}
-
-.telescopio {
-
-    position: absolute;
-
-    bottom: 80px;
-
-    left: 40px;
-
-    transform: rotate(-18deg);
-
-}
-
-.telescopio-corpo {
-
-    width: 110px;
-
-    height: 35px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #242936,
-            #687080,
-            #252934
-        );
-
-}
-
-.telescopio-ocular {
-
-    position: absolute;
-
-    right: -25px;
-
-    top: 8px;
-
-    width: 30px;
-
-    height: 18px;
-
-    background: #151820;
-
-    border-radius: 5px;
 
 }
 
@@ -1459,8 +1190,7 @@ button {
         pulsarEstrela
         2s ease-in-out infinite;
 
-    transition:
-        0.3s ease;
+    transition: 0.3s ease;
 
 }
 
@@ -1468,26 +1198,22 @@ button {
 
     transform: scale(1.5);
 
-    color: #dce5ff;
-
 }
 
 .estrela.encontrada {
 
-    color: #7582a5;
+    color: #65708e;
 
-    opacity: 0.25;
+    opacity: 0.2;
 
     pointer-events: none;
 
     transform: scale(0.5);
 
-    text-shadow: none;
-
 }
 
 
-/* POSIÇÕES DAS ESTRELAS */
+/* POSIÇÕES */
 
 .estrela-1 {
     top: 15%;
@@ -1543,20 +1269,24 @@ button {
 
     0%,
     100% {
+
         opacity: 0.55;
 
         text-shadow:
             0 0 5px white,
             0 0 12px #9fb7ff;
+
     }
 
     50% {
+
         opacity: 1;
 
         text-shadow:
             0 0 8px white,
             0 0 25px #9fb7ff,
             0 0 40px #728cff;
+
     }
 
 }
@@ -1578,7 +1308,8 @@ button {
 
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%,-50%);
 
     pointer-events: none;
 
@@ -1620,7 +1351,8 @@ button {
 
     height: 1px;
 
-    background: rgba(180, 200, 255, 0.25);
+    background:
+        rgba(180,200,255,0.25);
 
     transform-origin: left center;
 
@@ -1684,7 +1416,7 @@ button {
 
 
 /* =====================================================
-   PALAVRA DA ESTRELA
+   PALAVRA DAS ESTRELAS
 ===================================================== */
 
 .palavra-estrela {
@@ -1705,9 +1437,6 @@ button {
 
     opacity: 0;
 
-    transition:
-        opacity 0.5s ease;
-
     z-index: 20;
 
     text-shadow:
@@ -1715,11 +1444,14 @@ button {
         0 0 25px #9fb7ff,
         0 0 40px #728cff;
 
+    transition:
+        opacity 0.5s ease;
+
 }
 
 
 /* =====================================================
-   MENSAGEM NO CÉU
+   MENSAGEM DO CÉU
 ===================================================== */
 
 .ceu-mensagem {
@@ -1734,9 +1466,9 @@ button {
 
     text-align: center;
 
-    z-index: 15;
-
     width: 90%;
+
+    z-index: 15;
 
 }
 
@@ -1758,7 +1490,7 @@ button {
 
 
 /* =====================================================
-   MENSAGEM DEPOIS DAS 10 ESTRELAS
+   MENSAGEM APÓS AS ESTRELAS
 ===================================================== */
 
 .mensagem-universo {
@@ -1783,9 +1515,9 @@ button {
 
     background:
         radial-gradient(
-            circle at center,
-            rgba(55, 70, 130, 0.3),
-            transparent 55%
+            circle,
+            rgba(40,55,110,0.45),
+            #050711
         );
 
 }
@@ -1795,8 +1527,8 @@ button {
     display: flex;
 
     animation:
-        aparecerUniverso
-        1.2s ease forwards;
+        aparecerMensagem
+        1s ease forwards;
 
 }
 
@@ -1806,9 +1538,9 @@ button {
 
     font-family: monospace;
 
-    letter-spacing: 5px;
-
     font-size: 12px;
+
+    letter-spacing: 5px;
 
     margin-bottom: 25px;
 
@@ -1818,7 +1550,7 @@ button {
 
     max-width: 750px;
 
-    font-size: clamp(30px, 6vw, 60px);
+    font-size: clamp(30px,6vw,60px);
 
     font-weight: normal;
 
@@ -1828,7 +1560,7 @@ button {
 
 }
 
-.mensagem-universo > p:not(.mensagem-mini) {
+.mensagem-universo > p {
 
     color: #aeb6ce;
 
@@ -1840,7 +1572,7 @@ button {
 
 }
 
-@keyframes aparecerUniverso {
+@keyframes aparecerMensagem {
 
     from {
 
@@ -1857,91 +1589,6 @@ button {
         transform: translateY(0);
 
     }
-
-}
-
-
-/* =====================================================
-   FINAL DO UNIVERSO
-===================================================== */
-
-.universo-final {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 40px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle,
-            #1b254c,
-            #050711 70%
-        );
-
-}
-
-.galaxia-final {
-
-    position: absolute;
-
-    width: 600px;
-
-    height: 200px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(160,180,255,0.2),
-            transparent
-        );
-
-    transform:
-        rotate(-20deg);
-
-    filter: blur(25px);
-
-}
-
-.universo-final p {
-
-    position: relative;
-
-    color: #a9b2cb;
-
-    font-size: 18px;
-
-    margin-bottom: 25px;
-
-}
-
-.universo-final h3 {
-
-    position: relative;
-
-    max-width: 700px;
-
-    font-size: clamp(28px, 5vw, 50px);
-
-    font-weight: normal;
-
-    line-height: 1.4;
-
-    margin-bottom: 35px;
 
 }
 
@@ -1965,7 +1612,7 @@ button {
     background:
         linear-gradient(
             135deg,
-            #fff,
+            #ffffff,
             #fff6f8
         );
 
@@ -1973,35 +1620,18 @@ button {
 
 .carta-lirio {
 
-    width: min(800px, 92%);
+    width: min(850px,92%);
 
     padding: 55px;
 
-    background: #ffffff;
+    background: white;
 
     border: 1px solid #efc2cc;
 
     box-shadow:
-        0 20px 60px rgba(125, 38, 60, 0.12);
+        0 20px 60px rgba(125,38,60,0.12);
 
     text-align: center;
-
-    position: relative;
-
-    opacity: 0;
-
-    transform: translateY(40px);
-
-    transition:
-        0.8s ease;
-
-}
-
-.carta-lirio.aparecer {
-
-    opacity: 1;
-
-    transform: translateY(0);
 
 }
 
@@ -2036,16 +1666,16 @@ button {
 
 .foto-lirio {
 
-    width: min(400px, 90%);
+    width: min(400px,90%);
 
-    margin: 0 auto 35px;
+    margin: 0 auto 40px;
 
     overflow: hidden;
 
     border-radius: 5px;
 
     box-shadow:
-        0 10px 35px rgba(125, 38, 60, 0.18);
+        0 10px 35px rgba(125,38,60,0.18);
 
 }
 
@@ -2057,13 +1687,11 @@ button {
 
     height: auto;
 
-    object-fit: cover;
-
 }
 
 
 /* =====================================================
-   TEXTO DO LÍRIO
+   TEXTO
 ===================================================== */
 
 .texto-lirio {
@@ -2090,7 +1718,153 @@ button {
 
     color: var(--vermelho-escuro) !important;
 
-    font-size: 25px !important;
+    font-size: 27px !important;
+
+    font-style: italic;
+
+    margin-top: 35px;
+
+}
+
+
+/* =====================================================
+   LOCALIZAÇÃO
+===================================================== */
+
+.localizacao {
+
+    margin-top: 55px;
+
+    padding-top: 40px;
+
+    border-top:
+        1px solid #f0d3da;
+
+    text-align: center;
+
+}
+
+.localizacao-linha {
+
+    width: 50px;
+
+    height: 2px;
+
+    background: var(--vermelho);
+
+    margin: 0 auto 30px;
+
+}
+
+.localizacao-titulo {
+
+    color: var(--vermelho-escuro);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+.localizacao-texto {
+
+    color: #75404c;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+}
+
+.botao-localizacao {
+
+    margin-top: 5px;
+
+}
+
+.resultado-localizacao {
+
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    color: var(--vermelho-escuro);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   CARTA FINAL DA LOCALIZAÇÃO
+===================================================== */
+
+.carta-localizacao {
+
+    display: none;
+
+    margin-top: 40px;
+
+    padding: 40px;
+
+    background: #fffafa;
+
+    border: 1px solid #efc2cc;
+
+    box-shadow:
+        0 15px 40px rgba(125,38,60,0.12);
+
+    animation:
+        aparecerMensagem
+        1s ease forwards;
+
+}
+
+.localizacao-mini {
+
+    color: var(--vermelho);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+.carta-localizacao h3 {
+
+    color: var(--vermelho-escuro);
+
+    font-size: 35px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+}
+
+.carta-localizacao p {
+
+    color: #59333d;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+
+}
+
+.carta-localizacao .mensagem-final {
+
+    color: var(--vermelho-escuro);
+
+    font-size: 23px;
 
     font-style: italic;
 
@@ -2098,9 +1872,19 @@ button {
 
 }
 
+.assinatura {
+
+    text-align: right;
+
+    color: var(--vermelho) !important;
+
+    margin-top: 30px;
+
+}
+
 
 /* =====================================================
-   PRÓXIMA PARTE
+   FINAL
 ===================================================== */
 
 .proxima-parte {
@@ -2122,7 +1906,7 @@ button {
     background:
         linear-gradient(
             135deg,
-            #fff,
+            #ffffff,
             #fff4f7
         );
 
@@ -2132,9 +1916,11 @@ button {
 
     color: var(--vermelho-escuro);
 
-    font-size: clamp(32px, 6vw, 60px);
+    font-size: clamp(32px,6vw,60px);
 
     font-weight: normal;
+
+    max-width: 800px;
 
     margin-bottom: 20px;
 
@@ -2159,9 +1945,10 @@ footer {
 
     text-align: center;
 
-    background: #fff;
+    background: white;
 
-    border-top: 1px solid #f2d5dc;
+    border-top:
+        1px solid #f2d5dc;
 
 }
 
@@ -2175,7 +1962,7 @@ footer p {
 
 
 /* =====================================================
-   RESPONSIVIDADE — CELULAR
+   CELULAR
 ===================================================== */
 
 @media (max-width: 700px) {
@@ -2216,12 +2003,6 @@ footer p {
 
     }
 
-    .arquivo {
-
-        padding: 20px;
-
-    }
-
     .pistas {
 
         flex-direction: column;
@@ -2244,31 +2025,15 @@ footer p {
 
     .estrela {
 
-        font-size: 22px;
-
-    }
-
-    .observatorio {
-
-        left: -35px;
-
-        transform: scale(0.7);
-
-        transform-origin: bottom left;
+        font-size: 23px;
 
     }
 
     .constelacao {
 
         transform:
-            translate(-50%, -50%)
-            scale(0.75);
-
-    }
-
-    .mensagem-universo {
-
-        padding: 30px 20px;
+            translate(-50%,-50%)
+            scale(0.7);
 
     }
 
@@ -2289,6 +2054,12 @@ footer p {
         font-size: 16px;
 
         line-height: 1.8;
+
+    }
+
+    .carta-localizacao {
+
+        padding: 30px 20px;
 
     }
 

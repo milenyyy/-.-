@@ -1,2496 +1,828 @@
-/* =====================================================
-   CONFIGURAÇÕES
-===================================================== */
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<head>
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta charset="UTF-8">
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #080607;
-    color: #eee5e8;
-    overflow-x: hidden;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-button,
-input {
-    font-family: Arial, sans-serif;
-}
+    <title>Dear Noah 🖤</title>
 
+    <link rel="stylesheet" href="style.css">
 
-/* =====================================================
-   CORES PRINCIPAIS
-===================================================== */
+</head>
 
-:root {
+<body>
 
-    --preto: #080607;
-    --preto-2: #120b0e;
 
-    --vermelho: #c87989;
-    --vermelho-claro: #e5a7b4;
-    --vermelho-palido: #f4d5dc;
+<!-- =====================================================
+     PARTE 1 — A CARTA
+===================================================== -->
 
-    --vinho: #6f2639;
+<section class="inicio" id="inicio">
 
-    --branco: #fff5f7;
+    <div class="inicio-conteudo">
 
-}
+        <p class="subtitulo">
+            UMA PEQUENA CARTA
+        </p>
 
+        <h1>
+            Dear Noah
+        </h1>
 
-/* =====================================================
-   INÍCIO
-===================================================== */
+        <p class="frase">
+            Algumas coisas são difíceis de dizer...
+            então talvez seja melhor escrever.
+        </p>
 
-.inicio {
+        <button class="botao" onclick="abrirCarta()">
+            💌 Abrir carta
+        </button>
 
-    min-height: 100vh;
+    </div>
 
-    display: flex;
+</section>
 
-    align-items: center;
 
-    justify-content: center;
+<!-- =====================================================
+     CARTA
+===================================================== -->
 
-    text-align: center;
+<section class="carta" id="carta">
 
-    padding: 30px;
+    <div class="papel">
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(200, 121, 137, 0.35),
-            transparent 40%
-        ),
+        <p class="data">
+            Para Noah,
+        </p>
 
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(111, 38, 57, 0.15),
-            transparent 40%
-        ),
+        <h2>
+            Querido Noah,
+        </h2>
 
-        #080607;
+        <p>
+            Talvez você não esperasse encontrar uma carta
+            escondida em forma de site.
+        </p>
 
-    position: relative;
+        <p>
+            Mas algumas mensagens merecem mais do que
+            uma simples mensagem enviada pelo celular.
+        </p>
 
-    overflow: hidden;
-}
+        <p>
+            Então fiz este pequeno lugar para guardar
+            algumas palavras, lembranças e momentos.
+        </p>
 
+        <p class="texto-quatro">
 
-.inicio::before {
+            Meu bem, não sou boa com palavras como um certo
+            poeta aí, mas cada palavra dessa carta será retirada
+            do meu coração. Irei colocar cada pensamento e
+            sentimento em cada detalhe dessa carta.
+            Espero que goste...
 
-    content: "";
+        </p>
 
-    position: absolute;
+        <button class="botao" onclick="mostrarMensagem()">
+            ✨ Tem mais uma coisa...
+        </button>
 
-    width: 500px;
-    height: 500px;
+    </div>
 
-    border-radius: 50%;
+</section>
 
-    border:
-        1px solid rgba(229, 167, 180, 0.15);
 
-    animation:
-        pulsar 5s infinite;
-}
+<!-- =====================================================
+     CORAÇÕES
+===================================================== -->
 
+<section class="coracoes" id="coracoes">
 
-.inicio-conteudo {
+    <div class="chuva-coracoes" id="chuvaCoracoes"></div>
 
-    max-width: 700px;
+    <div
+        class="palavras-estrelas"
+        id="palavrasEstrelas">
+    </div>
 
-    position: relative;
+    <div class="coracoes-conteudo">
 
-    z-index: 2;
+        <p class="subtitulo">
+            MAS ANTES...
+        </p>
 
-    animation:
-        aparecer 1.3s ease forwards;
-}
+        <h2>
+            Você é...
+        </h2>
 
+        <p class="coracoes-intro">
+            Algumas coisas simplesmente não cabem
+            em uma única palavra.
+        </p>
 
-.subtitulo {
+    </div>
 
-    font-family: Arial, sans-serif;
+    <button
+        class="botao continuar"
+        onclick="irParaParte2()">
 
-    font-size: 12px;
+        🔎 Continuar
 
-    letter-spacing: 5px;
+    </button>
 
-    color:
-        var(--vermelho-claro);
+</section>
 
-    margin-bottom: 20px;
-}
 
+<!-- =====================================================
+     PARTE 2 — INVESTIGAÇÃO
+===================================================== -->
 
-.inicio h1 {
+<section
+    class="investigacao"
+    id="investigacao">
 
-    font-size: 90px;
+    <div class="ruido"></div>
 
-    font-weight: normal;
+    <div class="investigacao-conteudo">
 
-    color:
-        var(--branco);
+        <p class="codigo-vermelho">
+            ARQUIVO Nº 02
+        </p>
 
-    margin-bottom: 25px;
+        <h2>
+            Você encontrou uma coisa
+            que não deveria estar aqui.
+        </h2>
 
-    text-shadow:
-        0 0 25px rgba(229, 167, 180, 0.25);
-}
+        <p class="texto-investigacao">
 
+            Há algo escondido neste arquivo.
+            Mas ele não será entregue tão facilmente.
 
-.frase {
+        </p>
 
-    font-size: 20px;
 
-    line-height: 1.7;
+        <!-- ARQUIVO -->
 
-    color: #cbb9bf;
+        <div class="arquivo">
 
-    margin-bottom: 35px;
-}
+            <p>
+                STATUS:
+                <span>
+                    ACESSO BLOQUEADO
+                </span>
+            </p>
 
+            <p>
+                IDENTIDADE:
+                <span>
+                    NOAH
+                </span>
+            </p>
 
-/* =====================================================
-   BOTÕES
-===================================================== */
+            <p>
+                NÍVEL:
+                <span>
+                    CONFIDENCIAL
+                </span>
+            </p>
 
-.botao {
+        </div>
 
-    border:
-        1px solid rgba(255,255,255,0.15);
 
-    background:
-        linear-gradient(
-            135deg,
-            #c87989,
-            #8f4257
-        );
+        <!-- PISTAS -->
 
-    color: white;
+        <div class="pistas">
 
-    padding: 15px 28px;
+            <button
+                class="pista"
+                onclick="abrirPista(1)">
 
-    border-radius: 30px;
+                📼 Pista 01
 
-    font-size: 15px;
+            </button>
 
-    cursor: pointer;
+            <button
+                class="pista"
+                onclick="abrirPista(2)">
 
-    transition: 0.4s;
+                🗝️ Pista 02
 
-    box-shadow:
-        0 8px 30px rgba(150, 60, 80, 0.18);
-}
+            </button>
 
+            <button
+                class="pista"
+                onclick="abrirPista(3)">
 
-.botao:hover {
+                👁️ Pista 03
 
-    transform:
-        translateY(-4px);
+            </button>
 
-    box-shadow:
-        0 12px 40px
-        rgba(200, 121, 137, 0.3);
+        </div>
 
-    filter:
-        brightness(1.1);
-}
 
+        <div
+            id="textoPista"
+            class="texto-pista">
+        </div>
 
-/* =====================================================
-   CARTA
-===================================================== */
 
-.carta {
+        <!-- SENHA -->
 
-    min-height: 100vh;
+        <div class="senha-area">
 
-    padding: 100px 30px;
+            <p>
+                Talvez as pistas tenham deixado
+                uma resposta escondida.
+            </p>
 
-    display: flex;
+            <input
+                type="text"
+                id="senha"
+                placeholder="Digite a senha..."
+                autocomplete="off"
+            >
 
-    justify-content: center;
+            <br>
 
-    align-items: center;
+            <button
+                class="botao"
+                onclick="verificarSenha()">
 
-    background:
-        radial-gradient(
-            circle at center,
-            #1b0e13,
-            #080607 70%
-        );
-}
+                🔓 Desbloquear
 
+            </button>
 
-.papel {
+            <p id="resultadoSenha"></p>
 
-    max-width: 750px;
+        </div>
 
-    background:
-        #fdf8f9;
 
-    color:
-        #3f3035;
+        <!-- FINAL DA INVESTIGAÇÃO -->
 
-    padding: 70px;
+        <div
+            id="investigacaoFinal"
+            class="investigacao-final">
 
-    border-radius: 5px;
+            <div class="arquivo-aberto">
 
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,0.5);
+                <span class="arquivo-status">
+                    ACESSO CONCEDIDO
+                </span>
 
-    position: relative;
+                <h3>
+                    ARQUIVO DESBLOQUEADO
+                </h3>
 
-    animation:
-        subir 1s ease;
-}
+                <p>
+                    Algumas coisas são escondidas
+                    não porque precisam permanecer
+                    em segredo...
+                </p>
 
+                <p>
+                    mas porque certas descobertas ficam
+                    mais bonitas quando são encontradas.
+                </p>
 
-.papel::before {
+            </div>
 
-    content: "";
+            <button
+                class="botao"
+                onclick="irParaParte3()">
 
-    position: absolute;
+                🌌 Prosseguir
 
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+            </button>
 
-    border:
-        1px solid #e6cbd2;
+        </div>
 
-    pointer-events: none;
-}
+    </div>
 
+</section>
 
-.data {
 
-    text-align: right;
+<!-- =====================================================
+     PARTE 3 — UNIVERSO
+===================================================== -->
 
-    color:
-        #9a6674;
+<section
+    class="universo"
+    id="universo">
 
-    margin-bottom: 50px;
-}
+    <div class="estrelas-fundo"></div>
 
+    <div
+        class="nebulosa nebulosa-1">
+    </div>
 
-.papel h2 {
+    <div
+        class="nebulosa nebulosa-2">
+    </div>
 
-    font-size: 40px;
 
-    font-weight: normal;
+    <!-- INTRODUÇÃO -->
 
-    margin-bottom: 30px;
-}
+    <div
+        class="universo-intro"
+        id="universoIntro">
 
+        <p class="universo-mini">
+            ARQUIVO Nº 03
+        </p>
 
-.papel p:not(.data) {
+        <h2>
 
-    font-size: 18px;
+            Existem coisas<br>
+            que não cabem em palavras.
 
-    line-height: 2;
+        </h2>
 
-    margin-bottom: 20px;
-}
+        <p>
+            Então talvez seja melhor olhar para o céu.
+        </p>
 
+        <button
+            class="botao botao-fones"
+            onclick="comecarUniverso()">
 
-.texto-quatro {
+            🌌 Olhar para o céu
 
-    margin-top: 35px;
+        </button>
 
-    padding-top: 30px;
+    </div>
 
-    border-top:
-        1px solid #ead7dc;
-}
 
+    <!-- =================================================
+         CÉU
+    ================================================= -->
 
-.papel .botao {
+    <div
+        class="ceu"
+        id="ceu">
 
-    margin-top: 20px;
-}
+        <div class="via-lactea"></div>
 
 
-/* =====================================================
-   CORAÇÕES
-===================================================== */
+        <!-- TELESCÓPIO -->
 
-.coracoes {
+        <div class="observatorio">
 
-    min-height: 100vh;
+            <div class="telescopio">
 
-    position: relative;
+                <div
+                    class="telescopio-corpo">
+                </div>
 
-    overflow: hidden;
+                <div
+                    class="telescopio-ocular">
+                </div>
 
-    display: flex;
+            </div>
 
-    align-items: center;
+        </div>
 
-    justify-content: center;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #2a1018,
-            #090607 75%
-        );
-}
+        <!-- =================================================
+             ESTRELAS CLICÁVEIS
+        ================================================= -->
 
+        <div
+            class="estrela estrela-1"
+            onclick="clicarEstrela(1)">
+            ✦
+        </div>
 
-.coracoes-conteudo {
+        <div
+            class="estrela estrela-2"
+            onclick="clicarEstrela(2)">
+            ✦
+        </div>
 
-    position: relative;
+        <div
+            class="estrela estrela-3"
+            onclick="clicarEstrela(3)">
+            ✦
+        </div>
 
-    z-index: 20;
+        <div
+            class="estrela estrela-4"
+            onclick="clicarEstrela(4)">
+            ✦
+        </div>
 
-    text-align: center;
+        <div
+            class="estrela estrela-5"
+            onclick="clicarEstrela(5)">
+            ✦
+        </div>
 
-    animation:
-        aparecer 1.5s ease;
-}
+        <div
+            class="estrela estrela-6"
+            onclick="clicarEstrela(6)">
+            ✦
+        </div>
 
+        <div
+            class="estrela estrela-7"
+            onclick="clicarEstrela(7)">
+            ✦
+        </div>
 
-.coracoes h2 {
+        <div
+            class="estrela estrela-8"
+            onclick="clicarEstrela(8)">
+            ✦
+        </div>
 
-    font-size: 75px;
+        <div
+            class="estrela estrela-9"
+            onclick="clicarEstrela(9)">
+            ✦
+        </div>
 
-    font-weight: normal;
+        <div
+            class="estrela estrela-10"
+            onclick="clicarEstrela(10)">
+            ✦
+        </div>
 
-    color:
-        var(--branco);
 
-    text-shadow:
-        0 0 25px
-        rgba(229,167,180,0.3);
-}
+        <!-- =================================================
+             CONSTELAÇÃO
+        ================================================= -->
 
+        <div
+            class="constelacao"
+            id="constelacao">
 
-.coracoes-intro {
+            <div class="ponto p1"></div>
+            <div class="ponto p2"></div>
+            <div class="ponto p3"></div>
+            <div class="ponto p4"></div>
+            <div class="ponto p5"></div>
+            <div class="ponto p6"></div>
+            <div class="ponto p7"></div>
+            <div class="ponto p8"></div>
+            <div class="ponto p9"></div>
+            <div class="ponto p10"></div>
 
-    margin-top: 20px;
+            <div class="linha l1"></div>
+            <div class="linha l2"></div>
+            <div class="linha l3"></div>
+            <div class="linha l4"></div>
+            <div class="linha l5"></div>
+            <div class="linha l6"></div>
+            <div class="linha l7"></div>
+            <div class="linha l8"></div>
 
-    color:
-        #c7b1b8;
+        </div>
 
-    font-size: 18px;
-}
 
+        <!-- PALAVRA DA ESTRELA -->
 
-/* =====================================================
-   CHUVA INFINITA DE CORAÇÕES
-===================================================== */
+        <div
+            id="palavraEstrela"
+            class="palavra-estrela">
+        </div>
 
-.chuva-coracoes {
 
-    position: absolute;
+        <!-- =================================================
+             MENSAGEM
+        ================================================= -->
 
-    inset: 0;
+        <div class="ceu-mensagem">
 
-    pointer-events: none;
+            <p>
+                Encontre as estrelas.
+            </p>
 
-    overflow: hidden;
-}
+            <span>
+                Cada uma guarda uma palavra.
+            </span>
 
+        </div>
 
-.coracao-caindo {
 
-    position: absolute;
+        <!-- =================================================
+             MENSAGEM APÓS TODAS AS ESTRELAS
+        ================================================= -->
 
-    top: -80px;
+        <div
+            class="universo-final"
+            id="mensagemUniverso">
 
-    color:
-        var(--vermelho-claro);
+            <div class="galaxia-final"></div>
 
-    font-size:
-        var(--tamanho);
+            <p>
+                Você encontrou todas elas.
+            </p>
 
-    opacity: 0;
+            <h3>
 
-    animation:
-        cair var(--duracao)
-        linear infinite;
+                No meio de um universo tão grande...
+                é curioso encontrar alguém
+                que consegue fazer o meu pequeno
+                mundo parecer maior.
 
-    animation-delay:
-        var(--atraso);
+            </h3>
 
-    left:
-        var(--posicao);
+            <button
+                class="botao"
+                onclick="irParaLirio()">
 
-    text-shadow:
-        0 0 15px
-        rgba(229,167,180,0.45);
-}
+                🌸 Próximo
 
+            </button>
 
-@keyframes cair {
+        </div>
 
-    0% {
+    </div>
 
-        transform:
-            translateY(-100px)
-            rotate(0deg);
+</section>
 
-        opacity: 0;
-    }
 
-    10% {
+<!-- =====================================================
+     PARTE 4 — CARTA DO LÍRIO
+===================================================== -->
 
-        opacity: 0.8;
-    }
+<section
+    class="carta-lirio"
+    id="lirio">
 
-    90% {
+    <div>
 
-        opacity: 0.7;
-    }
+        <!-- FOTO REAL DO LÍRIO -->
 
-    100% {
+        <img
+            src="lirio.jpg"
+            alt="Lírio"
+            class="foto-lirio"
+        >
 
-        transform:
-            translateY(120vh)
-            rotate(360deg);
 
-        opacity: 0;
-    }
+        <h2>
+            Para você...
+        </h2>
 
-}
 
+        <p>
 
-/* =====================================================
-   PALAVRAS COMO ESTRELAS
-===================================================== */
+            Eu poderia dizer que você é a rosa
+            mais linda que já vi, mas, na verdade,
+            você é o lírio mais encantador que já
+            apareceu para mim.
 
-.palavra-estrela-fundo {
+        </p>
 
-    position: absolute;
 
-    color:
-        #f2cbd3;
+        <p>
 
-    font-family:
-        Arial, sans-serif;
+            A flor mais bela do meu jardim,
+            a flor mais preciosa do meu buquê.
 
-    font-size:
-        var(--tamanho-palavra);
+        </p>
 
-    letter-spacing:
-        2px;
 
-    opacity: 0;
+        <p>
 
-    animation:
-        piscar var(--tempo)
-        ease-in-out infinite;
+            Você é a típica flor que não arrancamos,
+            porque gostamos dela.
 
-    animation-delay:
-        var(--atraso);
+        </p>
 
-    left:
-        var(--x);
 
-    top:
-        var(--y);
+        <p>
 
-    text-shadow:
-        0 0 15px
-        rgba(255,220,228,0.7);
-}
+            Você é a flor que cuidamos, regamos
+            e deixamos crescer.
 
+        </p>
 
-@keyframes piscar {
 
-    0%, 100% {
+        <p>
 
-        opacity: 0;
+            Você é tão belo quanto um lírio
+            em meio a um buquê cheio de rosas.
 
-        transform:
-            scale(0.8);
-    }
+        </p>
 
-    50% {
 
-        opacity: 0.9;
+        <button
+            class="botao"
+            onclick="continuarDepoisDoLirio()">
 
-        transform:
-            scale(1);
-    }
+            💌 Próximo
 
-}
+        </button>
 
+    </div>
 
-/* =====================================================
-   BOTÃO CONTINUAR
-===================================================== */
+</section>
 
-.continuar {
 
-    position: absolute;
+<!-- =====================================================
+     PARTE 5 — CARTA FINAL / LOCALIZAÇÃO
+===================================================== -->
 
-    bottom: 50px;
+<section
+    class="carta-final"
+    id="cartaFinal">
 
-    z-index: 30;
-}
+    <div class="localizacao-caixa">
 
+        <p class="subtitulo">
+            ÚLTIMO ARQUIVO
+        </p>
 
-/* =====================================================
-   PARTE 2 — INVESTIGAÇÃO
-===================================================== */
+        <h2>
+            Uma última descoberta...
+        </h2>
 
-.investigacao {
+        <p>
 
-    min-height: 100vh;
+            Talvez algumas cartas não devam
+            ser abertas em qualquer lugar.
 
-    padding: 100px 25px;
+        </p>
 
-    display: flex;
 
-    justify-content: center;
+        <div class="destino-localizacao">
 
-    align-items: center;
+            <span>
+                DESTINO
+            </span>
 
-    background:
-        radial-gradient(
-            circle at center,
-            #1b0b10,
-            #050405
-        );
+            <strong>
+                📍 Umuarama — Paraná
+            </strong>
 
-    position: relative;
+        </div>
 
-    overflow: hidden;
-}
 
+        <p>
 
-.investigacao::before {
+            Existe uma carta esperando por você.
+            Mas ela só poderá ser encontrada
+            quando você estiver aqui.
 
-    content: "";
+        </p>
 
-    position: absolute;
 
-    inset: 0;
+        <button
+            class="botao"
+            onclick="verificarLocalizacao()">
 
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 3px,
-            rgba(255,255,255,0.015) 4px
-        );
+            📍 Verificar localização
 
-    pointer-events: none;
-}
+        </button>
 
 
-.investigacao-conteudo {
+        <p
+            id="resultadoLocalizacao">
+        </p>
 
-    max-width: 850px;
 
-    width: 100%;
+        <!-- =================================================
+             CARTA ESCONDIDA
+        ================================================= -->
 
-    position: relative;
+        <div
+            id="cartaFinalConteudo">
 
-    z-index: 2;
+            <h2>
+                Noah,
+            </h2>
 
-    text-align: center;
-}
 
+            <p>
 
-.codigo-vermelho {
+                Em tão pouco tempo você se tornou
+                uma pessoa muito especial para mim.
 
-    color:
-        var(--vermelho-claro);
+                Você se tornou a pessoa em quem confio,
+                a pessoa com quem sei que posso ser eu mesma,
+                sem medo de ser julgada ou acusada.
 
-    font-family:
-        monospace;
+            </p>
 
-    letter-spacing:
-        5px;
 
-    margin-bottom:
-        25px;
-}
+            <p>
 
+                Você foi a pessoa que me ajudou quando
+                precisei, quando eu queria falar com ninguém,
+                quando não sentia mais emoção no dia e
+                quando não tinha vontade de me socializar
+                com ninguém.
 
-.investigacao h2 {
+                Você me ajudou.
 
-    font-size: 48px;
+            </p>
 
-    font-weight: normal;
 
-    line-height: 1.3;
+            <p>
 
-    margin-bottom: 25px;
-}
+                Hoje sinto felicidade todos os dias
+                quando recebo uma mensagem sua.
 
+                Fico esperando ansiosamente por nossas
+                conversas e amo a sua companhia,
+                a sua amizade.
 
-.texto-investigacao {
+            </p>
 
-    color:
-        #ad9ba1;
 
-    line-height: 1.8;
+            <p>
 
-    font-size: 18px;
-}
+                É tão bom saber que tenho uma pessoa
+                tão especial quanto você.
 
+                Uma pessoa incrível, animada, gentil,
+                engraçada e que ajuda os outros
+                nos momentos difíceis.
 
-.arquivo {
+            </p>
 
-    margin:
-        40px auto;
 
-    max-width:
-        600px;
+            <p>
 
-    padding:
-        25px;
+                Você é uma pessoa que todos querem
+                ter por perto, alguém que todos querem
+                como amigo.
 
-    background:
-        rgba(255,255,255,0.03);
+            </p>
 
-    border:
-        1px solid
-        rgba(229,167,180,0.15);
 
-    text-align:
-        left;
+            <p>
 
-    font-family:
-        monospace;
+                Bem no começo, quando conheci você,
+                eu sentia que queria muito ser sua amiga.
 
-    line-height:
-        2;
+                E hoje você é meu melhor amigo.
 
-    color:
-        #aa969d;
-}
+            </p>
 
 
-.arquivo span {
+            <p>
 
-    color:
-        var(--vermelho-claro);
-}
+                Agradeço pela sua amizade.
 
+                Agradeço por todos os nossos momentos,
+                por todas as risadas e pelos momentos
+                de raiva também, kakak.
 
-.pistas {
+            </p>
 
-    display:
-        flex;
 
-    justify-content:
-        center;
+            <p>
 
-    flex-wrap:
-        wrap;
+                Quero que saiba que você é muito
+                especial para mim.
 
-    gap:
-        15px;
+            </p>
 
-    margin:
-        30px 0;
-}
 
+            <p class="assinatura-final">
 
-.pista {
+                I love you. ♡
 
-    padding:
-        14px 20px;
+            </p>
 
-    background:
-        #10090c;
 
-    color:
-        #dcb8c1;
+            <button
+                class="botao"
+                onclick="finalizarCarta()">
 
-    border:
-        1px solid #522632;
+                ♡ Fim
 
-    border-radius:
-        8px;
+            </button>
 
-    cursor:
-        pointer;
+        </div>
 
-    transition:
-        0.3s;
-}
+    </div>
 
+</section>
 
-.pista:hover {
 
-    background:
-        #261118;
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
 
-    transform:
-        translateY(-3px);
-}
+<footer>
 
+    <p>
+        Feito especialmente para Noah ♡
+    </p>
 
-.texto-pista {
+</footer>
 
-    min-height:
-        30px;
 
-    color:
-        #dcaeba;
+<script src="script.js"></script>
 
-    font-style:
-        italic;
+</body>
 
-    margin:
-        20px auto;
-
-    max-width:
-        650px;
-
-    line-height:
-        1.7;
-}
-
-
-.senha-area {
-
-    margin-top:
-        50px;
-
-    padding:
-        35px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.08);
-}
-
-
-.senha-area p {
-
-    color:
-        #9f8c93;
-
-    margin-bottom:
-        20px;
-}
-
-
-.senha-area input {
-
-    width:
-        min(400px, 100%);
-
-    padding:
-        15px;
-
-    background:
-        #0b0809;
-
-    border:
-        1px solid #58303b;
-
-    color:
-        white;
-
-    outline:
-        none;
-
-    border-radius:
-        5px;
-
-    margin-bottom:
-        15px;
-}
-
-
-.senha-area input:focus {
-
-    border-color:
-        var(--vermelho);
-}
-
-
-#resultadoSenha {
-
-    min-height:
-        25px;
-
-    margin-top:
-        15px;
-}
-
-
-.investigacao-final {
-
-    display:
-        none;
-
-    margin-top:
-        40px;
-
-    animation:
-        aparecer 1s ease;
-}
-
-
-.arquivo-aberto {
-
-    padding:
-        40px;
-
-    border:
-        1px solid #7c3d4e;
-
-    background:
-        rgba(124,61,78,0.08);
-
-    margin-bottom:
-        30px;
-}
-
-
-.arquivo-status {
-
-    color:
-        #e6a6b4;
-
-    font-family:
-        monospace;
-
-    letter-spacing:
-        3px;
-}
-
-
-.arquivo-aberto h3 {
-
-    font-size:
-        30px;
-
-    margin:
-        20px 0;
-}
-
-
-/* =====================================================
-   PARTE 3 — UNIVERSO
-===================================================== */
-
-.universo {
-
-    min-height:
-        100vh;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    background:
-        #020308;
-
-    color:
-        white;
-}
-
-
-.estrelas-fundo {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background-image:
-
-        radial-gradient(
-            white 1px,
-            transparent 1px
-        ),
-
-        radial-gradient(
-            rgba(255,255,255,0.6) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        90px 90px,
-        150px 150px;
-
-    animation:
-        estrelasMover
-        40s linear infinite;
-
-    opacity:
-        0.6;
-}
-
-
-@keyframes estrelasMover {
-
-    from {
-
-        background-position:
-            0 0,
-            0 0;
-    }
-
-    to {
-
-        background-position:
-            300px 500px,
-            -400px 300px;
-    }
-
-}
-
-
-.nebulosa {
-
-    position:
-        absolute;
-
-    border-radius:
-        50%;
-
-    filter:
-        blur(80px);
-
-    opacity:
-        0.18;
-}
-
-
-.nebulosa-1 {
-
-    width:
-        500px;
-
-    height:
-        300px;
-
-    background:
-        #91364d;
-
-    top:
-        20%;
-
-    left:
-        -10%;
-}
-
-
-.nebulosa-2 {
-
-    width:
-        500px;
-
-    height:
-        350px;
-
-    background:
-        #432a69;
-
-    right:
-        -10%;
-
-    bottom:
-        20%;
-}
-
-
-.universo-intro {
-
-    min-height:
-        100vh;
-
-    position:
-        relative;
-
-    z-index:
-        10;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        30px;
-
-    transition:
-        1.5s;
-}
-
-
-.universo-mini {
-
-    font-family:
-        monospace;
-
-    letter-spacing:
-        5px;
-
-    color:
-        #c894a2;
-
-    margin-bottom:
-        30px;
-}
-
-
-.universo-intro h2 {
-
-    font-size:
-        clamp(45px, 7vw, 85px);
-
-    font-weight:
-        normal;
-
-    line-height:
-        1.1;
-
-    margin-bottom:
-        30px;
-}
-
-
-.universo-intro > p:not(.universo-mini) {
-
-    font-size:
-        20px;
-
-    color:
-        #aaa9b7;
-
-    margin-bottom:
-        40px;
-}
-
-
-/* =====================================================
-   CÉU
-===================================================== */
-
-.ceu {
-
-    display:
-        none;
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    min-height:
-        100vh;
-
-    opacity:
-        0;
-
-    transition:
-        2s;
-
-    overflow:
-        hidden;
-}
-
-
-.via-lactea {
-
-    position:
-        absolute;
-
-    width:
-        150%;
-
-    height:
-        350px;
-
-    left:
-        -25%;
-
-    top:
-        25%;
-
-    transform:
-        rotate(-18deg);
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,0.2),
-            rgba(160,130,180,0.08) 35%,
-            transparent 70%
-        );
-
-    filter:
-        blur(20px);
-
-    opacity:
-        0.7;
-}
-
-
-/* =====================================================
-   TELESCÓPIO
-===================================================== */
-
-.observatorio {
-
-    position:
-        absolute;
-
-    bottom:
-        0;
-
-    left:
-        50%;
-
-    transform:
-        translateX(-50%);
-
-    width:
-        250px;
-
-    height:
-        300px;
-
-    opacity:
-        0.35;
-}
-
-
-.telescopio {
-
-    position:
-        absolute;
-
-    bottom:
-        100px;
-
-    left:
-        40px;
-
-    width:
-        170px;
-
-    height:
-        60px;
-
-    transform:
-        rotate(-25deg);
-}
-
-
-.telescopio-corpo {
-
-    width:
-        170px;
-
-    height:
-        50px;
-
-    border-radius:
-        50px;
-
-    background:
-        linear-gradient(
-            #292831,
-            #0d0d12
-        );
-
-    border:
-        1px solid #575362;
-}
-
-
-.telescopio-ocular {
-
-    position:
-        absolute;
-
-    right:
-        -25px;
-
-    top:
-        12px;
-
-    width:
-        35px;
-
-    height:
-        35px;
-
-    background:
-        #111117;
-
-    border-radius:
-        5px;
-}
-
-
-/* =====================================================
-   ESTRELAS CLICÁVEIS — NOVO DESIGN
-===================================================== */
-
-.estrela {
-
-    position:
-        absolute;
-
-    width:
-        42px;
-
-    height:
-        42px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    font-size:
-        21px;
-
-    color:
-        white;
-
-    cursor:
-        pointer;
-
-    z-index:
-        15;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.15);
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.18),
-            rgba(229,167,180,0.05) 55%,
-            transparent 72%
-        );
-
-    box-shadow:
-        0 0 12px
-        rgba(255,255,255,0.45),
-
-        0 0 30px
-        rgba(229,167,180,0.22);
-
-    backdrop-filter:
-        blur(3px);
-
-    transition:
-        0.4s;
-
-    animation:
-        brilhoEstrela
-        2.5s ease-in-out infinite;
-}
-
-
-.estrela:hover {
-
-    transform:
-        scale(1.35);
-
-    box-shadow:
-        0 0 18px white,
-
-        0 0 40px
-        rgba(229,167,180,0.7),
-
-        0 0 70px
-        rgba(229,167,180,0.25);
-}
-
-
-.estrela.encontrada {
-
-    color:
-        #e5a7b4;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(229,167,180,0.4),
-            rgba(229,167,180,0.08) 55%,
-            transparent 72%
-        );
-
-    box-shadow:
-        0 0 18px
-        #e5a7b4,
-
-        0 0 45px
-        rgba(229,167,180,0.7);
-
-    animation:
-        estrelaEncontrada
-        0.8s ease forwards;
-}
-
-
-.estrela-1 {
-    top: 20%;
-    left: 20%;
-}
-
-.estrela-2 {
-    top: 32%;
-    left: 35%;
-}
-
-.estrela-3 {
-    top: 18%;
-    left: 50%;
-}
-
-.estrela-4 {
-    top: 42%;
-    left: 65%;
-}
-
-.estrela-5 {
-    top: 25%;
-    left: 80%;
-}
-
-.estrela-6 {
-    top: 55%;
-    left: 15%;
-}
-
-.estrela-7 {
-    top: 65%;
-    left: 35%;
-}
-
-.estrela-8 {
-    top: 58%;
-    left: 55%;
-}
-
-.estrela-9 {
-    top: 72%;
-    left: 75%;
-}
-
-.estrela-10 {
-    top: 48%;
-    left: 88%;
-}
-
-
-@keyframes brilhoEstrela {
-
-    0%, 100% {
-
-        opacity:
-            0.55;
-
-        transform:
-            scale(0.9);
-    }
-
-    50% {
-
-        opacity:
-            1;
-
-        transform:
-            scale(1.08);
-    }
-
-}
-
-
-@keyframes estrelaEncontrada {
-
-    0% {
-
-        transform:
-            scale(1);
-
-        opacity:
-            1;
-    }
-
-    40% {
-
-        transform:
-            scale(1.7);
-
-        opacity:
-            1;
-    }
-
-    100% {
-
-        transform:
-            scale(1.15);
-
-        opacity:
-            0.9;
-    }
-
-}
-
-
-/* =====================================================
-   PALAVRA DA ESTRELA
-===================================================== */
-
-.palavra-estrela {
-
-    position:
-        absolute;
-
-    left:
-        50%;
-
-    top:
-        50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index:
-        30;
-
-    font-size:
-        clamp(25px, 5vw, 50px);
-
-    letter-spacing:
-        5px;
-
-    color:
-        white;
-
-    text-shadow:
-        0 0 15px #e5a7b4,
-
-        0 0 40px #e5a7b4;
-
-    opacity:
-        0;
-
-    pointer-events:
-        none;
-
-    padding:
-        18px 30px;
-
-    border:
-        1px solid
-        rgba(229,167,180,0.22);
-
-    border-radius:
-        50px;
-
-    background:
-        rgba(5,4,8,0.55);
-
-    backdrop-filter:
-        blur(8px);
-
-    transition:
-        opacity 0.5s;
-}
-
-
-/* =====================================================
-   CONSTELAÇÃO
-===================================================== */
-
-.constelacao {
-
-    position:
-        absolute;
-
-    width:
-        400px;
-
-    height:
-        300px;
-
-    left:
-        50%;
-
-    top:
-        48%;
-
-    transform:
-        translate(-50%, -50%);
-
-    opacity:
-        0;
-
-    transition:
-        3s;
-
-    z-index:
-        5;
-}
-
-
-.constelacao.mostrar {
-
-    opacity:
-        1;
-}
-
-
-.ponto {
-
-    position:
-        absolute;
-
-    width:
-        8px;
-
-    height:
-        8px;
-
-    border-radius:
-        50%;
-
-    background:
-        white;
-
-    box-shadow:
-        0 0 12px white,
-
-        0 0 25px #e5a7b4;
-}
-
-
-.p1 {
-    left: 50%;
-    top: 48%;
-}
-
-.p2 {
-    left: 38%;
-    top: 35%;
-}
-
-.p3 {
-    left: 25%;
-    top: 20%;
-}
-
-.p4 {
-    left: 15%;
-    top: 35%;
-}
-
-.p5 {
-    left: 30%;
-    top: 55%;
-}
-
-.p6 {
-    left: 70%;
-    top: 35%;
-}
-
-.p7 {
-    left: 85%;
-    top: 20%;
-}
-
-.p8 {
-    left: 95%;
-    top: 35%;
-}
-
-.p9 {
-    left: 70%;
-    top: 55%;
-}
-
-.p10 {
-    left: 50%;
-    top: 65%;
-}
-
-
-.linha {
-
-    position:
-        absolute;
-
-    height:
-        1px;
-
-    background:
-        rgba(255,255,255,0.45);
-
-    transform-origin:
-        left center;
-}
-
-
-.l1 {
-    width: 90px;
-    left: 50%;
-    top: 48%;
-    transform: rotate(-145deg);
-}
-
-.l2 {
-    width: 80px;
-    left: 38%;
-    top: 35%;
-    transform: rotate(-140deg);
-}
-
-.l3 {
-    width: 70px;
-    left: 25%;
-    top: 20%;
-    transform: rotate(130deg);
-}
-
-.l4 {
-    width: 70px;
-    left: 15%;
-    top: 35%;
-    transform: rotate(35deg);
-}
-
-.l5 {
-    width: 80px;
-    left: 30%;
-    top: 55%;
-    transform: rotate(-10deg);
-}
-
-.l6 {
-    width: 90px;
-    left: 50%;
-    top: 48%;
-    transform: rotate(-35deg);
-}
-
-.l7 {
-    width: 80px;
-    left: 70%;
-    top: 35%;
-    transform: rotate(-40deg);
-}
-
-.l8 {
-    width: 70px;
-    left: 85%;
-    top: 20%;
-    transform: rotate(50deg);
-}
-
-
-/* =====================================================
-   MENSAGEM DO CÉU
-===================================================== */
-
-.ceu-mensagem {
-
-    position:
-        absolute;
-
-    bottom:
-        40px;
-
-    left:
-        50%;
-
-    transform:
-        translateX(-50%);
-
-    text-align:
-        center;
-
-    z-index:
-        20;
-
-    color:
-        #aaa8b3;
-
-    font-size:
-        17px;
-
-    line-height:
-        1.7;
-}
-
-
-.ceu-mensagem span {
-
-    font-size:
-        13px;
-
-    color:
-        #777680;
-}
-
-
-/* =====================================================
-   FINAL UNIVERSO
-===================================================== */
-
-.universo-final {
-
-    display:
-        none;
-
-    min-height:
-        100vh;
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    z-index:
-        50;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    flex-direction:
-        column;
-
-    text-align:
-        center;
-
-    padding:
-        30px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(30,20,40,0.75),
-            #020308 75%
-        );
-
-    animation:
-        aparecer 2s ease;
-}
-
-
-.universo-final p {
-
-    color:
-        #aaa6b2;
-
-    font-size:
-        19px;
-
-    margin-bottom:
-        25px;
-}
-
-
-.universo-final h3 {
-
-    max-width:
-        750px;
-
-    font-size:
-        clamp(30px, 5vw, 55px);
-
-    font-weight:
-        normal;
-
-    line-height:
-        1.4;
-
-    margin-bottom:
-        45px;
-}
-
-
-/* =====================================================
-   PARTE DO LÍRIO
-===================================================== */
-
-.carta-lirio {
-
-    min-height:
-        100vh;
-
-    padding:
-        100px 30px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff8fa,
-            #f7dfe5
-        );
-
-    color:
-        #4a3038;
-}
-
-
-.carta-lirio > div {
-
-    max-width:
-        750px;
-}
-
-
-.foto-lirio {
-
-    width:
-        260px;
-
-    height:
-        320px;
-
-    object-fit:
-        cover;
-
-    border-radius:
-        8px;
-
-    margin-bottom:
-        35px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(100,40,55,0.2);
-
-    border:
-        8px solid #fffdf8;
-}
-
-
-.carta-lirio h2 {
-
-    font-size:
-        42px;
-
-    font-weight:
-        normal;
-
-    margin-bottom:
-        30px;
-}
-
-
-.carta-lirio p {
-
-    font-size:
-        19px;
-
-    line-height:
-        2;
-
-    margin-bottom:
-        20px;
-}
-
-
-/* =====================================================
-   PRÓXIMA PARTE
-===================================================== */
-
-.proxima-parte {
-
-    min-height:
-        500px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    text-align:
-        center;
-
-    padding:
-        50px 30px;
-
-    background:
-        linear-gradient(
-            #080607,
-            #170b10
-        );
-}
-
-
-.proxima-parte h2 {
-
-    font-size:
-        clamp(35px, 6vw, 60px);
-
-    font-weight:
-        normal;
-
-    margin:
-        20px 0;
-}
-
-
-.proxima-parte p:last-child {
-
-    color:
-        #a9979d;
-
-    font-size:
-        18px;
-}
-
-
-/* =====================================================
-   CARTA FINAL — LOCALIZAÇÃO
-===================================================== */
-
-.carta-final {
-
-    min-height:
-        100vh;
-
-    padding:
-        100px 25px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    text-align:
-        center;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(200,121,137,0.25),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            #170b10,
-            #080607
-        );
-}
-
-
-.localizacao-caixa {
-
-    width:
-        min(750px, 100%);
-
-    padding:
-        60px 45px;
-
-    border-radius:
-        12px;
-
-    background:
-        #fdf8f9;
-
-    color:
-        #3f3035;
-
-    box-shadow:
-        0 30px 90px
-        rgba(0,0,0,0.45);
-
-    position:
-        relative;
-}
-
-
-.localizacao-caixa::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        18px;
-
-    border:
-        1px solid #e6cbd2;
-
-    pointer-events:
-        none;
-}
-
-
-.localizacao-caixa h2 {
-
-    font-size:
-        clamp(35px, 6vw, 55px);
-
-    font-weight:
-        normal;
-
-    margin:
-        20px 0;
-}
-
-
-.localizacao-caixa > p {
-
-    font-size:
-        18px;
-
-    line-height:
-        1.8;
-}
-
-
-.destino-localizacao {
-
-    margin:
-        35px auto;
-
-    padding:
-        20px;
-
-    max-width:
-        450px;
-
-    border-radius:
-        10px;
-
-    background:
-        #f7e8ec;
-
-    border:
-        1px solid #e5c1ca;
-}
-
-
-.destino-localizacao span {
-
-    display:
-        block;
-
-    font-family:
-        Arial, sans-serif;
-
-    font-size:
-        11px;
-
-    letter-spacing:
-        4px;
-
-    color:
-        #9a6674;
-
-    margin-bottom:
-        8px;
-}
-
-
-.destino-localizacao strong {
-
-    font-size:
-        25px;
-
-    font-weight:
-        normal;
-
-    color:
-        #6f2639;
-}
-
-
-#resultadoLocalizacao {
-
-    min-height:
-        30px;
-
-    margin:
-        20px 0;
-
-    font-family:
-        Arial, sans-serif;
-
-    font-size:
-        14px;
-}
-
-
-.localizacao-sucesso {
-
-    color:
-        #6f2639 !important;
-
-    font-weight:
-        bold;
-}
-
-
-/* =====================================================
-   CARTA ESCONDIDA
-===================================================== */
-
-#cartaFinalConteudo {
-
-    display:
-        none;
-
-    margin-top:
-        45px;
-
-    padding-top:
-        40px;
-
-    border-top:
-        1px solid #ead7dc;
-
-    text-align:
-        left;
-}
-
-
-#cartaFinalConteudo p {
-
-    font-size:
-        18px;
-
-    line-height:
-        2;
-
-    margin-bottom:
-        22px;
-}
-
-
-.assinatura-final {
-
-    margin-top:
-        40px;
-
-    text-align:
-        right;
-
-    color:
-        #9a6674;
-
-    font-style:
-        italic;
-}
-
-
-/* =====================================================
-   RODAPÉ
-===================================================== */
-
-footer {
-
-    padding:
-        30px;
-
-    text-align:
-        center;
-
-    background:
-        #030203;
-
-    color:
-        #a98f98;
-
-    font-family:
-        Arial, sans-serif;
-}
-
-
-/* =====================================================
-   ANIMAÇÕES GERAIS
-===================================================== */
-
-@keyframes aparecer {
-
-    from {
-
-        opacity:
-            0;
-
-        transform:
-            translateY(30px);
-    }
-
-    to {
-
-        opacity:
-            1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-
-@keyframes subir {
-
-    from {
-
-        opacity:
-            0;
-
-        transform:
-            translateY(50px);
-    }
-
-    to {
-
-        opacity:
-            1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-
-@keyframes pulsar {
-
-    0%, 100% {
-
-        transform:
-            scale(0.8);
-
-        opacity:
-            0.2;
-    }
-
-    50% {
-
-        transform:
-            scale(1.2);
-
-        opacity:
-            0.5;
-    }
-
-}
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
-@media (max-width: 750px) {
-
-    .inicio h1 {
-
-        font-size:
-            60px;
-    }
-
-
-    .frase {
-
-        font-size:
-            17px;
-    }
-
-
-    .papel {
-
-        padding:
-            50px 30px;
-    }
-
-
-    .papel h2 {
-
-        font-size:
-            32px;
-    }
-
-
-    .coracoes h2 {
-
-        font-size:
-            55px;
-    }
-
-
-    .investigacao h2 {
-
-        font-size:
-            35px;
-    }
-
-
-    .arquivo {
-
-        font-size:
-            12px;
-    }
-
-
-    .constelacao {
-
-        width:
-            300px;
-
-        height:
-            230px;
-    }
-
-
-    .observatorio {
-
-        display:
-            none;
-    }
-
-
-    .estrela {
-
-        width:
-            34px;
-
-        height:
-            34px;
-
-        font-size:
-            18px;
-    }
-
-
-    .via-lactea {
-
-        width:
-            180%;
-
-        left:
-            -40%;
-    }
-
-
-    .universo-intro h2 {
-
-        font-size:
-            45px;
-    }
-
-
-    .foto-lirio {
-
-        width:
-            210px;
-
-        height:
-            260px;
-    }
-
-
-    .carta-lirio {
-
-        padding:
-            60px 25px;
-    }
-
-
-    .carta-lirio h2 {
-
-        font-size:
-            34px;
-    }
-
-
-    .carta-lirio p {
-
-        font-size:
-            17px;
-    }
-
-
-    .localizacao-caixa {
-
-        padding:
-            50px 25px;
-    }
-
-
-    .localizacao-caixa::before {
-
-        inset:
-            12px;
-    }
-
-
-    #cartaFinalConteudo p {
-
-        font-size:
-            16px;
-
-        line-height:
-            1.9;
-    }
-
-}
+</html>

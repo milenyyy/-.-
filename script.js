@@ -35,36 +35,28 @@ function mostrarMensagem() {
 
 
 /* =====================================================
-   CORAÇÕES
+   CRIAR CORAÇÕES
 ===================================================== */
 
-let coracoesCriados = false;
-
 function criarCoracoes() {
-
-    if (coracoesCriados) {
-        return;
-    }
-
-    coracoesCriados = true;
 
     const container =
         document.getElementById("chuvaCoracoes");
 
-    const simbolos = [
-        "♡",
-        "♡",
-        "♥",
-        "❤"
-    ];
+    if (container.children.length > 0) {
+        return;
+    }
+
+    const simbolos = ["♡", "♥", "❤"];
 
     for (let i = 0; i < 35; i++) {
 
         const coracao =
             document.createElement("div");
 
-        coracao.className =
-            "coracao-caindo";
+        coracao.classList.add(
+            "coracao-caindo"
+        );
 
         coracao.innerText =
             simbolos[
@@ -78,13 +70,13 @@ function criarCoracoes() {
             Math.random() * 100 + "%";
 
         coracao.style.animationDuration =
-            (6 + Math.random() * 8) + "s";
+            (6 + Math.random() * 7) + "s";
 
         coracao.style.animationDelay =
             (-Math.random() * 10) + "s";
 
         coracao.style.fontSize =
-            (16 + Math.random() * 20) + "px";
+            (15 + Math.random() * 25) + "px";
 
         container.appendChild(coracao);
 
@@ -97,20 +89,16 @@ function criarCoracoes() {
    PALAVRAS
 ===================================================== */
 
-let palavrasCriadas = false;
-
 function criarPalavras() {
-
-    if (palavrasCriadas) {
-        return;
-    }
-
-    palavrasCriadas = true;
 
     const container =
         document.getElementById(
             "palavrasEstrelas"
         );
+
+    if (container.children.length > 0) {
+        return;
+    }
 
     const palavras = [
 
@@ -138,20 +126,21 @@ function criarPalavras() {
             const elemento =
                 document.createElement("span");
 
-            elemento.className =
-                "palavra-caindo";
+            elemento.classList.add(
+                "palavra-caindo"
+            );
 
             elemento.innerText =
                 palavra;
 
             elemento.style.left =
-                (5 + Math.random() * 85) + "%";
+                (5 + Math.random() * 90) + "%";
 
             elemento.style.top =
-                (8 + Math.random() * 80) + "%";
+                (5 + Math.random() * 85) + "%";
 
             elemento.style.animationDelay =
-                (index * .4) + "s";
+                (index * 0.4) + "s";
 
             container.appendChild(
                 elemento
@@ -164,7 +153,7 @@ function criarPalavras() {
 
 
 /* =====================================================
-   PARTE 2
+   IR PARA PARTE 2
 ===================================================== */
 
 function irParaParte2() {
@@ -226,7 +215,9 @@ function abrirPista(numero) {
 function verificarSenha() {
 
     const campo =
-        document.getElementById("senha");
+        document.getElementById(
+            "senha"
+        );
 
     const resultado =
         document.getElementById(
@@ -248,7 +239,7 @@ function verificarSenha() {
             "✓ ACESSO CONCEDIDO";
 
         resultado.style.color =
-            "#c9576d";
+            "#f3a1b1";
 
 
         const final =
@@ -259,14 +250,15 @@ function verificarSenha() {
         final.style.display =
             "block";
 
+    }
 
-    } else {
+    else {
 
         resultado.innerText =
             "✕ Senha incorreta. Talvez você ainda precise investigar um pouco mais...";
 
         resultado.style.color =
-            "#a83e56";
+            "#d98295";
 
     }
 
@@ -274,7 +266,7 @@ function verificarSenha() {
 
 
 /* =====================================================
-   PARTE 3
+   IR PARA PARTE 3
 ===================================================== */
 
 function irParaParte3() {
@@ -324,7 +316,7 @@ const estrelasEncontradas =
     new Set();
 
 
-const palavrasDasEstrelas = {
+const palavrasEstrelas = {
 
     1: "especial",
 
@@ -350,7 +342,7 @@ const palavrasDasEstrelas = {
 
 
 /* =====================================================
-   CLICAR NA ESTRELA
+   CLICAR NAS ESTRELAS
 ===================================================== */
 
 function clicarEstrela(numero) {
@@ -362,7 +354,9 @@ function clicarEstrela(numero) {
 
 
     if (
-        estrelasEncontradas.has(numero)
+        estrelasEncontradas.has(
+            numero
+        )
     ) {
 
         return;
@@ -370,7 +364,9 @@ function clicarEstrela(numero) {
     }
 
 
-    estrelasEncontradas.add(numero);
+    estrelasEncontradas.add(
+        numero
+    );
 
 
     estrela.classList.add(
@@ -378,46 +374,38 @@ function clicarEstrela(numero) {
     );
 
 
-    /* PALAVRA */
+    /* palavra */
 
     const palavra =
         document.getElementById(
             "palavraEstrela"
         );
 
-
     palavra.innerText =
-        palavrasDasEstrelas[
-            numero
-        ];
-
+        palavrasEstrelas[numero];
 
     palavra.style.opacity =
         "1";
 
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            palavra.style.opacity =
-                "0";
+        palavra.style.opacity =
+            "0";
 
-        },
-        1800
-    );
+    }, 1400);
 
 
-    /* CONTADOR */
+    /* contador */
 
     const contador =
         document.getElementById(
             "contadorEstrelas"
         );
 
-
     contador.innerText =
         estrelasEncontradas.size +
-        " / 10 encontradas";
+        " / 10 estrelas encontradas";
 
 
     /* TODAS ENCONTRADAS */
@@ -426,14 +414,11 @@ function clicarEstrela(numero) {
         estrelasEncontradas.size === 10
     ) {
 
-        setTimeout(
-            () => {
+        setTimeout(() => {
 
-                mostrarMensagemUniverso();
+            mostrarMensagemUniverso();
 
-            },
-            1000
-        );
+        }, 1000);
 
     }
 
@@ -441,7 +426,7 @@ function clicarEstrela(numero) {
 
 
 /* =====================================================
-   MENSAGEM DO UNIVERSO
+   MENSAGEM APÓS AS 10 ESTRELAS
 ===================================================== */
 
 function mostrarMensagemUniverso() {
@@ -458,7 +443,7 @@ function mostrarMensagemUniverso() {
 
 
 /* =====================================================
-   IR PARA O LÍRIO
+   IR PARA CARTA DO LÍRIO
 ===================================================== */
 
 function irParaLirio() {
@@ -476,17 +461,17 @@ function irParaLirio() {
 
 
 /* =====================================================
-   IR PARA CARTA FINAL
+   CONTINUAR DEPOIS DO LÍRIO
 ===================================================== */
 
-function irParaCartaFinal() {
+function continuarDepoisDoLirio() {
 
-    const cartaFinal =
+    const proxima =
         document.getElementById(
-            "cartaFinal"
+            "proximaParte"
         );
 
-    cartaFinal.scrollIntoView({
+    proxima.scrollIntoView({
         behavior: "smooth"
     });
 
@@ -494,211 +479,41 @@ function irParaCartaFinal() {
 
 
 /* =====================================================
-   LOCALIZAÇÃO
+   OBSERVADOR DE ANIMAÇÃO
 ===================================================== */
 
-function verificarLocalizacao() {
+const observador =
+    new IntersectionObserver(
+        (entradas) => {
 
-    const resultado =
-        document.getElementById(
-            "resultadoLocalizacao"
-        );
+            entradas.forEach(
+                (entrada) => {
 
+                    if (
+                        entrada.isIntersecting
+                    ) {
 
-    if (!navigator.geolocation) {
+                        entrada.target.classList.add(
+                            "aparecer"
+                        );
 
-        resultado.innerText =
-            "Seu navegador não permite verificar a localização.";
+                    }
 
-        resultado.style.color =
-            "#a83e56";
-
-        return;
-
-    }
-
-
-    resultado.innerText =
-        "📍 Procurando sua localização...";
-
-
-    navigator.geolocation.getCurrentPosition(
-
-        function(posicao) {
-
-            const latitude =
-                posicao.coords.latitude;
-
-            const longitude =
-                posicao.coords.longitude;
-
-
-            /*
-             * Coordenadas aproximadas do centro
-             * de Umuarama - Paraná.
-             */
-
-            const umuaramaLatitude =
-                -23.7658;
-
-            const umuaramaLongitude =
-                -53.3250;
-
-
-            const distancia =
-                calcularDistancia(
-
-                    latitude,
-                    longitude,
-
-                    umuaramaLatitude,
-                    umuaramaLongitude
-
-                );
-
-
-            /*
-             * Aproximadamente 20 km.
-             */
-
-            if (distancia <= 20) {
-
-                resultado.innerText =
-                    "✓ LOCALIZAÇÃO CONFIRMADA. A carta é sua.";
-
-                resultado.style.color =
-                    "#c9576d";
-
-
-                const carta =
-                    document.getElementById(
-                        "cartaFinalConteudo"
-                    );
-
-                carta.style.display =
-                    "block";
-
-
-                setTimeout(
-                    () => {
-
-                        carta.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-
-                    },
-                    700
-                );
-
-
-            } else {
-
-                resultado.innerText =
-                    "✕ Parece que você ainda não está em Umuarama...";
-
-                resultado.style.color =
-                    "#a83e56";
-
-            }
+                }
+            );
 
         },
-
-
-        function(erro) {
-
-            resultado.innerText =
-                "Não consegui acessar sua localização. Verifique se você permitiu o acesso à localização.";
-
-            resultado.style.color =
-                "#a83e56";
-
-        },
-
         {
-
-            enableHighAccuracy: true,
-
-            timeout: 10000,
-
-            maximumAge: 0
-
+            threshold: 0.15
         }
-
     );
 
-}
 
-
-/* =====================================================
-   CALCULAR DISTÂNCIA
-===================================================== */
-
-function calcularDistancia(
-    latitude1,
-    longitude1,
-    latitude2,
-    longitude2
-) {
-
-    const raioTerra =
-        6371;
-
-
-    const diferencaLatitude =
-        grausParaRadianos(
-            latitude2 - latitude1
-        );
-
-
-    const diferencaLongitude =
-        grausParaRadianos(
-            longitude2 - longitude1
-        );
-
-
-    const a =
-        Math.sin(
-            diferencaLatitude / 2
-        ) ** 2 +
-
-        Math.cos(
-            grausParaRadianos(
-                latitude1
-            )
-        ) *
-
-        Math.cos(
-            grausParaRadianos(
-                latitude2
-            )
-        ) *
-
-        Math.sin(
-            diferencaLongitude / 2
-        ) ** 2;
-
-
-    const c =
-        2 *
-        Math.atan2(
-            Math.sqrt(a),
-            Math.sqrt(1 - a)
-        );
-
-
-    return raioTerra * c;
-
-}
-
-
-/* =====================================================
-   GRAUS → RADIANOS
-===================================================== */
-
-function grausParaRadianos(graus) {
-
-    return graus *
-        (Math.PI / 180);
-
-}
+document
+    .querySelectorAll(
+        ".papel, .carta-lirio, .arquivo-aberto"
+    )
+    .forEach(
+        elemento =>
+            observador.observe(elemento)
+    );

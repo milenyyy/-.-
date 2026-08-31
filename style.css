@@ -14,1055 +14,436 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: #ffffff;
-    color: #4a1c27;
+    background: #fffafa;
+    color: #35151d;
     overflow-x: hidden;
 }
 
-button,
-input {
-    font-family: inherit;
-}
-
 button {
+    font-family: inherit;
     cursor: pointer;
 }
 
 
 /* =====================================================
-   CORES
+   SEÇÕES
 ===================================================== */
 
-:root {
-
-    --vermelho: #d95b72;
-    --vermelho-claro: #f3a1b1;
-    --vermelho-suave: #f9dce2;
-    --vermelho-escuro: #7d263c;
-
-    --branco: #ffffff;
-
-    --preto: #07070a;
-    --preto-2: #111117;
-
+.secao {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
 }
 
 
 /* =====================================================
-   BOTÃO
-===================================================== */
-
-.botao {
-
-    border: none;
-
-    background: var(--vermelho);
-
-    color: white;
-
-    padding: 14px 28px;
-
-    border-radius: 30px;
-
-    font-size: 16px;
-
-    box-shadow:
-        0 6px 20px rgba(217, 91, 114, 0.25);
-
-    transition: 0.3s ease;
-
-}
-
-.botao:hover {
-
-    transform: translateY(-3px);
-
-    background: #c94c65;
-
-    box-shadow:
-        0 10px 28px rgba(217, 91, 114, 0.4);
-
-}
-
-
-/* =====================================================
-   PARTE 1
+   PARTE INICIAL
 ===================================================== */
 
 .inicio {
-
     min-height: 100vh;
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
+    justify-content: center;
 
     text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(243,161,177,0.25),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(217,91,114,0.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #fff6f8
-        );
-
-}
-
-.inicio-conteudo {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 700px;
-
-    padding: 30px;
-
-}
-
-.subtitulo {
-
-    color: var(--vermelho);
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 18px;
-
-}
-
-.inicio h1 {
-
-    font-size: clamp(55px, 10vw, 100px);
-
-    color: var(--vermelho-escuro);
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-
-}
-
-.frase {
-
-    max-width: 500px;
-
-    margin: 0 auto 35px;
-
-    color: #74404b;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-}
-
-
-/* =====================================================
-   CARTA
-===================================================== */
-
-.carta {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 80px 20px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff8fa,
-            #ffffff
-        );
-
-}
-
-.papel {
-
-    width: min(850px, 92%);
-
-    padding: 65px;
-
-    background: white;
-
-    border: 1px solid #f1c4ce;
-
-    box-shadow:
-        0 20px 60px rgba(125,38,60,0.12);
-
-    position: relative;
-
-}
-
-.papel::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 12px;
-
-    border: 1px solid #f5d9df;
-
-    pointer-events: none;
-
-}
-
-.data {
-
-    color: var(--vermelho);
-
-    margin-bottom: 25px;
-
-}
-
-.papel h2 {
-
-    color: var(--vermelho-escuro);
-
-    font-size: 35px;
-
-    font-weight: normal;
-
-    margin-bottom: 30px;
-
-}
-
-.papel p {
-
-    color: #59333d;
-
-    font-size: 17px;
-
-    line-height: 2;
-
-    margin-bottom: 20px;
-
-}
-
-.texto-quatro {
-
-    font-style: italic;
-
-    margin-top: 30px;
-
-}
-
-
-/* =====================================================
-   CORAÇÕES
-===================================================== */
-
-.coracoes {
-
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #fff3f6
-        );
-
-}
-
-.coracoes-conteudo {
-
-    position: relative;
-
-    z-index: 5;
-
-    padding: 30px;
-
-}
-
-.coracoes h2 {
-
-    color: var(--vermelho-escuro);
-
-    font-size: clamp(45px,8vw,75px);
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-
-}
-
-.coracoes-intro {
-
-    color: #77404c;
-
-    font-size: 18px;
-
-}
-
-
-/* =====================================================
-   CHUVA DE CORAÇÕES
-===================================================== */
-
-.chuva-coracoes {
-
-    position: absolute;
-
-    inset: 0;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-}
-
-.coracao-caindo {
-
-    position: absolute;
-
-    top: -60px;
-
-    color: var(--vermelho-claro);
-
-    opacity: 0.45;
-
-    animation-name: cairCoracao;
-
-    animation-timing-function: linear;
-
-    animation-iteration-count: infinite;
-
-}
-
-@keyframes cairCoracao {
-
-    from {
-        transform: translateY(-70px) rotate(0deg);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 0.5;
-    }
-
-    85% {
-        opacity: 0.5;
-    }
-
-    to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   PALAVRAS DA PARTE 2
-===================================================== */
-
-.palavras-estrelas {
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-}
-
-.palavra-caindo {
-
-    position: absolute;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    opacity: 0;
-
-    text-shadow:
-        0 0 5px white,
-        0 0 12px #ff6f91,
-        0 0 25px #d94362;
-
-    animation:
-        estrelaPalavra
-        4s ease-in-out infinite;
-
-    white-space: nowrap;
-
-}
-
-.palavra-caindo:nth-child(3n) {
-
-    color: #ff9eb3;
-
-    text-shadow:
-        0 0 5px #ff9eb3,
-        0 0 15px #ff5475,
-        0 0 30px #c91f45;
-
-}
-
-.palavra-caindo:nth-child(4n) {
-
-    color: white;
-
-}
-
-@keyframes estrelaPalavra {
-
-    0% {
-
-        opacity: 0;
-
-        transform: scale(0.5);
-
-        filter: blur(4px);
-
-    }
-
-    25% {
-
-        opacity: 1;
-
-        transform: scale(1);
-
-        filter: blur(0);
-
-    }
-
-    55% {
-
-        opacity: 1;
-
-        transform: scale(1.05);
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform: scale(0.4);
-
-        filter: blur(4px);
-
-    }
-
-}
-
-
-/* =====================================================
-   BOTÃO CONTINUAR
-===================================================== */
-
-.continuar {
-
-    position: absolute;
-
-    bottom: 50px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 10;
-
-}
-
-.continuar:hover {
-
-    transform:
-        translateX(-50%)
-        translateY(-3px);
-
-}
-
-
-/* =====================================================
-   PARTE 2 — INVESTIGAÇÃO
-===================================================== */
-
-.investigacao {
-
-    min-height: 100vh;
-
-    position: relative;
-
-    overflow: hidden;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 80px 20px;
-
-    color: white;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(100,15,35,0.2),
-            transparent 40%
-        ),
-        linear-gradient(
-            135deg,
-            #07070a,
-            #13090d,
-            #050507
+            #fff 0%,
+            #fff5f6 55%,
+            #ffe5e9 100%
         );
-
 }
 
-.investigacao::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 3px,
-            rgba(255,255,255,0.018) 4px
-        );
-
+.inicio-conteudo {
+    animation: aparecer 1.5s ease;
 }
 
-.ruido {
-
-    position: absolute;
-
-    inset: 0;
-
-    opacity: 0.15;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 3px,
-            rgba(255,60,90,0.08) 4px
-        );
-
-    animation: ruidoGlitch 0.25s infinite;
-
+.pequeno-titulo {
+    letter-spacing: 5px;
+    font-size: 13px;
+    color: #a84f62;
+    margin-bottom: 20px;
 }
 
-@keyframes ruidoGlitch {
-
-    0% {
-        transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(-2px);
-    }
-
-    50% {
-        transform: translateX(2px);
-    }
-
-    75% {
-        transform: translateX(-1px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-
+.inicio h1 {
+    font-size: clamp(55px, 10vw, 110px);
+    color: #a83d54;
+    font-weight: normal;
+    margin-bottom: 15px;
 }
 
-.investigacao-conteudo {
+.subtitulo {
+    color: #70414b;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
 
-    width: min(850px,95%);
+button {
+    border: 1px solid #a94b61;
+    background: #a94b61;
+    color: white;
 
-    position: relative;
+    padding: 13px 25px;
 
-    z-index: 5;
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(100, 25, 40, .18);
+    background: #8e3349;
+}
+
+
+/* =====================================================
+   CARTA PRINCIPAL
+===================================================== */
+
+.carta-principal {
+    background: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 70px 20px;
+}
+
+.papel {
+    width: min(700px, 90%);
+
+    padding: 70px;
+
+    background: #fffdfd;
+
+    border: 1px solid #ead0d5;
+
+    box-shadow:
+        0 20px 60px rgba(100, 30, 45, .12);
 
     text-align: center;
 
-}
-
-.codigo-vermelho {
-
-    color: #ff526f;
-
-    font-family: monospace;
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 25px;
-
-    animation: piscando 2s infinite;
-
-}
-
-@keyframes piscando {
-
-    0%,
-    45%,
-    55%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.25;
-    }
-
-}
-
-.investigacao h2 {
-
-    font-family: monospace;
-
-    font-size: clamp(28px,5vw,52px);
-
-    line-height: 1.25;
-
-    color: #f4f4f4;
-
-    text-shadow:
-        2px 0 #ff3155,
-        -2px 0 #621528;
-
-    margin-bottom: 25px;
-
-}
-
-.texto-investigacao {
-
-    color: #b9aeb1;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
-
-}
-
-
-/* =====================================================
-   ARQUIVO
-===================================================== */
-
-.arquivo {
-
-    width: min(500px,100%);
-
-    margin: 0 auto 35px;
-
-    padding: 25px;
-
-    text-align: left;
-
-    background: rgba(255,255,255,0.025);
-
-    border: 1px solid rgba(255,82,111,0.3);
-
-    font-family: monospace;
-
-}
-
-.arquivo p {
-
-    color: #aaa;
-
-    margin: 10px 0;
-
-}
-
-.arquivo span {
-
-    color: #ff607b;
-
-}
-
-
-/* =====================================================
-   PISTAS
-===================================================== */
-
-.pistas {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-
-}
-
-.pista {
-
-    background: transparent;
-
-    color: #ddd;
-
-    border: 1px solid #7e3345;
-
-    padding: 12px 20px;
-
-    border-radius: 3px;
-
-    font-family: monospace;
-
-    transition: 0.3s ease;
-
-}
-
-.pista:hover {
-
-    color: white;
-
-    border-color: #ff5573;
-
-    background: rgba(255,70,100,0.08);
-
-    box-shadow:
-        0 0 20px rgba(255,70,100,0.15);
-
-}
-
-
-/* =====================================================
-   TEXTO PISTA
-===================================================== */
-
-.texto-pista {
-
-    min-height: 30px;
-
-    margin: 20px auto;
-
-    color: #ff9cad;
-
-    font-family: monospace;
-
-    line-height: 1.7;
-
-    text-shadow:
-        0 0 8px rgba(255,80,110,0.5);
-
-}
-
-
-/* =====================================================
-   SENHA
-===================================================== */
-
-.senha-area {
-
-    margin-top: 40px;
-
-    padding: 30px;
-
-    border-top:
-        1px solid rgba(255,255,255,0.08);
-
-}
-
-.senha-area p {
-
-    color: #aaa;
-
-    margin-bottom: 18px;
-
-}
-
-#senha {
-
-    width: min(350px,90%);
-
-    padding: 14px 18px;
-
-    background: #08080b;
-
-    border: 1px solid #56303a;
-
-    color: white;
-
-    outline: none;
-
-    font-family: monospace;
-
-    margin-bottom: 15px;
-
-}
-
-#senha:focus {
-
-    border-color: #ff607b;
-
-}
-
-#resultadoSenha {
-
-    min-height: 25px;
-
-    margin-top: 15px;
-
-    font-family: monospace;
-
-}
-
-
-/* =====================================================
-   ARQUIVO ABERTO
-===================================================== */
-
-.investigacao-final {
-
-    display: none;
-
-    margin-top: 45px;
-
-}
-
-.arquivo-aberto {
-
-    padding: 40px;
-
-    background: rgba(255,255,255,0.025);
-
-    border:
-        1px solid
-        rgba(255,90,115,0.45);
-
-    box-shadow:
-        0 0 35px rgba(255,50,80,0.08);
-
-}
-
-.arquivo-status {
-
-    display: inline-block;
-
-    color: #ff607b;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-
-}
-
-.arquivo-aberto h3 {
-
-    font-family: monospace;
-
-    font-size: 25px;
-
-    margin-bottom: 20px;
-
-}
-
-.arquivo-aberto p {
-
-    color: #aaa;
-
-    line-height: 1.8;
-
-    margin-bottom: 15px;
-
-}
-
-
-/* =====================================================
-   PARTE 3 — UNIVERSO
-===================================================== */
-
-.universo {
-
-    min-height: 100vh;
-
     position: relative;
+}
 
+.decoracao {
+    font-size: 35px;
+    color: #b74c63;
+}
+
+.etiqueta {
+    color: #aa5365;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.papel h2 {
+    color: #7f3044;
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.papel p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #513039;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   PARTE DOS — CORAÇÕES
+===================================================== */
+
+.parte-coracoes {
     overflow: hidden;
 
     background:
-        radial-gradient(
-            ellipse at center,
-            #172044,
-            #080b18 50%,
-            #020307
+        linear-gradient(
+            135deg,
+            #fff,
+            #fff3f5
         );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coracoes-conteudo {
+    position: relative;
+    z-index: 10;
+
+    text-align: center;
+
+    width: min(600px, 90%);
+}
+
+.mini-titulo {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #a84b60;
+}
+
+.coracoes-conteudo h2 {
+    color: #9e3d53;
+    font-size: clamp(40px, 7vw, 70px);
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.coracoes-conteudo p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #63343f;
+    margin-bottom: 30px;
+}
+
+
+/* CORAÇÕES */
+
+#chuvaCoracoes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.coracao-caindo {
+    position: absolute;
+
+    top: -80px;
+
+    color: #b94a61;
+
+    opacity: .35;
+
+    animation:
+        cairCoracao linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(185, 74, 97, .3);
+}
+
+@keyframes cairCoracao {
+
+    0% {
+        transform:
+            translateY(-80px)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+
+}
+
+
+/* PALAVRAS */
+
+#palavrasEstrelas {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.palavra-caindo {
+    position: absolute;
+
+    color: #a63d54;
+
+    font-size: 15px;
+
+    opacity: 0;
+
+    animation:
+        palavraEstrela 4s ease-in-out infinite;
+
+    text-shadow:
+        0 0 8px rgba(166, 61, 84, .4);
+}
+
+@keyframes palavraEstrela {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: .9;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   INVESTIGAÇÃO
+===================================================== */
+
+.investigacao {
+    background: #f7eef0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+.arquivo {
+    width: min(700px, 92%);
+
+    background: #fff;
+
+    border: 1px solid #dcb7bf;
+
+    padding: 55px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(70, 20, 30, .12);
+}
+
+.arquivo-topo {
+    color: #9d4358;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.arquivo h2 {
+    font-size: 48px;
+    font-weight: normal;
+    color: #652433;
+    margin-bottom: 15px;
+}
+
+.descricao-investigacao {
+    color: #65404a;
+    margin-bottom: 35px;
+}
+
+.botao-pista {
+    background: transparent;
+    color: #8e394f;
+    border: 1px solid #b65a6e;
+    margin: 6px;
+}
+
+.botao-pista:hover {
+    background: #a94b61;
+    color: white;
+}
+
+.texto-pista {
+    min-height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 25px 0;
+
+    color: #592c38;
+
+    font-style: italic;
+
+    line-height: 1.6;
+}
+
+.senha-area {
+    border-top: 1px solid #ecd8dc;
+
+    padding-top: 30px;
+
+    margin-top: 20px;
+}
+
+.senha-area h3 {
+    color: #743244;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.senha-area input {
+    width: min(350px, 100%);
+
+    padding: 13px 17px;
+
+    border: 1px solid #d8b6bd;
+
+    border-radius: 25px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    margin-bottom: 12px;
+}
+
+.senha-area input:focus {
+    border-color: #a94b61;
+}
+
+#resultadoSenha {
+    margin-top: 15px;
+    min-height: 22px;
+}
+
+.investigacao-final {
+    display: none;
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #ead3d8;
+
+    animation: aparecer .7s ease;
+}
+
+.investigacao-final p {
+    color: #7e3044;
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   PARTE 3 — UNIVERSO MACABRO
+===================================================== */
+
+.universo {
+    background: #050509;
 
     color: white;
 
+    overflow: hidden;
 }
-
-.estrelas-fundo {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-
-        radial-gradient(
-            1px 1px at 10% 20%,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 25% 70%,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 40% 30%,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 60% 15%,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            2px 2px at 75% 60%,
-            white,
-            transparent
-        ),
-
-        radial-gradient(
-            1px 1px at 90% 35%,
-            white,
-            transparent
-        );
-
-    background-size: 300px 300px;
-
-    animation:
-        estrelasMover
-        30s linear infinite;
-
-}
-
-@keyframes estrelasMover {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-300px);
-    }
-
-}
-
-
-/* =====================================================
-   NEBULOSAS
-===================================================== */
-
-.nebulosa {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(70px);
-
-    opacity: 0.2;
-
-}
-
-.nebulosa-1 {
-
-    width: 350px;
-
-    height: 250px;
-
-    top: 15%;
-
-    left: -100px;
-
-    background: #713b76;
-
-}
-
-.nebulosa-2 {
-
-    width: 400px;
-
-    height: 300px;
-
-    right: -120px;
-
-    bottom: 10%;
-
-    background: #354b8d;
-
-}
-
-
-/* =====================================================
-   INTRO UNIVERSO
-===================================================== */
 
 .universo-intro {
-
     min-height: 100vh;
 
     display: flex;
@@ -1077,55 +458,81 @@ button {
 
     padding: 30px;
 
-    position: relative;
-
-    z-index: 5;
-
+    background:
+        radial-gradient(
+            circle at center,
+            #24131c 0%,
+            #09090d 45%,
+            #020204 100%
+        );
 }
 
-.universo-mini {
+.universo-intro p:first-child {
+    color: #8c6872;
 
-    color: #aab9e9;
+    letter-spacing: 7px;
 
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 5px;
+    font-size: 11px;
 
     margin-bottom: 25px;
-
 }
 
 .universo-intro h2 {
+    font-size: clamp(40px, 8vw, 90px);
 
-    font-size: clamp(35px,7vw,70px);
+    line-height: .95;
 
-    font-weight: normal;
+    color: #eee;
 
-    line-height: 1.2;
+    text-shadow:
+        2px 0 #7b1e39,
+        -2px 0 #261c75;
 
-    margin-bottom: 25px;
+    animation: glitch 3s infinite;
+}
+
+.universo-intro p:nth-of-type(2) {
+    margin: 30px 0;
+
+    color: #999;
+
+    font-style: italic;
+}
+
+.universo-intro button {
+    background: transparent;
+
+    border-color: #8b304d;
+
+    color: #d88ba0;
+}
+
+@keyframes glitch {
+
+    0%,
+    90%,
+    100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-3px, 2px);
+    }
+
+    94% {
+        transform: translate(3px, -2px);
+    }
+
+    96% {
+        transform: translate(-2px, 1px);
+    }
 
 }
 
-.universo-intro > p {
 
-    color: #aeb5ca;
-
-    font-size: 18px;
-
-    margin-bottom: 35px;
-
-}
-
-
-/* =====================================================
-   CÉU
-===================================================== */
+/* CÉU */
 
 .ceu {
-
     display: none;
 
     min-height: 100vh;
@@ -1134,81 +541,147 @@ button {
 
     overflow: hidden;
 
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #161326,
+            #06060b 60%,
+            #010103
+        );
 }
 
-.via-lactea {
+.ceu::before {
+    content: "";
 
     position: absolute;
 
-    width: 150%;
+    inset: 0;
 
-    height: 35%;
-
-    top: 30%;
-
-    left: -25%;
-
-    transform: rotate(-20deg);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.05),
-            rgba(255,255,255,0.18),
-            rgba(255,255,255,0.05),
-            transparent
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
         );
 
-    filter: blur(20px);
+    background-size: 80px 80px;
+
+    opacity: .15;
+
+    animation: estrelasFundo 12s linear infinite;
+}
+
+@keyframes estrelasFundo {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(80px);
+    }
 
 }
 
-
-/* =====================================================
-   ESTRELAS CLICÁVEIS
-===================================================== */
-
-.estrela {
-
+.glitch-titulo {
     position: absolute;
 
-    color: white;
+    top: 45px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #e7cbd2;
+
+    letter-spacing: 6px;
+
+    font-size: 13px;
+
+    text-align: center;
+
+    z-index: 5;
+
+    text-shadow:
+        2px 0 #7c2441,
+        -2px 0 #293174;
+
+    animation: glitch 2.5s infinite;
+}
+
+.instrucao-estrelas {
+    position: absolute;
+
+    top: 75px;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+
+    z-index: 5;
+}
+
+
+/* ESTRELAS CLICÁVEIS */
+
+.estrela {
+    position: absolute;
+
+    border: none;
+
+    padding: 0;
+
+    background: transparent;
+
+    color: #fff;
 
     font-size: 28px;
 
-    cursor: pointer;
-
-    z-index: 10;
+    line-height: 1;
 
     text-shadow:
-        0 0 5px white,
-        0 0 15px #9fb7ff,
-        0 0 30px #728cff;
+        0 0 6px white,
+        0 0 15px #b58cff;
 
     animation:
-        pulsarEstrela
-        2s ease-in-out infinite;
+        brilhoEstrela 2s ease-in-out infinite;
 
-    transition: 0.3s ease;
-
+    z-index: 10;
 }
 
 .estrela:hover {
+    background: transparent;
+
+    color: white;
+
+    box-shadow: none;
 
     transform: scale(1.5);
-
 }
 
 .estrela.encontrada {
+    color: #c76b86;
 
-    color: #65708e;
+    opacity: .3;
 
-    opacity: 0.2;
+    transform: scale(.7);
 
     pointer-events: none;
+}
 
-    transform: scale(0.5);
+@keyframes brilhoEstrela {
+
+    0%,
+    100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
 
 }
 
@@ -1216,380 +689,169 @@ button {
 /* POSIÇÕES */
 
 .estrela-1 {
-    top: 15%;
-    left: 18%;
+    top: 20%;
+    left: 13%;
 }
 
 .estrela-2 {
-    top: 28%;
-    left: 35%;
+    top: 30%;
+    left: 31%;
 }
 
 .estrela-3 {
-    top: 12%;
-    right: 25%;
+    top: 18%;
+    left: 52%;
 }
 
 .estrela-4 {
-    top: 42%;
-    left: 15%;
+    top: 36%;
+    left: 72%;
 }
 
 .estrela-5 {
-    top: 55%;
-    left: 32%;
+    top: 52%;
+    left: 20%;
 }
 
 .estrela-6 {
-    top: 32%;
-    right: 15%;
+    top: 61%;
+    left: 43%;
 }
 
 .estrela-7 {
-    top: 65%;
-    right: 25%;
+    top: 49%;
+    left: 61%;
 }
 
 .estrela-8 {
     top: 72%;
-    left: 48%;
+    left: 76%;
 }
 
 .estrela-9 {
-    top: 50%;
-    right: 42%;
+    top: 78%;
+    left: 33%;
 }
 
 .estrela-10 {
-    top: 80%;
-    right: 12%;
-}
-
-@keyframes pulsarEstrela {
-
-    0%,
-    100% {
-
-        opacity: 0.55;
-
-        text-shadow:
-            0 0 5px white,
-            0 0 12px #9fb7ff;
-
-    }
-
-    50% {
-
-        opacity: 1;
-
-        text-shadow:
-            0 0 8px white,
-            0 0 25px #9fb7ff,
-            0 0 40px #728cff;
-
-    }
-
+    top: 68%;
+    left: 10%;
 }
 
 
-/* =====================================================
-   CONSTELAÇÃO
-===================================================== */
+/* PALAVRA */
 
-.constelacao {
-
+#palavraEstrela {
     position: absolute;
-
-    width: 300px;
-
-    height: 220px;
-
-    top: 35%;
 
     left: 50%;
+    top: 50%;
 
-    transform:
-        translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
-    pointer-events: none;
-
-}
-
-.ponto {
-
-    position: absolute;
-
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    box-shadow:
-        0 0 10px white,
-        0 0 20px #8ea7ff;
-
-}
-
-.p1 { left: 5%; top: 30%; }
-.p2 { left: 20%; top: 15%; }
-.p3 { left: 35%; top: 35%; }
-.p4 { left: 50%; top: 20%; }
-.p5 { left: 65%; top: 40%; }
-.p6 { left: 80%; top: 25%; }
-.p7 { left: 90%; top: 55%; }
-.p8 { left: 70%; top: 70%; }
-.p9 { left: 45%; top: 65%; }
-.p10 { left: 25%; top: 75%; }
-
-
-.linha {
-
-    position: absolute;
-
-    height: 1px;
-
-    background:
-        rgba(180,200,255,0.25);
-
-    transform-origin: left center;
-
-}
-
-.l1 {
-    width: 65px;
-    left: 7%;
-    top: 31%;
-    transform: rotate(-25deg);
-}
-
-.l2 {
-    width: 65px;
-    left: 22%;
-    top: 18%;
-    transform: rotate(25deg);
-}
-
-.l3 {
-    width: 60px;
-    left: 37%;
-    top: 34%;
-    transform: rotate(-20deg);
-}
-
-.l4 {
-    width: 60px;
-    left: 52%;
-    top: 22%;
-    transform: rotate(30deg);
-}
-
-.l5 {
-    width: 70px;
-    left: 67%;
-    top: 42%;
-    transform: rotate(20deg);
-}
-
-.l6 {
-    width: 65px;
-    left: 72%;
-    top: 55%;
-    transform: rotate(135deg);
-}
-
-.l7 {
-    width: 80px;
-    left: 46%;
-    top: 67%;
-    transform: rotate(170deg);
-}
-
-.l8 {
-    width: 75px;
-    left: 27%;
-    top: 75%;
-    transform: rotate(-120deg);
-}
-
-
-/* =====================================================
-   PALAVRA DAS ESTRELAS
-===================================================== */
-
-.palavra-estrela {
-
-    position: absolute;
-
-    top: 15%;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    color: white;
+    color: #fff;
 
     font-size: 25px;
 
-    font-weight: bold;
-
-    opacity: 0;
-
-    z-index: 20;
+    letter-spacing: 2px;
 
     text-shadow:
         0 0 10px white,
-        0 0 25px #9fb7ff,
-        0 0 40px #728cff;
+        0 0 25px #b66dff;
 
-    transition:
-        opacity 0.5s ease;
+    opacity: 0;
 
+    transition: opacity .5s ease;
+
+    z-index: 20;
+
+    pointer-events: none;
 }
 
 
-/* =====================================================
-   MENSAGEM DO CÉU
-===================================================== */
+/* MENSAGEM */
 
-.ceu-mensagem {
+.mensagem-universo {
+    display: none;
 
     position: absolute;
 
-    bottom: 45px;
+    inset: 0;
 
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    text-align: center;
-
-    width: 90%;
-
-    z-index: 15;
-
-}
-
-.ceu-mensagem p {
-
-    font-size: 20px;
-
-    margin-bottom: 8px;
-
-}
-
-.ceu-mensagem span {
-
-    color: #8f99b5;
-
-    font-size: 14px;
-
-}
-
-
-/* =====================================================
-   MENSAGEM APÓS AS ESTRELAS
-===================================================== */
-
-.mensagem-universo {
-
-    min-height: 100vh;
-
-    display: none;
-
-    position: relative;
-
-    z-index: 30;
-
-    flex-direction: column;
+    z-index: 50;
 
     justify-content: center;
 
     align-items: center;
 
-    text-align: center;
-
-    padding: 40px;
+    padding: 25px;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(40,55,110,0.45),
-            #050711
+        rgba(0, 0, 0, .72);
+
+    backdrop-filter: blur(5px);
+}
+
+.mensagem-universo-caixa {
+    width: min(650px, 95%);
+
+    padding: 50px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111019,
+            #08080c
         );
 
+    border: 1px solid #753047;
+
+    box-shadow:
+        0 0 60px rgba(115, 30, 65, .25);
+
+    text-align: center;
+
+    animation: aparecer .8s ease;
 }
 
-.mensagem-universo.mostrar {
+.mensagem-pequena {
+    color: #9e6170;
 
-    display: flex;
+    letter-spacing: 4px;
 
-    animation:
-        aparecerMensagem
-        1s ease forwards;
+    text-transform: uppercase;
 
+    font-size: 11px;
+
+    margin-bottom: 20px;
 }
 
-.mensagem-mini {
+.mensagem-universo-caixa h2 {
+    color: #e8dbe0;
 
-    color: #9eacd5;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 25px;
-
-}
-
-.mensagem-universo h3 {
-
-    max-width: 750px;
-
-    font-size: clamp(30px,6vw,60px);
+    font-size: 34px;
 
     font-weight: normal;
 
-    line-height: 1.3;
-
     margin-bottom: 25px;
-
 }
 
-.mensagem-universo > p {
-
-    color: #aeb6ce;
-
-    font-size: 17px;
+.mensagem-universo-caixa p {
+    color: #aaa;
 
     line-height: 1.8;
 
-    margin-bottom: 35px;
-
+    margin-bottom: 18px;
 }
 
-@keyframes aparecerMensagem {
+.mensagem-universo-caixa button {
+    margin-top: 15px;
 
-    from {
+    background: transparent;
 
-        opacity: 0;
+    border-color: #8e3a55;
 
-        transform: translateY(30px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
+    color: #d18da0;
 }
 
 
@@ -1597,133 +859,92 @@ button {
    CARTA DO LÍRIO
 ===================================================== */
 
-.lirio {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 80px 20px;
-
+.secao-lirio {
     background:
         linear-gradient(
             135deg,
-            #ffffff,
-            #fff6f8
+            #fff,
+            #fff6f7
         );
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 20px;
 }
 
 .carta-lirio {
+    width: min(750px, 94%);
 
-    width: min(850px,92%);
+    background: #fff;
 
-    padding: 55px;
+    padding: 45px;
 
-    background: white;
-
-    border: 1px solid #efc2cc;
+    border: 1px solid #e1c5ca;
 
     box-shadow:
-        0 20px 60px rgba(125,38,60,0.12);
+        0 25px 70px rgba(100, 30, 45, .14);
 
-    text-align: center;
-
+    position: relative;
 }
 
-.lirio-mini {
+.carta-lirio-cabecalho {
+    display: flex;
 
-    color: var(--vermelho);
+    justify-content: space-between;
 
-    font-size: 12px;
+    color: #a2495e;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
-    margin-bottom: 20px;
-
-}
-
-.carta-lirio h2 {
-
-    color: var(--vermelho-escuro);
-
-    font-size: 45px;
-
-    font-weight: normal;
+    font-size: 11px;
 
     margin-bottom: 30px;
-
 }
 
-
-/* =====================================================
-   FOTO DO LÍRIO
-===================================================== */
-
 .foto-lirio {
+    width: 100%;
 
-    width: min(400px,90%);
-
-    margin: 0 auto 40px;
+    height: min(430px, 60vw);
 
     overflow: hidden;
 
-    border-radius: 5px;
+    margin-bottom: 35px;
 
-    box-shadow:
-        0 10px 35px rgba(125,38,60,0.18);
-
+    background: #eee;
 }
 
 .foto-lirio img {
-
-    display: block;
-
     width: 100%;
 
-    height: auto;
+    height: 100%;
 
+    object-fit: cover;
+
+    display: block;
 }
 
-
-/* =====================================================
-   TEXTO
-===================================================== */
-
 .texto-lirio {
+    color: #513039;
 
-    text-align: left;
+    font-size: 18px;
 
+    line-height: 1.9;
+
+    text-align: center;
 }
 
 .texto-lirio p {
-
-    color: #59333d;
-
-    font-size: 17px;
-
-    line-height: 2;
-
-    margin-bottom: 20px;
-
+    margin-bottom: 18px;
 }
 
-.final-lirio {
+.botao-lirio {
+    display: block;
 
-    text-align: center;
-
-    color: var(--vermelho-escuro) !important;
-
-    font-size: 27px !important;
-
-    font-style: italic;
-
-    margin-top: 35px;
-
+    margin: 30px auto 0;
 }
 
 
@@ -1732,232 +953,215 @@ button {
 ===================================================== */
 
 .localizacao {
+    background:
+        radial-gradient(
+            circle at center,
+            #fff,
+            #fff1f3
+        );
 
-    margin-top: 55px;
+    display: flex;
 
-    padding-top: 40px;
+    align-items: center;
 
-    border-top:
-        1px solid #f0d3da;
+    justify-content: center;
+
+    padding: 60px 20px;
+}
+
+.carta-localizacao {
+    width: min(750px, 94%);
+
+    background: #fff;
+
+    padding: 55px;
 
     text-align: center;
 
-}
-
-.localizacao-linha {
-
-    width: 50px;
-
-    height: 2px;
-
-    background: var(--vermelho);
-
-    margin: 0 auto 30px;
-
-}
-
-.localizacao-titulo {
-
-    color: var(--vermelho-escuro);
-
-    font-size: 14px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-
-}
-
-.localizacao-texto {
-
-    color: #75404c;
-
-    font-size: 17px;
-
-    margin-bottom: 25px;
-
-}
-
-.botao-localizacao {
-
-    margin-top: 5px;
-
-}
-
-.resultado-localizacao {
-
-    min-height: 30px;
-
-    margin-top: 20px;
-
-    color: var(--vermelho-escuro);
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-}
-
-
-/* =====================================================
-   CARTA FINAL DA LOCALIZAÇÃO
-===================================================== */
-
-.carta-localizacao {
-
-    display: none;
-
-    margin-top: 40px;
-
-    padding: 40px;
-
-    background: #fffafa;
-
-    border: 1px solid #efc2cc;
+    border: 1px solid #dfc2c8;
 
     box-shadow:
-        0 15px 40px rgba(125,38,60,0.12);
-
-    animation:
-        aparecerMensagem
-        1s ease forwards;
-
+        0 25px 70px rgba(100, 30, 45, .14);
 }
 
-.localizacao-mini {
+.selo {
+    color: #a3495d;
 
-    color: var(--vermelho);
+    font-size: 11px;
 
-    font-size: 12px;
-
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
     margin-bottom: 20px;
-
 }
 
-.carta-localizacao h3 {
+.carta-localizacao h2 {
+    font-size: 45px;
 
-    color: var(--vermelho-escuro);
-
-    font-size: 35px;
+    color: #763144;
 
     font-weight: normal;
 
     margin-bottom: 25px;
-
 }
 
-.carta-localizacao p {
+.carta-localizacao > p {
+    color: #58333c;
 
-    color: #59333d;
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.cidade-alvo {
+    display: inline-block;
+
+    margin: 25px 0;
+
+    padding: 15px 25px;
+
+    background: #fff1f3;
+
+    border: 1px solid #ddb7c0;
+
+    color: #86374b;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+}
+
+.explicacao-localizacao {
+    max-width: 550px;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.botao-localizacao {
+    margin-top: 15px;
+}
+
+#statusLocalizacao {
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   CARTA SECRETA
+===================================================== */
+
+.carta-secreta {
+    display: none;
+
+    margin-top: 40px;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafa,
+            #fff1f3
+        );
+
+    border: 1px solid #d8adb6;
+
+    text-align: left;
+
+    animation:
+        aparecer .9s ease;
+}
+
+.secreto-topo {
+    text-align: center;
+
+    color: #a0475b;
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+
+    margin-bottom: 35px;
+}
+
+.carta-secreta h2 {
+    color: #793043;
+
+    font-size: 38px;
+
+    font-weight: normal;
+
+    margin-bottom: 30px;
+}
+
+.texto-carta-final {
+    color: #4d3037;
 
     font-size: 17px;
 
     line-height: 1.9;
-
-    margin-bottom: 18px;
-
 }
 
-.carta-localizacao .mensagem-final {
+.texto-carta-final p {
+    margin-bottom: 20px;
+}
 
-    color: var(--vermelho-escuro);
+.final-eu-te-amo {
+    text-align: center;
 
-    font-size: 23px;
+    font-size: 28px;
+
+    color: #a23e56;
+
+    margin-top: 35px;
+
+    font-style: italic;
+}
+
+.assinatura {
+    text-align: right;
+
+    color: #914052;
 
     font-style: italic;
 
     margin-top: 30px;
 
-}
-
-.assinatura {
-
-    text-align: right;
-
-    color: var(--vermelho) !important;
-
-    margin-top: 30px;
-
-}
-
-
-/* =====================================================
-   FINAL
-===================================================== */
-
-.proxima-parte {
-
-    min-height: 80vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 40px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #fff4f7
-        );
-
-}
-
-.proxima-parte h2 {
-
-    color: var(--vermelho-escuro);
-
-    font-size: clamp(32px,6vw,60px);
-
-    font-weight: normal;
-
-    max-width: 800px;
-
-    margin-bottom: 20px;
-
-}
-
-.proxima-parte > p:last-child {
-
-    color: #75404c;
-
     font-size: 18px;
-
 }
 
 
 /* =====================================================
-   RODAPÉ
+   ANIMAÇÕES
 ===================================================== */
 
-footer {
+@keyframes aparecer {
 
-    padding: 30px;
+    from {
+        opacity: 0;
 
-    text-align: center;
+        transform:
+            translateY(25px);
+    }
 
-    background: white;
+    to {
+        opacity: 1;
 
-    border-top:
-        1px solid #f2d5dc;
+        transform:
+            translateY(0);
+    }
 
 }
 
-footer p {
-
-    color: #a15a6b;
-
-    font-size: 14px;
-
+.aparecer {
+    animation:
+        aparecer .8s ease forwards;
 }
 
 
@@ -1965,102 +1169,49 @@ footer p {
    CELULAR
 ===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    .papel {
-
-        padding: 40px 25px;
-
+    .papel,
+    .arquivo,
+    .carta-lirio,
+    .carta-localizacao {
+        padding: 30px 22px;
     }
 
     .papel h2 {
-
-        font-size: 30px;
-
+        font-size: 32px;
     }
 
-    .papel p {
-
-        font-size: 16px;
-
+    .arquivo h2 {
+        font-size: 36px;
     }
 
-    .coracoes h2 {
-
-        font-size: 48px;
-
+    .mensagem-universo-caixa {
+        padding: 30px 22px;
     }
 
-    .investigacao {
-
-        padding: 60px 15px;
-
-    }
-
-    .investigacao h2 {
-
+    .mensagem-universo-caixa h2 {
         font-size: 27px;
-
-    }
-
-    .pistas {
-
-        flex-direction: column;
-
-        align-items: center;
-
-    }
-
-    .pista {
-
-        width: 220px;
-
-    }
-
-    .senha-area {
-
-        padding: 25px 10px;
-
-    }
-
-    .estrela {
-
-        font-size: 23px;
-
-    }
-
-    .constelacao {
-
-        transform:
-            translate(-50%,-50%)
-            scale(0.7);
-
     }
 
     .carta-lirio {
-
-        padding: 35px 22px;
-
+        padding: 25px 18px;
     }
 
-    .carta-lirio h2 {
-
-        font-size: 35px;
-
-    }
-
-    .texto-lirio p {
-
-        font-size: 16px;
-
-        line-height: 1.8;
-
-    }
-
-    .carta-localizacao {
-
+    .carta-secreta {
         padding: 30px 20px;
+    }
 
+    .carta-localizacao h2 {
+        font-size: 35px;
+    }
+
+    .texto-carta-final {
+        font-size: 16px;
+    }
+
+    .estrela {
+        font-size: 24px;
     }
 
 }

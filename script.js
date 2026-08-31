@@ -15,7 +15,7 @@ function abrirCarta() {
 
 
 /* =====================================================
-   MOSTRAR MENSAGEM
+   MOSTRAR PARTE DOS CORAÇÕES
 ===================================================== */
 
 function mostrarMensagem() {
@@ -43,7 +43,11 @@ function criarCoracoes() {
     const container =
         document.getElementById("chuvaCoracoes");
 
-    container.innerHTML = "";
+    /* Evita duplicar os corações */
+
+    if (container.children.length > 0) {
+        return;
+    }
 
     const simbolos = [
         "♡",
@@ -80,9 +84,7 @@ function criarCoracoes() {
         coracao.style.fontSize =
             (18 + Math.random() * 30) + "px";
 
-        container.appendChild(
-            coracao
-        );
+        container.appendChild(coracao);
 
     }
 
@@ -100,7 +102,9 @@ function criarPalavras() {
             "palavrasEstrelas"
         );
 
-    container.innerHTML = "";
+    if (container.children.length > 0) {
+        return;
+    }
 
     const palavras = [
 
@@ -122,7 +126,6 @@ function criarPalavras() {
 
     ];
 
-
     palavras.forEach(
         (palavra, index) => {
 
@@ -134,28 +137,16 @@ function criarPalavras() {
             );
 
             elemento.innerText =
-                "✦ " + palavra;
-
+                palavra;
 
             elemento.style.left =
-                (3 + Math.random() * 90)
-                + "%";
-
+                (5 + Math.random() * 90) + "%";
 
             elemento.style.top =
-                (8 + Math.random() * 75)
-                + "%";
-
+                (5 + Math.random() * 85) + "%";
 
             elemento.style.animationDelay =
-                (Math.random() * 5)
-                + "s";
-
-
-            elemento.style.fontSize =
-                (13 + Math.random() * 8)
-                + "px";
-
+                (index * 0.5) + "s";
 
             container.appendChild(
                 elemento
@@ -168,7 +159,7 @@ function criarPalavras() {
 
 
 /* =====================================================
-   IR PARA PARTE 2
+   IR PARA INVESTIGAÇÃO
 ===================================================== */
 
 function irParaParte2() {
@@ -245,6 +236,12 @@ function verificarSenha() {
             .toLowerCase();
 
 
+    /*
+       SENHA ATUAL
+       --------------------------------
+       borboletas em vidro
+    */
+
     if (
         senha ===
         "borboletas em vidro"
@@ -254,7 +251,7 @@ function verificarSenha() {
             "✓ ACESSO CONCEDIDO";
 
         resultado.style.color =
-            "#f3a1b1";
+            "#a3475b";
 
 
         const final =
@@ -265,19 +262,13 @@ function verificarSenha() {
         final.style.display =
             "block";
 
-
-        final.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
     } else {
 
         resultado.innerText =
             "✕ Senha incorreta. Talvez você ainda precise investigar um pouco mais...";
 
         resultado.style.color =
-            "#d98295";
+            "#9b304b";
 
     }
 
@@ -372,8 +363,13 @@ function clicarEstrela(numero) {
         );
 
 
+    /*
+       Evita clicar duas vezes
+    */
+
     if (
-        estrelasEncontradas.has(numero)
+        estrelasEncontradas
+            .has(numero)
     ) {
 
         return;
@@ -381,15 +377,17 @@ function clicarEstrela(numero) {
     }
 
 
-    estrelasEncontradas.add(
-        numero
-    );
+    estrelasEncontradas
+        .add(numero);
 
 
-    estrela.classList.add(
-        "encontrada"
-    );
+    estrela.classList
+        .add("encontrada");
 
+
+    /*
+       Mostrar palavra
+    */
 
     const palavra =
         document.getElementById(
@@ -405,34 +403,28 @@ function clicarEstrela(numero) {
         "1";
 
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            palavra.style.opacity =
-                "0";
+        palavra.style.opacity =
+            "0";
 
-        },
-        1800
-    );
+    }, 1800);
 
 
     /*
-     * Quando as 10 estrelas
-     * forem encontradas
-     */
+       Quando encontrar as 10
+    */
 
     if (
-        estrelasEncontradas.size === 10
+        estrelasEncontradas.size ===
+        10
     ) {
 
-        setTimeout(
-            () => {
+        setTimeout(() => {
 
-                mostrarMensagemUniverso();
+            mostrarMensagemUniverso();
 
-            },
-            1200
-        );
+        }, 1200);
 
     }
 
@@ -440,7 +432,7 @@ function clicarEstrela(numero) {
 
 
 /* =====================================================
-   MOSTRAR MENSAGEM APÓS AS ESTRELAS
+   MOSTRAR MENSAGEM DO UNIVERSO
 ===================================================== */
 
 function mostrarMensagemUniverso() {
@@ -450,15 +442,8 @@ function mostrarMensagemUniverso() {
             "mensagemUniverso"
         );
 
-
-    mensagem.classList.add(
-        "mostrar"
-    );
-
-
-    mensagem.scrollIntoView({
-        behavior: "smooth"
-    });
+    mensagem.style.display =
+        "flex";
 
 }
 
@@ -474,10 +459,106 @@ function irParaLirio() {
             "lirio"
         );
 
-
     lirio.scrollIntoView({
         behavior: "smooth"
     });
+
+}
+
+
+/* =====================================================
+   IR PARA LOCALIZAÇÃO
+===================================================== */
+
+function irParaLocalizacao() {
+
+    const localizacao =
+        document.getElementById(
+            "proximaParte"
+        );
+
+    localizacao.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   LOCALIZAÇÃO — UMUARAMA
+===================================================== */
+
+
+/*
+   Coordenadas aproximadas do centro
+   de Umuarama - Paraná.
+
+   O raio deixa uma margem para que
+   a localização não precise estar
+   exatamente no centro da cidade.
+*/
+
+const UMUARAMA_LAT =
+    -23.7658;
+
+const UMUARAMA_LON =
+    -53.3250;
+
+
+/*
+   Raio permitido:
+
+   aproximadamente 15 km.
+*/
+
+const RAIO_PERMITIDO =
+    15;
+
+
+/* =====================================================
+   CALCULAR DISTÂNCIA
+===================================================== */
+
+function calcularDistancia(
+    lat1,
+    lon1,
+    lat2,
+    lon2
+) {
+
+    const R = 6371;
+
+    const dLat =
+        (lat2 - lat1) *
+        Math.PI / 180;
+
+    const dLon =
+        (lon2 - lon1) *
+        Math.PI / 180;
+
+    const a =
+        Math.sin(dLat / 2) *
+        Math.sin(dLat / 2) +
+
+        Math.cos(
+            lat1 * Math.PI / 180
+        ) *
+
+        Math.cos(
+            lat2 * Math.PI / 180
+        ) *
+
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+
+    const c =
+        2 *
+        Math.atan2(
+            Math.sqrt(a),
+            Math.sqrt(1 - a)
+        );
+
+    return R * c;
 
 }
 
@@ -488,147 +569,103 @@ function irParaLirio() {
 
 function verificarLocalizacao() {
 
-    const resultado =
+    const status =
         document.getElementById(
-            "resultadoLocalizacao"
+            "statusLocalizacao"
         );
 
 
-    const cartaFinal =
-        document.getElementById(
-            "cartaLocalizacao"
-        );
-
+    /*
+       Verifica se o navegador
+       possui geolocalização.
+    */
 
     if (
         !navigator.geolocation
     ) {
 
-        resultado.innerText =
+        status.innerText =
             "Seu navegador não permite verificar a localização.";
+
+        status.style.color =
+            "#a83250";
 
         return;
 
     }
 
 
-    resultado.innerText =
-        "📍 Verificando sua localização...";
+    status.innerText =
+        "📍 procurando sua localização...";
+
+
+    status.style.color =
+        "#8b5361";
 
 
     navigator.geolocation.getCurrentPosition(
 
-        function(posicao) {
+        function (posicao) {
 
             const latitude =
                 posicao.coords.latitude;
-
 
             const longitude =
                 posicao.coords.longitude;
 
 
-            /*
-             * Umuarama - Paraná
-             *
-             * Coordenadas aproximadas:
-             *
-             * Latitude:  -23.7658
-             * Longitude: -53.3250
-             */
+            const distancia =
+                calcularDistancia(
 
-            const latitudeUmuarama =
-                -23.7658;
+                    latitude,
+                    longitude,
 
+                    UMUARAMA_LAT,
+                    UMUARAMA_LON
 
-            const longitudeUmuarama =
-                -53.3250;
-
-
-            /*
-             * Área aproximada de desbloqueio.
-             *
-             * Não precisa estar exatamente
-             * no centro da cidade.
-             */
-
-            const distanciaLatitude =
-                Math.abs(
-                    latitude -
-                    latitudeUmuarama
                 );
 
-
-            const distanciaLongitude =
-                Math.abs(
-                    longitude -
-                    longitudeUmuarama
-                );
-
-
-            /*
-             * Área de aproximadamente
-             * alguns quilômetros.
-             */
 
             if (
-
-                distanciaLatitude < 0.15 &&
-
-                distanciaLongitude < 0.15
-
+                distancia <=
+                RAIO_PERMITIDO
             ) {
 
-                resultado.innerText =
-                    "♡ Localização confirmada. Você encontrou o último arquivo.";
-
-
-                cartaFinal.style.display =
-                    "block";
-
-
-                cartaFinal.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
-
+                desbloquearCarta();
 
             } else {
 
-                resultado.innerText =
-                    "✦ Ainda não... parece que você precisa chegar um pouco mais perto do lugar certo.";
+                status.innerText =
+                    "🔒 Ainda não... a última carta só pode ser aberta em Umuarama.";
+
+                status.style.color =
+                    "#9b304b";
 
             }
 
         },
 
 
-        function(erro) {
+        function () {
 
-            if (
-                erro.code ===
-                1
-            ) {
+            status.innerText =
+                "Não consegui acessar sua localização. Verifique a permissão do navegador e tente novamente.";
 
-                resultado.innerText =
-                    "📍 Você precisa permitir o acesso à localização para continuar.";
-
-            } else {
-
-                resultado.innerText =
-                    "Não foi possível verificar sua localização. Tente novamente.";
-
-            }
+            status.style.color =
+                "#9b304b";
 
         },
 
         {
 
-            enableHighAccuracy: true,
+            enableHighAccuracy:
+                true,
 
-            timeout: 10000,
+            timeout:
+                10000,
 
-            maximumAge: 0
+            maximumAge:
+                0
 
         }
 
@@ -638,7 +675,47 @@ function verificarLocalizacao() {
 
 
 /* =====================================================
-   ANIMAÇÃO DE ENTRADA
+   DESBLOQUEAR CARTA
+===================================================== */
+
+function desbloquearCarta() {
+
+    const carta =
+        document.getElementById(
+            "cartaSecreta"
+        );
+
+    const status =
+        document.getElementById(
+            "statusLocalizacao"
+        );
+
+
+    status.innerText =
+        "✓ LOCALIZAÇÃO CONFIRMADA — UMUARAMA";
+
+    status.style.color =
+        "#9a3d54";
+
+
+    carta.style.display =
+        "block";
+
+
+    setTimeout(() => {
+
+        carta.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 500);
+
+}
+
+
+/* =====================================================
+   ANIMAÇÃO AO ENTRAR NA TELA
 ===================================================== */
 
 const observador =
@@ -653,9 +730,9 @@ const observador =
                         entrada.isIntersecting
                     ) {
 
-                        entrada.target.classList.add(
-                            "aparecer"
-                        );
+                        entrada.target
+                            .classList
+                            .add("aparecer");
 
                     }
 
@@ -673,14 +750,9 @@ const observador =
 
 document
     .querySelectorAll(
-        ".papel, .carta-lirio, .arquivo-aberto"
+        ".papel, .carta-lirio, .arquivo, .carta-localizacao"
     )
     .forEach(
-        elemento => {
-
-            observador.observe(
-                elemento
-            );
-
-        }
+        elemento =>
+            observador.observe(elemento)
     );
